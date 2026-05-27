@@ -7,7 +7,8 @@ const verticals = [
     id: "vfx",
     title: "VFX",
     subtitle: "Movies & Ads",
-    description: "High-end visual effects and motion design for film, advertising, and digital experiences.",
+    description:
+      "High-end visual effects and motion design for film, advertising, and digital experiences.",
     href: "/vfx",
     bgImage: "https://resonancedigital.in/assets/images/VFX/Sandman-vfx.webp",
   },
@@ -15,25 +16,31 @@ const verticals = [
     id: "real-estate",
     title: "Real Estate",
     subtitle: "Mar-tech",
-    description: "Photorealistic renders and immersive virtual tours for architectural projects.",
+    description:
+      "Photorealistic renders and immersive virtual tours for architectural projects.",
     href: "/real-estate",
-    bgImage: "https://resonancedigital.in/assets/images/realEstate/verticalSelectorImg.png",
+    bgImage:
+      "https://resonancedigital.in/assets/images/realEstate/verticalSelectorImg.png",
   },
   {
     id: "brand-solutions",
     title: "Brand Solutions",
     subtitle: "",
-    description: "Strategic brand content and campaigns that resonate with audiences worldwide.",
+    description:
+      "Strategic brand content and campaigns that resonate with audiences worldwide.",
     href: "/brandSolutions",
-    bgImage: "https://resonancedigital.in/assets/images/brandSolutions/black_dog-copy.jpg",
+    bgImage:
+      "https://resonancedigital.in/assets/images/brandSolutions/black_dog-copy.jpg",
   },
   {
     id: "motion-pictures",
     title: "Motion Pictures",
     subtitle: "",
-    description: "Full-service content creation from concept to final delivery for motion pictures.",
+    description:
+      "Full-service content creation from concept to final delivery for motion pictures.",
     href: "/motion-pictures",
-    bgImage: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2000",
+    bgImage:
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2000",
   },
 ];
 
@@ -81,13 +88,32 @@ const VerticalSelector = () => {
   const handleCardTap = useCallback(
     (e: React.MouseEvent, id: string) => {
       if (activeVertical === id) return; // already active → let the link navigate
-      e.preventDefault();               // not yet active → activate first
+      e.preventDefault(); // not yet active → activate first
       setActiveVertical(id);
       if (rotateRef.current) clearInterval(rotateRef.current);
       if (resumeRef.current) clearTimeout(resumeRef.current);
       resumeRef.current = setTimeout(startAutoRotate, 6000);
     },
     [activeVertical, startAutoRotate],
+  );
+
+  // mobile card interaction helper
+  const activateCard = useCallback(
+    (id: string) => {
+      setActiveVertical(id);
+
+      // pause existing rotation
+      if (rotateRef.current) clearInterval(rotateRef.current);
+
+      // clear existing resume timer
+      if (resumeRef.current) clearTimeout(resumeRef.current);
+
+      // resume auto-rotation after 6s
+      resumeRef.current = setTimeout(() => {
+        startAutoRotate();
+      }, 6000);
+    },
+    [startAutoRotate],
   );
 
   return (
@@ -113,7 +139,6 @@ const VerticalSelector = () => {
 
       {/* ── Content layer ──────────────────────────────────────────────────── */}
       <div className="relative z-10 h-full flex flex-col">
-
         {/* Section header */}
         <div className="px-6 md:px-12 py-8 md:py-12 border-b border-white/20">
           <h2 className="text-xs uppercase tracking-widest text-white/50">
@@ -163,7 +188,9 @@ const VerticalSelector = () => {
                   {vertical.description}
                 </p>
                 <div className="flex items-center gap-2 text-sm text-white group-hover:text-primary transition-colors duration-200">
-                  <span className="uppercase tracking-widest text-xs">Explore</span>
+                  <span className="uppercase tracking-widest text-xs">
+                    Explore
+                  </span>
                   <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
                 </div>
               </div>
@@ -177,99 +204,97 @@ const VerticalSelector = () => {
         {/* ════════════════════════════════════════════════════════════════════
             MOBILE — 2×2 tap-to-activate grid + auto-rotating background
             ════════════════════════════════════════════════════════════════════ */}
-        <div className="flex flex-col md:hidden flex-1">
-          {/* 2×2 grid */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 p-8 flex-1 h-full">
-            {verticals.map((vertical, index) => {
-              const isActive = activeVertical === vertical.id;
-              return (
-                <Link
+        <div className="flex flex-col md:hidden flex-1 px-4 pt-4 pb-5 gap-4">
+          {/* Featured active card */}
+          {verticals
+            .filter((vertical) => vertical.id === activeVertical)
+            .map((vertical) => (
+              <Link
+                key={vertical.id}
+                to={vertical.href}
+                onClick={(e) => handleCardTap(e, vertical.id)}
+                className="relative h-[58vh] overflow-hidden rounded-2xl"
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${vertical.bgImage})` }}
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20" />
+
+                <div className="relative z-10 h-full flex flex-col justify-between p-5">
+                  <span className="text-xs text-white/60">
+                    0{verticals.findIndex((v) => v.id === vertical.id) + 1}
+                  </span>
+
+                  <div>
+                    <h3 className="font-display text-4xl font-semibold text-white leading-none">
+                      {vertical.title}
+                    </h3>
+
+                    {vertical.subtitle && (
+                      <span className="block mt-2 text-base text-white/70">
+                        {vertical.subtitle}
+                      </span>
+                    )}
+
+                    <p className="mt-4 text-sm leading-relaxed text-white/80 max-w-xs">
+                      {vertical.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-[#4ab6ff]">
+                    <span className="uppercase tracking-widest text-xs">
+                      Tap to visit
+                    </span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+
+          {/* Thumbnail cards */}
+          <div className="grid grid-cols-3 gap-3">
+            {verticals
+              .filter((vertical) => vertical.id !== activeVertical)
+              .map((vertical) => (
+                <button
                   key={vertical.id}
-                  to={vertical.href}
-                  onClick={(e) => handleCardTap(e, vertical.id)}
-                  className="relative overflow-hidden rounded-xl h-full"
+                  onClick={() => activateCard(vertical.id)}
+                  className="relative h-28 overflow-hidden rounded-xl text-left"
                 >
-                  {/* Background image */}
                   <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${vertical.bgImage})` }}
                   />
 
-                  {/* Overlay — lighter when active */}
-                  <div
-                    className={`absolute inset-0 transition-all duration-500 ${
-                      isActive ? "bg-black/25" : "bg-black/60"
-                    }`}
-                  />
+                  <div className="absolute inset-0 bg-black/55" />
 
-                  {/* Card content */}
-                  <div className="absolute inset-0 p-4 flex flex-col justify-between">
-                    {/* Number */}
-                    <span className="text-xs text-white/50">0{index + 1}</span>
-
-                    {/* Middle: title + subtitle + description */}
-                    <div>
-                      <h3
-                        className={`font-display text-xl font-bold leading-tight transition-colors duration-300 ${
-                          isActive ? "text-[#4ab6ff]" : "text-white"
-                        }`}
-                      >
-                        {vertical.title}
-                      </h3>
-                      {vertical.subtitle && (
-                        <span className="block text-xs text-white/60 mt-0.5">
-                          {vertical.subtitle}
-                        </span>
-                      )}
-                      {/* Description: slides in when active */}
-                      <p
-                        className={`text-xs text-white/70 mt-2 leading-relaxed transition-all duration-400 overflow-hidden ${
-                          isActive ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        {vertical.description}
-                      </p>
-                    </div>
-
-                    {/* Explore row */}
-                    <div
-                      className={`flex items-center gap-1 text-xs uppercase tracking-widest transition-colors duration-200 ${
-                        isActive ? "text-[#4ab6ff]" : "text-white/50"
-                      }`}
-                    >
-                      <span>{isActive ? "Tap again to visit →" : "Explore"}</span>
-                      {!isActive && <ArrowUpRight className="w-3 h-3" />}
-                    </div>
+                  <div className="relative z-10 h-full flex items-end p-3">
+                    <span className="text-xs text-white font-medium leading-tight">
+                      {vertical.title}
+                    </span>
                   </div>
-
-                  {/* Active bottom border — animates in */}
-                  <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#4ab6ff] transition-all duration-500 ease-out ${
-                      isActive ? "w-full" : "w-0"
-                    }`}
-                  />
-                </Link>
-              );
-            })}
+                </button>
+              ))}
           </div>
 
-          {/* Auto-rotate indicator dots */}
-          <div className="flex justify-center items-center gap-2 py-5">
+          {/* Indicator dots */}
+          <div className="flex justify-center items-center gap-2">
             {verticals.map((vertical) => (
               <button
                 key={`dot-${vertical.id}`}
                 aria-label={`View ${vertical.title}`}
-                onClick={() => handleCardTap({ preventDefault: () => {} } as React.MouseEvent, vertical.id)}
-                className={`rounded-full transition-all duration-400 ${
+                onClick={() => activateCard(vertical.id)}
+                className={`rounded-full transition-all duration-300 ${
                   activeVertical === vertical.id
-                    ? "w-6 h-[6px] bg-[#4ab6ff]"
-                    : "w-[6px] h-[6px] bg-white/30 hover:bg-white/60"
+                    ? "w-8 h-1.5 bg-[#4ab6ff]"
+                    : "w-2 h-2 bg-white/30"
                 }`}
               />
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
