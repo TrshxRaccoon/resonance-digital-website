@@ -31,6 +31,7 @@ const Hero = () => {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source
@@ -42,9 +43,39 @@ const Hero = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 hero-overlay z-10" />
 
+<div
+  className="
+    absolute
+    inset-x-0
+    top-0
+    h-32
+    bg-gradient-to-b
+    from-black/80
+    via-black/30
+    to-transparent
+    z-10
+  "
+/>
+
         {/* Content - Animated */}
-        <motion.div 
-          className="absolute left-6 md:left-12 lg:left-24 bottom-10 md:bottom-14 lg:bottom-16 z-20"
+        <motion.div
+  className="
+    absolute
+    left-6
+    right-6
+    md:left-12
+    md:right-auto
+    lg:left-24
+    max-w-[85vw]
+    md:max-w-none
+    top-[58%]
+    md:top-auto
+    md:bottom-14
+    lg:bottom-16
+    -translate-y-1/2
+    md:translate-y-0
+    z-20
+  "
           style={{
             y: contentY,
             opacity: contentOpacity,
@@ -57,7 +88,7 @@ const Hero = () => {
             fontWeight: 700,
 
             /* Reduced hero headline size */
-            fontSize: "55pt",
+            fontSize: "clamp(40px, 10vw, 55pt)",
 
             /* Kill browser-added line gap */
             lineHeight: "0.88",
@@ -90,7 +121,15 @@ const Hero = () => {
               lineHeight: "0.88",
             }}
           >
-            <DynamicText />
+            <div
+  style={{
+    minHeight: "1.1em",
+    display: "flex",
+    alignItems: "center",
+  }}
+>
+  <DynamicText />
+</div>
           </span>
 
           <span

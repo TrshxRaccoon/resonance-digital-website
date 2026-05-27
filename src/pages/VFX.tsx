@@ -254,7 +254,7 @@ const VFX = () => {
       category: "xxxxxx"
     },
     {
-      title: "Doctor's-Strang-Multiverse-of-Madness",
+      title: "Doctor's-Strange-Multiverse-of-Madness",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Doctor's-Strang-Multiverse-of-Madness.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
