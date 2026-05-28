@@ -8,6 +8,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 type BrandShowcaseItem = {
   title: string;
   image: string;
+  caseStudyImage?: string;
   client: string;
   year: string;
   service: string;
@@ -35,7 +36,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "ICICI Lombard",
     year: "2018",
     service: "Film Production & Campaign",
-    objective: "Digital content to drive engagement and brand recall across insurance touchpoints — concept to final delivery.",
+    objective:
+      "Digital content to drive engagement and brand recall across insurance touchpoints — concept to final delivery.",
     videoSrc: "/assets/videos/ads.mp4",
     videoTitle: "ICICI LOMBARD",
     videoSubtitle: "Insurance for Every Moment",
@@ -48,7 +50,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "ICICI Lombard",
     year: "2018",
     service: "Social Media Management",
-    objective: "Sustained social media presence and content calendar management for quarterly campaigns.",
+    objective:
+      "Sustained social media presence and content calendar management for quarterly campaigns.",
   },
   {
     title: "Bharti AXA",
@@ -56,7 +59,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Bharti AXA",
     year: "2024",
     service: "Pre to Post Production",
-    objective: "End-to-end production of a branded film across digital platforms to drive emotional brand connection.",
+    objective:
+      "End-to-end production of a branded film across digital platforms to drive emotional brand connection.",
     videoSrc: "/assets/videos/movies.mp4",
     videoTitle: "BHARTI AXA",
     videoSubtitle: "Hum Kaise Maan Le",
@@ -69,7 +73,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Morde",
     year: "2024",
     service: "Launch New Packaging",
-    objective: "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad.",
+    objective:
+      "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad.",
   },
   {
     title: "Travel + Leisure",
@@ -77,7 +82,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Travel + Leisure",
     year: "2024",
     service: "Original Content & Copywriting",
-    objective: "Crafting destination-led editorial content and visual storytelling for the Travel + Leisure India brand.",
+    objective:
+      "Crafting destination-led editorial content and visual storytelling for the Travel + Leisure India brand.",
   },
   {
     title: "Oppo",
@@ -85,7 +91,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Oppo",
     year: "2024",
     service: "Video Editing & Animation",
-    objective: "Product launch video editing and motion graphics for digital-first distribution across platforms.",
+    objective:
+      "Product launch video editing and motion graphics for digital-first distribution across platforms.",
     videoSrc: "/assets/videos/placeholder_video.mp4",
     videoTitle: "OPPO",
     videoSubtitle: "Future Tech Stories",
@@ -98,7 +105,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "ICICI Lombard",
     year: "2019",
     service: "Campaign Planning",
-    objective: "Campus-focused insurance awareness campaign targeting young professionals and graduates.",
+    objective:
+      "Campus-focused insurance awareness campaign targeting young professionals and graduates.",
   },
   {
     title: "ICICI Lombard - Elevate",
@@ -106,7 +114,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "ICICI Lombard",
     year: "2020",
     service: "Graphic Design & Illustration",
-    objective: "A refreshed design language for the Elevate product line across digital and print touchpoints.",
+    objective:
+      "A refreshed design language for the Elevate product line across digital and print touchpoints.",
   },
   {
     title: "Bharti AXA - Secure Living",
@@ -114,7 +123,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Bharti AXA",
     year: "2023",
     service: "Script to Post",
-    objective: "Full campaign production from scripting to post — driving 4M+ views across digital platforms.",
+    objective:
+      "Full campaign production from scripting to post — driving 4M+ views across digital platforms.",
     videoSrc: "/assets/videos/movies.mp4",
     videoTitle: "BHARTI AXA",
     videoSubtitle: "Secure Living Campaign",
@@ -127,7 +137,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Morde",
     year: "2025",
     service: "Print, OOH & Mainline Advertising",
-    objective: "Festive packaging campaign designed for in-store visibility and regional distribution across bakery trade shows.",
+    objective:
+      "Festive packaging campaign designed for in-store visibility and regional distribution across bakery trade shows.",
   },
   {
     title: "Travel + Leisure - Goa Edit",
@@ -135,7 +146,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Travel + Leisure",
     year: "2025",
     service: "Original Content & Copywriting",
-    objective: "A special destination edit on Goa — photo essays, reels, and editorial copy for digital and print.",
+    objective:
+      "A special destination edit on Goa — photo essays, reels, and editorial copy for digital and print.",
   },
   {
     title: "Oppo - Future Assistant",
@@ -143,7 +155,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "Oppo",
     year: "2023",
     service: "Pre to Post Production",
-    objective: "Campaign production for Oppo's AI assistant feature — scripted, shot, and delivered for digital platforms.",
+    objective:
+      "Campaign production for Oppo's AI assistant feature — scripted, shot, and delivered for digital platforms.",
     videoSrc: "/assets/videos/ads.mp4",
     videoTitle: "OPPO",
     videoSubtitle: "Future Assistant",
@@ -156,7 +169,8 @@ const brandShowcase: BrandShowcaseItem[] = [
     client: "ICICI Lombard",
     year: "2025",
     service: "Social Media Management",
-    objective: "Sustained digital-first campaign to drive insurance policy renewals and brand affinity across social platforms.",
+    objective:
+      "Sustained digital-first campaign to drive insurance policy renewals and brand affinity across social platforms.",
   },
 ];
 
@@ -312,57 +326,103 @@ const brandStatements = [
   },
 ];
 
-const caseStudyNameOverrides: Array<
-  Pick<BrandShowcaseItem, "title" | "client" | "year">
-> = [
-  { title: "Monte Carlo", client: "Monte Carlo", year: "2026" },
-  { title: "Mahindra XUV 500", client: "Mahindra XUV 500", year: "2018" },
+const caseStudyShowcase: BrandShowcaseItem[] = [
   {
-    title: "Netflix India Playback",
-    client: "Netflix India Playback",
-    year: "2021",
+    title: "MORDE",
+    image: "/assets/images/CaseStudies/Morde-58.jpg",
+    caseStudyImage: "/assets/images/CaseStudies/Morde-56.jpg",
+    client: "MORDE",
+    year: "2025",
+    service: "Launch New Packaging",
+    objective: "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad with emailers, videos, e-brochures, Insta reels, posts, and carousels.",
   },
-  { title: "MORDE", client: "MORDE", year: "2025" },
-  { title: "TRAVEL + LEISURE", client: "TRAVEL + LEISURE", year: "2024" },
-  { title: "Vraj Group", client: "Vraj Group", year: "2024" },
-  { title: "Estuary", client: "Estuary", year: "2020" },
+  {
+    title: "TRAVEL + LEISURE",
+    image: "/assets/images/CaseStudies/travel1.jpeg",
+    caseStudyImage: "/assets/images/CaseStudies/travel-leisure.jpg",
+    client: "TRAVEL + LEISURE",
+    year: "2024",
+    service: "Original Content & Copywriting",
+  },
+  {
+    title: "CONOSH",
+    image: "/assets/images/CaseStudies/conosh-1.png",
+    caseStudyImage: "/assets/images/CaseStudies/conosh.jpg",
+    client: "CONOSH",
+    year: "2025",
+    service: "Brand Solutions",
+  },
+  {
+    title: "OPPO",
+    image: "/assets/images/CaseStudies/oppo-1.png",
+    caseStudyImage: "/assets/images/CaseStudies/oppo.jpg",
+    client: "OPPO",
+    year: "2024",
+    service: "Video Editing & Animation",
+  },
+  {
+    title: "Mahindra XUV 500",
+    image: "/assets/images/CaseStudies/mahindra1.png",
+    caseStudyImage: "/assets/images/CaseStudies/mahindra-xuv500.jpg",
+    client: "Mahindra XUV 500",
+    year: "2018",
+    service: "Campaign Production",
+  },
+  {
+    title: "Vraj Group",
+    image: "/assets/images/CaseStudies/Vraj_meradian.png",
+    caseStudyImage: "/assets/images/CaseStudies/Vraj_meradian.png",
+    client: "Vraj Group",
+    year: "2024",
+    service: "Brand Campaign",
+  },
+  {
+    title: "Estuary",
+    image: "/assets/images/CaseStudies/estuary1.png",
+    caseStudyImage: "/assets/images/CaseStudies/estuary.jpg",
+    client: "Estuary",
+    year: "2020",
+    service: "Digital Marketing",
+  },
   {
     title: "Calamus One - Ultrabike",
+    image: "/assets/images/CaseStudies/calamus1.png",
+    caseStudyImage: "/assets/images/CaseStudies/ultrabike.jpg",
     client: "Calamus One - Ultrabike",
     year: "2019",
+    service: "Brand Film",
   },
-  { title: "Puravankara", client: "Puravankara", year: "2022" },
-  { title: "OPPO", client: "OPPO", year: "2024" },
+  {
+    title: "Puravankara",
+    image: "/assets/images/CaseStudies/puravankara.jpg",
+    caseStudyImage: "/assets/images/CaseStudies/puravankara.jpg",
+    client: "Puravankara",
+    year: "2022",
+    service: "Real Estate Marketing",
+  },
   {
     title: "Elegant Builders & Developers",
+    image: "/assets/images/CaseStudies/elegant1.png",
+    caseStudyImage: "/assets/images/CaseStudies/elegant-builders.jpg",
     client: "Elegant Builders & Developers",
     year: "2024",
+    service: "Brand Solutions",
   },
-  { title: "CONOSH", client: "CONOSH", year: "2025" },
 ];
-
-const caseStudyShowcase: BrandShowcaseItem[] = brandShowcase
-  .slice(0, 12)
-  .map((item, index) => {
-    const override = caseStudyNameOverrides[index];
-    return override ? { ...item, ...override } : item;
-  });
-
-const mordeObjectiveText =
-  "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad with emailers, videos, e-brochures, Insta reels, posts, and carousels.";
 
 const BrandSolutions = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [activeCaseStudyIndex, setActiveCaseStudyIndex] = useState<number | null>(null);
-  const [activeShowcaseVideoUrl, setActiveShowcaseVideoUrl] = useState<string | null>(null);
+  const [activeCaseStudyIndex, setActiveCaseStudyIndex] = useState<
+    number | null
+  >(null);
+  const [activeShowcaseVideoUrl, setActiveShowcaseVideoUrl] = useState<
+    string | null
+  >(null);
 
   const activeCaseStudy =
-    activeCaseStudyIndex !== null ? caseStudyShowcase[activeCaseStudyIndex] : null;
-  const isMordeCaseStudy = Boolean(
-    activeCaseStudy &&
-    (activeCaseStudy.title.trim().toLowerCase() === "morde" ||
-      activeCaseStudy.client.trim().toLowerCase() === "morde"),
-  );
+    activeCaseStudyIndex !== null
+      ? caseStudyShowcase[activeCaseStudyIndex]
+      : null;
 
   const openCaseStudy = (index: number) => {
     setActiveCaseStudyIndex(index);
@@ -373,7 +433,8 @@ const BrandSolutions = () => {
   const prevCaseStudy = () => {
     if (activeCaseStudyIndex === null) return;
     setActiveCaseStudyIndex(
-      (activeCaseStudyIndex - 1 + caseStudyShowcase.length) % caseStudyShowcase.length,
+      (activeCaseStudyIndex - 1 + caseStudyShowcase.length) %
+        caseStudyShowcase.length,
     );
   };
 
@@ -412,7 +473,25 @@ const BrandSolutions = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+      <section
+        className="
+    relative
+    w-full
+    min-h-screen
+    bg-[#080032]
+    bg-[url('/assets/images/BrandStatements/ICICI-lombard2.png')]
+    bg-cover
+    bg-center
+    bg-no-repeat
+    flex
+    flex-col
+    justify-center
+    px-6
+    md:px-12
+    lg:px-24
+    py-24
+  "
+      >
         <div className="max-w-6xl w-full mt-20">
           <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
             Brand Solutions
@@ -423,25 +502,6 @@ const BrandSolutions = () => {
             blueText="Company, which focuses on delivering rememberable web designs that are searchable, alongside other online promotion solutions in Coventry. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue."
           />
         </div>
-      </section>
-
-      {/* Full-viewport Video Section */}
-      <section className="relative w-full h-screen overflow-hidden">
-        <video
-          src="/assets/videos/movies.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        />
-        {/* Subtle overlay to slightly darken the video */}
-        <div className="absolute inset-0 bg-black/20" />
-
-        {/* Top-left label */}
-        <h2 className="absolute top-[35%] left-10 md:left-16 font-display text-5xl md:text-6xl lg:text-7xl font-bold text-[#4ab6ff]">
-          Brand Solutions
-        </h2>
       </section>
 
       {/* Clients + Statements Section */}
@@ -538,7 +598,8 @@ const BrandSolutions = () => {
                 </span>
               </div>
               <p className="mt-3 text-sm text-gray-500 uppercase tracking-wide">
-                {item.client} <span className="text-gray-400">|</span> {item.year}
+                {item.client} <span className="text-gray-400">|</span>{" "}
+                {item.year}
               </p>
             </button>
           ))}
@@ -586,7 +647,7 @@ const BrandSolutions = () => {
       <section className="w-full bg-[#e7e5df] pb-24 px-10 md:px-16">
         <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12">
           Brand Solutions <span className="text-gray-400">|</span>{" "}
-          <span className="font-bold text-gray-700">Showcase</span>
+          <span className="font-bold text-gray-700">Case Studies</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -611,7 +672,8 @@ const BrandSolutions = () => {
                 </div>
               </div>
               <p className="mt-3 text-sm text-gray-500 uppercase tracking-wide">
-                {item.client} <span className="text-gray-400">|</span> {item.year}
+                {item.client} <span className="text-gray-400">|</span>{" "}
+                {item.year}
               </p>
             </button>
           ))}
@@ -638,7 +700,6 @@ const BrandSolutions = () => {
               <X className="w-5 h-5 text-gray-600" />
             </button>
 
-            {!isMordeCaseStudy && (
               <>
                 {/* Prev */}
                 <button
@@ -660,156 +721,9 @@ const BrandSolutions = () => {
                   <ChevronRight className="w-5 h-5 text-gray-600" />
                 </button>
               </>
-            )}
 
             {/* Content */}
-            {isMordeCaseStudy ? (
-              <div className="mx-auto w-full max-w-[1240px] px-6 md:px-10 lg:px-12 pt-24 pb-20 space-y-24">
-                <motion.section
-                  key={`morde-intro-${activeCaseStudyIndex}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                  className="min-h-[calc(100vh-140px)] flex items-center"
-                >
-                  <div className="w-full grid grid-cols-2 lg:grid-cols-[1fr_300px_1fr] gap-4 lg:gap-5 items-center">
-                    <div className="grid grid-cols-2 gap-4">
-                      {Array.from({ length: 2 }).map((_, index) => (
-                        <div
-                          key={`morde-left-asset-${index}`}
-                          className="h-[205px] border border-[#e0dbd0] bg-[#e8e3d8] overflow-hidden shadow-[0_16px_26px_-20px_rgba(0,0,0,0.45)]"
-                        >
-                          <img
-                            src={activeCaseStudy.image}
-                            alt={`${activeCaseStudy.title} visual ${index + 1}`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="col-span-2 lg:col-span-1 mx-auto h-[560px] w-[300px] rounded-[40px] border-[10px] border-[#8f1f2f] bg-[#f7f4ee] shadow-[0_24px_48px_-26px_rgba(0,0,0,0.55)] p-3">
-                      <div className="relative h-full w-full rounded-[28px] overflow-hidden border border-[#ddd7cc]">
-                        <img
-                          src={activeCaseStudy.image}
-                          alt={`${activeCaseStudy.title} phone visual`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      {Array.from({ length: 2 }).map((_, index) => (
-                        <div
-                          key={`morde-right-asset-${index}`}
-                          className="h-[205px] border border-[#e0dbd0] bg-[#e8e3d8] overflow-hidden shadow-[0_16px_26px_-20px_rgba(0,0,0,0.45)]"
-                        >
-                          <img
-                            src={activeCaseStudy.image}
-                            alt={`${activeCaseStudy.title} visual ${index + 3}`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.section>
-
-                <motion.section
-                  key={`morde-details-${activeCaseStudyIndex}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                  className="min-h-[calc(100vh-140px)] flex flex-col justify-center"
-                >
-                  <h2 className="font-display text-[42px] md:text-[56px] font-normal text-[#9ea1a8] leading-tight">
-                    Brand Solutions <span className="text-[#9ea1a8]">|</span>{" "}
-                    <span className="font-bold text-[#8a8d94]">Case Studies</span>
-                  </h2>
-
-                  <div className="mt-10 relative grid grid-cols-1 lg:grid-cols-[1.02fr_0.88fr] gap-8 lg:gap-10 items-start">
-                    <span className="hidden lg:flex absolute left-[-34px] top-[42%] -translate-y-1/2 text-[#b8b3aa]">
-                      <ChevronLeft className="w-8 h-8" />
-                    </span>
-                    <span className="hidden lg:flex absolute right-[-34px] top-[42%] -translate-y-1/2 text-[#b8b3aa]">
-                      <ChevronRight className="w-8 h-8" />
-                    </span>
-
-                    <div>
-                      <div className="w-full border border-[#d9d3c8] bg-[#dedad1] aspect-[4/3] overflow-hidden">
-                        <img
-                          src={activeCaseStudy.image}
-                          alt={`${activeCaseStudy.title} case visual`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="mt-4 h-9 bg-[#b9bbc0] px-4 flex items-center justify-between text-[#23252a]">
-                        <span className="text-[20px] md:text-[24px] font-semibold">View Case</span>
-                        <span className="text-2xl">→</span>
-                      </div>
-                    </div>
-
-                    <div className="pt-1">
-                      <div className="space-y-0">
-                        <div className="grid grid-cols-[96px_1fr] items-baseline border-b border-[#c5c2bb] py-2">
-                          <span className="text-[20px] md:text-[32px] text-[#6f7177]">Client</span>
-                          <span className="text-[20px] md:text-[32px] font-bold text-[#5f6168] uppercase">MORDE</span>
-                        </div>
-                        <div className="grid grid-cols-[96px_1fr] items-baseline border-b border-[#c5c2bb] py-2">
-                          <span className="text-[20px] md:text-[32px] text-[#6f7177]">Service</span>
-                          <span className="text-[20px] md:text-[32px] font-bold text-[#5f6168] uppercase">LAUNCH NEW PACKAGING</span>
-                        </div>
-                        <div className="grid grid-cols-[96px_1fr] items-baseline border-b border-[#c5c2bb] py-2">
-                          <span className="text-[20px] md:text-[32px] text-[#6f7177]">Year</span>
-                          <span className="text-[20px] md:text-[32px] font-bold text-[#5f6168]">2025</span>
-                        </div>
-                      </div>
-
-                      <p className="mt-8 text-[22px] md:text-[30px] text-[#8a8d94] leading-[1.24]">
-                        <span className="font-bold text-[#666971]">Objective:</span> {mordeObjectiveText}
-                      </p>
-                    </div>
-                  </div>
-                </motion.section>
-
-                <motion.section
-                  key={`morde-posts-${activeCaseStudyIndex}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                  className="min-h-[calc(100vh-140px)] flex flex-col justify-center"
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-6 lg:gap-7 items-start">
-                    <div className="w-full aspect-[16/10] border border-[#d8d1c5] bg-[#ddd8ce] shadow-[0_22px_34px_-22px_rgba(0,0,0,0.45)] overflow-hidden">
-                      <img
-                        src={activeCaseStudy.image}
-                        alt={`${activeCaseStudy.title} key visual`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    <div>
-                      <div className="grid grid-cols-2 gap-4">
-                        {Array.from({ length: 4 }).map((_, index) => (
-                          <div
-                            key={`morde-post-${index}`}
-                            className="aspect-[4/3] border border-[#d7d0c3] bg-[#e5e1d8] overflow-hidden"
-                          >
-                            <img
-                              src={activeCaseStudy.image}
-                              alt={`${activeCaseStudy.title} post ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                </motion.section>
-              </div>
-            ) : (
-              <div className="min-h-screen flex flex-col lg:flex-row">
+            <div className="min-h-screen flex flex-col lg:flex-row">
                 {/* Left — full-height image */}
                 <motion.div
                   key={activeCaseStudy.image + activeCaseStudyIndex}
@@ -820,13 +734,16 @@ const BrandSolutions = () => {
                 >
                   <div className="absolute inset-0 bg-[#f0ede6]" />
                   <div className="absolute inset-0 flex items-center justify-center px-6">
-                    <span className="border border-gray-300 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-gray-400">
-                      Case Study Visual Placeholder
-                    </span>
+                    <img
+                      src={activeCaseStudy.caseStudyImage || activeCaseStudy.image}
+                      alt={`${activeCaseStudy.title} case study`}
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                   {/* Counter badge */}
                   <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs text-gray-500 uppercase tracking-widest">
-                    {(activeCaseStudyIndex ?? 0) + 1} / {caseStudyShowcase.length}
+                    {(activeCaseStudyIndex ?? 0) + 1} /{" "}
+                    {caseStudyShowcase.length}
                   </div>
                 </motion.div>
 
@@ -851,21 +768,37 @@ const BrandSolutions = () => {
                   {/* Metadata rows */}
                   <div className="space-y-0 mb-8">
                     <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                      <span className="text-gray-400 text-sm uppercase tracking-wide">Client</span>
-                      <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">{activeCaseStudy.client}</span>
+                      <span className="text-gray-400 text-sm uppercase tracking-wide">
+                        Client
+                      </span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">
+                        {activeCaseStudy.client}
+                      </span>
                     </div>
                     <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                      <span className="text-gray-400 text-sm uppercase tracking-wide">Service</span>
-                      <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">{activeCaseStudy.service}</span>
+                      <span className="text-gray-400 text-sm uppercase tracking-wide">
+                        Service
+                      </span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">
+                        {activeCaseStudy.service}
+                      </span>
                     </div>
                     <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                      <span className="text-gray-400 text-sm uppercase tracking-wide">Year</span>
-                      <span className="text-gray-800 font-bold text-sm">{activeCaseStudy.year}</span>
+                      <span className="text-gray-400 text-sm uppercase tracking-wide">
+                        Year
+                      </span>
+                      <span className="text-gray-800 font-bold text-sm">
+                        {activeCaseStudy.year}
+                      </span>
                     </div>
                     {activeCaseStudy.videoHighlight && (
                       <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                        <span className="text-gray-400 text-sm uppercase tracking-wide">Reach</span>
-                        <span className="text-[#1498e1] font-bold text-sm">{activeCaseStudy.videoHighlight}</span>
+                        <span className="text-gray-400 text-sm uppercase tracking-wide">
+                          Reach
+                        </span>
+                        <span className="text-[#1498e1] font-bold text-sm">
+                          {activeCaseStudy.videoHighlight}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -873,7 +806,9 @@ const BrandSolutions = () => {
                   {/* Objective */}
                   {activeCaseStudy.objective && (
                     <div className="mb-10">
-                      <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">Objective</p>
+                      <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+                        Objective
+                      </p>
                       <p className="text-gray-600 text-[15px] leading-relaxed">
                         {activeCaseStudy.objective}
                       </p>
@@ -889,7 +824,6 @@ const BrandSolutions = () => {
                   </button>
                 </motion.div>
               </div>
-            )}
           </motion.div>
         )}
       </AnimatePresence>

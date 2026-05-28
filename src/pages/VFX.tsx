@@ -1080,13 +1080,6 @@ const VFX = () => {
                   </div>
                 </div>
 
-                {/* Lorem Ipsum Text */}
-                <div className="mt-16">
-                  <p className="text-white/50 text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectet uer adipi scing elit. Lorem ipsum dolor sit am et, consectetuer adipi scing elit. Lorem ipsum dolor sit amet, consectet uer adipi scing elit. Lorem ipsum dolor sit am.
-                  </p>
-                </div>
-
                 {/* Films & Episodic Clients Section */}
                 <div className="mt-24 mb-16">
                   <div className="flex flex-col lg:flex-row gap-12 items-start">

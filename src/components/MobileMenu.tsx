@@ -9,7 +9,7 @@ interface MobileMenuProps {
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "VFX", href: "/vfx" },
-  { label: "Brands", href: "/brands" },
+  { label: "Brands", href: "/brandSolutions" },
   { label: "Real Estate", href: "/real-estate" },
   { label: "Content", href: "/content" },
   { label: "About", href: "/about" },
