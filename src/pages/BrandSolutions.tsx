@@ -9,6 +9,7 @@ type BrandShowcaseItem = {
   title: string;
   image: string;
   caseStudyImage?: string;
+  galleryImages?: string[];
   client: string;
   year: string;
   service: string;
@@ -331,6 +332,17 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     title: "MORDE",
     image: "/assets/images/CaseStudies/Morde-58.jpg",
     caseStudyImage: "/assets/images/CaseStudies/Morde-56.jpg",
+    galleryImages: [
+        "assets/images/CaseStudies/Morde-49.jpg",
+        "assets/images/CaseStudies/Morde-50.jpg",
+        "assets/images/CaseStudies/Morde-51.jpg",
+        "assets/images/CaseStudies/Morde-52.jpg",
+        "assets/images/CaseStudies/Morde-53.jpg",
+        "assets/images/CaseStudies/Morde-54.jpg",
+        "assets/images/CaseStudies/Morde-55.jpg",
+        "assets/images/CaseStudies/Morde-57.jpg",
+        "assets/images/CaseStudies/Morde-59.jpg",
+    ],
     client: "MORDE",
     year: "2025",
     service: "Launch New Packaging",
@@ -338,7 +350,7 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
   },
   {
     title: "TRAVEL + LEISURE",
-    image: "/assets/images/CaseStudies/travel1.jpeg",
+    image: "/assets/images/CaseStudies/travel1.png",
     caseStudyImage: "/assets/images/CaseStudies/travel-leisure.jpg",
     client: "TRAVEL + LEISURE",
     year: "2024",
@@ -418,6 +430,8 @@ const BrandSolutions = () => {
   const [activeShowcaseVideoUrl, setActiveShowcaseVideoUrl] = useState<
     string | null
   >(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+const [galleryIndex, setGalleryIndex] = useState(0);
 
   const activeCaseStudy =
     activeCaseStudyIndex !== null
@@ -733,13 +747,37 @@ const BrandSolutions = () => {
                   className="w-full lg:w-[55%] relative min-h-[40vh] lg:min-h-screen"
                 >
                   <div className="absolute inset-0 bg-[#f0ede6]" />
-                  <div className="absolute inset-0 flex items-center justify-center px-6">
-                    <img
-                      src={activeCaseStudy.caseStudyImage || activeCaseStudy.image}
-                      alt={`${activeCaseStudy.title} case study`}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+  <div className="aspect-square w-[85%] max-w-[650px] overflow-hidden rounded-lg bg-white">
+    <img
+      src={activeCaseStudy.caseStudyImage || activeCaseStudy.image}
+      alt={`${activeCaseStudy.title} case study`}
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
+<button
+  onClick={() => {
+    setGalleryIndex(0);
+    setGalleryOpen(true);
+  }}
+  className="
+    mt-6
+    px-6
+    py-3
+    border
+    border-gray-300
+    uppercase
+    tracking-widest
+    text-sm
+    text-gray-600
+    hover:bg-gray-900
+    hover:text-white
+    transition-all
+  "
+>
+  View Gallery
+</button>
                   {/* Counter badge */}
                   <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs text-gray-500 uppercase tracking-widest">
                     {(activeCaseStudyIndex ?? 0) + 1} /{" "}
@@ -824,6 +862,55 @@ const BrandSolutions = () => {
                   </button>
                 </motion.div>
               </div>
+          </motion.div>
+        )}
+            </AnimatePresence>
+
+      {/* Gallery Modal */}
+      <AnimatePresence>
+        {galleryOpen && activeCaseStudy?.galleryImages && (
+          <motion.div
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <button
+              onClick={() => setGalleryOpen(false)}
+              className="absolute top-6 right-6 text-white"
+            >
+              <X size={32} />
+            </button>
+
+            <button
+              onClick={() =>
+                setGalleryIndex(
+                  (galleryIndex - 1 + activeCaseStudy.galleryImages.length) %
+                    activeCaseStudy.galleryImages.length
+                )
+              }
+              className="absolute left-8 text-white"
+            >
+              <ChevronLeft size={40} />
+            </button>
+
+            <img
+              src={activeCaseStudy.galleryImages[galleryIndex]}
+              alt=""
+              className="max-w-[85vw] max-h-[85vh] object-contain"
+            />
+
+            <button
+              onClick={() =>
+                setGalleryIndex(
+                  (galleryIndex + 1) %
+                    activeCaseStudy.galleryImages.length
+                )
+              }
+              className="absolute right-8 text-white"
+            >
+              <ChevronRight size={40} />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
