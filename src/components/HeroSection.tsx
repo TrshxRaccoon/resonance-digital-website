@@ -3,7 +3,7 @@ import DynamicText from "./DynamicText";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
+    <section id="our-verticals" className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video

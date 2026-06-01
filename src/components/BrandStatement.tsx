@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import AnimatedParagraph from "./AnimatedParagraph";
 
 const BrandStatement = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -11,6 +10,9 @@ const BrandStatement = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isInView, setIsInView] = useState(false);
+  const isMobile =
+    typeof window !== "undefined" &&
+    (window.innerWidth < 768 || "ontouchstart" in window);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,6 +36,9 @@ const BrandStatement = () => {
   // Handle wheel/touch scroll attempts during animation
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      if (isMobile) {
+        return;
+      }
       if (hasCompletedRef.current) {
         return;
       }
@@ -69,35 +74,23 @@ const BrandStatement = () => {
       const progress = Math.min(Math.max(scrollDeltaRef.current / 800, 0), 1);
       setScrollProgress(progress);
 
+      if (progress <= 0 && delta < 0) {
+        document.body.style.overflow = "";
+        isLockedRef.current = false;
+        setIsAnimating(false);
+        return;
+      }
+
       if (progress >= 1) {
         document.body.style.overflow = "";
         isLockedRef.current = false;
         hasCompletedRef.current = true;
         setIsAnimating(false);
-        // Allow normal scrolling to resume after completion
       }
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!sectionRef.current || hasCompletedRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const viewportCenter = window.innerHeight / 2;
-      const elementCenter = rect.top + rect.height / 2;
-      const isCentered = Math.abs(elementCenter - viewportCenter) < 80;
-
-      if (!isLockedRef.current) {
-        if (isInView && isCentered) {
-          isLockedRef.current = true;
-          setIsAnimating(true);
-          scrollDeltaRef.current = 0;
-          document.body.style.overflow = "hidden";
-        } else {
-          return;
-        }
-      }
-
-      e.preventDefault();
+    const handleTouchMove = () => {
+      return;
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });
@@ -108,6 +101,15 @@ const BrandStatement = () => {
       window.removeEventListener("touchmove", handleTouchMove);
     };
   }, [isInView]);
+
+  const statementText =
+    "A leading digital Creative Technology Company, which focuses on delivering rememberable web designs that are searchable, alongside other online promotion solutions. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue.";
+
+  const visibleCharacters = isMobile
+    ? statementText.length
+    : Math.floor(statementText.length * scrollProgress);
+
+  const displayedText = statementText.slice(0, visibleCharacters);
 
   return (
     <section
@@ -126,11 +128,15 @@ const BrandStatement = () => {
           <span className="text-purple-400">Motion Pictures</span>
         </p>
 
-        {/* Main statement - driven by scroll progress */}
-        <AnimatedParagraph
-          text="A leading digital Creative Technology Company, which focuses on delivering rememberable web designs that are searchable, alongside other online promotion solutions. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue."
-          scrollProgress={scrollProgress}
-        />
+        {/* Main statement - scroll-driven typewriter effect */}
+        <div className="max-w-6xl">
+          <p className="text-[24px] md:text-[38px] lg:text-[52px] font-display font-medium leading-[1.08] tracking-tight text-gray-900">
+            {displayedText}
+            {!isMobile && scrollProgress < 1 && (
+              <span className="inline-block ml-1 animate-pulse">|</span>
+            )}
+          </p>
+        </div>
       </div>
     </section>
   );

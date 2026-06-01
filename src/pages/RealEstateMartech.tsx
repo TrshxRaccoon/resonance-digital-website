@@ -4,6 +4,7 @@ import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AnimatedColorText from "../components/AnimatedColorText";
+import FixedHero from "../components/FixedHero";
 
 const realEstateStatements = [
   {
@@ -435,6 +436,7 @@ const RealEstateMartech = () => {
     expertiseStartIndex + EXPERTISE_PER_PAGE,
   );
 
+
   // ── Immersive section helpers ──────────────────────────────────────────
   const activeImmersiveTab =
     immersiveTabs.find((t) => t.id === activeImmersiveTabId) ??
@@ -575,60 +577,29 @@ const RealEstateMartech = () => {
     <>
       <Header />
 
-      <section
-        className="
-    relative
-    w-full
-    min-h-screen
-    flex
-    flex-col
-    justify-center
-    px-6
-    md:px-12
-    lg:px-24
-    py-24
-    overflow-hidden
-  "
-      >
-        <div
-          className="
-    absolute
-    inset-0
-    bg-[url('/assets/images/martech/Mahindra.png')]
-    bg-cover
-    bg-center
-    bg-no-repeat
-    scale-x-[-1]
-  "
-        />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 max-w-6xl w-full mt-20">
-          <h1 className="font-display text-[65px] md:text-[75px] lg:text-[85px] font-bold text-[#4ab6ff] mb-10 leading-tight">
-            Real Estate Mar-Tech
-          </h1>
-
+      {/*
+        Hero section — bg image is fixed (position:fixed) while text is visible.
+        Once scrolled past the section the bg switches to position:absolute so it
+        scrolls away with the page like any other element.
+      */}
+      <FixedHero
+        backgroundImage="/assets/images/martech/Mahindra.png"
+        title="Real Estate Mar-Tech"
+        mirrored
+        description={
           <AnimatedColorText
             whiteText="A leading digital Creative Technology Company, which focuses on delivering rememberable web designs that are search"
             blueText="able, alongside other online promotion solutions in Coventry. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue."
           />
-        </div>
-      </section>
+        }
+      />
 
       {/* Video player section */}
       <section className="relative w-full h-screen overflow-hidden">
-        <video
-          src="/assets/videos/placeholder_video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        />
 
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0" />
 
         <h2 className="absolute top-[24%] left-10 md:left-16 font-display text-5xl md:text-6xl lg:text-7xl font-bold text-[#4ab6ff]">
-          Real Estate Mar-Tech
         </h2>
       </section>
 

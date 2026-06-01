@@ -13,7 +13,7 @@ const HorizontalSelector = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="w-full bg-[#f6f4ef] py-16">
+    <section id="our-verticals" className="w-full bg-[#f6f4ef] py-16">
       <div className="w-full">
         <div className="mb-10 px-16 max-w-7xl mx-auto">
           <h2 className="font-display text-[56px] leading-[1.05] text-gray-400">

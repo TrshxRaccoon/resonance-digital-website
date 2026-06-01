@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AnimatedColorText from "../components/AnimatedColorText";
+import FixedHero from "../components/FixedHero";
 import { ChevronDown, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 
 type BrandShowcaseItem = {
@@ -541,36 +542,16 @@ const BrandSolutions = () => {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="
-    relative
-    w-full
-    min-h-screen
-    bg-[#080032]
-    bg-[url('/assets/images/BrandStatements/ICICI-lombard2.png')]
-    bg-cover
-    bg-center
-    bg-no-repeat
-    flex
-    flex-col
-    justify-center
-    px-6
-    md:px-12
-    lg:px-24
-    py-24
-  "
-      >
-        <div className="max-w-6xl w-full mt-20">
-          <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
-            Brand Solutions
-          </h1>
-
+      <FixedHero
+        backgroundImage="/assets/images/BrandStatements/ICICI-lombard2.png"
+        title="Brand Solutions"
+        description={
           <AnimatedColorText
             whiteText="A leading digital Creative Technology"
             blueText="Company, which focuses on delivering rememberable web designs that are searchable, alongside other online promotion solutions in Coventry. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue."
           />
-        </div>
-      </section>
+        }
+      />
 
       {/* Clients + Statements Section */}
       <section className="w-full bg-[#f6f4ef] py-20 px-10 md:px-16">

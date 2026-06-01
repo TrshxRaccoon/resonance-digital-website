@@ -33,12 +33,15 @@ const Footer = ({ theme = "light" }: FooterProps) => {
           </p>
 
           <div className="w-full max-w-xl">
-            <div className={`${topCtaClass} flex items-center justify-between px-8 py-6 w-full mb-10 cursor-pointer transition`}>
+            <Link
+              to="/contact"
+              className={`${topCtaClass} flex items-center justify-between px-8 py-6 w-full mb-10 cursor-pointer transition`}
+            >
               <span className={`font-semibold text-base ${topCtaTextClass}`}>
                 Got A Project? let’s Talk
               </span>
               <span className={`text-xl ${topCtaTextClass}`}>↗</span>
-            </div>
+            </Link>
 
             {/* GOOGLE MAP - CLICKABLE */}
             <a
@@ -100,14 +103,20 @@ const Footer = ({ theme = "light" }: FooterProps) => {
 
           {/* LINKS */}
           <div className="space-y-16 mb-8">
-            {["Works", "Verticals", "About us", "Awards"].map((item) => (
-              <div
-                key={item}
+            {[
+              { label: "Works", path: "/vfx" },
+              { label: "Verticals", path: "/#our-verticals" },
+              { label: "About us", path: "/about" },
+              { label: "Awards", path: "/awards" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                to={item.path}
                 className={`flex items-center justify-between border-b pb-6 text-base cursor-pointer ${borderClass}`}
               >
-                <span>{item}</span>
+                <span>{item.label}</span>
                 <span>↗</span>
-              </div>
+              </Link>
             ))}
           </div>
 
