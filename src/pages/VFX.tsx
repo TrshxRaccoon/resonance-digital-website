@@ -15,6 +15,7 @@ const VFX = () => {
   const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
   const [currentAdIndex, setCurrentAdIndex] = useState<number>(0);
   const [adDirection, setAdDirection] = useState<number>(0);
+  const [hoveredSide, setHoveredSide] = useState<"movies" | "ads" | null>(null);
   const expandedContentRef = useRef<HTMLDivElement>(null);
   const splitSectionRef = useRef<HTMLDivElement>(null);
 
@@ -677,10 +678,18 @@ const VFX = () => {
         duration: 0.5,
         ease: "power2.in",
         onComplete: () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "auto",
+          });
           setExpandedSection(section);
         },
       });
     } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
       setExpandedSection(section);
     }
   };
@@ -755,24 +764,35 @@ const VFX = () => {
 
       {/* Split Movies / Ads Section - Becomes Expandable */}
       {!expandedSection && (
-        <section ref={splitSectionRef} className="relative w-full h-screen overflow-hidden">
+        <section ref={splitSectionRef} className="relative w-full h-screen overflow-hidden bg-black">
+          {/* Full-bleed movies image as base layer — prevents black corners showing through clip gaps */}
+          <img
+            src="/assets/images/vfx/movie-background.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           {/* Movies (Left, diagonally clipped) */}
           <div
             onClick={() => handleExpand("movies")}
-            className="absolute inset-0 group cursor-pointer"
+            onMouseEnter={() => setHoveredSide("movies")}
+            onMouseLeave={() => setHoveredSide(null)}
+            className="absolute inset-0 group cursor-pointer transition-all duration-700"
             style={{
-              clipPath: "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
+              clipPath:
+                hoveredSide === "movies"
+                  ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+                  : hoveredSide === "ads"
+                  ? "polygon(0 0, 15% 0, 5% 100%, 0 100%)"
+                  : "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
             }}
           >
-            <video
-              src="/assets/videos/movies.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <img
+              src="/assets/images/vfx/movie-background.png"
+              alt="Movies"
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+            <div className="absolute inset-0 transition-all duration-500" />
 
             <h2 className="absolute left-20 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-110">
               Movies
@@ -782,20 +802,24 @@ const VFX = () => {
           {/* Ads (Right, diagonally clipped) */}
           <div
             onClick={() => handleExpand("ads")}
-            className="absolute inset-0 group cursor-pointer"
+            onMouseEnter={() => setHoveredSide("ads")}
+            onMouseLeave={() => setHoveredSide(null)}
+            className="absolute inset-0 group cursor-pointer transition-all duration-700"
             style={{
-              clipPath: "polygon(65% 0, 100% 0, 100% 100%, 45% 100%)",
+              clipPath:
+                hoveredSide === "ads"
+                  ? "polygon(5% 0, 100% 0, 100% 100%, 15% 100%)"
+                  : hoveredSide === "movies"
+                  ? "polygon(95% 0, 100% 0, 100% 100%, 85% 100%)"
+                  : "polygon(62% 0, 100% 0, 100% 100%, 42% 100%)",
             }}
           >
-            <video
-              src="/assets/videos/ads.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <img
+              src="/assets/images/vfx/ads-showreel.jpg"
+              alt="Ads"
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500" />
+            <div className="absolute inset-0 transition-all duration-500" />
 
             <h2 className="absolute right-20 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-110">
               Ads
@@ -804,13 +828,31 @@ const VFX = () => {
         </section>
       )}
 
+      {/* Back Button for Expanded Movies or Ads */}
+      {expandedSection && (
+        <button
+          onClick={handleCollapse}
+          className="fixed top-24 right-8 z-[200] bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+        >
+          ← Back
+        </button>
+      )}
+
       {/* Expanded Movies Section */}
       {expandedSection === "movies" && (
         <div ref={expandedContentRef} className="w-full bg-[#100a44]">
           {/* Hero Section */}
           <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+            {/* FixedHero-style Background */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('/assets/images/vfx/movie-background.png')`,
+              }}
+            />
+            <div className="absolute inset-0 bg-black/60" />
             {/* Main Title */}
-            <div className="max-w-6xl w-full mt-20">
+            <div className="relative z-10 max-w-6xl w-full mt-20">
               <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
                 VFX: Movies
               </h1>
@@ -823,40 +865,14 @@ const VFX = () => {
             </div>
           </section>
 
-          {/* Hero Video Section */}
-          <section className="relative w-full h-screen overflow-hidden">
-            {/* Back Button */}
-            <button
-              onClick={handleCollapse}
-              className="absolute top-8 right-8 z-50 bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              ← Back
-            </button>
-
-            <video
-              src="/assets/videos/movies.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#100a44]" />
-
-            <div className="absolute left-12 md:left-24 top-1/2 -translate-y-1/2">
-              <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4">
-                VFX: Movie <span className="text-[#4ab6ff]">|</span> <span className="text-white/60">Showcase</span>
-              </h1>
-            </div>
-          </section>
 
 
           {/* featured projects section */}
           <div className="mt-32 px-12 md:px-24">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                VFX: Featured Projects <span className="text-[#4ab6ff]">|</span>{" "}
-                <span className="text-white/60">xxxxx</span>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                VFX: Movie <span className="text-[#4ab6ff]">|</span>{" "}
+                <span className="text-white/60">Showcase</span>
               </h2>
             </div>
           </div>
@@ -1095,7 +1111,7 @@ const VFX = () => {
                       <img
                         src="https://resonancedigital.in/assets/images/VFX/Films-and-episodic-client.png"
                         alt="Films & Episodic Clients Logos"
-                        className="w-full h-auto rounded-2xl"
+                        className="w-full max-w-[1200px] h-auto rounded-2xl scale-110 origin-right"
                       />
                     </div>
                   </div>
@@ -1111,7 +1127,7 @@ const VFX = () => {
           {/* Hero Section */}
           <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
             {/* Main Title */}
-            <div className="max-w-6xl w-full mt-20">
+            <div className="relative z-10 max-w-6xl w-full mt-20">
               <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
                 VFX: Ads
               </h1>
@@ -1126,14 +1142,6 @@ const VFX = () => {
 
           {/* Hero Video Section */}
           <section className="relative w-full h-screen overflow-hidden">
-            {/* Back Button */}
-            <button
-              onClick={handleCollapse}
-              className="absolute top-8 right-8 z-50 bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              ← Back
-            </button>
-
             <video
               src="/assets/videos/ads.mp4"
               autoPlay

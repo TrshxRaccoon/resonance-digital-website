@@ -404,8 +404,8 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
   },
   {
     title: "Vraj Group",
-    image: "/assets/images/CaseStudies/Vraj_meradian.png",
-    caseStudyImage: "/assets/images/CaseStudies/Vraj_meradian.png",
+    image: "/assets/images/CaseStudies/Vraj_meridian.png",
+    caseStudyImage: "/assets/images/CaseStudies/Vraj_meridian.png",
     galleryImages: [
         "/assets/images/CaseStudies/Vraj_meridian.png",
         "/assets/images/CaseStudies/Vraj-meridian-logo.png",

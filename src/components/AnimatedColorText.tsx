@@ -1,7 +1,7 @@
 // components/AnimatedColorText.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 type Props = {
   whiteText: string;
@@ -11,10 +11,31 @@ type Props = {
 
 /**
  * Renders a two-part paragraph where the first part is static white and the
- * second part animates word-by-word from sky-400 blue to white on mount.
+ * second part appears using a typewriter animation on mount.
  */
 export default function AnimatedColorText({ whiteText, blueText, className = "" }: Props) {
-  const words = blueText.split(" ");
+  const [visibleChars, setVisibleChars] = useState(0);
+
+  useEffect(() => {
+    setVisibleChars(0);
+
+    const intervalMs = Math.max(5, 1500 / Math.max(blueText.length, 1));
+
+    const interval = setInterval(() => {
+      setVisibleChars((prev) => {
+        if (prev >= blueText.length) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, intervalMs);
+
+    return () => clearInterval(interval);
+  }, [blueText]);
+
+  const hiddenText = blueText.slice(visibleChars);
+  const visibleText = blueText.slice(0, visibleChars);
 
   return (
     <p
@@ -26,23 +47,10 @@ export default function AnimatedColorText({ whiteText, blueText, className = "" 
       }}
     >
       <span className="text-white">{whiteText} </span>
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          initial={{ color: "#38bdf8" }}
-          animate={{ color: "#ffffff" }}
-          transition={{
-            duration: 0.5,
-            delay: 0.6 + i * 0.06,
-            ease: [0.4, 0, 0.2, 1],
-          }}
-          style={{ 
-            willChange: 'color'
-          }}
-        >
-          {word + " "}
-        </motion.span>
-      ))}
+      <span className="text-white">
+        <span>{visibleText}</span>
+        <span className="opacity-0">{hiddenText}</span>
+      </span>
     </p>
   );
 }
