@@ -334,20 +334,21 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/Morde-58.jpg",
     caseStudyImage: "/assets/images/CaseStudies/Morde-56.jpg",
     galleryImages: [
-        "assets/images/CaseStudies/Morde-49.jpg",
-        "assets/images/CaseStudies/Morde-50.jpg",
-        "assets/images/CaseStudies/Morde-51.jpg",
-        "assets/images/CaseStudies/Morde-52.jpg",
-        "assets/images/CaseStudies/Morde-53.jpg",
-        "assets/images/CaseStudies/Morde-54.jpg",
-        "assets/images/CaseStudies/Morde-55.jpg",
-        "assets/images/CaseStudies/Morde-57.jpg",
-        "assets/images/CaseStudies/Morde-59.jpg",
+      "assets/images/CaseStudies/Morde-49.jpg",
+      "assets/images/CaseStudies/Morde-50.jpg",
+      "assets/images/CaseStudies/Morde-51.jpg",
+      "assets/images/CaseStudies/Morde-52.jpg",
+      "assets/images/CaseStudies/Morde-53.jpg",
+      "assets/images/CaseStudies/Morde-54.jpg",
+      "assets/images/CaseStudies/Morde-55.jpg",
+      "assets/images/CaseStudies/Morde-57.jpg",
+      "assets/images/CaseStudies/Morde-59.jpg",
     ],
     client: "MORDE",
     year: "2025",
     service: "Launch New Packaging",
-    objective: "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad with emailers, videos, e-brochures, Insta reels, posts, and carousels.",
+    objective:
+      "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad with emailers, videos, e-brochures, Insta reels, posts, and carousels.",
   },
   {
     title: "TRAVEL + LEISURE",
@@ -362,12 +363,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/conosh-1.png",
     caseStudyImage: "/assets/images/CaseStudies/for\ website-23.png",
     galleryImages: [
-        "/assets/images/CaseStudies/for\ website-23.png",
-        "/assets/images/CaseStudies/for\ website-20.png",
-        "/assets/images/CaseStudies/for\ website-21.png",
-        "/assets/images/CaseStudies/for\ website-22.png",
-        "/assets/images/CaseStudies/for\ website-24.png",
-        "/assets/images/CaseStudies/for\ website-25.png",
+      "/assets/images/CaseStudies/for\ website-23.png",
+      "/assets/images/CaseStudies/for\ website-20.png",
+      "/assets/images/CaseStudies/for\ website-21.png",
+      "/assets/images/CaseStudies/for\ website-22.png",
+      "/assets/images/CaseStudies/for\ website-24.png",
+      "/assets/images/CaseStudies/for\ website-25.png",
     ],
     client: "CONOSH",
     year: "2025",
@@ -378,9 +379,9 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/oppo-1.png",
     caseStudyImage: "/assets/images/CaseStudies/oppo-1.png",
     galleryImages: [
-        "/assets/images/CaseStudies/oppo-1.png",
-        "/assets/images/CaseStudies/oppo-2.png",
-        "/assets/images/CaseStudies/oppo-3.png",
+      "/assets/images/CaseStudies/oppo-1.png",
+      "/assets/images/CaseStudies/oppo-2.png",
+      "/assets/images/CaseStudies/oppo-3.png",
     ],
     client: "OPPO",
     year: "2024",
@@ -391,12 +392,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/mahindra1.png",
     caseStudyImage: "/assets/images/CaseStudies/mahindra1.png",
     galleryImages: [
-        "/assets/images/CaseStudies/for\ website-31.png",
-        "/assets/images/CaseStudies/for\ website-32.png",
-        "/assets/images/CaseStudies/for\ website-33.png",
-        "/assets/images/CaseStudies/for\ website-34.png",
-        "/assets/images/CaseStudies/for\ website-35.png",
-        "/assets/images/CaseStudies/for\ website-36.png",
+      "/assets/images/CaseStudies/for\ website-31.png",
+      "/assets/images/CaseStudies/for\ website-32.png",
+      "/assets/images/CaseStudies/for\ website-33.png",
+      "/assets/images/CaseStudies/for\ website-34.png",
+      "/assets/images/CaseStudies/for\ website-35.png",
+      "/assets/images/CaseStudies/for\ website-36.png",
     ],
     client: "Mahindra XUV 500",
     year: "2018",
@@ -407,13 +408,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/Vraj_meridian.png",
     caseStudyImage: "/assets/images/CaseStudies/Vraj_meridian.png",
     galleryImages: [
-        "/assets/images/CaseStudies/Vraj_meridian.png",
-        "/assets/images/CaseStudies/Vraj-meridian-logo.png",
-        "/assets/images/CaseStudies/2.png",
-        "/assets/images/CaseStudies/3-1.png",
-        "/assets/images/CaseStudies/4.png",
-        "/assets/images/CaseStudies/5.png",
-
+      "/assets/images/CaseStudies/Vraj_meridian.png",
+      "/assets/images/CaseStudies/Vraj-meridian-logo.png",
+      "/assets/images/CaseStudies/2.png",
+      "/assets/images/CaseStudies/3-1.png",
+      "/assets/images/CaseStudies/4.png",
+      "/assets/images/CaseStudies/5.png",
     ],
     client: "Vraj Group",
     year: "2024",
@@ -424,10 +424,10 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/estuary1.png",
     caseStudyImage: "/assets/images/CaseStudies/estuary1.png",
     galleryImages: [
-        "/assets/images/CaseStudies/estuary1.png",
-        "/assets/images/CaseStudies/for\ website-27.png",
-        "/assets/images/CaseStudies/for\ website-26.png",
-        "/assets/images/CaseStudies/for\ website-28.png",
+      "/assets/images/CaseStudies/estuary1.png",
+      "/assets/images/CaseStudies/for\ website-27.png",
+      "/assets/images/CaseStudies/for\ website-26.png",
+      "/assets/images/CaseStudies/for\ website-28.png",
     ],
     client: "Estuary",
     year: "2020",
@@ -438,9 +438,9 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/calamus1.png",
     caseStudyImage: "/assets/images/CaseStudies/calamus1.png",
     galleryImages: [
-        "assets/images/CaseStudies/calamus1.png",
-        "assets/images/CaseStudies/1.png",
-        "assets/images/CaseStudies/2.png",
+      "assets/images/CaseStudies/calamus1.png",
+      "assets/images/CaseStudies/1.png",
+      "assets/images/CaseStudies/2.png",
     ],
     client: "Calamus One - Ultrabike",
     year: "2019",
@@ -451,11 +451,11 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/p5.png",
     caseStudyImage: "/assets/images/CaseStudies/p5.png",
     galleryImages: [
-        "assets/images/CaseStudies/p5.png",
-        "assets/images/CaseStudies/p1.jpeg",
-        "assets/images/CaseStudies/p2.png",
-        "assets/images/CaseStudies/p3.png",
-        "assets/images/CaseStudies/p4.png",
+      "assets/images/CaseStudies/p5.png",
+      "assets/images/CaseStudies/p1.jpeg",
+      "assets/images/CaseStudies/p2.png",
+      "assets/images/CaseStudies/p3.png",
+      "assets/images/CaseStudies/p4.png",
     ],
     client: "Puravankara",
     year: "2022",
@@ -466,10 +466,10 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/elegant1.png",
     caseStudyImage: "/assets/images/CaseStudies/elegant1.png",
     galleryImages: [
-        "assets/images/CaseStudies/elegant1.png",
-        "assets/images/CaseStudies/elegant2.png",
-        "assets/images/CaseStudies/elegant3.png",
-        "assets/images/CaseStudies/elegant4.png",
+      "assets/images/CaseStudies/elegant1.png",
+      "assets/images/CaseStudies/elegant2.png",
+      "assets/images/CaseStudies/elegant3.png",
+      "assets/images/CaseStudies/elegant4.png",
     ],
     client: "Elegant Builders & Developers",
     year: "2024",
@@ -509,9 +509,7 @@ const BrandSolutions = () => {
 
   const nextGalleryImage = () => {
     if (!activeCaseStudy?.galleryImages?.length) return;
-    setGalleryIndex(
-      (galleryIndex + 1) % activeCaseStudy.galleryImages.length,
-    );
+    setGalleryIndex((galleryIndex + 1) % activeCaseStudy.galleryImages.length);
   };
 
   const openShowcaseVideoModal = (youtubeEmbedUrl: string) => {
@@ -760,23 +758,11 @@ const BrandSolutions = () => {
                 className="w-full lg:w-[55%] relative min-h-[40vh] lg:min-h-screen"
               >
                 <div className="absolute inset-0 bg-[#f0ede6]" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 gap-6">
-                  <div className="relative w-[85%] max-w-[650px]">
-                    {activeCaseStudy.galleryImages?.length ? (
-                      <button
-                        type="button"
-                        aria-label="Previous gallery image"
-                        onClick={prevGalleryImage}
-                        className="absolute left-0 top-1/2 -translate-x-[140%] -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white shadow-lg hover:bg-gray-100 flex items-center justify-center transition-colors duration-200"
-                      >
-                        <ChevronLeft className="w-5 h-5 text-gray-700" />
-                      </button>
-                    ) : null}
-
+                <div className="absolute inset-0 flex flex-col items-center overflow-y-auto p-8">
+                  <div className="relative w-[85%] max-w-[650px] mt-16 mx-auto">
                     <div className="aspect-square overflow-hidden rounded-lg bg-white">
                       <img
                         src={
-                          activeCaseStudy.galleryImages?.[galleryIndex] ||
                           activeCaseStudy.caseStudyImage ||
                           activeCaseStudy.image
                         }
@@ -784,53 +770,30 @@ const BrandSolutions = () => {
                         className="w-full h-full object-contain"
                       />
                     </div>
-
-                    {activeCaseStudy.galleryImages?.length ? (
-                      <button
-                        type="button"
-                        aria-label="Next gallery image"
-                        onClick={nextGalleryImage}
-                        className="absolute right-0 top-1/2 translate-x-[140%] -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white shadow-lg hover:bg-gray-100 flex items-center justify-center transition-colors duration-200"
-                      >
-                        <ChevronRight className="w-5 h-5 text-gray-700" />
-                      </button>
-                    ) : null}
                   </div>
 
                   {activeCaseStudy.galleryImages?.length ? (
-                    <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-[85%] max-w-[750px]">
-                      <p className="mb-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+                    <div className="w-[85%] max-w-[650px] mt-8">
+                      <p className="mb-6 text-xs uppercase tracking-[0.2em] text-gray-500 border-b border-gray-300 pb-2">
                         Gallery
                       </p>
-                      <div className="overflow-x-auto overflow-y-hidden scrollbar-hide pb-2">
-                        <div className="flex gap-3 w-max pr-2">
-                          {activeCaseStudy.galleryImages.map((image, index) => (
-                            <button
-                              key={index}
-                              type="button"
-                              onClick={() => setGalleryIndex(index)}
-                              className={`flex-shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden rounded-md border-2 transition-all duration-200 ${
-                                galleryIndex === index
-                                  ? 'border-[#1498e1]'
-                                  : 'border-transparent hover:border-gray-300'
-                              }`}
-                            >
-                              <img
-                                src={image}
-                                alt={`Gallery ${index + 1}`}
-                                className="w-full h-full object-cover"
-                              />
-                            </button>
-                          ))}
-                        </div>
+
+                      <div className="flex flex-col gap-6">
+                        {activeCaseStudy.galleryImages.map((image, index) => (
+                          <img
+                            key={index}
+                            src={image}
+                            alt={`Gallery ${index + 1}`}
+                            className="w-full h-auto rounded-lg bg-white"
+                          />
+                        ))}
                       </div>
                     </div>
                   ) : null}
                 </div>
                 {/* Counter badge */}
                 <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs text-gray-500 uppercase tracking-widest">
-                  {(activeCaseStudyIndex ?? 0) + 1} /{" "}
-                  {caseStudyShowcase.length}
+                  {(activeCaseStudyIndex ?? 0) + 1} / {caseStudyShowcase.length}
                 </div>
               </motion.div>
 
@@ -914,7 +877,6 @@ const BrandSolutions = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
 
       <Footer theme="dark" />
     </>
