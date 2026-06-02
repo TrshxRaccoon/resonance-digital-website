@@ -574,6 +574,33 @@ const VFX = () => {
     },
   ];
 
+  const cgShowreels = [
+    "/assets/images/Showreel/ads-showreel.jpg",
+    "assets/images/Showreel/liquids-showreel.jpg",
+    "assets/images/Showreel/mahindra-xuv.png"
+  ];
+
+  const cgiStillsShowcase = [
+    "/assets/images/CGI-Stills/CGI-1.jpg",
+    "/assets/images/CGI-Stills/CGI-2.jpg",
+    "/assets/images/CGI-Stills/CGI-3.jpg",
+    "/assets/images/CGI-Stills/CGI-4.jpg",
+    "/assets/images/CGI-Stills/CGI-5.jpg",
+    "/assets/images/CGI-Stills/CGI-6.jpg",
+    "/assets/images/CGI-Stills/CGI-7.jpg",
+    "/assets/images/CGI-Stills/CGI-8.jpg",
+    "/assets/images/CGI-Stills/CGI-9.jpg",
+    "/assets/images/CGI-Stills/CGI-10.jpg",
+    "/assets/images/CGI-Stills/CGI-11.jpg",
+    "/assets/images/CGI-Stills/CGI-12.jpg",
+    "/assets/images/CGI-Stills/CGI-13.jpg",
+    "/assets/images/CGI-Stills/CGI-14.jpg",
+    "/assets/images/CGI-Stills/CGI-15.jpg",
+    "/assets/images/CGI-Stills/CGI-16.jpg",
+    "/assets/images/CGI-Stills/CGI-17.jpg",
+    "/assets/images/CGI-Stills/CGI-18.jpg",
+  ];
+
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // ADS VIDEO FEED — ADD / EDIT VIDEOS HERE
   // Each entry needs `src` (path to the video file) and `label` (client name).
@@ -1139,26 +1166,209 @@ const VFX = () => {
               />
             </div>
           </section>
+          
+          {/* Areas of Expertise Section */}
+          <div className="px-12 md:px-24 pb-24">
+            <div className="max-w-7xl mx-auto translate-y-8">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+                VFX: Ads <span className="text-[#4ab6ff]">|</span>{" "}
+                <span className="text-white/60">Areas of expertise</span>
+              </h2>
 
-          {/* Hero Video Section */}
-          <section className="relative w-full h-screen overflow-hidden">
-            <video
-              src="/assets/videos/ads.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#100a44]" />
+              <div className="mt-8 mb-12">
+                <div className="flex flex-wrap gap-4 text-xl md:text-2xl font-semibold">
+                  {adCategories.map((category, index) => (
+                    <div key={category} className="flex items-center">
+                      <button
+                        onClick={() => setSelectedAdCategory(category)}
+                        className={`transition-colors duration-300 ${
+                          selectedAdCategory === category
+                            ? "text-[#4ab6ff]"
+                            : "text-white/40 hover:text-[#4ab6ff]"
+                        }`}
+                      >
+                        {category}
+                      </button>
+                      {index < adCategories.length - 1 && (
+                        <span className="text-white/30 mx-3">|</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+{/* Expertise Showcase Cards */}
+<div className="relative mb-16">
+  <button
+    onClick={handleAdPrev}
+    disabled={currentAdIndex === 0}
+    className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white ${
+      currentAdIndex === 0
+        ? "opacity-40 cursor-not-allowed"
+        : "hover:text-[#4ab6ff]"
+    }`}
+  >
+    <ChevronLeft className="w-8 h-8" />
+  </button>
 
-            <div className="absolute left-12 md:left-24 top-1/2 -translate-y-1/2">
-              <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4">
-                VFX: Ads <span className="text-[#4ab6ff]">|</span> <span className="text-white/60">Showcase</span>
-              </h1>
+  <div className="relative overflow-hidden">
+    <div
+      className="flex transition-transform duration-300 ease-out will-change-transform"
+      style={{
+        transform: `translate3d(-${Math.floor(currentAdIndex / 3) * 100}%, 0, 0)`,
+      }}
+    >
+      {Array.from(
+        { length: Math.ceil(adsShowcase.length / 3) },
+        (_, page) => adsShowcase.slice(page * 3, page * 3 + 3)
+      ).map((pageItems, pageIndex) => (
+        <div
+          key={pageIndex}
+          className="shrink-0 min-w-full grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          {pageItems.map((item, index) => (
+            <div
+              key={`${item.title}-${index}`}
+              className="group relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300" />
+
+              <div className="absolute inset-0 flex items-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <p className="text-white font-bold uppercase text-lg">
+                    {item.title}
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    {item.client} | {item.year}
+                  </p>
+                </div>
+              </div>
             </div>
-          </section>
+          ))}
+          {Array.from({ length: 3 - pageItems.length }).map((_, i) => (
+            <div key={`ad-placeholder-${pageIndex}-${i}`} />
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
 
+  <button
+    onClick={handleAdNext}
+    disabled={currentAdIndex + 3 >= adsShowcase.length}
+    className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white ${
+      currentAdIndex + 3 >= adsShowcase.length
+        ? "opacity-40 cursor-not-allowed"
+        : "hover:text-[#4ab6ff]"
+    }`}
+  >
+    <ChevronRight className="w-8 h-8" />
+  </button>
+</div>
+              {adShowreels[selectedAdCategory as keyof typeof adShowreels] && (
+                <div className="flex flex-col lg:flex-row gap-6 lg:items-end">
+                  <div className="w-full lg:w-[300px] lg:flex-shrink-0 flex flex-col">
+                    <div className="grid grid-cols-[70px_1fr] gap-3 items-start">
+                      <p className="text-white/40 text-sm">Client</p>
+                      <h3 className="text-white font-bold text-lg uppercase leading-tight">
+                        {adShowreels[selectedAdCategory as keyof typeof adShowreels].client}
+                      </h3>
+                    </div>
+
+                    <div className="h-px bg-white/10 my-5" />
+
+                    <div className="grid grid-cols-[70px_1fr] gap-x-3 gap-y-2">
+                      <p className="text-white/40 text-sm">Service</p>
+                      <p className="text-white font-semibold text-base">
+                        {adShowreels[selectedAdCategory as keyof typeof adShowreels].service}
+                      </p>
+
+                      <p className="text-white/40 text-sm">Year</p>
+                      <p className="text-white font-semibold text-base">
+                        {adShowreels[selectedAdCategory as keyof typeof adShowreels].year}
+                      </p>
+                    </div>
+
+                    <p className="text-white/50 text-sm leading-relaxed mt-6">
+                      {adShowreels[selectedAdCategory as keyof typeof adShowreels].description}
+                    </p>
+
+                    <div className="mt-3">
+                      <img
+                        src={adShowreels[selectedAdCategory as keyof typeof adShowreels].thumbnail}
+                        alt={selectedAdCategory}
+                        className="w-full h-44 object-cover object-center rounded-lg shadow-xl"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
+                      <video
+                        key={selectedAdCategory}
+                        src={adShowreels[selectedAdCategory as keyof typeof adShowreels].video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="px-12 md:px-24 pb-24">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-10">
+                VFX: Ads <span className="text-[#4ab6ff]">|</span>{" "}
+                <span className="text-white/60">CG Showreels</span>
+              </h2>
+
+              <div className="flex gap-6 overflow-x-auto pb-4 mb-24 scrollbar-hide snap-x snap-mandatory">
+                {cgShowreels.map((image, index) => (
+                  <div
+                    key={`cg-showreel-${index}`}
+                    className="group relative aspect-[4/3] min-w-[320px] md:min-w-[420px] overflow-hidden rounded-lg snap-start flex-shrink-0"
+                  >
+                    <img
+                      src={image}
+                      alt={`CG Showreel ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-10">
+                VFX: CGI Stills <span className="text-[#4ab6ff]">|</span>{" "}
+                <span className="text-white/60">Showcase</span>
+              </h2>
+
+              <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+                {cgiStillsShowcase.map((image, index) => (
+                  <div
+                    key={`cgi-still-${index}`}
+                    className="group relative aspect-[4/3] min-w-[320px] md:min-w-[420px] overflow-hidden rounded-lg snap-start flex-shrink-0"
+                  >
+                    <img
+                      src={image}
+                      alt={`CGI Still ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           {/* ── Ads Video Feed ─────────────────────────────────────────────────── */}
           {/* The section is a continuous dark canvas of 16:9 cards.             */}
           {/* Layout alternates between full, split, T, 2×2, and inverted-T.     */}
