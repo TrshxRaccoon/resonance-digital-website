@@ -120,15 +120,24 @@ const Footer = ({ theme = "light" }: FooterProps) => {
             ))}
           </div>
 
-          {/* SOCIAL ICONS */}
+         {/* SOCIAL ICONS */}
           <div className="flex gap-8 mt-0 mb-6">
-            {["🌐", "f", "▶", "◎", "in"].map((icon, i) => (
-              <div
+            {[
+              { icon: "🌐", href: "https://resonancedigital.in" },
+              { icon: "f", href: "https://www.facebook.com/share/1D13tnZctJ/" },
+              { icon: "▶", href: "https://www.youtube.com/@Resonance2016" },
+              { icon: "◎", href: "https://www.instagram.com/resonancedigital/" },
+              { icon: "in", href: "https://www.linkedin.com/company/resonance-digital/" },
+            ].map((item, i) => (
+              <a
                 key={i}
-                className={`w-[64px] h-[64px] border flex items-center justify-center rounded-full text-lg ${isDark ? "border-[#f2eee2]/40" : "border-black/30"}`}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-[64px] h-[64px] border flex items-center justify-center rounded-full text-lg transition-all duration-300 hover:scale-105 ${isDark ? "border-[#f2eee2]/40" : "border-black/30"}`}
               >
-                {icon}
-              </div>
+                {item.icon}
+              </a>
             ))}
           </div>
 

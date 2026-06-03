@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AnimatedColorText from "../components/AnimatedColorText";
 import FixedHero from "../components/FixedHero";
-import { ChevronDown, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
+import { ChevronDown, Play, X } from "lucide-react";
 
 type BrandShowcaseItem = {
   title: string;
@@ -177,120 +177,51 @@ const brandShowcase: BrandShowcaseItem[] = [
 ];
 
 const tvcShowcaseVideoEmbeds = [
-  "https://www.youtube.com/embed/rLzbIqI1VrU",
-  "https://www.youtube.com/embed/mn7WMlnyWnQ",
-  "https://www.youtube.com/embed/KBwcwjQDjEE",
-  "https://www.youtube.com/embed/8jUa_imL-DI",
-  "https://www.youtube.com/embed/RbtCvfX4n_I",
-  "https://www.youtube.com/embed/87CuOfwFpd0",
+  "https://www.youtube.com/embed/R38Utym7jQA",
+  "https://www.youtube.com/embed/Mzi9C-KQn20",
+  "https://www.youtube.com/embed/hV5qy2Uf6rA",
+  "https://www.youtube.com/embed/WyRVQCG9zQU",
+  "https://www.youtube.com/embed/2XmSERxk2D4",
+  "https://www.youtube.com/embed/RfB82bLMjF0",
+  "https://www.youtube.com/embed/645Oi-VWWzk",
+  "https://www.youtube.com/embed/tbF1zLEg2JQ",
+  "https://www.youtube.com/embed/7bJF4SQNHfM",
+  "https://www.youtube.com/embed/WZ0iwRyJvUE",
+  "https://www.youtube.com/embed/YBghJkyU938",
+  "https://www.youtube.com/embed/KKrPcYTI-ms",
+  "https://www.youtube.com/embed/8Zl1JTwkGsU",
+  "https://www.youtube.com/embed/3bMiUFq4R3g",
+  "https://www.youtube.com/embed/18ONRTDjpNE",
+  "https://www.youtube.com/embed/j_yCTy7RJdA",
+  "https://www.youtube.com/embed/psj8PBNokiU",
+  "https://www.youtube.com/embed/oC56lEFHo0Y",
+  "https://www.youtube.com/embed/qSiO0_LFdlo",
+  "https://www.youtube.com/embed/_-nqkErvF1E",
+  "https://www.youtube.com/embed/K5qns5BI208",
 ];
 
 const tvcShowcase: TVCShowcaseItem[] = [
-  {
-    title: "School Promise",
-    image: "/assets/images/BrandStatements/ICICI-Lombard.jpg",
-    client: "ICICI Lombard",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[0],
-  },
-  {
-    title: "Neck Brace",
-    image: "/assets/images/BrandStatements/images.jpeg",
-    client: "ICICI Lombard",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[1],
-  },
-  {
-    title: "Hum Kaise Maan Le",
-    image: "/assets/images/BrandStatements/bhartiAXA.jpg",
-    client: "BHARTI AXA",
-    year: "2024",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[2],
-  },
-  {
-    title: "GumOn Groove",
-    image: "/assets/images/movies/movies_03.png",
-    client: "GumOn Groove",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[3],
-  },
-  {
-    title: "STPI Campaign",
-    image: "/assets/images/movies/movies_02Witches.png",
-    client: "STPI",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[4],
-  },
-  {
-    title: "Future Tech Stories",
-    image: "/assets/images/BrandStatements/oppo.png",
-    client: "OPPO",
-    year: "2024",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[5],
-  },
-  {
-    title: "Ultrabike",
-    image: "/assets/images/movies/dune.jpeg",
-    client: "Calamus One - Ultrabike",
-    year: "2019",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[0],
-  },
-  {
-    title: "XUV 500",
-    image: "/assets/images/movies/flash.jpg",
-    client: "Mahindra XUV 500",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[1],
-  },
-  {
-    title: "Playback",
-    image: "/assets/images/movies/strangerThings.jpg",
-    client: "Netflix India Playback",
-    year: "2021",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[2],
-  },
-  {
-    title: "Playback Mood",
-    image: "/assets/images/movies/avatar.jpeg",
-    client: "Netflix Playback",
-    year: "2022",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[3],
-  },
-  {
-    title: "Playback 2023",
-    image: "/assets/images/movies/batman.png",
-    client: "Netflix India Playback",
-    year: "2023",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[4],
-  },
-  {
-    title: "Break Time",
-    image: "/assets/images/movies/movies_01.png",
-    client: "KitKat",
-    year: "2024",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[5],
-  },
-  {
-    title: "TUV 300",
-    image: "/assets/images/movies/movies_03.png",
-    client: "Mahindra TUV 300",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[0],
-  },
-  {
-    title: "Marazzo",
-    image: "/assets/images/movies/dune.jpeg",
-    client: "Mahindra Marazzo",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[1],
-  },
-  {
-    title: "Alturas G4",
-    image: "/assets/images/movies/flash.jpg",
-    client: "Mahindra Alturas G4",
-    year: "2018",
-    youtubeEmbedUrl: tvcShowcaseVideoEmbeds[2],
-  },
+  { title: "Apollo Apterra Tyres", image: "/assets/images/BrandStatements/ICICI-Lombard.jpg", client: "Apollo Tyres", year: "2025", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[0] },
+  { title: "OPPO AI Best Face", image: "/assets/images/BrandStatements/oppo.png", client: "OPPO", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[1] },
+  { title: "IndiGo Protect Plus", image: "/assets/images/BrandStatements/images.jpeg", client: "IndiGo", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[2] },
+  { title: "Campa Energy", image: "/assets/images/movies/movies_01.png", client: "Campa", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[3] },
+  { title: "Black Dog", image: "/assets/images/movies/avatar.jpeg", client: "Black Dog", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[4] },
+  { title: "SUPERBET", image: "/assets/images/movies/batman.png", client: "SUPERBET", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[5] },
+  { title: "Fastrack Smart", image: "/assets/images/movies/movies_03.png", client: "Fastrack", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[6] },
+  { title: "Bournvita", image: "/assets/images/movies/dune.jpeg", client: "Bournvita", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[7] },
+  { title: "The All-New Honda Amaze", image: "/assets/images/movies/flash.jpg", client: "Honda", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[8] },
+  { title: "Ecolink BLDC Fans", image: "/assets/images/movies/strangerThings.jpg", client: "Ecolink", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[9] },
+  { title: "JK Cement", image: "/assets/images/movies/avatar.jpeg", client: "JK Cement", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[10] },
+  { title: "Director Special Elaichi", image: "/assets/images/movies/batman.png", client: "Director Special", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[11] },
+  { title: "Kit Kat", image: "/assets/images/movies/movies_01.png", client: "Kit Kat", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[12] },
+  { title: "Max Fashion", image: "/assets/images/movies/movies_02Witches.png", client: "Max Fashion", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[13] },
+  { title: "The Plush New XUV500", image: "/assets/images/CaseStudies/mahindra1.png", client: "Mahindra", year: "2018", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[14] },
+  { title: "Savsol Lubricants", image: "/assets/images/movies/dune.jpeg", client: "Savsol", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[15] },
+  { title: "Flipkart Big Bang Diwali", image: "/assets/images/movies/flash.jpg", client: "Flipkart", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[16] },
+  { title: "The Fast & The Fair", image: "/assets/images/movies/strangerThings.jpg", client: "ACKO", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[17] },
+  { title: "Netflix End of Year 2021", image: "/assets/images/movies/strangerThings.jpg", client: "Netflix", year: "2021", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[18] },
+  { title: "Netflix End of Year 2022", image: "/assets/images/movies/avatar.jpeg", client: "Netflix", year: "2022", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[19] },
+  { title: "Netflix End of Year 2023", image: "/assets/images/movies/batman.png", client: "Netflix", year: "2023", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[20] },
 ];
 
 const brandStatements = [
@@ -352,8 +283,8 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
   },
   {
     title: "TRAVEL + LEISURE",
-    image: "/assets/images/CaseStudies/travel1.png",
-    caseStudyImage: "/assets/images/CaseStudies/travel-leisure.jpg",
+    image: "/assets/images/BrandStatements/T+L.jpg",
+    caseStudyImage: "/assets/images/BrandStatements/T+L.jpg",
     client: "TRAVEL + LEISURE",
     year: "2024",
     service: "Original Content & Copywriting",
@@ -485,7 +416,7 @@ const BrandSolutions = () => {
   const [activeShowcaseVideoUrl, setActiveShowcaseVideoUrl] = useState<
     string | null
   >(null);
-  const [galleryIndex, setGalleryIndex] = useState(0);
+
 
   const activeCaseStudy =
     activeCaseStudyIndex !== null
@@ -494,23 +425,12 @@ const BrandSolutions = () => {
 
   const openCaseStudy = (index: number) => {
     setActiveCaseStudyIndex(index);
-    setGalleryIndex(0);
   };
 
-  const closeCaseStudy = () => setActiveCaseStudyIndex(null);
-
-  const prevGalleryImage = () => {
-    if (!activeCaseStudy?.galleryImages?.length) return;
-    setGalleryIndex(
-      (galleryIndex - 1 + activeCaseStudy.galleryImages.length) %
-        activeCaseStudy.galleryImages.length,
-    );
+  const closeCaseStudy = () => {
+    setActiveCaseStudyIndex(null);
   };
 
-  const nextGalleryImage = () => {
-    if (!activeCaseStudy?.galleryImages?.length) return;
-    setGalleryIndex((galleryIndex + 1) % activeCaseStudy.galleryImages.length);
-  };
 
   const openShowcaseVideoModal = (youtubeEmbedUrl: string) => {
     setActiveShowcaseVideoUrl(youtubeEmbedUrl);
@@ -633,16 +553,15 @@ const BrandSolutions = () => {
               onClick={() => openShowcaseVideoModal(item.youtubeEmbedUrl)}
               aria-label={`Open ${item.title}`}
             >
-              <div className="relative aspect-video overflow-hidden rounded-sm">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              <div className="relative aspect-video overflow-hidden rounded-sm bg-black">
+                <iframe
+                  src={item.youtubeEmbedUrl}
+                  title={item.title}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
-                <div className="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-300" />
-                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center px-4 py-2 rounded-[10px] bg-[#10b8f4] shadow-lg">
-                  <Play className="w-4 h-4 text-white fill-white" />
-                </span>
               </div>
               <p className="mt-3 text-sm text-gray-500 uppercase tracking-wide">
                 {item.client} <span className="text-gray-400">|</span>{" "}
@@ -747,132 +666,175 @@ const BrandSolutions = () => {
               <X className="w-5 h-5 text-gray-600" />
             </button>
 
-            {/* Content */}
-            <div className="min-h-screen flex flex-col lg:flex-row">
-              {/* Left — full-height image */}
-              <motion.div
-                key={activeCaseStudy.image + activeCaseStudyIndex}
-                initial={{ opacity: 0, x: -24 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                className="w-full lg:w-[55%] relative min-h-[40vh] lg:min-h-screen"
-              >
-                <div className="absolute inset-0 bg-[#f0ede6]" />
-                <div className="absolute inset-0 flex flex-col items-center overflow-y-auto p-8">
-                  <div className="relative w-[85%] max-w-[650px] mt-16 mx-auto">
-                    <div className="aspect-square overflow-hidden rounded-lg bg-white">
-                      <img
-                        src={
-                          activeCaseStudy.caseStudyImage ||
-                          activeCaseStudy.image
-                        }
-                        alt={`${activeCaseStudy.title} case study`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
+            {/* Content — vertical scroll: hero + metadata, then gallery images inline */}
+            <div className="flex flex-col">
 
-                  {activeCaseStudy.galleryImages?.length ? (
-                    <div className="w-[85%] max-w-[650px] mt-8">
-                      <p className="mb-6 text-xs uppercase tracking-[0.2em] text-gray-500 border-b border-gray-300 pb-2">
-                        Gallery
-                      </p>
-
-                      <div className="flex flex-col gap-6">
-                        {activeCaseStudy.galleryImages.map((image, index) => (
-                          <img
-                            key={index}
-                            src={image}
-                            alt={`Gallery ${index + 1}`}
-                            className="w-full h-auto rounded-lg bg-white"
-                          />
-                        ))}
+              {/* ── Above-fold: hero image left + metadata right ── */}
+              <div className="min-h-screen flex flex-col lg:flex-row">
+                {/* Left — hero image */}
+                <motion.div
+                  key={activeCaseStudy.image + activeCaseStudyIndex}
+                  initial={{ opacity: 0, x: -24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="w-full lg:w-[55%] relative min-h-[40vh] lg:min-h-screen"
+                >
+                  <div className="absolute inset-0 bg-[#f0ede6]" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                    <div className="relative w-[85%] max-w-[650px] mx-auto">
+                      <div className="aspect-square overflow-hidden rounded-lg bg-white">
+                        <img
+                          src={
+                            activeCaseStudy.caseStudyImage ||
+                            activeCaseStudy.image
+                          }
+                          alt={`${activeCaseStudy.title} case study`}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                     </div>
-                  ) : null}
-                </div>
-                {/* Counter badge */}
-                <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs text-gray-500 uppercase tracking-widest">
-                  {(activeCaseStudyIndex ?? 0) + 1} / {caseStudyShowcase.length}
-                </div>
-              </motion.div>
-
-              {/* Right — metadata */}
-              <motion.div
-                key={activeCaseStudyIndex}
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                className="w-full lg:w-[45%] flex flex-col justify-center px-10 md:px-16 py-24 lg:py-32"
-              >
-                {/* Section label */}
-                <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
-                  Brand Solutions | Case Study
-                </p>
-
-                {/* Title */}
-                <h2 className="font-display text-[36px] md:text-[52px] font-bold text-gray-800 leading-none mb-10">
-                  {activeCaseStudy.title}
-                </h2>
-
-                {/* Metadata rows */}
-                <div className="space-y-0 mb-8">
-                  <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                    <span className="text-gray-400 text-sm uppercase tracking-wide">
-                      Client
-                    </span>
-                    <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">
-                      {activeCaseStudy.client}
-                    </span>
                   </div>
-                  <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                    <span className="text-gray-400 text-sm uppercase tracking-wide">
-                      Service
-                    </span>
-                    <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">
-                      {activeCaseStudy.service}
-                    </span>
+                  {/* Counter badge */}
+                  <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs text-gray-500 uppercase tracking-widest">
+                    {(activeCaseStudyIndex ?? 0) + 1} / {caseStudyShowcase.length}
                   </div>
-                  <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
-                    <span className="text-gray-400 text-sm uppercase tracking-wide">
-                      Year
-                    </span>
-                    <span className="text-gray-800 font-bold text-sm">
-                      {activeCaseStudy.year}
-                    </span>
-                  </div>
-                  {activeCaseStudy.videoHighlight && (
+                </motion.div>
+
+                {/* Right — metadata */}
+                <motion.div
+                  key={activeCaseStudyIndex}
+                  initial={{ opacity: 0, x: 24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="w-full lg:w-[45%] flex flex-col justify-center px-10 md:px-16 py-24 lg:py-32"
+                >
+                  {/* Section label */}
+                  <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
+                    Brand Solutions | Case Study
+                  </p>
+
+                  {/* Title */}
+                  <h2 className="font-display text-[36px] md:text-[52px] font-bold text-gray-800 leading-none mb-10">
+                    {activeCaseStudy.title}
+                  </h2>
+
+                  {/* Metadata rows */}
+                  <div className="space-y-0 mb-8">
                     <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
                       <span className="text-gray-400 text-sm uppercase tracking-wide">
-                        Reach
+                        Client
                       </span>
-                      <span className="text-[#1498e1] font-bold text-sm">
-                        {activeCaseStudy.videoHighlight}
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">
+                        {activeCaseStudy.client}
                       </span>
                     </div>
-                  )}
-                </div>
-
-                {/* Objective */}
-                {activeCaseStudy.objective && (
-                  <div className="mb-10">
-                    <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
-                      Objective
-                    </p>
-                    <p className="text-gray-600 text-[15px] leading-relaxed">
-                      {activeCaseStudy.objective}
-                    </p>
+                    <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
+                      <span className="text-gray-400 text-sm uppercase tracking-wide">
+                        Service
+                      </span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-sm">
+                        {activeCaseStudy.service}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
+                      <span className="text-gray-400 text-sm uppercase tracking-wide">
+                        Year
+                      </span>
+                      <span className="text-gray-800 font-bold text-sm">
+                        {activeCaseStudy.year}
+                      </span>
+                    </div>
+                    {activeCaseStudy.videoHighlight && (
+                      <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
+                        <span className="text-gray-400 text-sm uppercase tracking-wide">
+                          Reach
+                        </span>
+                        <span className="text-[#1498e1] font-bold text-sm">
+                          {activeCaseStudy.videoHighlight}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                )}
 
-                {/* Dismiss hint */}
-                <button
-                  onClick={closeCaseStudy}
-                  className="self-start text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
-                >
-                  ← Back to Showcase
-                </button>
-              </motion.div>
+                  {/* Objective */}
+                  {activeCaseStudy.objective && (
+                    <div className="mb-10">
+                      <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+                        Objective
+                      </p>
+                      <p className="text-gray-600 text-[15px] leading-relaxed">
+                        {activeCaseStudy.objective}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Scroll hint — only shown when gallery images exist */}
+                  {activeCaseStudy.galleryImages?.length ? (
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-gray-400 mb-6">
+                      ↓ Scroll to view gallery ({activeCaseStudy.galleryImages.length} images)
+                    </p>
+                  ) : null}
+
+                  {/* Dismiss hint */}
+                  <button
+                    onClick={closeCaseStudy}
+                    className="self-start text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
+                  >
+                    ← Back to Showcase
+                  </button>
+                </motion.div>
+              </div>
+
+              {/* ── Gallery images — inline, full viewport-height each ── */}
+              {activeCaseStudy.galleryImages?.length ? (
+                <div className="flex flex-col">
+                  {/* Gallery header strip */}
+                  <div className="bg-[#f0ede6] border-t border-gray-300 px-8 py-6">
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-1">
+                      Gallery
+                    </p>
+                    <div className="flex items-baseline gap-4 flex-wrap">
+                      <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-800">
+                        {activeCaseStudy.title}
+                      </h2>
+                      <span className="text-gray-400 text-sm">·</span>
+                      <span className="text-gray-400 text-sm">{activeCaseStudy.year}</span>
+                      <span className="text-gray-400 text-sm">·</span>
+                      <span className="text-gray-400 text-sm uppercase tracking-wide">{activeCaseStudy.service}</span>
+                    </div>
+                  </div>
+
+                  {/* Full-screen stacked images */}
+                  {activeCaseStudy.galleryImages.map((image, idx) => (
+                    <div
+                      key={idx}
+                      className="relative w-full"
+                      style={{ height: "100svh" }}
+                    >
+                      <img
+                        src={image}
+                        alt={`${activeCaseStudy.title} — ${idx + 1} of ${activeCaseStudy.galleryImages!.length}`}
+                        className="w-full h-full object-contain bg-[#e8e5de]"
+                      />
+                      {/* Counter badge */}
+                      <div className="absolute bottom-6 right-6 bg-white/70 backdrop-blur-sm px-3 py-1 text-[10px] text-gray-500 uppercase tracking-widest">
+                        {idx + 1} / {activeCaseStudy.galleryImages!.length}
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Footer */}
+                  <div className="py-12 flex justify-center border-t border-gray-300 bg-[#f0ede6]">
+                    <button
+                      onClick={closeCaseStudy}
+                      className="text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
+                    >
+                      ← Back to Showcase
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+
             </div>
           </motion.div>
         )}

@@ -116,7 +116,7 @@ const BrandStatement = () => {
       ref={sectionRef}
       className="relative bg-[#f6f5ee] min-h-screen w-full flex items-center px-6 md:px-10 lg:px-16 z-30 -mt-[100vh]"
     >
-      <div className="w-full max-w-[1400px] mx-auto flex flex-col items-start pl-4 md:pl-8 lg:pl-12">
+      <div className="w-full max-w-[1900px] mx-auto flex flex-col items-start pl-0 md:pl-2 lg:pl-4">
         {/* Verticals line - NEVER animates */}
         <p className="mb-8 text-[18px] md:text-[20px] lg:text-[22px] font-medium tracking-wide text-left">
           <span className="text-[#4ab6ff]">VFX & Animation</span>
@@ -129,8 +129,8 @@ const BrandStatement = () => {
         </p>
 
         {/* Main statement - scroll-driven typewriter effect */}
-        <div className="max-w-6xl">
-          <p className="text-[24px] md:text-[38px] lg:text-[52px] font-display font-medium leading-[1.08] tracking-tight text-gray-900">
+        <div className="max-w-7xl">
+          <p className="text-[25px] md:text-[45px] lg:text-[65px] font-display font-large leading-[1.08] tracking-tight text-gray-900">
             {displayedText}
             {!isMobile && scrollProgress < 1 && (
               <span className="inline-block ml-1 animate-pulse">|</span>

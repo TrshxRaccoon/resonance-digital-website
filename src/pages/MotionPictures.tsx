@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AnimatedColorText from "../components/AnimatedColorText";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import FixedHero from "@/components/FixedHero";
 
 type ShowcaseItem = {
   title: string;
@@ -128,37 +129,16 @@ const MotionPictures = () => {
 
       <Header />
 
-      {/* intro text Section */}
-      <section
-        className="
-    relative
-    w-full
-    min-h-screen
-    flex
-    flex-col
-    justify-center
-    px-6
-    md:px-12
-    lg:px-24
-    py-24
-    overflow-hidden
-    bg-[url('/assets/images/motionPictures/motionpicturesbg.jpeg')]
-    bg-cover
-    bg-center
-    bg-no-repeat
-  "
-      >
-        <div className="max-w-6xl w-full mt-20">
-          <h1 className="font-display text-[65px] md:text-[75px] lg:text-[85px] font-bold text-[#4ab6ff] mb-10 leading-tight">
-            Motion Pictures
-          </h1>
-
+      <FixedHero
+        backgroundImage="/assets/images/motionPictures/motionpicturesbg.jpeg"
+        title="Motion Pictures"
+        description={
           <AnimatedColorText
             whiteText="A leading digital Creative Technology Company, which focuses on delivering rememberable web designs that are search"
             blueText="able, alongside other online promotion solutions in Coventry. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue."
           />
-        </div>
-      </section>
+        }
+      />
 
       {/* Showcase Section */}
       <section className="w-full bg-[#f6f4ef] py-20 px-10 md:px-16">

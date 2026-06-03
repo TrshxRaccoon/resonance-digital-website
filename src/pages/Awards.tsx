@@ -3,6 +3,126 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedColorText from "@/components/AnimatedColorText";
 
+const AWARDS = [
+  {
+    id: "fps",
+    name: "24 FPS",
+    img: "/assets/images/awards/24fps_copy.png",
+    alt: "24 FPS Award",
+    flip: false,
+    items: [
+      { label: "BEST VFX", sub: "Web Series 2025" },
+      { label: "BEST VFX", sub: "Web Series 2024" },
+      { label: "BEST VFX", sub: "Web Series 2023" },
+    ],
+  },
+  {
+    id: "filmfare",
+    name: "FILMFARE",
+    img: "/assets/images/awards/filmfare-l-bollywood-awards-trophy-11563256379bolcjatcv8.png",
+    alt: "Filmfare Award",
+    flip: true,
+    items: [{ label: "BEST VFX", sub: "Web Series 2022" }],
+  },
+  {
+    id: "kyoorius",
+    name: "KYOORIUS",
+    img: "/assets/images/awards/kyoorius-2.png",
+    alt: "Kyoorius Award",
+    flip: false,
+    items: [{ label: "BEST VFX", sub: "Web Series 2022" }],
+  },
+  {
+    id: "ita",
+    name: "ITA",
+    img: "/assets/images/awards/ITA_Awards_Trophy.png",
+    alt: "ITA Award",
+    flip: true,
+    items: [{ label: "BEST VFX", sub: "Web Series 2022" }],
+  },
+];
+
+const AwardCard = ({ award }: { award: (typeof AWARDS)[number] }) => {
+  const trophy = (
+    // LINE 46 — trophy container width. Change w-[160px] to make trophies wider/narrower.
+    <div className="relative w-[160px] flex-shrink-0 flex items-center justify-center">
+      <div
+        className="
+          absolute
+          w-[180px]
+          h-[180px]
+          rounded-full
+          bg-[#4ab6ff]/20
+          blur-[60px]
+        "
+      />
+
+      <img
+        src={award.img}
+        alt={award.alt}
+        className="
+          relative z-10
+          w-full
+          h-[30vh]
+          object-contain
+          transition-transform
+          duration-500
+          hover:scale-105
+        "
+      />
+    </div>
+  );
+
+  const connector = (
+    // LINE 58 — connector spacing. Change mx-6 to push trophy/label apart or together.
+    <div className="flex items-center flex-shrink-0 self-center mx-6">
+      {/* LINE 60 — line length each side of the dot. Change w-8 on both divs. */}
+      <div className="w-8 h-[2px] bg-[#4ab6ff]" />
+      {/* LINE 62 — dot size. Change w-4 h-4 to resize the circle. */}
+      <div className="w-4 h-4 rounded-full border-2 border-[#4ab6ff] bg-[#100a44] flex-shrink-0" />
+      <div className="w-8 h-[2px] bg-[#4ab6ff]" />
+    </div>
+  );
+
+  const label = (
+    // LINE 67 — label box padding. Change px-8 py-8 for more/less internal space.
+    <div className="flex-1 border border-[#4ab6ff]/30 bg-[#0b0845]/80
+                    rounded-2xl px-8 py-8 self-stretch flex flex-col justify-center">
+      {/* LINE 70 — award name font size. Change text-4xl to scale the name. */}
+      <p className="text-[#4ab6ff] font-extrabold text-4xl tracking-widest leading-none mb-5">
+        {award.name}
+      </p>
+      {/* LINE 73 — gap between award entries. Change gap-4 for more/less spacing. */}
+      <div className="flex flex-col gap-4">
+        {award.items.map((it, i) => (
+          <div key={i} className={i > 0 ? "pt-4 border-t border-white/10" : ""}>
+            {/* LINE 76 — entry label font size. Change text-xl to resize BEST VFX text. */}
+            <p className="text-white font-bold text-xl leading-tight">
+              {it.label}
+            </p>
+            {it.sub && (
+              // LINE 80 — entry sub font size. Change text-lg to resize "Web Series 20XX".
+              <p className="text-white/60 text-lg leading-tight">
+                {it.sub}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="flex items-center w-full h-full">
+      {award.flip ? (
+        <>{label}{connector}{trophy}</>
+      ) : (
+        <>{trophy}{connector}{label}</>
+      )}
+    </div>
+  );
+};
+
 const Awards = () => {
   return (
     <>
@@ -16,7 +136,7 @@ const Awards = () => {
 
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section — unchanged */}
       <section className="relative w-full min-h-screen overflow-hidden bg-[#05002d]">
         {/* Background Texture */}
         <div
@@ -62,107 +182,46 @@ const Awards = () => {
         </div>
       </section>
 
-      {/* Awards Showcase Section */}
-      <section className="relative w-full bg-[#100a44] py-24">
-        <div className="max-w-7xl mx-auto px-8">
-          {/* Row 2 */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 border-t border-white/10 pt-12">
-            <div className="space-y-8 order-2 md:order-1">
-              <div>
-                <h3 className="text-[#4ab6ff] text-3xl md:text-4xl font-bold mb-2">
-                  FILMFARE
-                </h3>
-                <p className="text-white/60 text-lg">BEST VFX</p>
-                <p className="text-white text-xl">Web Series 2022</p>
-              </div>
+      {/* Awards Showcase — full viewport height */}
+      {/* LINE 152 — section height. Change min-h-screen to min-h-[110vh] if rows need more room. */}
+      <section className="relative w-full min-h-screen bg-[#100a44] overflow-hidden flex items-center">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse at 15% 30%, rgba(74,182,255,0.07) 0%, transparent 50%), radial-gradient(ellipse at 85% 70%, rgba(74,182,255,0.07) 0%, transparent 50%)",
+          }}
+        />
+
+        {/* LINE 161 — side padding. Change px-10 to control how close cards get to screen edges. */}
+        <div className="relative w-full px-10 flex flex-col justify-center gap-0">
+
+          {/* Row 1: 24FPS + Filmfare — each card gets exactly half the screen width */}
+          {/* LINE 165 — row height. Change h-[42vh] to make each row taller/shorter. */}
+          <div className="grid grid-cols-2 h-[42vh]">
+            <div className="flex items-center pr-6">
+              <AwardCard award={AWARDS[0]} />
             </div>
-            <div className="relative flex justify-center order-1 md:order-2">
-              <img
-                src="/assets/images/awards/filmfare-l-bollywood-awards-trophy-11563256379bolcjatcv8.png"
-                alt="24 FPS Award"
-                className="w-24 md:w-56 lg:w-54 h-auto object-contain"
-              />
+            <div className="flex items-center pl-6">
+              <AwardCard award={AWARDS[1]} />
             </div>
           </div>
 
-          {/* Row 3 */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 border-t border-white/10 pt-12">
-            <div className="relative flex justify-center">
-              <img
-                src="/assets/images/awards/kyoorius-2.png"
-                alt="24 FPS Award"
-                className="w-24 md:w-26 lg:w-34 h-auto object-contain"
-              />
+          {/* Divider */}
+          {/* LINE 175 — divider vertical margin. Change my-4 to add/remove space around the line. */}
+          <div className="my-4 h-px bg-gradient-to-r from-transparent via-[#4ab6ff]/25 to-transparent" />
+
+          {/* Row 2: Kyoorius + ITA */}
+          {/* LINE 179 — row height. Change h-[42vh] to make each row taller/shorter. */}
+          <div className="grid grid-cols-2 h-[42vh]">
+            <div className="flex items-center pr-6">
+              <AwardCard award={AWARDS[2]} />
             </div>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-[#4ab6ff] text-3xl md:text-4xl font-bold mb-2">
-                  KYOORIUS
-                </h3>
-                <p className="text-white/60 text-lg">BEST VFX</p>
-                <p className="text-white text-xl">Web Series 2022</p>
-              </div>
+            <div className="flex items-center pl-6">
+              <AwardCard award={AWARDS[3]} />
             </div>
           </div>
 
-          {/* Row 4 */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 border-t border-white/10 pt-12">
-            <div className="space-y-8 order-2 md:order-1">
-              <div>
-                <h3 className="text-[#4ab6ff] text-3xl md:text-4xl font-bold mb-2">
-                  ITA
-                </h3>
-                <p className="text-white/60 text-lg">BEST VFX</p>
-                <p className="text-white text-xl">Web Series 2022</p>
-              </div>
-            </div>
-            <div className="relative flex justify-center order-1 md:order-2">
-              <img
-                src="/assets/images/awards/ITA_Awards_Trophy.png"
-                alt="24 FPS Award"
-                className="w-24 md:w-26 lg:w-34 h-auto object-contain"
-              />
-            </div>
-          </div>
-
-          {/* Row 5 */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-t border-white/10 pt-12">
-            <div className="relative flex justify-center">
-              <img
-                src="/assets/images/awards/24fps_copy.png"
-                alt="24 FPS Award"
-                className="w-24 md:w-36 lg:w-44 h-auto object-contain"
-              />
-            </div>
-            <div className="space-y-8">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-[#4ab6ff] text-3xl md:text-4xl font-bold mb-2">
-                    24 FPS
-                  </h3>
-                  <p className="text-white/60 text-lg">BEST VFX</p>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-white/80 text-2xl md:text-3xl font-bold mb-2">
-                  BEST VFX
-                </h3>
-                <p className="text-white text-xl">Web Series 2025</p>
-              </div>
-              <div>
-                <h3 className="text-white/80 text-2xl md:text-3xl font-bold mb-2">
-                  BEST VFX
-                </h3>
-                <p className="text-white text-xl">Web Series 2023</p>
-              </div>
-              <div>
-                <h3 className="text-white/80 text-2xl md:text-3xl font-bold mb-2">
-                  BEST VFX
-                </h3>
-                <p className="text-white text-xl">Web Series 2024</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

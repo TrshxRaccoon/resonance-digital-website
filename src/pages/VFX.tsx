@@ -10,8 +10,10 @@ import gsap from "gsap";
 
 const VFX = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
-  const [selectedMovieCategory, setSelectedMovieCategory] = useState<string>("Action Reel");
-  const [selectedAdCategory, setSelectedAdCategory] = useState<string>("Brand Commercials");
+  const [selectedMovieCategory, setSelectedMovieCategory] =
+    useState<string>("Action Reel");
+  const [selectedAdCategory, setSelectedAdCategory] =
+    useState<string>("Brand Commercials");
   const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
   const [currentAdIndex, setCurrentAdIndex] = useState<number>(0);
   const [adDirection, setAdDirection] = useState<number>(0);
@@ -50,19 +52,16 @@ const VFX = () => {
   const movieCategories = [
     "Action Reel",
     "Set Extension",
-    "Roto-Paint-Matchmove",
     "PIP Reel",
     "Creature Reel",
-    "Crowd Multiplication Reel"
+    "Roto-Paint-Matchmove",
+    "Crowd Multiplication Reel",
   ];
 
   const adCategories = [
-    "Brand Commercials",
-    "Product Visualization",
-    "Social Media Content",
-    "Broadcast Advertising",
-    "Motion Graphics",
-    "Visual Effects"
+    "Ads Showreel",
+    "Automobile Showreel",
+    "Liquids Showreel",
   ];
 
   const YOUTUBE_EMBED_PLACEHOLDER = "https://www.youtube.com/embed/dQw4w9WgXcQ";
@@ -72,460 +71,466 @@ const VFX = () => {
       client: "WARNER BROS STUDIOS",
       service: "Compositing",
       year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/rLzbIqI1VrU",
-      thumbnail: "/assets/images/movies/movies_02Witches.png"
+      thumbnail: "/assets/images/movies/movies_02Witches.png",
     },
     "Roto-Paint-Matchmove": {
       client: "DISNEY+ HOTSTAR",
       service: "FX & Simulations",
       year: "2025",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/mn7WMlnyWnQ",
-      thumbnail: "/assets/images/movies/movies_03.png"
+      thumbnail: "/assets/images/movies/movies_03.png",
     },
     "Set Extension": {
       client: "WARNER BROS PICTURES",
       service: "Set Extensions",
       year: "2026",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/KBwcwjQDjEE",
-      thumbnail: "/assets/images/movies/dune.jpeg"
+      thumbnail: "/assets/images/movies/dune.jpeg",
     },
     "PIP Reel": {
       client: "20TH CENTURY STUDIOS",
       service: "Environments & Creatures",
       year: "2025",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/8jUa_imL-DI",
-      thumbnail: "/assets/images/movies/avatar.jpeg"
+      thumbnail: "/assets/images/movies/avatar.jpeg",
     },
     "Creature Reel": {
       client: "",
       service: "Environments & Creatures",
       year: "2025",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/RbtCvfX4n_I",
-      thumbnail: "/assets/images/movies/avatar.jpeg"
+      thumbnail: "/assets/images/movies/avatar.jpeg",
     },
     "Crowd Multiplication Reel": {
       client: "",
       service: "Environments & Creatures",
       year: "2025",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/87CuOfwFpd0",
-      thumbnail: "/assets/images/movies/avatar.jpeg"
-    }
+      thumbnail: "/assets/images/movies/avatar.jpeg",
+    },
   };
 
   const adShowreels = {
-    "Brand Commercials": {
-      client: "NIKE INC.",
-      service: "Brand Commercials",
-      year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
-      video: "/assets/videos/brand-commercials.mp4",
-      thumbnail: "/assets/images/ads/nike.jpg"
+    "Ads Showreel": {
+      embedUrl: "https://www.youtube.com/embed/YizxjEdgjwo",
     },
-    "Product Visualization": {
-      client: "APPLE INC.",
-      service: "Product Visualization",
-      year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
-      video: "/assets/videos/product-viz.mp4",
-      thumbnail: "/assets/images/ads/apple.jpg"
+    "Automobile Showreel": {
+      embedUrl: "https://www.youtube.com/embed/Oc4FdMn6v_Y",
     },
-    "Social Media Content": {
-      client: "SAMSUNG ELECTRONICS",
-      service: "Social Media Content",
-      year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
-      video: "/assets/videos/social-media.mp4",
-      thumbnail: "/assets/images/ads/nike.jpg"
+    "Liquids Showreel": {
+      embedUrl:
+        "https://drive.google.com/file/d/1f-DU2ZZ6qMsjfFYl7K8_TLwuZYnmFnTo/preview",
     },
-    "Broadcast Advertising": {
-      client: "COCA-COLA COMPANY",
-      service: "Broadcast Advertising",
-      year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
-      video: "/assets/videos/broadcast-ads.mp4",
-      thumbnail: "/assets/images/ads/cocacola.jpg"
-    },
-    "Motion Graphics": {
-      client: "SAMSUNG GALAXY",
-      service: "Motion Graphics",
-      year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
-      video: "/assets/videos/motion-graphics.mp4",
-      thumbnail: "/assets/images/ads/nike.jpg"
-    },
-    "Visual Effects": {
-      client: "PEPSI CO.",
-      service: "Visual Effects",
-      year: "2024",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
-      video: "/assets/videos/vfx-ads.mp4",
-      thumbnail: "/assets/images/ads/cocacola.jpg"
-    }
   };
 
   const moviesShowcase = [
     {
       title: "12th-Fail",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/12th-Fail.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/12th-Fail.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Anaconda",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Anaconda.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Anaconda.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Antman-Wasp-Quantumania",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Antman-Wasp-Quantumania.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Antman-Wasp-Quantumania.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Baaghi-3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-3.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-3.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Baaghi-4",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-4.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-4.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Batman",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Batman.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Beauty-in-Black 2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Beauty-in-Black 2.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Beauty-in-Black 2.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Bhediya",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Bhediya.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Chandigarh-Kare-Aashiqui",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Chandigarh-Kare-Aashiqui.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Chandigarh-Kare-Aashiqui.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Citadel-Honey-Bunny",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Citadel-Honey-Bunny.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Citadel-Honey-Bunny.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Dept-Q",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Dept-Q.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Dhurandhar",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Dhurandhar.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Dhurandhar.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Doctor's-Strange-Multiverse-of-Madness",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Doctor's-Strang-Multiverse-of-Madness.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Doctor's-Strang-Multiverse-of-Madness.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Extraction-2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Extraction-2.JPG",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Extraction-2.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Family-Man-S3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Family-Man-S3.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Family-Man-S3.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Fraggle-Rock",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Fraggle-Rock.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Fraggle-Rock.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Heropanti-2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Heropanti-2.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Heropanti-2.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Karate-Kids-Legends",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Karate-Kids-Legends.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Karate-Kids-Legends.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Kartikeya-2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Kartikeya-2.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Kartikeya-2.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "KGF2",
       image: "https://resonancedigital.in/assets/images/VFX/movies/KGF2.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Mike",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Mike.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Mirzapur-S3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mirzapur-S3.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Mirzapur-S3.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Mission-Impossible-Dead-Reckoning_1",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mission-Impossible-Dead-Reckoning_1.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Mission-Impossible-Dead-Reckoning_1.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Mumbai-Diaries",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mumbai-Diaries.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Mumbai-Diaries.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Orville",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Orville.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Pathan",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Pathan.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Red-Notice",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Red-Notice.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Red-Notice.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Rocket-Boys",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Rocket-Boys.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Rocket-Boys.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "sadak2",
       image: "https://resonancedigital.in/assets/images/VFX/movies/sadak2.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Sandman-Season 1",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Sandman-Season 1.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Sandman-Season 1.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Secret-Invasion",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Secret-Invasion.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Secret-Invasion.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "SEE",
       image: "https://resonancedigital.in/assets/images/VFX/movies/SEE.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Senna",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Senna.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Soorarai-Pottru",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Soorarai-Pottru.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Soorarai-Pottru.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Squid-Games-3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Squid-Games-3.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Squid-Games-3.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Stargirl",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Stargirl.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Stargirl.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "TED",
       image: "https://resonancedigital.in/assets/images/VFX/movies/TED.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "The-Empire",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Empire.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Empire.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "The-Flash 8",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Flash 8.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Flash 8.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "The-Flash",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Flash.JPG",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Flash.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "The-Last of Us",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Last of Us.JPG",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Last of Us.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Tulsa-King",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Tulsa-King.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Tulsa-King.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Umbrella-Academy S3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Umbrella-Academy S3.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Umbrella-Academy S3.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Unconfirmed-237953",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-237953.JPG",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-237953.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Unconfirmed-520721",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-520721.JPG",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-520721.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Unconfirmed-945243",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-945243.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-945243.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Unconfirmed-977985",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-977985.JPG",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-977985.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Upload",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Upload.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Wendel-and-Wild",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Wendel-and-Wild.jpg",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Wendel-and-Wild.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
     {
       title: "Witcher",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Witcher.jpg",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx"
+      category: "xxxxxx",
     },
   ];
 
@@ -535,49 +540,49 @@ const VFX = () => {
       image: "/assets/images/ads/nike.jpg",
       client: "Nike",
       year: "2024",
-      category: "Brand Commercials"
+      category: "Brand Commercials",
     },
     {
       title: "Coca-Cola Summer",
       image: "/assets/images/ads/cocacola.jpg",
       client: "Coca-Cola",
       year: "2024",
-      category: "Brand Commercials"
+      category: "Brand Commercials",
     },
     {
       title: "Apple Vision Pro",
       image: "/assets/images/ads/apple.jpg",
       client: "Apple",
       year: "2024",
-      category: "Product Visualization"
+      category: "Product Visualization",
     },
     {
       title: "Mercedes-Benz EQS",
       image: "/assets/images/ads/mercedes.jpg",
       client: "Mercedes-Benz",
       year: "2023",
-      category: "Product Visualization"
+      category: "Product Visualization",
     },
     {
       title: "Samsung Galaxy",
       image: "/assets/images/ads/nike.jpg",
       client: "Samsung",
       year: "2024",
-      category: "Motion Graphics"
+      category: "Motion Graphics",
     },
     {
       title: "Pepsi Max",
       image: "/assets/images/ads/cocacola.jpg",
       client: "Pepsi",
       year: "2024",
-      category: "Visual Effects"
+      category: "Visual Effects",
     },
   ];
 
   const cgShowreels = [
     "/assets/images/Showreel/ads-showreel.jpg",
     "assets/images/Showreel/liquids-showreel.jpg",
-    "assets/images/Showreel/mahindra-xuv.png"
+    "assets/images/Showreel/mahindra-xuv.png",
   ];
 
   const cgiStillsShowcase = [
@@ -609,22 +614,67 @@ const VFX = () => {
   // ► The layout pattern cycles automatically — no other code changes needed.
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   const adsVideoFeed = [
-    { src: "/assets/videos/ads.mp4",              label: "ICICI Lombard" },
-    { src: "/assets/videos/movies.mp4",            label: "Bharti AXA" },
-    { src: "/assets/videos/placeholder_video.mp4", label: "Oppo" },
-    { src: "/assets/videos/ads.mp4",              label: "Morde" },
-    { src: "/assets/videos/movies.mp4",            label: "Travel + Leisure" },
-    { src: "/assets/videos/placeholder_video.mp4", label: "ICICI Lombard" },
-    { src: "/assets/videos/ads.mp4",              label: "Bharti AXA" },
-    { src: "/assets/videos/movies.mp4",            label: "Oppo" },
-    { src: "/assets/videos/ads.mp4",              label: "Morde" },
-    { src: "/assets/videos/placeholder_video.mp4", label: "ICICI Lombard" },
-    { src: "/assets/videos/movies.mp4",            label: "Travel + Leisure" },
-    { src: "/assets/videos/ads.mp4",              label: "Bharti AXA" },
-    { src: "/assets/videos/movies.mp4",            label: "Oppo" },
-    { src: "/assets/videos/placeholder_video.mp4", label: "Morde" },
-    { src: "/assets/videos/ads.mp4",              label: "Travel + Leisure" },
-    { src: "/assets/videos/movies.mp4",            label: "ICICI Lombard" },
+    {
+      src: "https://www.youtube.com/embed/R38Utym7jQA",
+      label: "Apollo Apterra Tyres",
+    },
+    {
+      src: "https://www.youtube.com/embed/Mzi9C-KQn20",
+      label: "OPPO AI Best Face",
+    },
+    {
+      src: "https://www.youtube.com/embed/hV5qy2Uf6rA",
+      label: "Indigo Protect Plus",
+    },
+    { src: "https://www.youtube.com/embed/WyRVQCG9zQU", label: "Campa Energy" },
+    { src: "https://www.youtube.com/embed/2XmSERxk2D4", label: "Black Dog" },
+    { src: "https://www.youtube.com/embed/RfB82bLMjF0", label: "SUPERBET" },
+    {
+      src: "https://www.youtube.com/embed/645Oi-VWWzk",
+      label: "Fastrack Smart",
+    },
+    { src: "https://www.youtube.com/embed/tbF1zLEg2JQ", label: "Bournvita" },
+    { src: "https://www.youtube.com/embed/7bJF4SQNHfM", label: "Honda Amaze" },
+    { src: "https://www.instagram.com/reel/DQMRzL5DVIW/embed", label: "Oreo" },
+    {
+      src: "https://www.youtube.com/embed/WZ0iwRyJvUE",
+      label: "Ecolink BLDC Fans",
+    },
+    { src: "https://www.youtube.com/embed/YBghJkyU938", label: "JK Cement" },
+    {
+      src: "https://www.youtube.com/embed/KKrPcYTI-ms",
+      label: "Director Special Elaichi",
+    },
+    { src: "https://www.youtube.com/embed/8Zl1JTwkGsU", label: "Kit Kat" },
+    { src: "https://www.youtube.com/embed/3bMiUFq4R3g", label: "Max Fashion" },
+    {
+      src: "https://www.youtube.com/embed/18ONRTDjpNE",
+      label: "The Plush New XUV500",
+    },
+    {
+      src: "https://www.youtube.com/embed/j_yCTy7RJdA",
+      label: "Savsol Lubricants",
+    },
+    {
+      src: "https://www.youtube.com/embed/psj8PBNokiU",
+      label: "Flipkart Big Bang Diwali",
+    },
+    {
+      src: "https://www.youtube.com/embed/oC56lEFHo0Y",
+      label: "The Fast & The Fair - ACKO",
+    },
+    {
+      src: "https://www.youtube.com/embed/qSiO0_LFdlo",
+      label: "Netflix End of Year 2021",
+    },
+    {
+      src: "https://www.youtube.com/embed/_-nqkErvF1E",
+      label: "Netflix End of Year 2022",
+    },
+    {
+      src: "https://www.youtube.com/embed/K5qns5BI208",
+      label: "Netflix End of Year 2023",
+    },
   ];
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -636,14 +686,25 @@ const VFX = () => {
   //   "invertedT"  → 3 videos (two 16:9 cards + one 16:9 row)
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   const LAYOUT_PATTERN = [
-    "full", "split", "full", "T", "grid2x2", "full", "invertedT", "full",
+    "full",
+    "split",
+    "full",
+    "T",
+    "grid2x2",
+    "full",
+    "invertedT",
+    "full",
   ] as const;
 
-  type AdLayoutType = typeof LAYOUT_PATTERN[number];
+  type AdLayoutType = (typeof LAYOUT_PATTERN)[number];
   type AdBlock = { type: AdLayoutType; videos: typeof adsVideoFeed };
 
   const videoCounts: Record<AdLayoutType, number> = {
-    full: 1, split: 2, T: 3, grid2x2: 4, invertedT: 3,
+    full: 1,
+    split: 2,
+    T: 3,
+    grid2x2: 4,
+    invertedT: 3,
   };
 
   // Slice videos into blocks — walks through LAYOUT_PATTERN first, then
@@ -653,29 +714,51 @@ const VFX = () => {
   let _adCursor = 0;
   for (const type of LAYOUT_PATTERN) {
     const count = videoCounts[type];
-    const videos = Array.from({ length: count }, (_, i) =>
-      adsVideoFeed[(_adCursor + i) % adsVideoFeed.length]
+    const videos = Array.from(
+      { length: count },
+      (_, i) => adsVideoFeed[(_adCursor + i) % adsVideoFeed.length],
     );
     _adCursor += count;
     adBlocks.push({ type, videos } as AdBlock);
   }
   // Any remaining videos get their own single 16:9 block
   while (_adCursor < adsVideoFeed.length) {
-    adBlocks.push({ type: "full", videos: [adsVideoFeed[_adCursor]] } as AdBlock);
+    adBlocks.push({
+      type: "full",
+      videos: [adsVideoFeed[_adCursor]],
+    } as AdBlock);
     _adCursor++;
   }
 
   // Reusable floating video card
-  const AdCard = ({ src, label, className = "" }: { src: string; label: string; className?: string }) => (
-    <div className={`relative w-full aspect-video overflow-hidden rounded-sm ${className}`}>
-      <video src={src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-black/15" />
-      <p className="absolute bottom-6 left-6 text-white font-display text-xl font-bold">{label}</p>
+  const AdCard = ({
+    src,
+    label,
+    className = "",
+  }: {
+    src: string;
+    label: string;
+    className?: string;
+  }) => (
+    <div
+      className={`group relative w-full aspect-video overflow-hidden rounded-sm ${className}`}
+    >
+      <iframe
+        src={src}
+        title={label}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+      <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+      <p className="absolute bottom-6 left-6 text-white font-display text-xl font-bold pointer-events-none">
+        {label}
+      </p>
     </div>
   );
 
   useEffect(() => {
-
     if (expandedSection && expandedContentRef.current) {
       // Animate expansion
       gsap.fromTo(
@@ -691,7 +774,7 @@ const VFX = () => {
           y: 0,
           duration: 0.8,
           ease: "power3.out",
-        }
+        },
       );
     }
   }, [expandedSection]);
@@ -737,7 +820,7 @@ const VFX = () => {
             gsap.fromTo(
               splitSectionRef.current,
               { opacity: 0, scale: 0.98 },
-              { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
+              { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" },
             );
           }
         },
@@ -791,7 +874,10 @@ const VFX = () => {
 
       {/* Split Movies / Ads Section - Becomes Expandable */}
       {!expandedSection && (
-        <section ref={splitSectionRef} className="relative w-full h-screen overflow-hidden bg-black">
+        <section
+          ref={splitSectionRef}
+          className="relative w-full h-screen overflow-hidden bg-black"
+        >
           {/* Full-bleed movies image as base layer — prevents black corners showing through clip gaps */}
           <img
             src="/assets/images/vfx/movie-background.png"
@@ -810,8 +896,8 @@ const VFX = () => {
                 hoveredSide === "movies"
                   ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
                   : hoveredSide === "ads"
-                  ? "polygon(0 0, 15% 0, 5% 100%, 0 100%)"
-                  : "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
+                    ? "polygon(0 0, 15% 0, 5% 100%, 0 100%)"
+                    : "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
             }}
           >
             <img
@@ -837,8 +923,8 @@ const VFX = () => {
                 hoveredSide === "ads"
                   ? "polygon(5% 0, 100% 0, 100% 100%, 15% 100%)"
                   : hoveredSide === "movies"
-                  ? "polygon(95% 0, 100% 0, 100% 100%, 85% 100%)"
-                  : "polygon(62% 0, 100% 0, 100% 100%, 42% 100%)",
+                    ? "polygon(95% 0, 100% 0, 100% 100%, 85% 100%)"
+                    : "polygon(62% 0, 100% 0, 100% 100%, 42% 100%)",
             }}
           >
             <img
@@ -892,8 +978,6 @@ const VFX = () => {
             </div>
           </section>
 
-
-
           {/* featured projects section */}
           <div className="mt-32 px-12 md:px-24">
             <div className="max-w-7xl mx-auto">
@@ -920,7 +1004,7 @@ const VFX = () => {
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
-                
+
                 <div className="relative overflow-hidden">
                   <div
                     className="flex transition-transform duration-300 ease-out will-change-transform"
@@ -951,8 +1035,12 @@ const VFX = () => {
                             {/* Title overlay on hover */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                               <div>
-                                <p className="text-white font-bold text-lg">{movie.title}</p>
-                                <p className="text-[#4ab6ff] text-sm">{movie.platform}</p>
+                                <p className="text-white font-bold text-lg">
+                                  {movie.title}
+                                </p>
+                                <p className="text-[#4ab6ff] text-sm">
+                                  {movie.platform}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -960,7 +1048,10 @@ const VFX = () => {
                         {Array.from({
                           length: ITEMS_PER_PAGE - pageItems.length,
                         }).map((_, i) => (
-                          <div key={`movie-placeholder-${pageIndex}-${i}`} className="aspect-[2/3]" />
+                          <div
+                            key={`movie-placeholder-${pageIndex}-${i}`}
+                            className="aspect-[2/3]"
+                          />
                         ))}
                       </div>
                     ))}
@@ -969,7 +1060,9 @@ const VFX = () => {
 
                 <button
                   onClick={handleMovieNext}
-                  disabled={currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length}
+                  disabled={
+                    currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length
+                  }
                   className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
                     currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length
                       ? "bg-sky-400/10 cursor-not-allowed opacity-50"
@@ -1010,12 +1103,13 @@ const VFX = () => {
               {/* Areas of Expertise Section */}
               <div className="mt-32">
                 <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                  VFX: Movie <span className="text-[#4ab6ff]">|</span> <span className="text-white/60">Areas of expertise</span>
+                  VFX: Movie <span className="text-[#4ab6ff]">|</span>{" "}
+                  <span className="text-white/60">Areas of expertise</span>
                 </h2>
 
                 {/* Category Filter */}
                 <div className="mt-8 mb-12">
-                  <div className="flex flex-wrap gap-4 text-xl md:text-2xl font-semibold">
+                  <div className="flex flex-wrap gap-y-5 gap-x-0 text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed">
                     {movieCategories.map((category, index) => (
                       <div key={category} className="flex items-center">
                         <button
@@ -1029,7 +1123,7 @@ const VFX = () => {
                           {category}
                         </button>
                         {index < movieCategories.length - 1 && (
-                          <span className="text-white/30 mx-3">|</span>
+                          <span className="text-white/30 mx-5">|</span>
                         )}
                       </div>
                     ))}
@@ -1038,59 +1132,18 @@ const VFX = () => {
 
                 {/* Showreel Display */}
                 {selectedMovieShowreel && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:items-end">
-                    {/* Left Side - Details */}
-                    <div className="w-full lg:w-[300px] lg:flex-shrink-0 flex flex-col">
-                      {/* Client */}
-                      <div className="grid grid-cols-[70px_1fr] gap-3 items-start">
-                        <p className="text-white/40 text-sm">Client</p>
-                        <h3 className="text-white font-bold text-lg uppercase leading-tight">
-                          {selectedMovieShowreel.client}
-                        </h3>
-                      </div>
-
-                      <div className="h-px bg-white/10 my-5" />
-
-                      {/* Service & Year */}
-                      <div className="grid grid-cols-[70px_1fr] gap-x-3 gap-y-2">
-                        <p className="text-white/40 text-sm">Service</p>
-                        <p className="text-white font-semibold text-base">
-                          {selectedMovieShowreel.service}
-                        </p>
-                        <p className="text-white/40 text-sm">Year</p>
-                        <p className="text-white font-semibold text-base">
-                          {selectedMovieShowreel.year}
-                        </p>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-white/50 text-sm leading-relaxed mt-6">
-                        {selectedMovieShowreel.description}
-                      </p>
-
-                      {/* Thumbnail */}
-                      <div className="mt-3">
-                        <img
-                          src={selectedMovieShowreel.thumbnail}
-                          alt={selectedMovieCategory}
-                          className="w-full h-44 object-cover object-top rounded-lg shadow-xl"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Right Side - YouTube Player */}
-                    <div className="flex-1 min-w-0">
-                      <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
-                        <iframe
-                          key={selectedMovieCategory}
-                          src={selectedMovieShowreel.youtubeEmbedUrl}
-                          title={`${selectedMovieCategory} showreel`}
-                          className="w-full h-full"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                          allowFullScreen
-                        />
-                      </div>
+                  <div className="w-full">
+                    <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
+                      <iframe
+                        key={selectedMovieCategory}
+                        src={selectedMovieShowreel.youtubeEmbedUrl}
+                        title={`${selectedMovieCategory} showreel`}
+                        className="w-full h-full"
+                        loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
                     </div>
                   </div>
                 )}
@@ -1098,51 +1151,63 @@ const VFX = () => {
 
               {/* Security Certifications Section */}
               <div className="mt-24 mb-16">
-                  <div className="flex flex-col lg:flex-row gap-12 items-center">
-                    {/* Left Side - Text Content */}
-                    <div className="flex-1">
-                      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4ab6ff] mb-8 leading-tight">
-                        Security<br />Certifications
-                      </h2>
-                      
-                      <p className="text-white text-lg md:text-xl leading-relaxed">
-                        <span className="font-semibold">TPN Gold Shield Certification</span> and security compliance with{" "}
-                        <span className="font-semibold">Warner Bros, Lionsgate, Universal Pictures, Paramount,</span>{" "}
-                        <span className="text-white/60">Amazon Studios, Netflix and ABC</span> validate our commitment to safeguarding client content and IP.
-                      </p>
-                    </div>
+                <div className="flex flex-col lg:flex-row gap-12 items-center">
+                  {/* Left Side - Text Content */}
+                  <div className="flex-1">
+                    <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4ab6ff] mb-8 leading-tight">
+                      Security
+                      <br />
+                      Certifications
+                    </h2>
 
-                    {/* Right Side - Company Logos Image */}
-                    <div className="flex-1 min-w-0">
-                      <img
-                        src="https://resonancedigital.in/assets/images/VFX/movies/securityCertifications/Security-Certification.png"
-                        alt="Company Logos - TPN, Warner Bros, Amazon Studios, Lionsgate, Netflix, Universal"
-                        className="w-full h-auto rounded-2xl"
-                      />
-                    </div>
+                    <p className="text-white text-lg md:text-xl leading-relaxed">
+                      <span className="font-semibold">
+                        TPN Gold Shield Certification
+                      </span>{" "}
+                      and security compliance with{" "}
+                      <span className="font-semibold">
+                        Warner Bros, Lionsgate, Universal Pictures, Paramount,
+                      </span>{" "}
+                      <span className="text-white/60">
+                        Amazon Studios, Netflix and ABC
+                      </span>{" "}
+                      validate our commitment to safeguarding client content and
+                      IP.
+                    </p>
+                  </div>
+
+                  {/* Right Side - Company Logos Image */}
+                  <div className="flex-1 min-w-0">
+                    <img
+                      src="https://resonancedigital.in/assets/images/VFX/movies/securityCertifications/Security-Certification.png"
+                      alt="Company Logos - TPN, Warner Bros, Amazon Studios, Lionsgate, Netflix, Universal"
+                      className="w-full h-auto rounded-2xl"
+                    />
                   </div>
                 </div>
+              </div>
 
-                {/* Films & Episodic Clients Section */}
-                <div className="mt-24 mb-16">
-                  <div className="flex flex-col lg:flex-row gap-12 items-start">
-                    {/* Left Side - Title */}
-                    <div className="lg:w-[45%]">
-                      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4ab6ff] leading-tight">
-                        Films & Episodic <br />Clients
-                      </h2>
-                    </div>
+              {/* Films & Episodic Clients Section */}
+              <div className="mt-24 mb-16">
+                <div className="flex flex-col lg:flex-row gap-12 items-start">
+                  {/* Left Side - Title */}
+                  <div className="lg:w-[45%]">
+                    <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4ab6ff] leading-tight">
+                      Films & Episodic <br />
+                      Clients
+                    </h2>
+                  </div>
 
-                    {/* Right Side - Client Logos */}
-                    <div className="flex-1 min-w-0">
-                      <img
-                        src="https://resonancedigital.in/assets/images/VFX/Films-and-episodic-client.png"
-                        alt="Films & Episodic Clients Logos"
-                        className="w-full max-w-[1200px] h-auto rounded-2xl scale-110 origin-right"
-                      />
-                    </div>
+                  {/* Right Side - Client Logos */}
+                  <div className="flex-1 min-w-0">
+                    <img
+                      src="https://resonancedigital.in/assets/images/VFX/Films-and-episodic-client.png"
+                      alt="Films & Episodic Clients Logos"
+                      className="w-full max-w-[1200px] h-auto rounded-2xl scale-110 origin-right"
+                    />
                   </div>
                 </div>
+              </div>
             </div>
           </section>
         </div>
@@ -1153,6 +1218,13 @@ const VFX = () => {
         <div ref={expandedContentRef} className="w-full bg-[#100a44]">
           {/* Hero Section */}
           <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('/assets/images/vfx/ads-showreel.jpg')`,
+              }}
+            />
+            <div className="absolute inset-0 bg-black/60" />
             {/* Main Title */}
             <div className="relative z-10 max-w-6xl w-full mt-20">
               <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
@@ -1166,7 +1238,7 @@ const VFX = () => {
               />
             </div>
           </section>
-          
+
           {/* Areas of Expertise Section */}
           <div className="px-12 md:px-24 pb-24">
             <div className="max-w-7xl mx-auto translate-y-8">
@@ -1176,7 +1248,7 @@ const VFX = () => {
               </h2>
 
               <div className="mt-8 mb-12">
-                <div className="flex flex-wrap gap-4 text-xl md:text-2xl font-semibold">
+                <div className="flex flex-wrap gap-y-5 gap-x-0 text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed">
                   {adCategories.map((category, index) => (
                     <div key={category} className="flex items-center">
                       <button
@@ -1190,135 +1262,30 @@ const VFX = () => {
                         {category}
                       </button>
                       {index < adCategories.length - 1 && (
-                        <span className="text-white/30 mx-3">|</span>
+                        <span className="text-white/30 mx-5">|</span>
                       )}
                     </div>
                   ))}
                 </div>
               </div>
-{/* Expertise Showcase Cards */}
-<div className="relative mb-16">
-  <button
-    onClick={handleAdPrev}
-    disabled={currentAdIndex === 0}
-    className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white ${
-      currentAdIndex === 0
-        ? "opacity-40 cursor-not-allowed"
-        : "hover:text-[#4ab6ff]"
-    }`}
-  >
-    <ChevronLeft className="w-8 h-8" />
-  </button>
 
-  <div className="relative overflow-hidden">
-    <div
-      className="flex transition-transform duration-300 ease-out will-change-transform"
-      style={{
-        transform: `translate3d(-${Math.floor(currentAdIndex / 3) * 100}%, 0, 0)`,
-      }}
-    >
-      {Array.from(
-        { length: Math.ceil(adsShowcase.length / 3) },
-        (_, page) => adsShowcase.slice(page * 3, page * 3 + 3)
-      ).map((pageItems, pageIndex) => (
-        <div
-          key={pageIndex}
-          className="shrink-0 min-w-full grid grid-cols-1 md:grid-cols-3 gap-4"
-        >
-          {pageItems.map((item, index) => (
-            <div
-              key={`${item.title}-${index}`}
-              className="group relative aspect-[16/9] overflow-hidden rounded-lg cursor-pointer"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300" />
-
-              <div className="absolute inset-0 flex items-end p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div>
-                  <p className="text-white font-bold uppercase text-lg">
-                    {item.title}
-                  </p>
-                  <p className="text-white/70 text-sm">
-                    {item.client} | {item.year}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-          {Array.from({ length: 3 - pageItems.length }).map((_, i) => (
-            <div key={`ad-placeholder-${pageIndex}-${i}`} />
-          ))}
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <button
-    onClick={handleAdNext}
-    disabled={currentAdIndex + 3 >= adsShowcase.length}
-    className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white ${
-      currentAdIndex + 3 >= adsShowcase.length
-        ? "opacity-40 cursor-not-allowed"
-        : "hover:text-[#4ab6ff]"
-    }`}
-  >
-    <ChevronRight className="w-8 h-8" />
-  </button>
-</div>
               {adShowreels[selectedAdCategory as keyof typeof adShowreels] && (
-                <div className="flex flex-col lg:flex-row gap-6 lg:items-end">
-                  <div className="w-full lg:w-[300px] lg:flex-shrink-0 flex flex-col">
-                    <div className="grid grid-cols-[70px_1fr] gap-3 items-start">
-                      <p className="text-white/40 text-sm">Client</p>
-                      <h3 className="text-white font-bold text-lg uppercase leading-tight">
-                        {adShowreels[selectedAdCategory as keyof typeof adShowreels].client}
-                      </h3>
-                    </div>
-
-                    <div className="h-px bg-white/10 my-5" />
-
-                    <div className="grid grid-cols-[70px_1fr] gap-x-3 gap-y-2">
-                      <p className="text-white/40 text-sm">Service</p>
-                      <p className="text-white font-semibold text-base">
-                        {adShowreels[selectedAdCategory as keyof typeof adShowreels].service}
-                      </p>
-
-                      <p className="text-white/40 text-sm">Year</p>
-                      <p className="text-white font-semibold text-base">
-                        {adShowreels[selectedAdCategory as keyof typeof adShowreels].year}
-                      </p>
-                    </div>
-
-                    <p className="text-white/50 text-sm leading-relaxed mt-6">
-                      {adShowreels[selectedAdCategory as keyof typeof adShowreels].description}
-                    </p>
-
-                    <div className="mt-3">
-                      <img
-                        src={adShowreels[selectedAdCategory as keyof typeof adShowreels].thumbnail}
-                        alt={selectedAdCategory}
-                        className="w-full h-44 object-cover object-center rounded-lg shadow-xl"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
-                      <video
-                        key={selectedAdCategory}
-                        src={adShowreels[selectedAdCategory as keyof typeof adShowreels].video}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                <div className="w-full">
+                  <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
+                    <iframe
+                      key={selectedAdCategory}
+                      src={
+                        adShowreels[
+                          selectedAdCategory as keyof typeof adShowreels
+                        ].embedUrl
+                      }
+                      title={selectedAdCategory}
+                      className="w-full h-full"
+                      loading="lazy"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
                   </div>
                 </div>
               )}
@@ -1326,46 +1293,62 @@ const VFX = () => {
           </div>
           <div className="px-12 md:px-24 pb-24">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-10">
-                VFX: Ads <span className="text-[#4ab6ff]">|</span>{" "}
-                <span className="text-white/60">CG Showreels</span>
-              </h2>
-
-              <div className="flex gap-6 overflow-x-auto pb-4 mb-24 scrollbar-hide snap-x snap-mandatory">
-                {cgShowreels.map((image, index) => (
-                  <div
-                    key={`cg-showreel-${index}`}
-                    className="group relative aspect-[4/3] min-w-[320px] md:min-w-[420px] overflow-hidden rounded-lg snap-start flex-shrink-0"
-                  >
-                    <img
-                      src={image}
-                      alt={`CG Showreel ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                  </div>
-                ))}
-              </div>
-
+              {/* ── CGI Stills — unequal masonry grid ── */}
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-10">
                 VFX: CGI Stills <span className="text-[#4ab6ff]">|</span>{" "}
                 <span className="text-white/60">Showcase</span>
               </h2>
 
-              <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
-                {cgiStillsShowcase.map((image, index) => (
-                  <div
-                    key={`cgi-still-${index}`}
-                    className="group relative aspect-[4/3] min-w-[320px] md:min-w-[420px] overflow-hidden rounded-lg snap-start flex-shrink-0"
-                  >
-                    <img
-                      src={image}
-                      alt={`CGI Still ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
-                  </div>
-                ))}
+              {/*
+                CSS-columns masonry: browser stacks items top-to-bottom in each
+                column, so natural image heights create the unequal-card look
+                without any JS. break-inside-avoid stops images splitting across
+                column boundaries.
+              */}
+              <div
+                style={{
+                  columnCount: 3,
+                  columnGap: "8px",
+                }}
+              >
+                {cgiStillsShowcase.map((image, index) => {
+                  // Cycle through aspect ratios so adjacent cards are never
+                  // the same height — this is what creates the uneven grid feel
+                  const aspects = [
+                    "aspect-[4/5]",
+                    "aspect-[16/9]",
+                    "aspect-square",
+                    "aspect-[3/4]",
+                    "aspect-[16/10]",
+                    "aspect-[4/3]",
+                    "aspect-[9/16]",
+                    "aspect-[5/4]",
+                    "aspect-[16/9]",
+                  ];
+                  return (
+                    <div
+                      key={`cgi-still-${index}`}
+                      className={`group relative ${aspects[index % aspects.length]} overflow-hidden rounded-sm`}
+                      style={{
+                        display: "inline-block",
+                        width: "100%",
+                        marginBottom: "8px",
+                        breakInside: "avoid",
+                      }}
+                    >
+                      <img
+                        src={image}
+                        alt={`CGI Still ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 pointer-events-none" />
+                      {/* index badge — appears on hover */}
+                      <span className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[9px] text-white/70 uppercase tracking-widest bg-black/50 backdrop-blur-sm px-2 py-0.5">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -1381,19 +1364,33 @@ const VFX = () => {
           {adBlocks.map((block, blockIdx) => {
             const [v0, v1, v2, v3] = block.videos;
             switch (block.type) {
-
               case "full":
                 return (
-                  <div key={blockIdx} className="relative w-full aspect-video overflow-hidden rounded-sm">
-                    <video src={v0.src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
+                  <div
+                    key={blockIdx}
+                    className="relative w-full aspect-video overflow-hidden rounded-sm"
+                  >
+                    <iframe
+                      src={v0.src}
+                      title={v0.label}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
                     <div className="absolute inset-0 bg-black/20" />
-                    <p className="absolute bottom-8 left-8 text-white font-display text-2xl font-bold tracking-wide">{v0.label}</p>
+                    <p className="absolute bottom-8 left-8 text-white font-display text-2xl font-bold tracking-wide">
+                      {v0.label}
+                    </p>
                   </div>
                 );
 
               case "split":
                 return (
-                  <div key={blockIdx} className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+                  <div
+                    key={blockIdx}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full"
+                  >
                     <AdCard src={v0.src} label={v0.label} />
                     <AdCard src={v1.src} label={v1.label} />
                   </div>
@@ -1412,7 +1409,10 @@ const VFX = () => {
 
               case "grid2x2":
                 return (
-                  <div key={blockIdx} className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+                  <div
+                    key={blockIdx}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full"
+                  >
                     <AdCard src={v0.src} label={v0.label} />
                     <AdCard src={v1.src} label={v1.label} />
                     <AdCard src={v2.src} label={v2.label} />

@@ -57,11 +57,11 @@ const expertiseCategories = [
   "3D Renders",
   "3D Walkthroughs",
   "Drone Shots",
-  "Films Interactive Sales Tour",
   "Digital Twin",
-  "3D Anamorphic Experience Center",
   "Virtual Reality",
   "Augmented Reality",
+  "Films Interactive Sales Tour",
+  "3D Anamorphic Experience Center",
 ];
 
 type ExpertiseShowcaseItem = {
@@ -436,7 +436,6 @@ const RealEstateMartech = () => {
     expertiseStartIndex + EXPERTISE_PER_PAGE,
   );
 
-
   // ── Immersive section helpers ──────────────────────────────────────────
   const activeImmersiveTab =
     immersiveTabs.find((t) => t.id === activeImmersiveTabId) ??
@@ -596,11 +595,9 @@ const RealEstateMartech = () => {
 
       {/* Video player section */}
       <section className="relative w-full h-screen overflow-hidden">
-
         <div className="absolute inset-0" />
 
-        <h2 className="absolute top-[24%] left-10 md:left-16 font-display text-5xl md:text-6xl lg:text-7xl font-bold text-[#4ab6ff]">
-        </h2>
+        <h2 className="absolute top-[24%] left-10 md:left-16 font-display text-5xl md:text-6xl lg:text-7xl font-bold text-[#4ab6ff]"></h2>
       </section>
 
       <section className="w-full min-h-screen bg-[#100a44] py-10 md:py-12 px-10 md:px-16 flex flex-col justify-center">
@@ -671,8 +668,8 @@ const RealEstateMartech = () => {
           <span className="font-bold text-white">Areas of expertise</span>
         </h2>
 
-        <div className="mt-6 mb-8 max-w-6xl">
-          <div className="flex flex-wrap gap-4 text-xl md:text-2xl font-semibold">
+        <div className="mt-6 mb-8 w-full max-w-[1700px]">
+          <div className="flex flex-wrap gap-y-3 text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] w-full tracking-tight">
             {expertiseCategories.map((category, index) => (
               <div key={category} className="flex items-center">
                 <button
@@ -689,7 +686,7 @@ const RealEstateMartech = () => {
                   {category}
                 </button>
                 {index < expertiseCategories.length - 1 && (
-                  <span className="text-white/30 mx-3">|</span>
+                  <span className="text-white/30 mx-3 lg:mx-4">|</span>
                 )}
               </div>
             ))}
