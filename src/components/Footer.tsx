@@ -1,10 +1,46 @@
 import { Link } from "react-router-dom";
 
+
 type FooterTheme = "light" | "dark";
 
 interface FooterProps {
   theme?: FooterTheme;
 }
+
+const GlobeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M2 12h20" />
+    <path d="M12 2a15 15 0 0 1 0 20" />
+    <path d="M12 2a15 15 0 0 0 0 20" />
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5H16.7V5c-.3 0-1.4-.1-2.7-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.6v8h3.9Z"/>
+  </svg>
+);
+
+const YoutubeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+    <path d="M23 12s0-3.5-.4-5.2a2.9 2.9 0 0 0-2-2C18.8 4.3 12 4.3 12 4.3s-6.8 0-8.6.5a2.9 2.9 0 0 0-2 2C1 8.5 1 12 1 12s0 3.5.4 5.2a2.9 2.9 0 0 0 2 2c1.8.5 8.6.5 8.6.5s6.8 0 8.6-.5a2.9 2.9 0 0 0 2-2C23 15.5 23 12 23 12ZM10 15.5v-7l6 3.5-6 3.5Z"/>
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+    <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96ZM3 9h4v12H3Zm7 0h3.8v1.7h.1c.5-.9 1.8-1.9 3.8-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21h-4Z"/>
+  </svg>
+);
 
 const Footer = ({ theme = "light" }: FooterProps) => {
   const isDark = theme === "dark";
@@ -123,18 +159,18 @@ const Footer = ({ theme = "light" }: FooterProps) => {
          {/* SOCIAL ICONS */}
           <div className="flex gap-8 mt-0 mb-6">
             {[
-              { icon: "🌐", href: "https://resonancedigital.in" },
-              { icon: "f", href: "https://www.facebook.com/share/1D13tnZctJ/" },
-              { icon: "▶", href: "https://www.youtube.com/@Resonance2016" },
-              { icon: "◎", href: "https://www.instagram.com/resonancedigital/" },
-              { icon: "in", href: "https://www.linkedin.com/company/resonance-digital/" },
+              { icon: <GlobeIcon />, href: "https://resonancedigital.in" },
+              { icon: <FacebookIcon />, href: "https://www.facebook.com/share/1D13tnZctJ/" },
+              { icon: <YoutubeIcon />, href: "https://www.youtube.com/@Resonance2016" },
+              { icon: <InstagramIcon />, href: "https://www.instagram.com/resonancedigital/" },
+              { icon: <LinkedInIcon />, href: "https://www.linkedin.com/company/resonance-digital/" },
             ].map((item, i) => (
               <a
                 key={i}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-[64px] h-[64px] border flex items-center justify-center rounded-full text-lg transition-all duration-300 hover:scale-105 ${isDark ? "border-[#f2eee2]/40" : "border-black/30"}`}
+                className={`w-[64px] h-[64px] border flex items-center justify-center rounded-full text-[24px] transition-all duration-300 hover:scale-105 ${isDark ? "border-[#f2eee2]/40" : "border-black/30"}`}
               >
                 {item.icon}
               </a>

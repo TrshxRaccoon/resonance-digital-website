@@ -121,7 +121,7 @@ const BrandStatement = () => {
         <p className="mb-8 text-[18px] md:text-[20px] lg:text-[22px] font-medium tracking-wide text-left">
           <span className="text-[#4ab6ff]">VFX & Animation</span>
           <span className="text-gray-300"> / </span>
-          <span className="text-rose-400">Experiential Technology</span>
+          <span className="text-rose-400">Real Estate Mar-Tech</span>
           <span className="text-gray-300"> / </span>
           <span className="text-lime-400">Brand Solution</span>
           <span className="text-gray-300"> / </span>

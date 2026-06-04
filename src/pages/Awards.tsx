@@ -182,8 +182,24 @@ const Awards = () => {
         </div>
       </section>
 
-      {/* Awards Showcase — full viewport height */}
-      {/* LINE 152 — section height. Change min-h-screen to min-h-[110vh] if rows need more room. */}
+     {/* Awards Showcase Image */}
+<section className="relative w-full bg-[#000000] flex flex-col items-center justify-center">
+  <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
+    <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-[#4ab6ff] tracking-tight text-center">
+      Awards Showcase
+    </h2>
+  </div>
+  <img
+    src="/assets/images/awards/awardshowcase.png"
+    alt="Awards Showcase"
+    className="w-full h-auto block"
+  />
+</section>
+
+      {/* 
+      Awards Showcase — full viewport height 
+      */}
+      {/*
       <section className="relative w-full min-h-screen bg-[#100a44] overflow-hidden flex items-center">
         <div
           className="absolute inset-0 pointer-events-none"
@@ -193,11 +209,8 @@ const Awards = () => {
           }}
         />
 
-        {/* LINE 161 — side padding. Change px-10 to control how close cards get to screen edges. */}
         <div className="relative w-full px-10 flex flex-col justify-center gap-0">
 
-          {/* Row 1: 24FPS + Filmfare — each card gets exactly half the screen width */}
-          {/* LINE 165 — row height. Change h-[42vh] to make each row taller/shorter. */}
           <div className="grid grid-cols-2 h-[42vh]">
             <div className="flex items-center pr-6">
               <AwardCard award={AWARDS[0]} />
@@ -207,12 +220,8 @@ const Awards = () => {
             </div>
           </div>
 
-          {/* Divider */}
-          {/* LINE 175 — divider vertical margin. Change my-4 to add/remove space around the line. */}
           <div className="my-4 h-px bg-gradient-to-r from-transparent via-[#4ab6ff]/25 to-transparent" />
 
-          {/* Row 2: Kyoorius + ITA */}
-          {/* LINE 179 — row height. Change h-[42vh] to make each row taller/shorter. */}
           <div className="grid grid-cols-2 h-[42vh]">
             <div className="flex items-center pr-6">
               <AwardCard award={AWARDS[2]} />
@@ -224,6 +233,7 @@ const Awards = () => {
 
         </div>
       </section>
+      */}
 
       <Footer />
     </>

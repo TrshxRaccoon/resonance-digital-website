@@ -57,11 +57,8 @@ const expertiseCategories = [
   "3D Renders",
   "3D Walkthroughs",
   "Drone Shots",
-  "Digital Twin",
-  "Virtual Reality",
-  "Augmented Reality",
-  "Films Interactive Sales Tour",
-  "3D Anamorphic Experience Center",
+  "2D Isometrics",
+  "3D Isometrics",
 ];
 
 type ExpertiseShowcaseItem = {
@@ -72,53 +69,132 @@ type ExpertiseShowcaseItem = {
 };
 
 const expertiseShowcase: ExpertiseShowcaseItem[] = [
+  //3D RENDERS
   {
-    title: "Lodha Altamount",
-    subtitle: "Lorem ipsum",
-    image: "/assets/images/movies/movies_01.png",
-    category: "3D Walkthroughs",
-  },
-  {
-    title: "Vraj Group",
-    subtitle: "Lorem ipsum",
-    image: "/assets/images/movies/dune.jpeg",
-    category: "3D Walkthroughs",
-  },
-  {
-    title: "DA Group",
-    subtitle: "Lorem ipsum",
-    image: "/assets/images/movies/flash.jpg",
-    category: "3D Walkthroughs",
-  },
-  {
-    title: "Sattva",
-    subtitle: "Lorem ipsum",
-    image: "/assets/images/movies/avatar.jpeg",
+    title: "Hiranandani Empress Hill",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/HiranandaniEmpressHill.png",
     category: "3D Renders",
   },
   {
-    title: "Brigade",
-    subtitle: "Lorem ipsum",
-    image: "/assets/images/movies/batman.png",
-    category: "Drone Shots",
+    title: "Kalpataru",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Kalpataru.png",
+    category: "3D Renders",
   },
   {
-    title: "Atmos",
-    subtitle: "Lorem ipsum",
-    image: "/assets/images/movies/movies_03.png",
-    category: "Films Interactive Sales Tour",
+    title: "DLF",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/DLF.png",
+    category: "3D Renders",
   },
   {
-    title: "LOREM IPSUM",
-    subtitle: "2D Isometrics",
-    image: "/assets/images/movies/movies_01.png",
-    category: "2D & 3D Isometrics",
+    title: "Oberoi Sky City",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/OberoiSkyCity.png",
+    category: "3D Renders",
   },
   {
-    title: "LOREM IPSUM",
-    subtitle: "2D Isometrics",
-    image: "/assets/images/movies/movies_03.png",
-    category: "2D & 3D Isometrics",
+    title: "Larsen & Toubro",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Larsen&Turbo.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Mahindra Vista",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/MahindraVista.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Hiranandini Empress Hill",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/HiranandiniEmpressHill.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Mahindra 2",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Mahindra_2.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Mahindra 1",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Mahindra_1.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Rustomjee",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Rustomjee.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Rustomjee Lavie",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Rustomjee Lavie.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Larsen & Toubro 1",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Larsen&Turbo_1.png",
+    category: "3D Renders",
+  },
+  {
+    title: "Mahindra",
+    subtitle: "",
+    image: "/assets/images/martech/Renders/Mahindra.png",
+    category: "3D Renders",
+  },
+
+  //3D WALKTHROUGHS
+  {
+    title: "Kalpataru Park Revera",
+    subtitle: "",
+    image: "/assets/images/martech/Walkthroughs/Kalpataru-Park-Revera.png",
+    category: "3D Walkthroughs",
+  },
+  {
+    title: "Mahindra Vista",
+    subtitle: "",
+    image: "/assets/images/martech/Walkthroughs/Mahindra-Vista.png",
+    category: "3D Walkthroughs",
+  },
+  {
+    title: "Prestige Bellanza",
+    subtitle: "",
+    image: "/assets/images/martech/Walkthroughs/Prestige-Bellanza.png",
+    category: "3D Walkthroughs",
+  },
+  {
+    title: "Zira",
+    subtitle: "",
+    image: "/assets/images/martech/Walkthroughs/Zira.png",
+    category: "3D Walkthroughs",
+  },
+
+  //2D ISOMETRICS
+  {
+    title: "2D Isometric 01",
+    subtitle: "",
+    image: "/assets/images/martech/2D-Isometrics/Picture1.png",
+    category: "2D Isometrics",
+  },
+  {
+    title: "2D Isometric 02",
+    subtitle: "",
+    image: "/assets/images/martech/2D-Isometrics/Picture2.png",
+    category: "2D Isometrics",
+  },
+
+  //3D ISOMETRICS
+  {
+    title: "3D Isometric 01",
+    subtitle: "",
+    image: "/assets/images/martech/3D-Isometrics/Picture3.png",
+    category: "3D Isometrics",
   },
 ];
 
@@ -131,19 +207,10 @@ const expertiseShowcase: ExpertiseShowcaseItem[] = [
 //
 // Example: to make "Views" play from 2:15 to 2:50 set  start: 135, end: 170
 // ─────────────────────────────────────────────────────────────────────────────
-type FeatureSegment = {
-  label: string;
-  title: string;
-  description: string;
-  start: number; // seconds from video start
-  end: number; // seconds from video start
-};
-
 type ImmersiveTabData = {
   id: string;
   label: string;
   videoSrc: string;
-  segments: FeatureSegment[];
 };
 
 const immersiveTabs: ImmersiveTabData[] = [
@@ -151,232 +218,28 @@ const immersiveTabs: ImmersiveTabData[] = [
     id: "interactive-sales-tour",
     label: "Interactive Sales Tour",
     videoSrc: "/assets/videos/placeholder_video.mp4",
-    // ── EDIT TIMESTAMPS HERE for Interactive Sales Tour ──────────────────
-    segments: [
-      {
-        label: "Architectural",
-        title: "Architectural",
-        description:
-          "Explore the architectural language of the project — form, facades, and structural intent brought to life.",
-        start: 0,
-        end: 28,
-      },
-      {
-        label: "Weather Control",
-        title: "Weather Control",
-        description:
-          "Simulate real-world weather conditions across the site to understand sunlight, wind, and seasonal experience.",
-        start: 29,
-        end: 58,
-      },
-      {
-        label: "Interior Design",
-        title: "Interior Design",
-        description:
-          "Step inside curated interiors — material palettes, spatial proportions, and finish quality showcased in full detail.",
-        start: 59,
-        end: 88,
-      },
-      {
-        label: "Amenities",
-        title: "Amenities",
-        description:
-          "Discover the full range of amenities and community spaces that enhance the living experience.",
-        start: 89,
-        end: 118,
-      },
-      {
-        label: "Views",
-        title: "Views",
-        description:
-          "Experience panoramic views from every tower, floor, and vantage point across the development.",
-        start: 135,
-        end: 170,
-      },
-      {
-        label: "Surrounding",
-        title: "Surrounding",
-        description:
-          "Understand the neighborhood context — connectivity, landmarks, and the urban fabric surrounding the project.",
-        start: 171,
-        end: 180,
-      },
-    ],
   },
   {
     id: "digital-twin",
     label: "Digital Twin",
     videoSrc: "/assets/videos/placeholder_video.mp4",
-    // ── EDIT TIMESTAMPS HERE for Digital Twin ────────────────────────────
-    segments: [
-      {
-        label: "Architectural",
-        title: "Architectural",
-        description:
-          "A live digital replica of the project's architecture — updated in real-time as the structure evolves.",
-        start: 0,
-        end: 28,
-      },
-      {
-        label: "Weather Control",
-        title: "Weather Control",
-        description:
-          "Dynamic weather simulation integrated with the digital twin for environmental analysis.",
-        start: 29,
-        end: 58,
-      },
-      {
-        label: "Interior Design",
-        title: "Interior Design",
-        description:
-          "Interior layouts mirrored digitally for real-time planning, staging, and customisation.",
-        start: 59,
-        end: 88,
-      },
-      {
-        label: "Amenities",
-        title: "Amenities",
-        description:
-          "Monitor amenity usage, capacity, and condition through a connected digital twin layer.",
-        start: 89,
-        end: 118,
-      },
-      {
-        label: "Views",
-        title: "Views",
-        description:
-          "Real-time view analysis from any point in the digital model.",
-        start: 135,
-        end: 170,
-      },
-      {
-        label: "Surrounding",
-        title: "Surrounding",
-        description:
-          "Geo-anchored surroundings layer for infrastructure and context planning.",
-        start: 171,
-        end: 180,
-      },
-    ],
   },
   {
     id: "experience-center",
     label: "Experience Center",
     videoSrc: "/assets/videos/placeholder_video.mp4",
-    // ── EDIT TIMESTAMPS HERE for Experience Center ───────────────────────
-    segments: [
-      {
-        label: "Architectural",
-        title: "Architectural",
-        description:
-          "Immersive architectural walkthroughs projected at scale for high-impact sales center presentations.",
-        start: 0,
-        end: 28,
-      },
-      {
-        label: "Weather Control",
-        title: "Weather Control",
-        description:
-          "Real-time weather overlays displayed across large-format projection surfaces.",
-        start: 29,
-        end: 58,
-      },
-      {
-        label: "Interior Design",
-        title: "Interior Design",
-        description:
-          "Life-size interior mock-ups enhanced with digital projection mapping for material and finish exploration.",
-        start: 59,
-        end: 88,
-      },
-      {
-        label: "Amenities",
-        title: "Amenities",
-        description:
-          "Interactive amenity tours delivered through the experience center environment.",
-        start: 89,
-        end: 118,
-      },
-      {
-        label: "Views",
-        title: "Views",
-        description:
-          "Panoramic view simulations projected across multi-screen setups for full spatial immersion.",
-        start: 135,
-        end: 170,
-      },
-      {
-        label: "Surrounding",
-        title: "Surrounding",
-        description:
-          "Neighbourhood and connectivity context visuals for experience-center-led buyer journeys.",
-        start: 171,
-        end: 180,
-      },
-    ],
   },
   {
     id: "ar-vr",
     label: "AR / VR",
     videoSrc: "/assets/videos/placeholder_video.mp4",
-    // ── EDIT TIMESTAMPS HERE for AR / VR ─────────────────────────────────
-    segments: [
-      {
-        label: "Architectural",
-        title: "Architectural",
-        description:
-          "Walk through architectural spaces in full virtual reality before a single brick is laid.",
-        start: 0,
-        end: 28,
-      },
-      {
-        label: "Weather Control",
-        title: "Weather Control",
-        description:
-          "Switch weather conditions inside the VR environment to experience the project across seasons.",
-        start: 29,
-        end: 58,
-      },
-      {
-        label: "Interior Design",
-        title: "Interior Design",
-        description:
-          "Swap materials, finishes, and furniture in real-time within a fully immersive VR interior.",
-        start: 59,
-        end: 88,
-      },
-      {
-        label: "Amenities",
-        title: "Amenities",
-        description:
-          "Experience every amenity space in immersive VR — pool, gym, clubhouse, and more.",
-        start: 89,
-        end: 118,
-      },
-      {
-        label: "Views",
-        title: "Views",
-        description:
-          "Stand on any balcony or terrace and experience the exact view in VR before purchase.",
-        start: 135,
-        end: 170,
-      },
-      {
-        label: "Surrounding",
-        title: "Surrounding",
-        description:
-          "Explore the surrounding neighbourhood in AR — roads, landmarks, and connectivity overlaid on the real world.",
-        start: 171,
-        end: 180,
-      },
-    ],
   },
 ];
 
 const RealEstateMartech = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedExpertiseCategory, setSelectedExpertiseCategory] =
-    useState<string>("3D Walkthroughs");
+    useState<string>("3D Renders");
   const [currentExpertisePage, setCurrentExpertisePage] = useState<number>(0);
   const [expertiseDirection, setExpertiseDirection] = useState<number>(0);
 
@@ -384,15 +247,13 @@ const RealEstateMartech = () => {
   const [activeImmersiveTabId, setActiveImmersiveTabId] = useState<string>(
     immersiveTabs[0].id,
   );
-  const [activeSegment, setActiveSegment] = useState<FeatureSegment>(
-    immersiveTabs[0].segments[0], // default: "Architectural"
-  );
   const immersiveVideoRef = useRef<HTMLVideoElement>(null);
   const immersiveSectionRef = useRef<HTMLElement>(null);
   const [isImmersiveInView, setIsImmersiveInView] = useState<boolean>(false);
   const [isPageVisible, setIsPageVisible] = useState<boolean>(true);
 
-  const EXPERTISE_PER_PAGE = 3;
+  const EXPERTISE_PER_PAGE =
+    selectedExpertiseCategory === "3D Walkthroughs" ? 1 : 3;
   const AUTO_ROTATE_MS = 4000;
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
@@ -420,7 +281,9 @@ const RealEstateMartech = () => {
   };
 
   useEffect(() => {
-    if (!canSlideExpertise) return;
+    if (!canSlideExpertise || selectedExpertiseCategory === "3D Walkthroughs") {
+      return;
+    }
 
     const timer = window.setInterval(() => {
       setExpertiseDirection(1);
@@ -428,7 +291,7 @@ const RealEstateMartech = () => {
     }, AUTO_ROTATE_MS);
 
     return () => window.clearInterval(timer);
-  }, [canSlideExpertise, totalExpertisePages]);
+  }, [canSlideExpertise, totalExpertisePages, selectedExpertiseCategory]);
 
   const expertiseStartIndex = currentExpertisePage * EXPERTISE_PER_PAGE;
   const expertisePageItems = filteredExpertiseItems.slice(
@@ -443,35 +306,6 @@ const RealEstateMartech = () => {
 
   const handleTabSwitch = (tab: ImmersiveTabData) => {
     setActiveImmersiveTabId(tab.id);
-    const defaultSegment = tab.segments[0];
-    setActiveSegment(defaultSegment);
-  };
-
-  const handleSegmentClick = (segment: FeatureSegment) => {
-    setActiveSegment(segment);
-  };
-
-  const getValidSegmentWindow = (
-    video: HTMLVideoElement,
-    segment: FeatureSegment,
-  ) => {
-    const duration = video.duration;
-    if (!Number.isFinite(duration) || duration <= 0) return null;
-
-    // Fallback safely to full video if configured segment is invalid/out-of-range.
-    if (segment.start >= duration || segment.end <= segment.start) {
-      return { start: 0, end: duration };
-    }
-
-    const start = Math.max(0, Math.min(segment.start, duration - 0.1));
-    const end = Math.min(segment.end, duration);
-
-    // Avoid microscopic loop windows near EOF that can thrash seeks.
-    if (end - start < 0.25) {
-      return { start: 0, end: duration };
-    }
-
-    return { start, end };
   };
 
   useEffect(() => {
@@ -502,6 +336,7 @@ const RealEstateMartech = () => {
   useEffect(() => {
     const video = immersiveVideoRef.current;
     if (!video) return;
+
     const shouldPlay = isImmersiveInView && isPageVisible;
 
     if (!shouldPlay) {
@@ -509,67 +344,18 @@ const RealEstateMartech = () => {
       return;
     }
 
-    const seekAndPlaySegment = () => {
-      const segmentWindow = getValidSegmentWindow(video, activeSegment);
-      if (!segmentWindow) return;
-
-      if (
-        video.currentTime < segmentWindow.start ||
-        video.currentTime >= segmentWindow.end
-      ) {
-        video.currentTime = segmentWindow.start;
-      }
-
-      if (video.paused) {
-        void video.play().catch(() => undefined);
-      }
-    };
-
-    if (video.readyState >= 1) {
-      seekAndPlaySegment();
-      return;
+    if (video.paused) {
+      void video.play().catch(() => undefined);
     }
+  }, [activeImmersiveTab.videoSrc, isImmersiveInView, isPageVisible]);
 
-    video.addEventListener("loadedmetadata", seekAndPlaySegment);
-    return () =>
-      video.removeEventListener("loadedmetadata", seekAndPlaySegment);
-  }, [
-    activeSegment,
-    activeImmersiveTab.videoSrc,
-    isImmersiveInView,
-    isPageVisible,
-  ]);
-
-  // Loops the video within the active segment's window
-  const handleImmersiveTimeUpdate = () => {
-    const video = immersiveVideoRef.current;
-    if (!video || !isImmersiveInView || !isPageVisible) return;
-
-    const segmentWindow = getValidSegmentWindow(video, activeSegment);
-    if (!segmentWindow) return;
-
-    if (
-      video.currentTime >= segmentWindow.end ||
-      video.currentTime < segmentWindow.start
-    ) {
-      video.currentTime = segmentWindow.start;
-    }
-  };
+  const handleImmersiveTimeUpdate = () => {};
 
   const handleImmersiveEnded = () => {
     const video = immersiveVideoRef.current;
     if (!video) return;
 
-    if (!isImmersiveInView || !isPageVisible) {
-      video.pause();
-      return;
-    }
-
-    const segmentWindow = getValidSegmentWindow(video, activeSegment);
-    if (!segmentWindow) return;
-
-    video.currentTime = segmentWindow.start;
-    void video.play().catch(() => undefined);
+    video.currentTime = 0;
   };
 
   return (
@@ -592,13 +378,6 @@ const RealEstateMartech = () => {
           />
         }
       />
-
-      {/* Video player section */}
-      <section className="relative w-full h-screen overflow-hidden">
-        <div className="absolute inset-0" />
-
-        <h2 className="absolute top-[24%] left-10 md:left-16 font-display text-5xl md:text-6xl lg:text-7xl font-bold text-[#4ab6ff]"></h2>
-      </section>
 
       <section className="w-full min-h-screen bg-[#100a44] py-10 md:py-12 px-10 md:px-16 flex flex-col justify-center">
         <h2 className="font-display text-2xl md:text-3xl font-normal text-white/60 mb-8">
@@ -697,7 +476,7 @@ const RealEstateMartech = () => {
           <button
             onClick={handleExpertisePrev}
             disabled={!canSlideExpertise}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
               !canSlideExpertise
                 ? "bg-sky-400/10 cursor-not-allowed opacity-50"
                 : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
@@ -706,7 +485,7 @@ const RealEstateMartech = () => {
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden px-4 md:px-6 py-4">
             <AnimatePresence initial={false} custom={expertiseDirection}>
               <motion.div
                 key={`${selectedExpertiseCategory}-${currentExpertisePage}`}
@@ -715,18 +494,46 @@ const RealEstateMartech = () => {
                 animate={{ x: 0 }}
                 exit={{ x: expertiseDirection > 0 ? "-100%" : "100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 absolute inset-0"
+                className={`absolute inset-4 md:inset-6 gap-6 ${
+                  selectedExpertiseCategory === "3D Walkthroughs"
+                    ? "grid grid-cols-1"
+                    : "grid grid-cols-1 md:grid-cols-3"
+                }`}
               >
                 {expertisePageItems.map((item, index) => (
                   <div
                     key={`${item.title}-${item.subtitle}-${expertiseStartIndex + index}`}
-                    className="group relative h-[240px] md:h-[300px] lg:h-[360px] rounded-xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-[1.03]"
+                    className={`group relative rounded-xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-[1.03] ${
+                      item.category === "3D Walkthroughs"
+                        ? ""
+                        : "h-[240px] md:h-[300px] lg:h-[360px]"
+                    }`}
                   >
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className={`${
+                        item.category === "3D Walkthroughs"
+                          ? "w-full h-auto block object-contain"
+                          : "absolute inset-0 w-full h-full object-cover"
+                      }`}
                     />
+                    {item.category === "3D Walkthroughs" && (
+                      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                        <div className="w-20 h-20 rounded-full bg-[#4ab6ff] flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
+                          <div
+                            className="ml-1"
+                            style={{
+                              width: 0,
+                              height: 0,
+                              borderTop: "12px solid transparent",
+                              borderBottom: "12px solid transparent",
+                              borderLeft: "20px solid white",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    )}
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-all duration-500" />
 
@@ -766,7 +573,7 @@ const RealEstateMartech = () => {
           <button
             onClick={handleExpertiseNext}
             disabled={!canSlideExpertise}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
+            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
               !canSlideExpertise
                 ? "bg-sky-400/10 cursor-not-allowed opacity-50"
                 : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
@@ -816,58 +623,19 @@ const RealEstateMartech = () => {
             })}
           </div>
 
-          {/* Content: stacked on mobile, side-by-side on lg */}
-          <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
-            {/* ── Left column: segment buttons + info ── */}
-            <div className="w-full lg:w-[26%] flex-shrink-0 flex flex-col">
-              {/* On mobile: buttons in a 2-col grid; on lg: vertical stack */}
-              <div className="w-full lg:max-w-[220px] grid grid-cols-2 lg:grid-cols-1 gap-[6px]">
-                {activeImmersiveTab.segments.map((seg) => {
-                  const isActive = seg.label === activeSegment.label;
-                  return (
-                    <button
-                      key={seg.label}
-                      onClick={() => handleSegmentClick(seg)}
-                      className={`w-full text-center px-4 py-3 font-display text-[15px] sm:text-[16px] font-semibold transition-all duration-150 ${
-                        isActive
-                          ? "bg-[#f6f5ee]"
-                          : "bg-[#58595b] hover:bg-[#66676a]"
-                      }`}
-                      style={{
-                        color: isActive ? "#58595b" : "rgba(210,210,230,0.85)",
-                      }}
-                    >
-                      {seg.label}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Active segment info */}
-              <div className="mt-8 max-w-[360px]">
-                <p className="font-display font-extrabold text-white text-[17px] sm:text-[20px] mb-2 leading-tight">
-                  {activeSegment.title}
-                </p>
-                <p className="font-medium text-white/50 text-[13px] sm:text-[14px] leading-snug">
-                  {activeSegment.description}
-                </p>
-              </div>
-            </div>
-
-            {/* ── Right column: 16:9 video ── */}
-            <div className="w-full lg:w-[74%] min-w-0">
-              <div className="relative w-full aspect-video bg-black overflow-hidden">
-                <video
-                  ref={immersiveVideoRef}
-                  src={activeImmersiveTab.videoSrc}
-                  className="w-full h-full object-cover"
-                  onTimeUpdate={handleImmersiveTimeUpdate}
-                  onEnded={handleImmersiveEnded}
-                  muted
-                  preload="metadata"
-                  playsInline
-                />
-              </div>
+          {/* Content: video full width below tab bar */}
+          <div className="w-full">
+            <div className="relative w-full aspect-video bg-black overflow-hidden rounded-lg">
+              <video
+                ref={immersiveVideoRef}
+                src={activeImmersiveTab.videoSrc}
+                className="w-full h-full object-cover"
+                onTimeUpdate={handleImmersiveTimeUpdate}
+                onEnded={handleImmersiveEnded}
+                muted
+                preload="metadata"
+                playsInline
+              />
             </div>
           </div>
         </div>

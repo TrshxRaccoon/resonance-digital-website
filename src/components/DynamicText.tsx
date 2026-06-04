@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const phrases = [
   { text: "VFX & Animation", color: "#1fbed6" }, // Example hex code - replace with your actual hex
-  { text: "Experiential Technology", color: "#ff717e" }, // Example hex code - replace with your actual hex
+  { text: "Real Estate Mar-Tech", color: "#ff717e" }, // Example hex code - replace with your actual hex
   { text: "Brand Solutions", color: "#bfd76f" }, // Example hex code - replace with your actual hex
   { text: "Motion Pictures", color: "#a277e1" }, // Example hex code - replace with your actual hex
 ];

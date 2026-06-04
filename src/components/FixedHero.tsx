@@ -27,7 +27,7 @@ const FixedHero = ({
       const rect = heroRef.current.getBoundingClientRect();
 
       const scrollProgress = Math.min(
-        Math.max(-rect.top / (window.innerHeight * 0.6), 0),
+        Math.max(-rect.top / (window.innerHeight * 0.7), 0),
         1,
       );
 

@@ -170,7 +170,7 @@ const About = () => {
           </div>
 
           {/* Team Visual Composition */}
-          <div className="relative mt-24 min-h-[700px] flex items-end justify-center">
+          <div className="relative mt-24 min-h-[200px] flex items-end justify-center">
             {/* Left Info Card */}
             <div className="absolute left-0 bottom-32 z-10 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-[240px] md:w-[280px] text-white shadow-2xl">
               <h3 className="text-[#29a7ff] font-semibold text-lg mb-3">
@@ -295,6 +295,21 @@ const About = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Awards Showcase Image */}
+      <section className="relative w-full bg-[#000000] flex flex-col items-center justify-center">
+        <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
+          <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-[#4ab6ff] tracking-tight text-center">
+            Awards Showcase
+          </h2>
+        </div>
+
+        <img
+          src="/assets/images/awards/awardshowcase.png"
+          alt="Awards Showcase"
+          className="w-full h-auto block"
+        />
       </section>
 
       <Footer />

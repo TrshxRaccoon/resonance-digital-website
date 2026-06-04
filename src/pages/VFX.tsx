@@ -11,9 +11,9 @@ import gsap from "gsap";
 const VFX = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [selectedMovieCategory, setSelectedMovieCategory] =
-    useState<string>("Action Reel");
+    useState<string>("Master Showreel");
   const [selectedAdCategory, setSelectedAdCategory] =
-    useState<string>("Brand Commercials");
+    useState<string>("Ads Showreel");
   const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
   const [currentAdIndex, setCurrentAdIndex] = useState<number>(0);
   const [adDirection, setAdDirection] = useState<number>(0);
@@ -22,6 +22,7 @@ const VFX = () => {
   const splitSectionRef = useRef<HTMLDivElement>(null);
 
   const ITEMS_PER_PAGE = 4;
+  const MOVIE_AUTO_ROTATE_MS = 4000;
 
   const handleMovieNext = () => {
     if (currentMovieIndex + ITEMS_PER_PAGE < moviesShowcase.length) {
@@ -50,16 +51,17 @@ const VFX = () => {
   };
 
   const movieCategories = [
+    "Master Showreel",
     "Action Reel",
-    "Set Extension",
-    "PIP Reel",
     "Creature Reel",
     "Roto-Paint-Matchmove",
+    "PIP Reel",
+    "Set Extension",
     "Crowd Multiplication Reel",
   ];
 
   const adCategories = [
-    "Ads Showreel",
+    "Master Showreel",
     "Automobile Showreel",
     "Liquids Showreel",
   ];
@@ -67,59 +69,26 @@ const VFX = () => {
   const YOUTUBE_EMBED_PLACEHOLDER = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
   const movieShowreels = {
+    "Master Showreel": {
+      youtubeEmbedUrl: "https://resonancedigital.in/assets/videos/Resonance-VFX-Showreel_MP4.mp4",
+    },
     "Action Reel": {
-      client: "WARNER BROS STUDIOS",
-      service: "Compositing",
-      year: "2024",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/rLzbIqI1VrU",
-      thumbnail: "/assets/images/movies/movies_02Witches.png",
     },
     "Roto-Paint-Matchmove": {
-      client: "DISNEY+ HOTSTAR",
-      service: "FX & Simulations",
-      year: "2025",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/mn7WMlnyWnQ",
-      thumbnail: "/assets/images/movies/movies_03.png",
     },
     "Set Extension": {
-      client: "WARNER BROS PICTURES",
-      service: "Set Extensions",
-      year: "2026",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/KBwcwjQDjEE",
-      thumbnail: "/assets/images/movies/dune.jpeg",
     },
     "PIP Reel": {
-      client: "20TH CENTURY STUDIOS",
-      service: "Environments & Creatures",
-      year: "2025",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/8jUa_imL-DI",
-      thumbnail: "/assets/images/movies/avatar.jpeg",
     },
     "Creature Reel": {
-      client: "",
-      service: "Environments & Creatures",
-      year: "2025",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/RbtCvfX4n_I",
-      thumbnail: "/assets/images/movies/avatar.jpeg",
     },
     "Crowd Multiplication Reel": {
-      client: "",
-      service: "Environments & Creatures",
-      year: "2025",
-      description:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat",
       youtubeEmbedUrl: "https://www.youtube.com/embed/87CuOfwFpd0",
-      thumbnail: "/assets/images/movies/avatar.jpeg",
     },
   };
 
@@ -142,7 +111,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/12th-Fail.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -150,7 +119,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Anaconda.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
@@ -158,7 +127,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Antman-Wasp-Quantumania.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -166,7 +135,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-3.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2020",
       category: "xxxxxx",
     },
     {
@@ -174,14 +143,14 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-4.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
       title: "Batman",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Batman.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -189,14 +158,14 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Beauty-in-Black 2.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
       title: "Bhediya",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Bhediya.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -204,7 +173,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Chandigarh-Kare-Aashiqui.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2021",
       category: "xxxxxx",
     },
     {
@@ -212,14 +181,14 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Citadel-Honey-Bunny.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2024",
       category: "xxxxxx",
     },
     {
       title: "Dept-Q",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Dept-Q.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
@@ -227,15 +196,15 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Dhurandhar.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
       title: "Doctor's-Strange-Multiverse-of-Madness",
       image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Doctor's-Strang-Multiverse-of-Madness.jpg",
+        "https://resonancedigital.in/assets/images/VFX/movies/Doctor-Strange-Multiverse-of-Madness.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -243,7 +212,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Extraction-2.JPG",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -251,7 +220,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Family-Man-S3.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
@@ -259,7 +228,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Fraggle-Rock.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -267,7 +236,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Heropanti-2.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -275,7 +244,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Karate-Kids-Legends.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
@@ -283,21 +252,21 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Kartikeya-2.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
       title: "KGF2",
       image: "https://resonancedigital.in/assets/images/VFX/movies/KGF2.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
       title: "Mike",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Mike.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -305,7 +274,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Mirzapur-S3.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2024",
       category: "xxxxxx",
     },
     {
@@ -313,7 +282,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Mission-Impossible-Dead-Reckoning_1.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -321,21 +290,21 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Mumbai-Diaries.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2021",
       category: "xxxxxx",
     },
     {
       title: "Orville",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Orville.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
       title: "Pathan",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Pathan.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -343,7 +312,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Red-Notice.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2021",
       category: "xxxxxx",
     },
     {
@@ -351,14 +320,14 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Rocket-Boys.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
       title: "sadak2",
       image: "https://resonancedigital.in/assets/images/VFX/movies/sadak2.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2020",
       category: "xxxxxx",
     },
     {
@@ -366,7 +335,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Sandman-Season 1.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -374,21 +343,21 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Secret-Invasion.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
       title: "SEE",
       image: "https://resonancedigital.in/assets/images/VFX/movies/SEE.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
       title: "Senna",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Senna.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2024",
       category: "xxxxxx",
     },
     {
@@ -396,7 +365,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Soorarai-Pottru.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2020",
       category: "xxxxxx",
     },
     {
@@ -404,7 +373,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Squid-Games-3.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2025",
       category: "xxxxxx",
     },
     {
@@ -412,14 +381,14 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Stargirl.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2020",
       category: "xxxxxx",
     },
     {
       title: "TED",
       image: "https://resonancedigital.in/assets/images/VFX/movies/TED.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2024",
       category: "xxxxxx",
     },
     {
@@ -427,7 +396,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/The-Empire.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2021",
       category: "xxxxxx",
     },
     {
@@ -435,7 +404,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/The-Flash 8.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -443,7 +412,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/The-Flash.JPG",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -451,7 +420,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/The-Last of Us.JPG",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -459,7 +428,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2026",
       category: "xxxxxx",
     },
     {
@@ -467,7 +436,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Tulsa-King.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -475,7 +444,7 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Umbrella-Academy S3.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
@@ -514,7 +483,7 @@ const VFX = () => {
       title: "Upload",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Upload.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
     {
@@ -522,14 +491,14 @@ const VFX = () => {
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Wendel-and-Wild.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2022",
       category: "xxxxxx",
     },
     {
       title: "Witcher",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Witcher.jpg",
       platform: "xxxxxx",
-      year: "xxxxxx",
+      year: "2023",
       category: "xxxxxx",
     },
   ];
@@ -841,6 +810,21 @@ const VFX = () => {
       ),
   );
   const currentMoviePage = Math.floor(currentMovieIndex / ITEMS_PER_PAGE);
+  const totalMoviePages = movieShowcasePages.length;
+
+  useEffect(() => {
+    if (totalMoviePages <= 1 || expandedSection !== "movies") return;
+
+    const timer = window.setInterval(() => {
+      setCurrentMovieIndex((prev) => {
+        const currentPage = Math.floor(prev / ITEMS_PER_PAGE);
+        const nextPage = (currentPage + 1) % totalMoviePages;
+        return nextPage * ITEMS_PER_PAGE;
+      });
+    }, MOVIE_AUTO_ROTATE_MS);
+
+    return () => window.clearInterval(timer);
+  }, [expandedSection, totalMoviePages]);
 
   return (
     <>
@@ -907,8 +891,8 @@ const VFX = () => {
             />
             <div className="absolute inset-0 transition-all duration-500" />
 
-            <h2 className="absolute left-20 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-110">
-              Movies
+            <h2 className="absolute left-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
+              Films & Episodic
             </h2>
           </div>
 
@@ -934,8 +918,8 @@ const VFX = () => {
             />
             <div className="absolute inset-0 transition-all duration-500" />
 
-            <h2 className="absolute right-20 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-110">
-              Ads
+            <h2 className="absolute right-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
+              Advertising
             </h2>
           </div>
         </section>
@@ -945,7 +929,7 @@ const VFX = () => {
       {expandedSection && (
         <button
           onClick={handleCollapse}
-          className="fixed top-24 right-8 z-[200] bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+          className="fixed top-32 md:top-36 right-8 z-[40] bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
         >
           ← Back
         </button>
@@ -967,7 +951,7 @@ const VFX = () => {
             {/* Main Title */}
             <div className="relative z-10 max-w-6xl w-full mt-20">
               <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
-                VFX: Movies
+                VFX: Films & Episodic
               </h1>
 
               {/* Description */}
@@ -982,7 +966,7 @@ const VFX = () => {
           <div className="mt-32 px-12 md:px-24">
             <div className="max-w-7xl mx-auto">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                VFX: Movie <span className="text-[#4ab6ff]">|</span>{" "}
+                VFX: Films & Episodic <span className="text-[#4ab6ff]">|</span>{" "}
                 <span className="text-white/60">Showcase</span>
               </h2>
             </div>
@@ -1103,8 +1087,9 @@ const VFX = () => {
               {/* Areas of Expertise Section */}
               <div className="mt-32">
                 <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                  VFX: Movie <span className="text-[#4ab6ff]">|</span>{" "}
-                  <span className="text-white/60">Areas of expertise</span>
+                  VFX: Films & Episodic{" "}
+                  <span className="text-[#4ab6ff]">|</span>{" "}
+                  <span className="text-white/60">Showreel</span>
                 </h2>
 
                 {/* Category Filter */}
@@ -1228,7 +1213,7 @@ const VFX = () => {
             {/* Main Title */}
             <div className="relative z-10 max-w-6xl w-full mt-20">
               <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
-                VFX: Ads
+                VFX: Advertising
               </h1>
 
               {/* Description */}
@@ -1243,12 +1228,12 @@ const VFX = () => {
           <div className="px-12 md:px-24 pb-24">
             <div className="max-w-7xl mx-auto translate-y-8">
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                VFX: Ads <span className="text-[#4ab6ff]">|</span>{" "}
-                <span className="text-white/60">Areas of expertise</span>
+                VFX: Advertising <span className="text-[#4ab6ff]">|</span>{" "}
+                <span className="text-white/60">Showreel</span>
               </h2>
 
               <div className="mt-8 mb-12">
-                <div className="flex flex-wrap gap-y-5 gap-x-0 text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed">
+                <div className="flex flex-wrap gap-y-4 gap-x-0 text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed">
                   {adCategories.map((category, index) => (
                     <div key={category} className="flex items-center">
                       <button
@@ -1291,7 +1276,89 @@ const VFX = () => {
               )}
             </div>
           </div>
-          <div className="px-12 md:px-24 pb-24">
+
+          {/* ── Ads Video Feed ─────────────────────────────────────────────────── */}
+          {/* The section is a continuous dark canvas of 16:9 cards.             */}
+          {/* Layout alternates between full, split, T, 2×2, and inverted-T.     */}
+          {/* Ads immersive video feed — dynamic, driven by adsVideoFeed + LAYOUT_PATTERN */}
+          <div className="w-full bg-black p-3 flex flex-col gap-3">
+            {adBlocks.map((block, blockIdx) => {
+              const [v0, v1, v2, v3] = block.videos;
+              switch (block.type) {
+                case "full":
+                  return (
+                    <div
+                      key={blockIdx}
+                      className="relative w-full aspect-video overflow-hidden rounded-sm"
+                    >
+                      <iframe
+                        src={v0.src}
+                        title={v0.label}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
+                      <p className="absolute bottom-8 left-8 text-white font-display text-2xl font-bold tracking-wide">
+                        {v0.label}
+                      </p>
+                    </div>
+                  );
+
+                case "split":
+                  return (
+                    <div
+                      key={blockIdx}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full"
+                    >
+                      <AdCard src={v0.src} label={v0.label} />
+                      <AdCard src={v1.src} label={v1.label} />
+                    </div>
+                  );
+
+                case "T":
+                  return (
+                    <div key={blockIdx} className="flex flex-col gap-3 w-full">
+                      <AdCard src={v0.src} label={v0.label} />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <AdCard src={v1.src} label={v1.label} />
+                        <AdCard src={v2.src} label={v2.label} />
+                      </div>
+                    </div>
+                  );
+
+                case "grid2x2":
+                  return (
+                    <div
+                      key={blockIdx}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full"
+                    >
+                      <AdCard src={v0.src} label={v0.label} />
+                      <AdCard src={v1.src} label={v1.label} />
+                      <AdCard src={v2.src} label={v2.label} />
+                      <AdCard src={v3.src} label={v3.label} />
+                    </div>
+                  );
+
+                case "invertedT":
+                  return (
+                    <div key={blockIdx} className="flex flex-col gap-3 w-full">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <AdCard src={v0.src} label={v0.label} />
+                        <AdCard src={v1.src} label={v1.label} />
+                      </div>
+                      <AdCard src={v2.src} label={v2.label} />
+                    </div>
+                  );
+
+                default:
+                  return null;
+              }
+            })}
+          </div>
+
+          <div className="translate-y-10 px-12 md:px-24 pb-24">
             <div className="max-w-7xl mx-auto">
               {/* ── CGI Stills — unequal masonry grid ── */}
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-10">
@@ -1352,89 +1419,6 @@ const VFX = () => {
               </div>
             </div>
           </div>
-          {/* ── Ads Video Feed ─────────────────────────────────────────────────── */}
-          {/* The section is a continuous dark canvas of 16:9 cards.             */}
-          {/* Layout alternates between full, split, T, 2×2, and inverted-T.     */}
-        </div>
-      )}
-
-      {/* Ads immersive video feed — dynamic, driven by adsVideoFeed + LAYOUT_PATTERN */}
-      {expandedSection === "ads" && (
-        <div className="w-full bg-black p-3 flex flex-col gap-3">
-          {adBlocks.map((block, blockIdx) => {
-            const [v0, v1, v2, v3] = block.videos;
-            switch (block.type) {
-              case "full":
-                return (
-                  <div
-                    key={blockIdx}
-                    className="relative w-full aspect-video overflow-hidden rounded-sm"
-                  >
-                    <iframe
-                      src={v0.src}
-                      title={v0.label}
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <p className="absolute bottom-8 left-8 text-white font-display text-2xl font-bold tracking-wide">
-                      {v0.label}
-                    </p>
-                  </div>
-                );
-
-              case "split":
-                return (
-                  <div
-                    key={blockIdx}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full"
-                  >
-                    <AdCard src={v0.src} label={v0.label} />
-                    <AdCard src={v1.src} label={v1.label} />
-                  </div>
-                );
-
-              case "T":
-                return (
-                  <div key={blockIdx} className="flex flex-col gap-3 w-full">
-                    <AdCard src={v0.src} label={v0.label} />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      <AdCard src={v1.src} label={v1.label} />
-                      <AdCard src={v2.src} label={v2.label} />
-                    </div>
-                  </div>
-                );
-
-              case "grid2x2":
-                return (
-                  <div
-                    key={blockIdx}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full"
-                  >
-                    <AdCard src={v0.src} label={v0.label} />
-                    <AdCard src={v1.src} label={v1.label} />
-                    <AdCard src={v2.src} label={v2.label} />
-                    <AdCard src={v3.src} label={v3.label} />
-                  </div>
-                );
-
-              case "invertedT":
-                return (
-                  <div key={blockIdx} className="flex flex-col gap-3 w-full">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      <AdCard src={v0.src} label={v0.label} />
-                      <AdCard src={v1.src} label={v1.label} />
-                    </div>
-                    <AdCard src={v2.src} label={v2.label} />
-                  </div>
-                );
-
-              default:
-                return null;
-            }
-          })}
         </div>
       )}
 

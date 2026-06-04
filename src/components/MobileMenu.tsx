@@ -9,9 +9,9 @@ interface MobileMenuProps {
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "VFX", href: "/vfx" },
-  { label: "Brands", href: "/brandSolutions" },
+  { label: "Brand Solutions", href: "/brandSolutions" },
   { label: "Real Estate", href: "/real-estate" },
-  { label: "Content", href: "/content" },
+  { label: "Motion Pictures", href: "/motion-pictures" },
   { label: "About", href: "/about" },
   { label: "Awards", href: "/awards" },
   { label: "Culture", href: "/culture" },

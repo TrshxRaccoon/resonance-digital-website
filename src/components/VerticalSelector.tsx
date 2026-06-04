@@ -10,7 +10,7 @@ const verticals = [
     description:
       "High-end visual effects and motion design for film, advertising, and digital experiences.",
     href: "/vfx",
-    bgImage: "https://resonancedigital.in/assets/images/VFX/Sandman-vfx.webp",
+    bgImage: "/assets/images/vfxposter.png",
   },
   {
     id: "real-estate",
@@ -30,7 +30,7 @@ const verticals = [
       "Strategic brand content and campaigns that resonate with audiences worldwide.",
     href: "/brandSolutions",
     bgImage:
-      "https://resonancedigital.in/assets/images/brandSolutions/black_dog-copy.jpg",
+      "/assets/images/brandsolposter.png",
   },
   {
     id: "motion-pictures",
@@ -171,12 +171,12 @@ const VerticalSelector = () => {
               </span>
 
               {/* Title */}
-              <div className="my-auto relative z-10">
-                <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-white group-hover:text-primary transition-colors duration-300">
+              <div className="translate-y-10 my-auto relative z-10">
+                <h3 className="font-gotham-bold text-3xl md:text-4xl lg:text-5xl text-white group-hover:text-primary transition-colors duration-300">
                   {vertical.title}
                 </h3>
                 {vertical.subtitle && (
-                  <span className="block font-display text-lg md:text-xl text-white/70 mt-1 transition-colors duration-300">
+                  <span className="block font-gotham-light text-lg md:text-xl text-white/70 mt-1 transition-colors duration-300">
                     {vertical.subtitle}
                   </span>
                 )}
@@ -184,7 +184,7 @@ const VerticalSelector = () => {
 
               {/* Description & arrow */}
               <div className="mt-auto relative z-10">
-                <p className="text-sm text-white/70 mb-6 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="font-gotham-light text-sm text-white/70 mb-6 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {vertical.description}
                 </p>
                 <div className="flex items-center gap-2 text-sm text-white group-hover:text-primary transition-colors duration-200">
@@ -228,17 +228,17 @@ const VerticalSelector = () => {
                   </span>
 
                   <div>
-                    <h3 className="font-display text-4xl font-semibold text-white leading-none">
+                    <h3 className="font-gotham-bold text-4xl text-white leading-none">
                       {vertical.title}
                     </h3>
 
                     {vertical.subtitle && (
-                      <span className="block mt-2 text-base text-white/70">
+                      <span className="block mt-2 text-base text-white/70 font-gotham-light">
                         {vertical.subtitle}
                       </span>
                     )}
 
-                    <p className="mt-4 text-sm leading-relaxed text-white/80 max-w-xs">
+                    <p className="mt-4 text-sm leading-relaxed text-white/80 max-w-xs font-gotham-light">
                       {vertical.description}
                     </p>
                   </div>
@@ -271,7 +271,7 @@ const VerticalSelector = () => {
                   <div className="absolute inset-0 bg-black/55" />
 
                   <div className="relative z-10 h-full flex items-end p-3">
-                    <span className="text-xs text-white font-medium leading-tight">
+                    <span className="text-xs text-white font-gotham-bold leading-tight">
                       {vertical.title}
                     </span>
                   </div>
