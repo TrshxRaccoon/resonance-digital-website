@@ -35,8 +35,8 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source
-            src="https://resonancedigital.in/assets/videos/Resonance-VFX-Showreel_MP4.mp4"
-            type="video/mp4"
+            src="/assets/images/hero-showreel.webm"
+            type="video/webm"
           />
         </video>
         

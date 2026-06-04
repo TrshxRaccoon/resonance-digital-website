@@ -15,8 +15,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Montserrat', 'sans-serif'],
-        body: ['Montserrat', 'sans-serif'],
+        sans: ['Gotham Light', 'sans-serif'],
+        display: ['Gotham Bold', 'sans-serif'],
+        body: ['Gotham Light', 'sans-serif'],
       },
       letterSpacing: {
         tighter: '-0.075em',

@@ -185,7 +185,7 @@ const Awards = () => {
      {/* Awards Showcase Image */}
 <section className="relative w-full bg-[#000000] flex flex-col items-center justify-center">
   <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
-    <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-[#4ab6ff] tracking-tight text-center">
+    <h2 className="font-display text-[30px] leading-[0.95] md:text-[40px] lg:text-[65px] font-bold text-[#4ab6ff] tracking-tight text-left">
       Awards Showcase
     </h2>
   </div>

@@ -14,7 +14,6 @@ const menuItems = [
   { label: "Motion Pictures", href: "/motion-pictures" },
   { label: "About", href: "/about" },
   { label: "Awards", href: "/awards" },
-  { label: "Culture", href: "/culture" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -72,7 +71,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 }}
               >
                 <span 
-                  className={`font-display text-4xl md:text-5xl lg:text-6xl font-normal tracking-wide transition-colors duration-300 ${
+                  className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide transition-colors duration-300 ${
                     isActive 
                       ? "text-white" 
                       : "text-[#4a6b84] group-hover:text-white"

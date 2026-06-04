@@ -40,7 +40,7 @@ const verticals = [
       "Full-service content creation from concept to final delivery for motion pictures.",
     href: "/motion-pictures",
     bgImage:
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2000",
+      "/assets/images/motpicposter.png",
   },
 ];
 

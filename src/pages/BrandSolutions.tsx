@@ -225,38 +225,46 @@ const tvcShowcase: TVCShowcaseItem[] = [
 ];
 
 const brandStatements = [
-  {
-    title: "Social Media Management",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "Original Content and Copywriting",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "Print, OOH, Mainline Advertising",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "New Brand Launch and Rebranding",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "Graphic Design, Iconography and Illustration",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "Video Editing and Animation",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "Film Production, Avs and Product Photography",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
-  {
-    title: "Campaign Planning",
-    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-  },
+{
+  title: "Social Media Management",
+  body:
+    "Building meaningful digital presence through strategic content, community engagement, platform management and performance-driven social media growth.",
+},
+{
+  title: "Content and Copy",
+  body:
+    "Crafting compelling narratives, impactful messaging and original content that strengthens brand identity and drives audience connection.",
+},
+{
+  title: "Print, OOH and Mainline",
+  body:
+    "Creating attention-grabbing campaigns across print, outdoor and traditional media to maximise visibility and brand recall.",
+},
+{
+  title: "Brand Launch and Rebranding",
+  body:
+    "From market entry to transformation, we build distinctive brand identities that inspire trust and long-term recognition.",
+},
+{
+  title: "Graphic Design, Iconography and Illustration",
+  body:
+    "Designing visually compelling assets, custom illustrations and brand elements that communicate ideas with clarity and creativity.",
+},
+{
+  title: "Video Editing and Animation",
+  body:
+    "Transforming concepts into engaging visual stories through dynamic editing, motion graphics and high-quality animation.",
+},
+{
+  title: "Film Production, AVs and Product Photography",
+  body:
+    "Producing cinematic films, corporate AVs and professional photography that showcase brands, products and experiences effectively.",
+},
+{
+  title: "Campaign Planning",
+  body:
+    "Developing integrated campaigns that align objectives, audiences, channels and creative execution for measurable impact.",
+},
 ];
 
 const caseStudyShowcase: BrandShowcaseItem[] = [

@@ -39,7 +39,7 @@ export default function AnimatedColorText({ whiteText, blueText, className = "" 
 
   return (
     <p
-      className={`font-display text-[32px] md:text-[36px] lg:text-[40px] leading-[1.3] max-w-[1200px] font-bold ${className}`}
+      className={`font-display text-[20px] md:text-[25px] lg:text-[50px] leading-[0.9] max-w-[1200px] font-bold ${className}`}
       style={{ 
         transform: 'translateZ(0)',
         backfaceVisibility: 'hidden',
@@ -47,10 +47,10 @@ export default function AnimatedColorText({ whiteText, blueText, className = "" 
       }}
     >
       <span className="text-white">{whiteText} </span>
-      <span className="text-white">
-        <span>{visibleText}</span>
-        <span className="opacity-0">{hiddenText}</span>
-      </span>
+<span>
+  <span className="text-[#f2eee2]">{visibleText}</span>
+  <span className="text-[#100a44]">{hiddenText}</span>
+</span>
     </p>
   );
 }

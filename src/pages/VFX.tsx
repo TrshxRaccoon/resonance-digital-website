@@ -721,7 +721,7 @@ const VFX = () => {
         allowFullScreen
       />
       <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-      <p className="absolute bottom-6 left-6 text-white font-display text-xl font-bold pointer-events-none">
+      <p className="absolute bottom-6 left-6 text-[#f2eee2] font-display text-xl font-bold pointer-events-none">
         {label}
       </p>
     </div>
@@ -843,7 +843,7 @@ const VFX = () => {
         <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
           {/* Main Title */}
           <div className="max-w-6xl w-full mt-20">
-            <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
+            <h1 className="font-display text-[35px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-6 leading-tight">
               VFX: Movies & Ads
             </h1>
 
@@ -874,7 +874,7 @@ const VFX = () => {
             onClick={() => handleExpand("movies")}
             onMouseEnter={() => setHoveredSide("movies")}
             onMouseLeave={() => setHoveredSide(null)}
-            className="absolute inset-0 group cursor-pointer transition-all duration-700"
+            className="absolute inset-0 overflow-hidden group cursor-pointer transition-all duration-700"
             style={{
               clipPath:
                 hoveredSide === "movies"
@@ -889,7 +889,13 @@ const VFX = () => {
               alt="Movies"
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 transition-all duration-500" />
+            <div
+  className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
+    hoveredSide === "ads"
+      ? "bg-black/0"
+      : "bg-black/45 group-hover:bg-black/25"
+  }`}
+/>
 
             <h2 className="absolute left-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
               Films & Episodic
@@ -901,7 +907,7 @@ const VFX = () => {
             onClick={() => handleExpand("ads")}
             onMouseEnter={() => setHoveredSide("ads")}
             onMouseLeave={() => setHoveredSide(null)}
-            className="absolute inset-0 group cursor-pointer transition-all duration-700"
+            className="absolute inset-0 overflow-hidden group cursor-pointer transition-all duration-700"
             style={{
               clipPath:
                 hoveredSide === "ads"
@@ -916,7 +922,7 @@ const VFX = () => {
               alt="Ads"
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 transition-all duration-500" />
+            <div className="absolute inset-0 pointer-events-none bg-black/45 transition-all duration-500 group-hover:bg-black/25" />
 
             <h2 className="absolute right-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
               Advertising
@@ -929,7 +935,7 @@ const VFX = () => {
       {expandedSection && (
         <button
           onClick={handleCollapse}
-          className="fixed top-32 md:top-36 right-8 z-[40] bg-sky-400 hover:bg-sky-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+          className="fixed top-32 md:top-36 right-8 z-[40] bg-[#4ab6ff] hover:bg-[#4ab6ff]/80 text-[#201c50] px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
         >
           ← Back
         </button>
@@ -965,9 +971,9 @@ const VFX = () => {
           {/* featured projects section */}
           <div className="mt-32 px-12 md:px-24">
             <div className="max-w-7xl mx-auto">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-[#f2eee2] mb-4">
                 VFX: Films & Episodic <span className="text-[#4ab6ff]">|</span>{" "}
-                <span className="text-white/60">Showcase</span>
+                <span className="text-[#f2eee2]/60 font-bold">Showcase</span>
               </h2>
             </div>
           </div>
@@ -980,10 +986,10 @@ const VFX = () => {
                 <button
                   onClick={handleMoviePrev}
                   disabled={currentMovieIndex === 0}
-                  className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
+                  className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-[#f2eee2] transition-all duration-300 ${
                     currentMovieIndex === 0
-                      ? "bg-sky-400/10 cursor-not-allowed opacity-50"
-                      : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
+                      ? "bg-[#4ab6ff]/10 cursor-not-allowed opacity-50"
+                      : "bg-[#4ab6ff]/20 hover:bg-[#4ab6ff]/40 cursor-pointer"
                   }`}
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -1014,12 +1020,12 @@ const VFX = () => {
                             />
 
                             {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-sky-400/0 group-hover:bg-sky-400/20 transition-all duration-500" />
+                            <div className="absolute inset-0 bg-[#4ab6ff]/0 group-hover:bg-[#4ab6ff]/20 transition-all duration-500" />
 
                             {/* Title overlay on hover */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                               <div>
-                                <p className="text-white font-bold text-lg">
+                                <p className="text-[#f2eee2] font-bold text-lg">
                                   {movie.title}
                                 </p>
                                 <p className="text-[#4ab6ff] text-sm">
@@ -1047,10 +1053,10 @@ const VFX = () => {
                   disabled={
                     currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length
                   }
-                  className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${
+                  className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-[#f2eee2] transition-all duration-300 ${
                     currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length
-                      ? "bg-sky-400/10 cursor-not-allowed opacity-50"
-                      : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
+                      ? "bg-[#4ab6ff]/10 cursor-not-allowed opacity-50"
+                      : "bg-[#4ab6ff]/20 hover:bg-[#4ab6ff]/40 cursor-pointer"
                   }`}
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -1063,10 +1069,10 @@ const VFX = () => {
                   <h3 className="font-display text-4xl font-bold text-white mb-6">
                     Cinematic Excellence
                   </h3>
-                  <p className="text-white/80 text-lg leading-relaxed mb-4">
+                  <p className="text-[#f2eee2]/80 text-lg leading-relaxed mb-4">
                     We bring stories to life with cutting-edge visual effects that captivate audiences worldwide. Our team has contributed to major productions across streaming platforms and theatrical releases.
                   </p>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-[#f2eee2]/60 text-base leading-relaxed">
                     From concept art to final compositing, we deliver VFX that seamlessly blend with live-action footage, creating immersive worlds and unforgettable moments.
                   </p>
                 </div>
@@ -1074,7 +1080,7 @@ const VFX = () => {
                 <div className="space-y-6">
                   <div className="bg-white/5 p-6 rounded-lg border border-white/10">
                     <h4 className="text-[#4ab6ff] font-semibold text-xl mb-2">Our Expertise</h4>
-                    <ul className="text-white/70 space-y-2">
+                    <ul className="text-[#f2eee2]/70 space-y-2">
                       <li>• CGI & Digital Animation</li>
                       <li>• Motion Capture & Performance</li>
                       <li>• Virtual Production</li>
@@ -1086,15 +1092,15 @@ const VFX = () => {
 
               {/* Areas of Expertise Section */}
               <div className="mt-32">
-                <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+                <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-4">
                   VFX: Films & Episodic{" "}
                   <span className="text-[#4ab6ff]">|</span>{" "}
-                  <span className="text-white/60">Showreel</span>
+                  <span className="text-[#f2eee2]/60 font-bold">Showreel</span>
                 </h2>
 
                 {/* Category Filter */}
                 <div className="mt-8 mb-12">
-                  <div className="flex flex-wrap gap-y-5 gap-x-0 text-3xl md:text-4xl lg:text-5xl font-semibold leading-relaxed">
+                  <div className="flex flex-wrap gap-y-1 gap-x-0 text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed tracking-tighter">
                     {movieCategories.map((category, index) => (
                       <div key={category} className="flex items-center">
                         <button
@@ -1102,13 +1108,13 @@ const VFX = () => {
                           className={`transition-colors duration-300 ${
                             selectedMovieCategory === category
                               ? "text-[#4ab6ff]"
-                              : "text-white/40 hover:text-[#4ab6ff]"
+                              : "text-[#f2eee2]/40 hover:text-[#4ab6ff]"
                           }`}
                         >
                           {category}
                         </button>
                         {index < movieCategories.length - 1 && (
-                          <span className="text-white/30 mx-5">|</span>
+                          <span className="text-[#f2eee2]/30 mx-4">|</span>
                         )}
                       </div>
                     ))}
@@ -1145,7 +1151,7 @@ const VFX = () => {
                       Certifications
                     </h2>
 
-                    <p className="text-white text-lg md:text-xl leading-relaxed">
+                    <p className="text-[#f2eee2] text-lg md:text-xl leading-relaxed">
                       <span className="font-semibold">
                         TPN Gold Shield Certification
                       </span>{" "}
@@ -1153,7 +1159,7 @@ const VFX = () => {
                       <span className="font-semibold">
                         Warner Bros, Lionsgate, Universal Pictures, Paramount,
                       </span>{" "}
-                      <span className="text-white/60">
+                      <span className="text-[#f2eee2]/60">
                         Amazon Studios, Netflix and ABC
                       </span>{" "}
                       validate our commitment to safeguarding client content and
@@ -1227,9 +1233,9 @@ const VFX = () => {
           {/* Areas of Expertise Section */}
           <div className="px-12 md:px-24 pb-24">
             <div className="max-w-7xl mx-auto translate-y-8">
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-[#f2eee2] mb-4">
                 VFX: Advertising <span className="text-[#4ab6ff]">|</span>{" "}
-                <span className="text-white/60">Showreel</span>
+                <span className="text-[#f2eee2]/60">Showreel</span>
               </h2>
 
               <div className="mt-8 mb-12">
@@ -1241,13 +1247,13 @@ const VFX = () => {
                         className={`transition-colors duration-300 ${
                           selectedAdCategory === category
                             ? "text-[#4ab6ff]"
-                            : "text-white/40 hover:text-[#4ab6ff]"
+                            : "text-[#f2eee2]/40 hover:text-[#4ab6ff]"
                         }`}
                       >
                         {category}
                       </button>
                       {index < adCategories.length - 1 && (
-                        <span className="text-white/30 mx-5">|</span>
+                        <span className="text-[#f2eee2]/30 mx-5">|</span>
                       )}
                     </div>
                   ))}
@@ -1281,7 +1287,7 @@ const VFX = () => {
           {/* The section is a continuous dark canvas of 16:9 cards.             */}
           {/* Layout alternates between full, split, T, 2×2, and inverted-T.     */}
           {/* Ads immersive video feed — dynamic, driven by adsVideoFeed + LAYOUT_PATTERN */}
-          <div className="w-full bg-black p-3 flex flex-col gap-3">
+          <div className="w-full bg-[#080032] p-3 flex flex-col gap-3">
             {adBlocks.map((block, blockIdx) => {
               const [v0, v1, v2, v3] = block.videos;
               switch (block.type) {
@@ -1300,7 +1306,7 @@ const VFX = () => {
                         allowFullScreen
                       />
                       <div className="absolute inset-0 bg-black/20" />
-                      <p className="absolute bottom-8 left-8 text-white font-display text-2xl font-bold tracking-wide">
+                      <p className="absolute bottom-8 left-8 text-[#f2eee2] font-display text-2xl font-bold tracking-wide">
                         {v0.label}
                       </p>
                     </div>
@@ -1361,9 +1367,9 @@ const VFX = () => {
           <div className="translate-y-10 px-12 md:px-24 pb-24">
             <div className="max-w-7xl mx-auto">
               {/* ── CGI Stills — unequal masonry grid ── */}
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-10">
+              <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-10">
                 VFX: CGI Stills <span className="text-[#4ab6ff]">|</span>{" "}
-                <span className="text-white/60">Showcase</span>
+                <span className="text-[#f2eee2]/60 font-bold">Showcase</span>
               </h2>
 
               {/*
@@ -1373,6 +1379,7 @@ const VFX = () => {
                 column boundaries.
               */}
               <div
+                className="w-[80%] mx-auto"
                 style={{
                   columnCount: 3,
                   columnGap: "8px",
@@ -1410,7 +1417,7 @@ const VFX = () => {
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 pointer-events-none" />
                       {/* index badge — appears on hover */}
-                      <span className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[9px] text-white/70 uppercase tracking-widest bg-black/50 backdrop-blur-sm px-2 py-0.5">
+                      <span className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[9px] text-[#f2eee2]/70 uppercase tracking-widest bg-black/50 backdrop-blur-sm px-2 py-0.5">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
