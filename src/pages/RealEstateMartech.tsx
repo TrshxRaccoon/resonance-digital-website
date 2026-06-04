@@ -252,8 +252,7 @@ const RealEstateMartech = () => {
   const [isImmersiveInView, setIsImmersiveInView] = useState<boolean>(false);
   const [isPageVisible, setIsPageVisible] = useState<boolean>(true);
 
-  const EXPERTISE_PER_PAGE =
-    selectedExpertiseCategory === "3D Walkthroughs" ? 1 : 3;
+  const EXPERTISE_PER_PAGE = 2;
   const AUTO_ROTATE_MS = 4000;
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
@@ -494,56 +493,44 @@ const RealEstateMartech = () => {
                 animate={{ x: 0 }}
                 exit={{ x: expertiseDirection > 0 ? "-100%" : "100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className={`absolute inset-4 md:inset-6 gap-6 ${
-                  selectedExpertiseCategory === "3D Walkthroughs"
-                    ? "grid grid-cols-1"
-                    : "grid grid-cols-1 md:grid-cols-3"
-                }`}
+                className="absolute inset-4 md:inset-6 grid grid-cols-1 md:grid-cols-2 gap-8"
               >
                 {expertisePageItems.map((item, index) => (
                   <div
                     key={`${item.title}-${item.subtitle}-${expertiseStartIndex + index}`}
-                    className={`group relative rounded-xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-[1.03] ${
-                      item.category === "3D Walkthroughs"
-                        ? ""
-                        : "h-[240px] md:h-[300px] lg:h-[360px]"
-                    }`}
+                    className="group flex flex-col cursor-pointer"
                   >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className={`${
-                        item.category === "3D Walkthroughs"
-                          ? "w-full h-auto block object-contain"
-                          : "absolute inset-0 w-full h-full object-cover"
-                      }`}
-                    />
-                    {item.category === "3D Walkthroughs" && (
-                      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                        <div className="w-20 h-20 rounded-full bg-[#4ab6ff] flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
-                          <div
-                            className="ml-1"
-                            style={{
-                              width: 0,
-                              height: 0,
-                              borderTop: "12px solid transparent",
-                              borderBottom: "12px solid transparent",
-                              borderLeft: "20px solid white",
-                            }}
-                          />
+                    <div className="relative bg-[#0b0830] overflow-hidden rounded-none aspect-[16/10] flex items-center justify-center">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+
+                      {item.category === "3D Walkthroughs" && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-20 h-20 rounded-full bg-[#4ab6ff] flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
+                            <div
+                              className="ml-1"
+                              style={{
+                                width: 0,
+                                height: 0,
+                                borderTop: "12px solid transparent",
+                                borderBottom: "12px solid transparent",
+                                borderLeft: "20px solid white",
+                              }}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
+                    </div>
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-all duration-500" />
-
-                    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 flex flex-col justify-end">
-                      <p className="text-white font-display font-bold text-xl md:text-2xl leading-tight tracking-wide uppercase">
-                        {item.title}
-                      </p>
-                      <p className="mt-2 text-[#4ab6ff] text-sm md:text-base uppercase tracking-[0.14em]">
-                        {item.subtitle}
-                      </p>
+                    <div className="mt-4 text-[#f2eee2] text-base md:text-lg">
+                      <span className="font-gotham-bold">Client :</span>{" "}
+                      <span>{item.title}</span>
+                      <span className="mx-2">|</span>
+                      <span className="font-gotham-bold">Service :</span>{" "}
+                      <span>{item.category}</span>
                     </div>
                   </div>
                 ))}
@@ -553,18 +540,18 @@ const RealEstateMartech = () => {
                 }).map((_, index) => (
                   <div
                     key={`placeholder-${index}`}
-                    className="h-[240px] md:h-[300px] lg:h-[360px]"
+                    className="aspect-[16/10]"
                   />
                 ))}
               </motion.div>
             </AnimatePresence>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 invisible">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 invisible">
               {Array(EXPERTISE_PER_PAGE)
                 .fill(0)
                 .map((_, i) => (
                   <div
                     key={i}
-                    className="h-[240px] md:h-[300px] lg:h-[360px]"
+                    className="aspect-[16/10]"
                   ></div>
                 ))}
             </div>

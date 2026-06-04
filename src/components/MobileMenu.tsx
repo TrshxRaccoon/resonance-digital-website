@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
       {/* Side Menu Panel */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-[70] w-full md:w-[600px] bg-[#1a3a52] transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+        className={`fixed top-0 right-0 bottom-0 z-[70] w-full md:w-[450px] bg-[#080032] transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ 
@@ -71,7 +71,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 }}
               >
                 <span 
-                  className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide transition-colors duration-300 ${
+                  className={`font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight transition-colors duration-300 ${
                     isActive 
                       ? "text-white" 
                       : "text-[#4a6b84] group-hover:text-white"
