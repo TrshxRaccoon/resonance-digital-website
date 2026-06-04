@@ -128,8 +128,8 @@ const VerticalSelector = () => {
             key={`bg-${vertical.id}`}
             className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
             style={{
-              backgroundImage: `url(${vertical.bgImage})`,
-              opacity: activeVertical === vertical.id ? 1 : 0,
+              //backgroundImage: `url(${vertical.bgImage})`,
+              //opacity: activeVertical === vertical.id ? 1 : 0,
             }}
           >
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />

@@ -40,9 +40,6 @@ const Header = () => {
           transform: visible ? "translateY(0)" : "translateY(-12px)",
           transition: "opacity 0.5s ease, transform 0.5s ease",
           pointerEvents: visible ? "auto" : "none",
-          background: visible
-            ? "linear-gradient(to bottom, rgba(8,0,50,0.85) 0%, transparent 100%)"
-            : "transparent",
         }}
       >
         {/* Logo */}
@@ -56,7 +53,7 @@ const Header = () => {
         {/* Hamburger */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="relative z-50 w-12 h-12 flex items-center justify-center text-foreground hover:text-primary transition-colors duration-300"
+          className="relative z-50 w-12 h-12 flex items-center justify-center text-gray-500 hover:text-primary transition-colors duration-300"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

@@ -119,21 +119,21 @@ const BrandStatement = () => {
       <div className="w-full max-w-[1900px] mx-auto flex flex-col items-start pl-0 md:pl-2 lg:pl-4">
         {/* Verticals line - NEVER animates */}
         <p className="mb-8 text-[18px] md:text-[20px] lg:text-[22px] font-medium tracking-wide text-left">
-          <span className="text-[#4ab6ff]">VFX & Animation</span>
-          <span className="text-gray-300"> / </span>
-          <span className="text-rose-400">Real Estate Mar-Tech</span>
-          <span className="text-gray-300"> / </span>
-          <span className="text-lime-400">Brand Solution</span>
-          <span className="text-gray-300"> / </span>
-          <span className="text-purple-400">Motion Pictures</span>
+          <span className="text-[#201c50] font-bold">VFX & Animation</span>
+          <span className="text-gray-300"> | </span>
+          <span className="text-[#201c50] font-bold">Real Estate Mar-Tech</span>
+          <span className="text-gray-300"> | </span>
+          <span className="text-[#201c50] font-bold">Brand Solution</span>
+          <span className="text-gray-300"> | </span>
+          <span className="text-[#201c50] font-bold">Motion Pictures</span>
         </p>
 
         {/* Main statement - scroll-driven typewriter effect */}
         <div className="max-w-7xl">
-          <p className="text-[25px] md:text-[45px] lg:text-[65px] font-display font-large leading-[1.08] tracking-tight text-gray-900">
+          <p className="text-[25px] md:text-[45px] lg:text-[65px] font-display font-large leading-[0.9] tracking-tight text-[#4ab6ff] font-bold">
             {displayedText}
             {!isMobile && scrollProgress < 1 && (
-              <span className="inline-block ml-1 animate-pulse">|</span>
+              <span className="inline-block ml-1 animate-pulse text-[#201c50]">|</span>
             )}
           </p>
         </div>
