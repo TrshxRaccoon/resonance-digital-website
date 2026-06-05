@@ -11,10 +11,14 @@ type BrandShowcaseItem = {
   image: string;
   caseStudyImage?: string;
   galleryImages?: string[];
+  /** Mobile-optimised images — portrait/square crops. Falls back to galleryImages if omitted. */
+  mobileGalleryImages?: string[];
   client: string;
   year: string;
   service: string;
   objective?: string;
+  approach?: string;
+  impact?: string;
   videoSrc?: string;
   youtubeEmbedUrl?: string;
   videoTitle?: string;
@@ -270,32 +274,77 @@ const brandStatements = [
 const caseStudyShowcase: BrandShowcaseItem[] = [
   {
     title: "MORDE",
-    image: "/assets/images/CaseStudies/Morde-58.jpg",
-    caseStudyImage: "/assets/images/CaseStudies/Morde-56.jpg",
+    image: "/assets/images/CaseStudies/Morde-49.png",
+    caseStudyImage: "/assets/images/CaseStudies/Morde-49.png",
     galleryImages: [
-      "assets/images/CaseStudies/Morde-49.jpg",
-      "assets/images/CaseStudies/Morde-50.jpg",
-      "assets/images/CaseStudies/Morde-51.jpg",
-      "assets/images/CaseStudies/Morde-52.jpg",
-      "assets/images/CaseStudies/Morde-53.jpg",
-      "assets/images/CaseStudies/Morde-54.jpg",
-      "assets/images/CaseStudies/Morde-55.jpg",
-      "assets/images/CaseStudies/Morde-57.jpg",
-      "assets/images/CaseStudies/Morde-59.jpg",
+      "/assets/images/CaseStudies/Morde-1.png",
+      "/assets/images/CaseStudies/Morde-49.png",
+      "/assets/images/CaseStudies/Morde-49-01.png",
+      "/assets/images/CaseStudies/Morde-3-01.png",
+      "/assets/images/CaseStudies/Morde-2-01.png",
+    ],
+    mobileGalleryImages: [
+      "/assets/images/CaseStudies/Morde/Morde1-01.png",
+      "/assets/images/CaseStudies/Morde/Morde1-03-01.png",
+      "/assets/images/CaseStudies/Morde/Morde1-0-01.png",
+      "/assets/images/CaseStudies/Morde/Morde1-02-01.png",
     ],
     client: "MORDE",
     year: "2025",
     service: "Launch New Packaging",
     objective:
-      "Digital content to drive engagement and increase footfalls for the brand at Bakery Business South, Hyderabad with emailers, videos, e-brochures, Insta reels, posts, and carousels.",
+      "Refresh brand identity and drive engagement across B2B and B2C audiences.",
+    approach:
+      "Delivered an integrated solution across brochures, digital content, POSM, and social media, showcasing product range and new packaging.",
+    impact:
+      "Created a cohesive brand presence across touchpoints, driving both visibility and on-ground engagement.",
   },
   {
-    title: "TRAVEL + LEISURE",
-    image: "/assets/images/BrandStatements/T+L.jpg",
-    caseStudyImage: "/assets/images/BrandStatements/T+L.jpg",
-    client: "TRAVEL + LEISURE",
+    title: "Killer Jeans",
+    image: "/assets/images/CaseStudies/Killer1.png",
+    caseStudyImage: "/assets/images/CaseStudies/Killer1.png",
+    galleryImages: [
+      "/assets/images/CaseStudies/Killer1.png",
+      "/assets/images/CaseStudies/Killer2.png",
+      "/assets/images/CaseStudies/Killer3.png",
+      "/assets/images/CaseStudies/Killer4.png",
+      "/assets/images/CaseStudies/Killer5.png",
+    ],
+    mobileGalleryImages: [
+      "/assets/images/CaseStudies/Killer/Killer1-3-01.png",
+      "/assets/images/CaseStudies/Killer/Killer1-02-01.png",
+      "/assets/images/CaseStudies/Killer/Killer1-01.png",
+      "/assets/images/CaseStudies/Killer/Killer1-0-01.png",
+    ],
+    client: "Killer Jeans",
     year: "2024",
     service: "Original Content & Copywriting",
+    objective:
+      "Reinforce brand identity for a younger, style-forward audience.",
+    approach:
+      "Developed a bold, content-first strategy spanning print, social, and OOH, including influencer-led and trend-driven creatives.",
+    impact:
+      "Delivered scroll-stopping content that aligned with youth culture and increased digital traction.",
+  },
+  {
+    title: "Netflix India",
+    image: "/assets/images/CaseStudies/for\ website-41.png",
+    caseStudyImage: "/assets/images/CaseStudies/for\ website-41.png",
+    galleryImages: [
+      "/assets/images/CaseStudies/for\ website-38.png",
+      "/assets/images/CaseStudies/for\ website-39.png",
+      "/assets/images/CaseStudies/for\ website-40.png",
+      "/assets/images/CaseStudies/for\ website-41.png",
+    ],
+    client: "Netflix India",
+    year: "2023",
+    service: "Campaign Production",
+    objective:
+      "Drive engagement through culturally relevant storytelling.",
+    approach:
+      "Created end-of-year Playback campaigns for 2021, 2022, and 2023, delivering high-viewership content. Extended impact through brand collaborations like KitKat and award-winning work recognised at Kyoorius 2023.",
+    impact:
+      "Built high-recall, shareable content that amplified platform love and cultural relevance.",
   },
   {
     title: "CONOSH",
@@ -312,6 +361,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "CONOSH",
     year: "2025",
     service: "Brand Solutions",
+    objective:
+      "Build a community-driven culinary platform and grow digital presence.",
+    approach:
+      "Created an end-to-end ecosystem—social media, website, video content, and a flagship web series featuring celebrity chefs.",
+    impact:
+      "Scaled to 100K followers and established a strong content-led brand identity in the food space.",
   },
   {
     title: "OPPO",
@@ -325,6 +380,10 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "OPPO",
     year: "2024",
     service: "Video Editing & Animation",
+    objective:
+      "Bring AI capabilities to life in an engaging, humanised way.",
+    approach:
+      "Conceptualised and executed a mascot-led narrative, blending storytelling with product demonstration.",
   },
   {
     title: "Mahindra XUV 500",
@@ -341,6 +400,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "Mahindra XUV 500",
     year: "2018",
     service: "Campaign Production",
+    objective:
+      "Showcase product innovation and elevate brand perception.",
+    approach:
+      "Delivered high-quality product films and full-CG executions, highlighting design, performance, and features.",
+    impact:
+      "Positioned Mahindra as a tech-forward automotive brand, including executing India’s first end-to-end CG car launch.",
   },
   {
     title: "Vraj Group",
@@ -354,9 +419,19 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
       "/assets/images/CaseStudies/4.png",
       "/assets/images/CaseStudies/5.png",
     ],
+    mobileGalleryImages: [
+      "/assets/images/CaseStudies/Vraj/Vraj_1-01.png",
+      "/assets/images/CaseStudies/Vraj/Vraj_1-02-01.png",
+      "/assets/images/CaseStudies/Vraj/Vraj_0-01.png",
+      "/assets/images/CaseStudies/Vraj/Vraj_1-3-01.png",
+    ],
     client: "Vraj Group",
     year: "2024",
     service: "Brand Campaign",
+    objective: "Build a premium project identity.",
+    approach:
+      "Designed branding, visual language, and high-end collateral.",
+    impact: "Delivered a refined, luxury positioning.",
   },
   {
     title: "Estuary",
@@ -371,6 +446,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "Estuary",
     year: "2020",
     service: "Digital Marketing",
+    objective:
+      "Establish a premium identity in a niche category.",
+    approach:
+      "Built a refined brand language across packaging, digital, website, and films.",
+    impact:
+      "Positioned the brand as aspirational and category-defining.",
   },
   {
     title: "Calamus One - Ultrabike",
@@ -381,9 +462,20 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
       "assets/images/CaseStudies/1.png",
       "assets/images/CaseStudies/2.png",
     ],
+    mobileGalleryImages: [
+      "/assets/images/CaseStudies/Calamus/Calamus1-0-01.png",
+      "/assets/images/CaseStudies/Calamus/Calamus1-02-01.png",
+      "/assets/images/CaseStudies/Calamus/Calamus1-03-01.png",
+    ],
     client: "Calamus One - Ultrabike",
     year: "2019",
     service: "Brand Film",
+    objective:
+      "Launch a next-gen e-bike with a tech-forward narrative.",
+    approach:
+      "Developed product films and digital storytelling highlighting innovation.",
+    impact:
+      "Enabled strong market entry and successful crowdfunding traction.",
   },
   {
     title: "Puravankara",
@@ -396,9 +488,21 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
       "assets/images/CaseStudies/p3.png",
       "assets/images/CaseStudies/p4.png",
     ],
+    mobileGalleryImages: [
+      "/assets/images/CaseStudies/PURAVANKARA/Puravankara_1-3-01.png",
+      "/assets/images/CaseStudies/PURAVANKARA/Puravankara_1-01.png",
+      "/assets/images/CaseStudies/PURAVANKARA/Puravankara_1-2-01.png",
+      "/assets/images/CaseStudies/PURAVANKARA/Puravankara_1-4-01.png",
+    ],
     client: "Puravankara",
     year: "2022",
     service: "Real Estate Marketing",
+    objective:
+      "Launch a premium residential project across channels.",
+    approach:
+      "Delivered a 360° campaign across print, digital, and on-ground media.",
+    impact:
+      "Built a consistent, high-end brand narrative.",
   },
   {
     title: "Elegant Builders & Developers",
@@ -410,9 +514,21 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
       "assets/images/CaseStudies/elegant3.png",
       "assets/images/CaseStudies/elegant4.png",
     ],
+    mobileGalleryImages: [
+      "/assets/images/CaseStudies/Elegent/Elegant_1-2-01.png",
+      "/assets/images/CaseStudies/Elegent/Elegant_1-3-01.png",
+      "/assets/images/CaseStudies/Elegent/Elegant_1-01.png",
+      "/assets/images/CaseStudies/Elegent/Elegant_1-4-01.png",
+    ],
     client: "Elegant Builders & Developers",
     year: "2024",
     service: "Brand Solutions",
+    objective:
+      "Launch a nature-led luxury project.",
+    approach:
+      "Built a brand language rooted in conscious living across media.",
+    impact:
+      "Positioned the project at the intersection of sustainability and luxury.",
   },
 ];
 
@@ -424,6 +540,14 @@ const BrandSolutions = () => {
   const [activeShowcaseVideoUrl, setActiveShowcaseVideoUrl] = useState<
     string | null
   >(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
 
   const activeCaseStudy =
@@ -480,7 +604,7 @@ const BrandSolutions = () => {
       />
 
       {/* Clients + Statements Section */}
-      <section className="w-full bg-[#f6f4ef] py-20 px-10 md:px-16">
+      <section className="w-full bg-theme-primaryBg2 py-20 px-10 md:px-16">
         {/* Section heading */}
         <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12">
           Brand Solutions <span className="text-gray-400">|</span>{" "}
@@ -494,7 +618,7 @@ const BrandSolutions = () => {
             <img
               src="https://resonancedigital.in/assets/images/brandSolutions/Brand-solution-logo.png"
               alt="Brand Solutions Clients"
-              className="w-full h-full object-contain"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
 
@@ -544,7 +668,7 @@ const BrandSolutions = () => {
       </section>
 
       {/* Brand Solutions — TVC Showcase */}
-      <section className="w-full bg-[#f6f4ef] pb-24 px-10 md:px-16">
+      <section className="w-full bg-theme-secondaryBg2 pb-24 px-10 py-10 md:px-16">
         <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12">
           Brand Solutions <span className="text-gray-400">|</span>{" "}
           <span className="text-gray-600">TVC</span>{" "}
@@ -618,7 +742,7 @@ const BrandSolutions = () => {
       </AnimatePresence>
 
       {/* Brand Solutions — Showcase */}
-      <section className="w-full bg-[#e7e5df] pb-24 px-10 md:px-16">
+      <section className="w-full bg-theme-primaryBg2 pb-24 px-10 py-10 md:px-16">
         <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12 translate-y-3">
           Brand Solutions <span className="text-gray-400">|</span>{" "}
           <span className="font-bold text-gray-700">Case Studies</span>
@@ -658,7 +782,7 @@ const BrandSolutions = () => {
       <AnimatePresence>
         {activeCaseStudy && (
           <motion.div
-            className="fixed inset-0 z-50 bg-[#f0ede6] overflow-y-auto"
+            className="fixed inset-0 z-50 bg-theme-primaryBg2 overflow-y-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -677,44 +801,116 @@ const BrandSolutions = () => {
             {/* Content — vertical scroll: hero + metadata, then gallery images inline */}
             <div className="flex flex-col">
 
-              {/* ── Above-fold: hero image left + metadata right ── */}
+              {/* ── Above-fold: on desktop hero-left + metadata-right; on mobile metadata-top + hero-below ── */}
               <div className="min-h-screen flex flex-col lg:flex-row">
-                {/* Left — hero image */}
+
+                {/* MOBILE ONLY — metadata sits at the top */}
+                <motion.div
+                  key={`mobile-meta-${activeCaseStudyIndex}`}
+                  initial={{ opacity: 0, y: -16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="flex lg:hidden flex-col px-6 pt-16 pb-8"
+                >
+                  <p className="text-xs uppercase tracking-widest text-gray-400 mb-5">
+                    Brand Solutions | Case Study
+                  </p>
+                  <h2 className="font-display text-[32px] font-bold text-gray-800 leading-none mb-7">
+                    {activeCaseStudy.title}
+                  </h2>
+
+                  {/* Metadata rows */}
+                  <div className="space-y-0 mb-6">
+                    <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
+                      <span className="text-gray-400 text-xs uppercase tracking-wide">Client</span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-xs">{activeCaseStudy.client}</span>
+                    </div>
+                    <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
+                      <span className="text-gray-400 text-xs uppercase tracking-wide">Service</span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-xs">{activeCaseStudy.service}</span>
+                    </div>
+                    <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
+                      <span className="text-gray-400 text-xs uppercase tracking-wide">Year</span>
+                      <span className="text-gray-800 font-bold text-xs">{activeCaseStudy.year}</span>
+                    </div>
+                    {activeCaseStudy.videoHighlight && (
+                      <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
+                        <span className="text-gray-400 text-xs uppercase tracking-wide">Reach</span>
+                        <span className="text-[#1498e1] font-bold text-xs">{activeCaseStudy.videoHighlight}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Objective / Approach / Impact */}
+                  {(activeCaseStudy.objective || activeCaseStudy.approach || activeCaseStudy.impact) && (
+                    <div className="mb-7 space-y-4">
+                      {activeCaseStudy.objective && (
+                        <div>
+                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">Objective</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{activeCaseStudy.objective}</p>
+                        </div>
+                      )}
+                      {activeCaseStudy.approach && (
+                        <div>
+                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">Approach</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{activeCaseStudy.approach}</p>
+                        </div>
+                      )}
+                      {activeCaseStudy.impact && (
+                        <div>
+                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">Impact</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{activeCaseStudy.impact}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {activeCaseStudy.galleryImages?.length ? (
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-gray-400 mb-4">
+                      ↓ Scroll to view gallery ({activeCaseStudy.galleryImages.length} images)
+                    </p>
+                  ) : null}
+
+                  <button
+                    onClick={closeCaseStudy}
+                    className="self-start text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
+                  >
+                    ← Back to Showcase
+                  </button>
+                </motion.div>
+
+                {/* Hero image — full width on mobile, 55% on desktop */}
                 <motion.div
                   key={activeCaseStudy.image + activeCaseStudyIndex}
                   initial={{ opacity: 0, x: -24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="w-full lg:w-[55%] relative min-h-[40vh] lg:min-h-screen"
+                  className="w-full lg:w-[55%] relative h-[80vw] lg:h-auto lg:min-h-screen"
                 >
-                  <div className="absolute inset-0 bg-[#f0ede6]" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                    <div className="relative w-[85%] max-w-[650px] mx-auto">
-                      <div className="aspect-square overflow-hidden rounded-lg bg-white">
+                  <div className="absolute inset-0 bg-theme-primaryBg2" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center px-6 md:px-10 lg:px-16">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <div className="overflow-hidden bg-transparent">
                         <img
                           src={
                             activeCaseStudy.caseStudyImage ||
                             activeCaseStudy.image
                           }
                           alt={`${activeCaseStudy.title} case study`}
-                          className="w-full h-full object-contain"
+                          className="max-w-full max-h-full object-contain object-left"
                         />
                       </div>
                     </div>
                   </div>
-                  {/* Counter badge */}
-                  <div className="absolute bottom-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs text-gray-500 uppercase tracking-widest">
-                    {(activeCaseStudyIndex ?? 0) + 1} / {caseStudyShowcase.length}
-                  </div>
                 </motion.div>
 
-                {/* Right — metadata */}
+                {/* DESKTOP ONLY — right metadata panel */}
                 <motion.div
                   key={activeCaseStudyIndex}
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="w-full lg:w-[45%] flex flex-col justify-center px-10 md:px-16 py-24 lg:py-32"
+                  className="hidden lg:flex w-full lg:w-[45%] flex-col justify-start px-10 md:px-16 pt-20 lg:pt-24 pb-16"
                 >
                   {/* Section label */}
                   <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
@@ -764,15 +960,39 @@ const BrandSolutions = () => {
                     )}
                   </div>
 
-                  {/* Objective */}
-                  {activeCaseStudy.objective && (
-                    <div className="mb-10">
-                      <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
-                        Objective
-                      </p>
-                      <p className="text-gray-600 text-[15px] leading-relaxed">
-                        {activeCaseStudy.objective}
-                      </p>
+                  {/* Objective, Approach, Impact */}
+                  {(activeCaseStudy.objective || activeCaseStudy.approach || activeCaseStudy.impact) && (
+                    <div className="mb-10 space-y-6">
+                      {activeCaseStudy.objective && (
+                        <div>
+                          <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+                            Objective
+                          </p>
+                          <p className="text-gray-600 text-[15px] leading-relaxed">
+                            {activeCaseStudy.objective}
+                          </p>
+                        </div>
+                      )}
+                      {activeCaseStudy.approach && (
+                        <div>
+                          <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+                            Approach
+                          </p>
+                          <p className="text-gray-600 text-[15px] leading-relaxed">
+                            {activeCaseStudy.approach}
+                          </p>
+                        </div>
+                      )}
+                      {activeCaseStudy.impact && (
+                        <div>
+                          <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+                            Impact
+                          </p>
+                          <p className="text-gray-600 text-[15px] leading-relaxed">
+                            {activeCaseStudy.impact}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -793,16 +1013,23 @@ const BrandSolutions = () => {
                 </motion.div>
               </div>
 
-              {/* ── Gallery images — inline, full viewport-height each ── */}
-              {activeCaseStudy.galleryImages?.length ? (
+              {/* ── Gallery images — inline, full viewport-height on desktop / auto-height on mobile ── */}
+              {activeCaseStudy.galleryImages?.length ? (() => {
+                // Pick the right image list — mobile gets mobileGalleryImages if provided
+                const galleryList =
+                  isMobile && activeCaseStudy.mobileGalleryImages?.length
+                    ? activeCaseStudy.mobileGalleryImages
+                    : activeCaseStudy.galleryImages;
+
+                return (
                 <div className="flex flex-col">
                   {/* Gallery header strip */}
-                  <div className="bg-[#f0ede6] border-t border-gray-300 px-8 py-6">
+                  <div className="bg-theme-secondaryBg2 border-t border-gray-300 px-0 md:px-8 py-5 md:py-6">
                     <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-1">
                       Gallery
                     </p>
-                    <div className="flex items-baseline gap-4 flex-wrap">
-                      <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-800">
+                    <div className="flex items-baseline gap-3 md:gap-4 flex-wrap">
+                      <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
                         {activeCaseStudy.title}
                       </h2>
                       <span className="text-gray-400 text-sm">·</span>
@@ -812,27 +1039,70 @@ const BrandSolutions = () => {
                     </div>
                   </div>
 
-                  {/* Full-screen stacked images */}
-                  {activeCaseStudy.galleryImages.map((image, idx) => (
-                    <div
-                      key={idx}
-                      className="relative w-full"
-                      style={{ height: "100svh" }}
-                    >
-                      <img
-                        src={image}
-                        alt={`${activeCaseStudy.title} — ${idx + 1} of ${activeCaseStudy.galleryImages!.length}`}
-                        className="w-full h-full object-contain bg-[#e8e5de]"
-                      />
-                      {/* Counter badge */}
-                      <div className="absolute bottom-6 right-6 bg-white/70 backdrop-blur-sm px-3 py-1 text-[10px] text-gray-500 uppercase tracking-widest">
-                        {idx + 1} / {activeCaseStudy.galleryImages!.length}
-                      </div>
-                    </div>
-                  ))}
+                  {/* Full-screen stacked images — 100svh on desktop, auto height on mobile with tight gaps */}
+                  <div className={isMobile ? "flex flex-col gap-2 px-0" : "flex flex-col"}>
+                    {galleryList.map((image, idx) => {
+                      // Killer Jeans special paired layout — desktop only
+                      if (
+                        !isMobile &&
+                        activeCaseStudy.title === "Killer Jeans" &&
+                        image.includes("Killer2.png")
+                      ) {
+                        return (
+                          <div
+                            key={idx}
+                            className="relative w-full flex items-center justify-center gap-6 px-8"
+                            style={{ height: "100svh" }}
+                          >
+                            <img
+                              src="/assets/images/CaseStudies/Killer2.png"
+                              alt="Killer Jeans 2"
+                              className="w-1/2 h-full object-contain"
+                            />
+                            <img
+                              src="/assets/images/CaseStudies/Killer3.png"
+                              alt="Killer Jeans 3"
+                              className="w-1/2 h-full object-contain"
+                            />
+                          </div>
+                        );
+                      }
+
+                      // Skip Killer3 on desktop (it's paired with Killer2 above)
+                      if (
+                        !isMobile &&
+                        activeCaseStudy.title === "Killer Jeans" &&
+                        image.includes("Killer3.png")
+                      ) {
+                        return null;
+                      }
+
+                      return (
+                        <div
+                          key={idx}
+                          className={
+                            isMobile
+                              ? "relative w-full"
+                              : "relative w-full"
+                          }
+                          style={isMobile ? undefined : { height: "100svh" }}
+                        >
+                          <img
+                            src={image}
+                            alt={`${activeCaseStudy.title} — ${idx + 1} of ${galleryList.length}`}
+                            className={
+                              isMobile
+                                ? "w-full h-auto object-contain"
+                                : "w-full h-full object-contain"
+                            }
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
 
                   {/* Footer */}
-                  <div className="py-12 flex justify-center border-t border-gray-300 bg-[#f0ede6]">
+                  <div className="py-10 md:py-12 flex justify-center border-t border-gray-300 bg-theme-secondaryBg2">
                     <button
                       onClick={closeCaseStudy}
                       className="text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
@@ -841,14 +1111,15 @@ const BrandSolutions = () => {
                     </button>
                   </div>
                 </div>
-              ) : null}
+                );
+              })() : null}
 
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <Footer theme="dark" />
+      <Footer theme="light" />
     </>
   );
 };

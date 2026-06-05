@@ -13,16 +13,6 @@ const verticals = [
     bgImage: "/assets/images/vfxposter.png",
   },
   {
-    id: "real-estate",
-    title: "Real Estate",
-    subtitle: "Mar-tech",
-    description:
-      "Photorealistic renders and immersive virtual tours for architectural projects.",
-    href: "/real-estate",
-    bgImage:
-      "https://resonancedigital.in/assets/images/realEstate/verticalSelectorImg.png",
-  },
-  {
     id: "brand-solutions",
     title: "Brand Solutions",
     subtitle: "",
@@ -31,6 +21,16 @@ const verticals = [
     href: "/brandSolutions",
     bgImage:
       "/assets/images/brandsolposter.png",
+  },
+  {
+    id: "real-estate",
+    title: "Real Estate",
+    subtitle: "Mar-tech",
+    description:
+      "Photorealistic renders and immersive virtual tours for architectural projects.",
+    href: "/real-estate",
+    bgImage:
+      "https://resonancedigital.in/assets/images/realEstate/verticalSelectorImg.png",
   },
   {
     id: "motion-pictures",
@@ -122,7 +122,7 @@ const VerticalSelector = () => {
       id="verticals"
     >
       {/* ── Full-screen background image layer (shared by both layouts) ──── */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-theme-primaryBg1">
         {verticals.map((vertical) => (
           <div
             key={`bg-${vertical.id}`}
@@ -132,7 +132,6 @@ const VerticalSelector = () => {
               //opacity: activeVertical === vertical.id ? 1 : 0,
             }}
           >
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
           </div>
         ))}
       </div>

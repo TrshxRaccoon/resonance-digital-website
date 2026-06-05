@@ -44,36 +44,39 @@ const MotionPictures = () => {
       />
 
       {/* Motion Picture Showcase */}
-      <section className="w-full bg-[#080032] py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-normal text-white mb-12">
-          Motion Picture <span className="text-gray-400">|</span>{" "}
-          <span className="font-bold text-white">Showcase</span>
-        </h2>
+      <section className="w-full bg-theme-primaryBg2 py-20">
+        <div className="px-6 md:px-12 lg:px-20">
+          <h2 className="font-display text-3xl md:text-4xl font-normal text-theme-secondaryText mb-12">
+            Motion Picture <span className="text-theme-primaryText">|</span>{" "}
+            <span className="font-bold text-theme-secondaryText">Showcase</span>
+          </h2>
+        </div>
 
-          <div className="space-y-20">
-            {showreels.map((showreel) => (
-              <div key={showreel.title} className="w-full">
-                <h3 className="text-[#f2eee2] text-xl md:text-2xl font-gotham-bold mb-6">
-                  {showreel.title}
-                </h3>
+        <div className="space-y-0">
+          {showreels.map((showreel, index) => (
+            <div
+              key={showreel.title}
+              className={`w-full ${index % 2 === 0 ? "bg-theme-primaryBg2" : "bg-theme-secondaryBg2"} py-20 px-6 md:px-12 lg:px-20`}
+            >
+              <h3 className="text-theme-secondaryText text-xl md:text-2xl font-gotham-bold mb-6">
+                {showreel.title}
+              </h3>
 
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-                  <iframe
-                    src={showreel.embedUrl}
-                    title={showreel.title}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+                <iframe
+                  src={showreel.embedUrl}
+                  title={showreel.title}
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      <Footer theme="dark" />
+      <Footer theme="light" />
     </>
   );
 };

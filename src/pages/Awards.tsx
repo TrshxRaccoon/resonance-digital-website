@@ -137,7 +137,7 @@ const Awards = () => {
       <Header />
 
       {/* Hero Section — unchanged */}
-      <section className="relative w-full min-h-screen overflow-hidden bg-[#05002d]">
+      <section className="relative w-full min-h-screen overflow-hidden bg-theme-primaryBg1">
         {/* Background Texture */}
         <div
           className="absolute inset-0 opacity-40"
@@ -155,7 +155,7 @@ const Awards = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-10 lg:gap-16 flex-1">
             {/* Left Side */}
             <div className="max-w-[720px]">
-              <h1 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-[#4ab6ff] tracking-tight mb-8 md:mb-10">
+              <h1 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight mb-8 md:mb-10">
                 Awards &<br />
                 Achievements
               </h1>
@@ -183,16 +183,16 @@ const Awards = () => {
       </section>
 
      {/* Awards Showcase Image */}
-<section className="relative w-full bg-[#000000] flex flex-col items-center justify-center">
+<section className="relative w-full bg-black flex flex-col items-center justify-center">
   <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
-    <h2 className="font-display text-[30px] leading-[0.95] md:text-[40px] lg:text-[65px] font-bold text-[#4ab6ff] tracking-tight text-left">
+    <h2 className="font-display text-[30px] leading-[0.95] md:text-[40px] lg:text-[65px] font-bold text-theme-primaryText tracking-tight text-left">
       Awards Showcase
     </h2>
   </div>
   <img
     src="/assets/images/awards/awardshowcase.png"
     alt="Awards Showcase"
-    className="w-full h-auto block"
+    className="w-auto max-w-full h-auto max-h-[80vh] block object-contain mx-auto"
   />
 </section>
 
@@ -235,7 +235,7 @@ const Awards = () => {
       </section>
       */}
 
-      <Footer />
+      <Footer theme="dark"/>
     </>
   );
 };

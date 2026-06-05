@@ -13,7 +13,7 @@ const VFX = () => {
   const [selectedMovieCategory, setSelectedMovieCategory] =
     useState<string>("Master Showreel");
   const [selectedAdCategory, setSelectedAdCategory] =
-    useState<string>("Ads Showreel");
+    useState<string>("Master Showreel");
   const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
   const [currentAdIndex, setCurrentAdIndex] = useState<number>(0);
   const [adDirection, setAdDirection] = useState<number>(0);
@@ -93,7 +93,7 @@ const VFX = () => {
   };
 
   const adShowreels = {
-    "Ads Showreel": {
+    "Master Showreel": {
       embedUrl: "https://www.youtube.com/embed/YizxjEdgjwo",
     },
     "Automobile Showreel": {
@@ -943,9 +943,9 @@ const VFX = () => {
 
       {/* Expanded Movies Section */}
       {expandedSection === "movies" && (
-        <div ref={expandedContentRef} className="w-full bg-[#100a44]">
+        <div ref={expandedContentRef} className="w-full">
           {/* Hero Section */}
-          <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+          <section className="relative w-full min-h-screen bg-theme-primaryBg1 flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
             {/* FixedHero-style Background */}
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -969,17 +969,17 @@ const VFX = () => {
           </section>
 
           {/* featured projects section */}
-          <div className="mt-32 px-12 md:px-24">
+          <section className="mt-0 px-12 md:px-24 py-24 bg-theme-primaryBg1">
             <div className="max-w-7xl mx-auto">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-[#f2eee2] mb-4">
                 VFX: Films & Episodic <span className="text-[#4ab6ff]">|</span>{" "}
                 <span className="text-[#f2eee2]/60 font-bold">Showcase</span>
               </h2>
             </div>
-          </div>
+          </section>
 
           {/* Movies Showcase Carousel */}
-          <section className="relative w-full bg-[#100a44] py-24 px-12 md:px-24">
+          <section className="relative w-full bg-theme-primaryBg1 px-12 md:px-24 pb-32">
             <div className="max-w-7xl mx-auto">
               <div className="relative">
                 {/* Carousel Navigation */}
@@ -1091,7 +1091,7 @@ const VFX = () => {
               </div> */}
 
               {/* Areas of Expertise Section */}
-              <div className="mt-32">
+              <section className="py-24 bg-theme-secondaryBg1 -mx-12 md:-mx-24 px-12 md:px-24">
                 <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-4">
                   VFX: Films & Episodic{" "}
                   <span className="text-[#4ab6ff]">|</span>{" "}
@@ -1138,10 +1138,10 @@ const VFX = () => {
                     </div>
                   </div>
                 )}
-              </div>
+              </section>
 
               {/* Security Certifications Section */}
-              <div className="mt-24 mb-16">
+              <div className="mt-0 mb-0 -mx-12 md:-mx-24 px-12 md:px-24 py-24 bg-theme-primaryBg1">
                 <div className="flex flex-col lg:flex-row gap-12 items-center">
                   {/* Left Side - Text Content */}
                   <div className="flex-1">
@@ -1179,7 +1179,7 @@ const VFX = () => {
               </div>
 
               {/* Films & Episodic Clients Section */}
-              <div className="mt-24 mb-16">
+              <div className="mt-0 mb-0 -mx-12 md:-mx-24 px-12 md:px-24 py-24 bg-theme-secondaryBg1">
                 <div className="flex flex-col lg:flex-row gap-12 items-start">
                   {/* Left Side - Title */}
                   <div className="lg:w-[45%]">
@@ -1206,9 +1206,9 @@ const VFX = () => {
 
       {/* Expanded Ads Section */}
       {expandedSection === "ads" && (
-        <div ref={expandedContentRef} className="w-full bg-[#100a44]">
+        <div ref={expandedContentRef} className="w-full">
           {/* Hero Section */}
-          <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+          <section className="relative w-full min-h-screen bg-theme-primaryBg1 flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
@@ -1231,7 +1231,7 @@ const VFX = () => {
           </section>
 
           {/* Areas of Expertise Section */}
-          <div className="px-12 md:px-24 pb-24">
+          <section className="px-12 md:px-24 py-24 bg-theme-secondaryBg1">
             <div className="max-w-7xl mx-auto translate-y-8">
               <h2 className="font-display text-4xl md:text-5xl font-bold text-[#f2eee2] mb-4">
                 VFX: Advertising <span className="text-[#4ab6ff]">|</span>{" "}
@@ -1281,13 +1281,13 @@ const VFX = () => {
                 </div>
               )}
             </div>
-          </div>
+          </section>
 
           {/* ── Ads Video Feed ─────────────────────────────────────────────────── */}
           {/* The section is a continuous dark canvas of 16:9 cards.             */}
           {/* Layout alternates between full, split, T, 2×2, and inverted-T.     */}
           {/* Ads immersive video feed — dynamic, driven by adsVideoFeed + LAYOUT_PATTERN */}
-          <div className="w-full bg-[#080032] p-3 flex flex-col gap-3">
+          <div className="w-full bg-theme-primaryBg1 p-3 flex flex-col gap-3">
             {adBlocks.map((block, blockIdx) => {
               const [v0, v1, v2, v3] = block.videos;
               switch (block.type) {
@@ -1364,7 +1364,7 @@ const VFX = () => {
             })}
           </div>
 
-          <div className="translate-y-10 px-12 md:px-24 pb-24">
+          <section className="px-12 md:px-24 py-24 bg-theme-secondaryBg1">
             <div className="max-w-7xl mx-auto">
               {/* ── CGI Stills — unequal masonry grid ── */}
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-10">
@@ -1425,13 +1425,13 @@ const VFX = () => {
                 })}
               </div>
             </div>
-          </div>
+          </section>
         </div>
       )}
 
       {/* Original Expandable Items Section - Only show when nothing is expanded */}
       {!expandedSection && (
-        <section className="w-full bg-[#080032]">
+        <section className="w-full bg-theme-primaryBg1">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 space-y-4">
             {/* You can add additional content here if needed */}
           </div>

@@ -18,9 +18,9 @@ const About = () => {
       <Header />
 
       {/* Hero Section with Animated Text */}
-      <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+      <section className="relative w-full min-h-screen bg-theme-primaryBg1 flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
         <div className="max-w-7xl w-full mt-20">
-          <h1 className="font-display text-[65px] md:text-[85px] lg:text-[105px] font-bold text-[#3F488D] mb-16 leading-tight">
+          <h1 className="font-display text-[65px] md:text-[85px] lg:text-[105px] font-bold text-theme-primaryText mb-16 leading-tight">
             About us
           </h1>
 
@@ -34,24 +34,24 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="w-full bg-[#f6f4ef] py-20 px-10 md:px-16">
+      <section className="w-full bg-theme-secondaryBg1 py-20 px-10 md:px-16">
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           {/* Stat 1 */}
           <div className="text-center">
             <div className="flex items-end justify-center gap-3 mb-4">
               <BriefcaseBusiness
-                className="w-10 h-10 md:w-20 md:h-20 text-gray-600 mb-2"
+                className="w-10 h-10 md:w-20 md:h-20 text-white mb-2"
                 strokeWidth={1.75}
               />
-              <span className="text-[80px] md:text-[100px] font-display font-bold text-gray-600 leading-none">
+              <span className="text-[80px] md:text-[100px] font-display font-light text-white leading-none">
                 250
               </span>
-              <span className="text-[50px] md:text-[60px] font-display font-bold text-gray-600 leading-none translate-y-[-80%] translate-x-[-40%]">
+              <span className="text-[50px] md:text-[60px] font-display font-bold text-white leading-none translate-y-[-80%] translate-x-[-40%]">
                 +
               </span>
             </div>
-            <p className="text-gray-600 text-sm md:text-base tracking-wide">
+            <p className="text-white text-sm md:text-base tracking-wide">
               Experts in our team
             </p>
           </div>
@@ -60,17 +60,17 @@ const About = () => {
           <div className="text-center">
             <div className="flex items-end justify-center gap-3 mb-4">
               <Globe
-                className="w-10 h-10 md:w-20 md:h-20 text-gray-600 mb-2"
+                className="w-10 h-10 md:w-20 md:h-20 text-white mb-2"
                 strokeWidth={1.75}
               />
-              <span className="text-[80px] md:text-[100px] font-display font-bold text-gray-600 leading-none">
+              <span className="text-[80px] md:text-[100px] font-display font-light text-white leading-none">
                 20
               </span>
-              <span className="text-[50px] md:text-[60px] font-display font-bold text-gray-600 leading-none translate-y-[-80%] translate-x-[-40%]">
+              <span className="text-[50px] md:text-[60px] font-display font-bold text-white leading-none translate-y-[-80%] translate-x-[-40%]">
                 +
               </span>
             </div>
-            <p className="text-gray-600 text-sm md:text-base tracking-wide">
+            <p className="text-white text-sm md:text-base tracking-wide">
               Countries served
             </p>
           </div>
@@ -79,17 +79,17 @@ const About = () => {
           <div className="text-center">
             <div className="flex items-end justify-center gap-3 mb-4">
               <TrendingUp
-                className="w-10 h-10 md:w-20 md:h-20 text-gray-600 mb-2"
+                className="w-10 h-10 md:w-20 md:h-20 text-white mb-2"
                 strokeWidth={1.75}
               />
-              <span className="text-[80px] md:text-[100px] font-display font-bold text-gray-600 leading-none">
+              <span className="text-[80px] md:text-[100px] font-display font-light text-white leading-none">
                 10
               </span>
-              <span className="text-[50px] md:text-[60px] font-display font-bold text-gray-600 leading-none translate-y-[-80%] translate-x-[-40%]">
+              <span className="text-[50px] md:text-[60px] font-display font-bold text-white leading-none translate-y-[-80%] translate-x-[-40%]">
                 +
               </span>
             </div>
-            <p className="text-gray-600 text-sm md:text-base tracking-wide">
+            <p className="text-white text-sm md:text-base tracking-wide">
               Years of lagecy
             </p>
           </div>
@@ -99,52 +99,52 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
           {/* VFX: Movies & Ads */}
           <div>
-            <h3 className="font-display text-xl md:text-2xl font-normal text-gray-600 mb-4">
+            <h3 className="font-display text-xl md:text-2xl font-normal text-white mb-4">
               VFX: Movies & Ads
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               Successfully delivered visual effects for more than 200 Hollywood projects & 50 Bollywood projects.
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Films, Episodic, Commercials, Automobiles, Architectural & more.
             </p>
           </div>
 
           {/* Brand Solutions */}
           <div>
-            <h3 className="font-display text-xl md:text-2xl font-normal text-gray-600 mb-4">
+            <h3 className="font-display text-xl md:text-2xl font-normal text-white mb-4">
               Brand Solutions
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               Multiple campaigns for more than 50 brands/corporates in varied mediums.
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Branding, Digital Marketing, Mainline advertising, Product photography, TVC production, Audio Visual films and Content creation.
             </p>
           </div>
 
           {/* Real Estate Mar-tech */}
           <div>
-            <h3 className="font-display text-xl md:text-2xl font-normal text-gray-600 mb-4">
+            <h3 className="font-display text-xl md:text-2xl font-normal text-white mb-4">
               Real Estate Mar-tech
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               Ideated and designed technology campaigns for large scale brands and corporates across India.
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               AR, VR, MR, Projection Mapping, Interactive Media, Custom Web & App development.
             </p>
           </div>
 
           {/* Motion Pictures */}
           <div>
-            <h3 className="font-display text-xl md:text-2xl font-normal text-gray-600 mb-4">
+            <h3 className="font-display text-xl md:text-2xl font-normal text-white mb-4">
               Motion Pictures
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               Produced IP's ranging from web series, documentaries to short films.
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Series, documentaries & short films.
             </p>
           </div>
@@ -152,14 +152,14 @@ const About = () => {
       </section>
 
       {/* Meet Our Team Section */}
-      <section className="relative w-full overflow-hidden bg-[#062b3b] py-24 px-6 md:px-12 lg:px-20">
+      <section className="relative w-full overflow-hidden bg-theme-primaryBg1 py-24 px-6 md:px-12 lg:px-20">
         {/* Background Glow */}
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top,rgba(74,182,255,0.25),transparent_55%)]" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Heading */}
           <div className="max-w-5xl relative z-20">
-            <h2 className="font-display text-[56px] md:text-[80px] lg:text-[100px] font-bold text-[#29a7ff] leading-[0.95] mb-8">
+            <h2 className="font-display text-[56px] md:text-[80px] lg:text-[100px] font-bold text-theme-primaryText leading-[0.95] mb-8">
               Meet our team
             </h2>
 
@@ -222,7 +222,7 @@ const About = () => {
       </section>
 
       {/* Team Members Grid */}
-      <section className="w-full bg-[#062b3b] px-[5%] md:px-[8%] lg:px-[10%] pb-24">
+      <section className="w-full bg-theme-secondaryBg1 px-[5%] md:px-[8%] lg:px-[10%] pb-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {[
             {
@@ -298,9 +298,9 @@ const About = () => {
       </section>
 
       {/* Awards Showcase Image */}
-      <section className="relative w-full bg-[#000000] flex flex-col items-center justify-center">
+      <section className="relative w-full bg-black flex flex-col items-center justify-center">
         <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
-          <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-[#4ab6ff] tracking-tight text-center">
+          <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight text-center">
             Awards Showcase
           </h2>
         </div>
@@ -312,7 +312,7 @@ const About = () => {
         />
       </section>
 
-      <Footer />
+      <Footer theme="dark"/>
     </>
   );
 };

@@ -19,6 +19,11 @@ const menuItems = [
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const location = useLocation();
+  const isLightMenuTheme = [
+    "/",
+    "/brandSolutions",
+    "/motion-pictures",
+  ].includes(location.pathname);
 
   return (
     <>
@@ -33,10 +38,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
       {/* Side Menu Panel */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-[70] w-full md:w-[450px] bg-[#080032] transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+        className={`fixed top-0 right-0 bottom-0 z-[70] w-full md:w-[450px] ${
+          isLightMenuTheme
+            ? "bg-theme-secondaryBg2"
+            : "bg-theme-secondaryBg1"
+        } transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ 
+        style={{
           willChange: 'transform',
           backfaceVisibility: 'hidden'
         }}
@@ -46,7 +55,11 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           type="button"
           onClick={onClose}
           aria-label="Close menu"
-          className="absolute top-8 right-8 flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-300 group z-10"
+          className={`absolute top-8 right-8 flex items-center gap-2 transition-colors duration-300 group z-10 ${
+            isLightMenuTheme
+              ? "text-black hover:text-theme-primaryText"
+              : "text-white hover:text-theme-primaryText"
+          }`}
         >
           <X className="w-5 h-5" strokeWidth={1.5} />
           <span className="text-xs uppercase tracking-wider font-light">Close</span>
@@ -70,11 +83,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   willChange: 'opacity, transform'
                 }}
               >
-                <span 
+                <span
                   className={`font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight transition-colors duration-300 ${
-                    isActive 
-                      ? "text-white" 
-                      : "text-[#4a6b84] group-hover:text-white"
+                    isActive
+                      ? "text-theme-primaryText"
+                      : isLightMenuTheme
+                        ? "text-theme-secondaryText group-hover:text-theme-primaryText"
+                        : "text-white group-hover:text-theme-primaryText"
                   }`}
                   style={{ willChange: 'color' }}
                 >
@@ -86,16 +101,18 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         </nav>
 
         {/* Email at Bottom */}
-        <div 
-          className="absolute bottom-12 left-0 right-0 flex justify-center text-xs text-[#6b8aa3] px-8"
+        <div
+          className={`absolute bottom-12 left-0 right-0 flex justify-center text-xs px-8 ${
+            isLightMenuTheme ? "text-theme-secondaryText" : "text-white"
+          }`}
           style={{
             opacity: isOpen ? 1 : 0,
             transition: "opacity 0.8s ease 0.5s",
           }}
         >
-          <a 
-            href="mailto:hello@resonancedigital.com" 
-            className="hover:text-white transition-colors duration-300"
+          <a
+            href="mailto:hello@resonancedigital.com"
+            className="hover:text-theme-primaryText transition-colors duration-300"
           >
             hello@resonancedigital.com
           </a>

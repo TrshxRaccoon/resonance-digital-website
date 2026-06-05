@@ -28,6 +28,16 @@ export default {
         'tight': '1.1',
       },
       colors: {
+        theme: {
+          primaryBg1: '#080032',
+          secondaryBg1: '#100a44',
+
+          primaryBg2: '#f6f5ee',
+          secondaryBg2: '#f2eee2',
+
+          primaryText: '#4ab6ff',
+          secondaryText: '#201c50',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

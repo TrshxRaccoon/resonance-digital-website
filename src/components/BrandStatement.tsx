@@ -109,8 +109,6 @@ const BrandStatement = () => {
     ? statementText.length
     : Math.floor(statementText.length * scrollProgress);
 
-  const displayedText = statementText.slice(0, visibleCharacters);
-
   return (
     <section
       ref={sectionRef}
@@ -130,11 +128,18 @@ const BrandStatement = () => {
 
         {/* Main statement - scroll-driven typewriter effect */}
         <div className="max-w-7xl">
-          <p className="text-[25px] md:text-[45px] lg:text-[65px] font-display font-large leading-[0.9] tracking-tight text-[#4ab6ff] font-bold">
-            {displayedText}
-            {!isMobile && scrollProgress < 1 && (
-              <span className="inline-block ml-1 animate-pulse text-[#201c50]">|</span>
-            )}
+          <p className="text-[25px] md:text-[45px] lg:text-[65px] font-display font-large leading-[0.9] tracking-tight font-bold">
+            {statementText.split("").map((char, index) => (
+              <span
+                key={index}
+                style={{
+                  color: index < visibleCharacters ? "#4ab6ff" : "#f2eee2",
+                }}
+              >
+                {char}
+              </span>
+            ))}
+
           </p>
         </div>
       </div>
