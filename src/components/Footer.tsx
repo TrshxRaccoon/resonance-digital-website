@@ -6,6 +6,22 @@ interface FooterProps {
   theme?: FooterTheme;
 }
 
+// Inline SVG arrow — replaces the ↗ emoji
+const ArrowUpRight = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M7 17L17 7" />
+    <path d="M7 7h10v10" />
+  </svg>
+);
+
 const GlobeIcon = () => (
   <svg
     viewBox="0 0 24 24"
@@ -83,9 +99,10 @@ const Footer = ({ theme = "light" }: FooterProps) => {
               className={`${topCtaClass} flex items-center justify-between px-8 py-6 w-full mb-10 cursor-pointer transition`}
             >
               <span className={`font-semibold text-base ${topCtaTextClass}`}>
-                Got A Project? let’s Talk
+                Got A Project? let's Talk
               </span>
-              <span className={`text-xl ${topCtaTextClass}`}>↗</span>
+              {/* FIX: SVG arrow instead of emoji */}
+              <ArrowUpRight className={`w-5 h-5 ${topCtaTextClass}`} />
             </Link>
 
             {/* GOOGLE MAP - CLICKABLE */}
@@ -166,13 +183,19 @@ const Footer = ({ theme = "light" }: FooterProps) => {
                 className={`flex items-center justify-between border-b pb-6 text-base cursor-pointer ${borderClass}`}
               >
                 <span>{item.label}</span>
-                <span>↗</span>
+                {/* FIX: SVG arrow instead of emoji */}
+                <ArrowUpRight className="w-5 h-5" />
               </Link>
             ))}
           </div>
 
           {/* SOCIAL ICONS */}
-          <div className="flex gap-8 mt-0 mb-6">
+          {/*
+            FIX: Use size-16 (4rem = 64px) with aspect-square and flex-shrink-0
+            so the container never collapses to an oval on narrow viewports.
+            flex-wrap added so icons don't overflow on very small screens.
+          */}
+          <div className="flex flex-wrap gap-4 mt-0 mb-6">
             {[
               { icon: <GlobeIcon />, href: "https://resonancedigital.in" },
               {
@@ -197,7 +220,12 @@ const Footer = ({ theme = "light" }: FooterProps) => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-[64px] h-[64px] border flex items-center justify-center rounded-full text-[24px] transition-all duration-300 hover:scale-105 ${isDark ? "border-[#f2eee2]/40" : "border-black/30"}`}
+                className={`
+                  size-16 aspect-square flex-shrink-0
+                  border flex items-center justify-center rounded-full
+                  transition-all duration-300 hover:scale-105
+                  ${isDark ? "border-[#f2eee2]/40" : "border-black/30"}
+                `}
               >
                 {item.icon}
               </a>
