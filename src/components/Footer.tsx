@@ -169,7 +169,7 @@ const Footer = ({ theme = "light" }: FooterProps) => {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="flex flex-col pt-28">
+        <div className="flex flex-col lg:pt-28">
           {/* LINKS */}
           <div className="space-y-16 mb-8">
             {[
