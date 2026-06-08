@@ -75,7 +75,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 key={item.href}
                 to={item.href}
                 onClick={onClose}
-                className="group relative py-1 text-center"
+                className="group relative w-full py-3 text-center flex items-center justify-center"
                 style={{
                   opacity: isOpen ? 1 : 0,
                   transform: isOpen ? "translateX(0)" : "translateX(30px)",
