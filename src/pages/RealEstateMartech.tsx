@@ -57,8 +57,7 @@ const expertiseCategories = [
   "3D Renders",
   "3D Walkthroughs",
   "Drone Shots",
-  "2D Isometrics",
-  "3D Isometrics",
+  "2D & 3D Isometrics",
 ];
 
 type ExpertiseShowcaseItem = {
@@ -66,6 +65,7 @@ type ExpertiseShowcaseItem = {
   subtitle: string;
   image: string;
   category: string;
+  videoSrc?: string;
 };
 
 const expertiseShowcase: ExpertiseShowcaseItem[] = [
@@ -155,46 +155,56 @@ const expertiseShowcase: ExpertiseShowcaseItem[] = [
     subtitle: "",
     image: "/assets/images/martech/Walkthroughs/Kalpataru-Park-Revera.png",
     category: "3D Walkthroughs",
+    videoSrc: "/assets/videos/MasterAds.webm",
   },
   {
     title: "Mahindra Vista",
     subtitle: "",
     image: "/assets/images/martech/Walkthroughs/Mahindra-Vista.png",
     category: "3D Walkthroughs",
+    videoSrc: "/assets/videos/Mahindra.webm",
   },
   {
     title: "Prestige Bellanza",
     subtitle: "",
     image: "/assets/images/martech/Walkthroughs/Prestige-Bellanza.png",
     category: "3D Walkthroughs",
+    videoSrc: "/assets/videos/Automobile.webm",
   },
   {
     title: "Zira",
     subtitle: "",
     image: "/assets/images/martech/Walkthroughs/Zira.png",
     category: "3D Walkthroughs",
+    videoSrc: "/assets/videos/OPPO.webm",
+  },
+  {
+    title: "Drone Showcase",
+    subtitle: "",
+    image: "/assets/images/martech/Walkthroughs/Zira.png",
+    category: "Drone Shots",
+    videoSrc: "/assets/videos/Mahindra.webm",
   },
 
-  //2D ISOMETRICS
+  //2D & 3D Isometrics
   {
     title: "2D Isometric 01",
     subtitle: "",
     image: "/assets/images/martech/2D-Isometrics/Picture1.png",
-    category: "2D Isometrics",
+    category: "2D & 3D Isometrics",
   },
   {
     title: "2D Isometric 02",
     subtitle: "",
     image: "/assets/images/martech/2D-Isometrics/Picture2.png",
-    category: "2D Isometrics",
+    category: "2D & 3D Isometrics",
   },
 
-  //3D ISOMETRICS
   {
     title: "3D Isometric 01",
     subtitle: "",
     image: "/assets/images/martech/3D-Isometrics/Picture3.png",
-    category: "3D Isometrics",
+    category: "2D & 3D Isometrics",
   },
 ];
 
@@ -243,6 +253,10 @@ const RealEstateMartech = () => {
     useState<string>("3D Renders");
   const [currentExpertisePage, setCurrentExpertisePage] = useState<number>(0);
   const [expertiseDirection, setExpertiseDirection] = useState<number>(0);
+  const [autoRotatePausedUntil, setAutoRotatePausedUntil] = useState<number>(0);
+  const [activeWalkthroughVideo, setActiveWalkthroughVideo] = useState<
+    string | null
+  >(null);
 
   // Immersive section state
   const [activeImmersiveTabId, setActiveImmersiveTabId] = useState<string>(
@@ -252,11 +266,7 @@ const RealEstateMartech = () => {
   const isMobileViewport =
     typeof window !== "undefined" && window.innerWidth < 768;
 
-  const EXPERTISE_PER_PAGE = isMobileViewport
-    ? 1
-    : selectedExpertiseCategory === "3D Walkthroughs"
-      ? 1
-      : 3;
+  const EXPERTISE_PER_PAGE = isMobileViewport ? 1 : 3;
   const AUTO_ROTATE_MS = 4000;
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
@@ -272,29 +282,38 @@ const RealEstateMartech = () => {
   const handleExpertiseNext = () => {
     if (!canSlideExpertise) return;
     setExpertiseDirection(1);
+    setAutoRotatePausedUntil(Date.now() + 6000);
     setCurrentExpertisePage((prev) => (prev + 1) % totalExpertisePages);
   };
 
   const handleExpertisePrev = () => {
     if (!canSlideExpertise) return;
     setExpertiseDirection(-1);
+    setAutoRotatePausedUntil(Date.now() + 6000);
     setCurrentExpertisePage(
       (prev) => (prev - 1 + totalExpertisePages) % totalExpertisePages,
     );
   };
 
   useEffect(() => {
-    if (!canSlideExpertise || selectedExpertiseCategory === "3D Walkthroughs") {
+    if (!canSlideExpertise) {
       return;
     }
 
     const timer = window.setInterval(() => {
+      if (Date.now() < autoRotatePausedUntil) return;
+
       setExpertiseDirection(1);
       setCurrentExpertisePage((prev) => (prev + 1) % totalExpertisePages);
     }, AUTO_ROTATE_MS);
 
     return () => window.clearInterval(timer);
-  }, [canSlideExpertise, totalExpertisePages, selectedExpertiseCategory]);
+  }, [
+    canSlideExpertise,
+    totalExpertisePages,
+    selectedExpertiseCategory,
+    autoRotatePausedUntil,
+  ]);
 
   const expertiseStartIndex = currentExpertisePage * EXPERTISE_PER_PAGE;
   const expertisePageItems = filteredExpertiseItems.slice(
@@ -483,26 +502,28 @@ const RealEstateMartech = () => {
                 {expertisePageItems.map((item, index) => (
                   <div
                     key={`${item.title}-${item.subtitle}-${expertiseStartIndex + index}`}
+                    onClick={() =>
+                      item.videoSrc && setActiveWalkthroughVideo(item.videoSrc)
+                    }
                     className="group flex flex-col cursor-pointer"
                   >
-                    <div className="relative bg-[#0b0830] overflow-hidden rounded-none aspect-[16/10] flex items-center justify-center w-full max-w-[1200px] mx-auto">
+                    <div className="relative overflow-hidden rounded-xl aspect-[16/10] w-full bg-white/5 border border-white/10">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="max-w-[85%] max-h-[85%] object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-
-                      {item.category === "3D Walkthroughs" && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-20 h-20 rounded-full bg-[#4ab6ff] flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
+                      {item.videoSrc && (
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#4ab6ff]/90 backdrop-blur-sm flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
                             <div
                               className="ml-1"
                               style={{
                                 width: 0,
                                 height: 0,
-                                borderTop: "12px solid transparent",
-                                borderBottom: "12px solid transparent",
-                                borderLeft: "20px solid white",
+                                borderTop: "10px solid transparent",
+                                borderBottom: "10px solid transparent",
+                                borderLeft: "16px solid white",
                               }}
                             />
                           </div>
@@ -510,12 +531,13 @@ const RealEstateMartech = () => {
                       )}
                     </div>
 
-                    <div className="mt-4 pb-2 text-[#f2eee2] text-base md:text-lg leading-normal">
-                      <span className="font-gotham-bold">Client :</span>{" "}
-                      <span>{item.title}</span>
-                      <span className="mx-2">|</span>
-                      <span className="font-gotham-bold">Service :</span>{" "}
-                      <span>{item.category}</span>
+                    <div className="mt-4 flex flex-col gap-1 text-[#f2eee2]">
+                      <h3 className="text-lg md:text-xl font-semibold leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-white/60 uppercase tracking-wide">
+                        {item.category}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -622,6 +644,28 @@ const RealEstateMartech = () => {
         </div>
       </section>
 
+      {activeWalkthroughVideo && (
+        <div
+          className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4"
+          onClick={() => setActiveWalkthroughVideo(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white text-5xl leading-none"
+            onClick={() => setActiveWalkthroughVideo(null)}
+          >
+            ×
+          </button>
+
+          <video
+            src={activeWalkthroughVideo}
+            controls
+            autoPlay
+            playsInline
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
       <Footer theme="dark" />
     </>
   );

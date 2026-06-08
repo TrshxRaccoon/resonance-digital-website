@@ -6,8 +6,8 @@ import FixedHero from "@/components/FixedHero";
 
 const showcaseImages = [
   "/assets/images/motionPictures/AyodhyaSS3.jpg",
-  "/assets/images/motionPictures/CHHSS2.jpg",
-  "/assets/images/motionPictures/UHC2.png",
+  "/assets/images/motionPictures/CHHSS1.jpg",
+  "/assets/images/motionPictures/UHC1.png",
 ];
 
 const MotionPictures = () => {
@@ -24,7 +24,7 @@ const MotionPictures = () => {
       <Header />
 
       <FixedHero
-        backgroundImage="/assets/images/motionPictures/motionpicturesBg.jpg"
+        backgroundImage="/assets/images/motionPictures/motionpicturesBg.png"
         title="Motion Pictures"
         description={
           <AnimatedColorText

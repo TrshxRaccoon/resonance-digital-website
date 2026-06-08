@@ -109,22 +109,95 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
   };
 
   const moviesShowcase = [
+    // 1. Doctor's-Strange-Multiverse-of-Madness
     {
-      title: "12th-Fail",
+      title: "Doctor's-Strange-Multiverse-of-Madness",
       image:
-        "https://resonancedigital.in/assets/images/VFX/movies/12th-Fail.jpg",
+        "https://resonancedigital.in/assets/images/VFX/movies/Doctor-Strange-Multiverse-of-Madness.jpg",
       platform: "xxxxxx",
-      year: "2023",
+      year: "2022",
       category: "xxxxxx",
     },
+    // 2. Dhurandhar
     {
-      title: "Anaconda",
+      title: "Dhurandhar",
       image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Anaconda.jpg",
+        "https://resonancedigital.in/assets/images/VFX/movies/Dhurandhar.jpg",
       platform: "xxxxxx",
       year: "2025",
       category: "xxxxxx",
     },
+    // 3. Mission-Impossible-Dead-Reckoning_1
+    {
+      title: "Mission-Impossible-Dead-Reckoning_1",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Mission-Impossible-Dead-Reckoning_1.jpg",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 4. The-Last of Us
+    {
+      title: "The-Last of Us",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Last of Us.JPG",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 5. Pathan
+    {
+      title: "Pathan",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Pathan.jpg",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 7. Squid-Games-3
+    {
+      title: "Squid-Games-3",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Squid-Games-3.jpg",
+      platform: "xxxxxx",
+      year: "2025",
+      category: "xxxxxx",
+    },
+    // 8. Family-Man-S3
+    {
+      title: "Family-Man-S3",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Family-Man-S3.jpg",
+      platform: "xxxxxx",
+      year: "2025",
+      category: "xxxxxx",
+    },
+    // 9. Witcher
+    {
+      title: "Witcher",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Witcher.jpg",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 10. Mirzapur-S3
+    {
+      title: "Mirzapur-S3",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Mirzapur-S3.jpg",
+      platform: "xxxxxx",
+      year: "2024",
+      category: "xxxxxx",
+    },
+    // 11. Sandman-Season 1
+    {
+      title: "Sandman-Season 1",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Sandman-Season 1.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 12. Antman-Wasp-Quantumania
     {
       title: "Antman-Wasp-Quantumania",
       image:
@@ -133,14 +206,136 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
       year: "2023",
       category: "xxxxxx",
     },
+    // 13. KGF2
     {
-      title: "Baaghi-3",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-3.jpg",
+      title: "KGF2",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/KGF2.jpg",
       platform: "xxxxxx",
-      year: "2020",
+      year: "2022",
       category: "xxxxxx",
     },
+    // 14. Extraction-2
+    {
+      title: "Extraction-2",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Extraction-2.JPG",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 15. Secret-Invasion
+    {
+      title: "Secret-Invasion",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Secret-Invasion.jpg",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 16. Citadel-Honey-Bunny
+    {
+      title: "Citadel-Honey-Bunny",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Citadel-Honey-Bunny.jpg",
+      platform: "xxxxxx",
+      year: "2024",
+      category: "xxxxxx",
+    },
+    // 17. 12th-Fail
+    {
+      title: "12th-Fail",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/12th-Fail.jpg",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 18. Red-Notice
+    {
+      title: "Red-Notice",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Red-Notice.jpg",
+      platform: "xxxxxx",
+      year: "2021",
+      category: "xxxxxx",
+    },
+    // 19. The-Flash
+    {
+      title: "The-Flash",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Flash.JPG",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 20. Rocket-Boys
+    {
+      title: "Rocket-Boys",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Rocket-Boys.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 23. Senna
+    {
+      title: "Senna",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Senna.jpg",
+      platform: "xxxxxx",
+      year: "2024",
+      category: "xxxxxx",
+    },
+    // 24. SEE
+    {
+      title: "SEE",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/SEE.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 25. Karate-Kids-Legends
+    {
+      title: "Karate-Kids-Legends",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Karate-Kids-Legends.jpg",
+      platform: "xxxxxx",
+      year: "2025",
+      category: "xxxxxx",
+    },
+    // 28. Upload
+    {
+      title: "Upload",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Upload.jpg",
+      platform: "xxxxxx",
+      year: "2023",
+      category: "xxxxxx",
+    },
+    // 29. TED
+    {
+      title: "TED",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/TED.jpg",
+      platform: "xxxxxx",
+      year: "2024",
+      category: "xxxxxx",
+    },
+    // 30. Dept-Q
+    {
+      title: "Dept-Q",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Dept-Q.jpg",
+      platform: "xxxxxx",
+      year: "2025",
+      category: "xxxxxx",
+    },
+    // 31. Kartikeya-2
+    {
+      title: "Kartikeya-2",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Kartikeya-2.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 32. Baaghi-4
     {
       title: "Baaghi-4",
       image:
@@ -149,6 +344,105 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
       year: "2025",
       category: "xxxxxx",
     },
+    // 33. Chandigarh-Kare-Aashiqui
+    {
+      title: "Chandigarh-Kare-Aashiqui",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Chandigarh-Kare-Aashiqui.jpg",
+      platform: "xxxxxx",
+      year: "2021",
+      category: "xxxxxx",
+    },
+    // 35. Orville
+    {
+      title: "Orville",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Orville.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 36. Fraggle-Rock
+    {
+      title: "Fraggle-Rock",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Fraggle-Rock.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 38. Anaconda
+    {
+      title: "Anaconda",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Anaconda.jpg",
+      platform: "xxxxxx",
+      year: "2025",
+      category: "xxxxxx",
+    },
+    // 39. Heropanti-2
+    {
+      title: "Heropanti-2",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Heropanti-2.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 40. Baaghi-3
+    {
+      title: "Baaghi-3",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-3.jpg",
+      platform: "xxxxxx",
+      year: "2020",
+      category: "xxxxxx",
+    },
+    // 41. Wendel-and-Wild
+    {
+      title: "Wendel-and-Wild",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Wendel-and-Wild.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 42. Mike
+    {
+      title: "Mike",
+      image: "https://resonancedigital.in/assets/images/VFX/movies/Mike.jpg",
+      platform: "xxxxxx",
+      year: "2022",
+      category: "xxxxxx",
+    },
+    // 50. The-Empire
+    {
+      title: "The-Empire",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/The-Empire.jpg",
+      platform: "xxxxxx",
+      year: "2021",
+      category: "xxxxxx",
+    },
+    // 51. Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01
+    {
+      title: "Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01.jpg",
+      platform: "xxxxxx",
+      year: "2026",
+      category: "xxxxxx",
+    },
+    // 54. Mumbai-Diaries
+    {
+      title: "Mumbai-Diaries",
+      image:
+        "https://resonancedigital.in/assets/images/VFX/movies/Mumbai-Diaries.jpg",
+      platform: "xxxxxx",
+      year: "2021",
+      category: "xxxxxx",
+    },
+    // Append any remaining movies not in the above order (preserve their object contents)
+    // The following titles were not mentioned in the requested order:
     {
       title: "Batman",
       image: "https://resonancedigital.in/assets/images/VFX/movies/Batman.jpg",
@@ -172,195 +466,10 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
       category: "xxxxxx",
     },
     {
-      title: "Chandigarh-Kare-Aashiqui",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Chandigarh-Kare-Aashiqui.jpg",
-      platform: "xxxxxx",
-      year: "2021",
-      category: "xxxxxx",
-    },
-    {
-      title: "Citadel-Honey-Bunny",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Citadel-Honey-Bunny.jpg",
-      platform: "xxxxxx",
-      year: "2024",
-      category: "xxxxxx",
-    },
-    {
-      title: "Dept-Q",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Dept-Q.jpg",
-      platform: "xxxxxx",
-      year: "2025",
-      category: "xxxxxx",
-    },
-    {
-      title: "Dhurandhar",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Dhurandhar.jpg",
-      platform: "xxxxxx",
-      year: "2025",
-      category: "xxxxxx",
-    },
-    {
-      title: "Doctor's-Strange-Multiverse-of-Madness",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Doctor-Strange-Multiverse-of-Madness.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Extraction-2",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Extraction-2.JPG",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "Family-Man-S3",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Family-Man-S3.jpg",
-      platform: "xxxxxx",
-      year: "2025",
-      category: "xxxxxx",
-    },
-    {
-      title: "Fraggle-Rock",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Fraggle-Rock.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Heropanti-2",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Heropanti-2.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Karate-Kids-Legends",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Karate-Kids-Legends.jpg",
-      platform: "xxxxxx",
-      year: "2025",
-      category: "xxxxxx",
-    },
-    {
-      title: "Kartikeya-2",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Kartikeya-2.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "KGF2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/KGF2.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Mike",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mike.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Mirzapur-S3",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Mirzapur-S3.jpg",
-      platform: "xxxxxx",
-      year: "2024",
-      category: "xxxxxx",
-    },
-    {
-      title: "Mission-Impossible-Dead-Reckoning_1",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Mission-Impossible-Dead-Reckoning_1.jpg",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "Mumbai-Diaries",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Mumbai-Diaries.jpg",
-      platform: "xxxxxx",
-      year: "2021",
-      category: "xxxxxx",
-    },
-    {
-      title: "Orville",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Orville.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Pathan",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Pathan.jpg",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "Red-Notice",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Red-Notice.jpg",
-      platform: "xxxxxx",
-      year: "2021",
-      category: "xxxxxx",
-    },
-    {
-      title: "Rocket-Boys",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Rocket-Boys.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
       title: "sadak2",
       image: "https://resonancedigital.in/assets/images/VFX/movies/sadak2.jpg",
       platform: "xxxxxx",
       year: "2020",
-      category: "xxxxxx",
-    },
-    {
-      title: "Sandman-Season 1",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Sandman-Season 1.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Secret-Invasion",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Secret-Invasion.jpg",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "SEE",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/SEE.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Senna",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Senna.jpg",
-      platform: "xxxxxx",
-      year: "2024",
       category: "xxxxxx",
     },
     {
@@ -372,14 +481,6 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
       category: "xxxxxx",
     },
     {
-      title: "Squid-Games-3",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Squid-Games-3.jpg",
-      platform: "xxxxxx",
-      year: "2025",
-      category: "xxxxxx",
-    },
-    {
       title: "Stargirl",
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/Stargirl.jpg",
@@ -388,50 +489,11 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
       category: "xxxxxx",
     },
     {
-      title: "TED",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/TED.jpg",
-      platform: "xxxxxx",
-      year: "2024",
-      category: "xxxxxx",
-    },
-    {
-      title: "The-Empire",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/The-Empire.jpg",
-      platform: "xxxxxx",
-      year: "2021",
-      category: "xxxxxx",
-    },
-    {
       title: "The-Flash 8",
       image:
         "https://resonancedigital.in/assets/images/VFX/movies/The-Flash 8.jpg",
       platform: "xxxxxx",
       year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "The-Flash",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/The-Flash.JPG",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "The-Last of Us",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/The-Last of Us.JPG",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01.jpg",
-      platform: "xxxxxx",
-      year: "2026",
       category: "xxxxxx",
     },
     {
@@ -480,28 +542,6 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
         "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-977985.JPG",
       platform: "xxxxxx",
       year: "xxxxxx",
-      category: "xxxxxx",
-    },
-    {
-      title: "Upload",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Upload.jpg",
-      platform: "xxxxxx",
-      year: "2023",
-      category: "xxxxxx",
-    },
-    {
-      title: "Wendel-and-Wild",
-      image:
-        "https://resonancedigital.in/assets/images/VFX/movies/Wendel-and-Wild.jpg",
-      platform: "xxxxxx",
-      year: "2022",
-      category: "xxxxxx",
-    },
-    {
-      title: "Witcher",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Witcher.jpg",
-      platform: "xxxxxx",
-      year: "2023",
       category: "xxxxxx",
     },
   ];
@@ -882,7 +922,7 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
           <div className="hidden md:block relative w-full h-screen">
             {/* Full-bleed movies image as base layer — prevents black corners showing through clip gaps */}
             <img
-              src="/assets/images/vfx/movie-background.png"
+              src="/assets/images/vfx/movie-background-leg.png"
               alt=""
               aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover"
@@ -903,7 +943,7 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
               }}
             >
               <img
-                src="/assets/images/vfx/movie-background.png"
+                src="/assets/images/vfx/movie-background-leg.png"
                 alt="Movies"
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
               />
@@ -954,7 +994,7 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
 
             {/* Base layer — films image fills the seam gap between the two clips */}
             <img
-              src="/assets/images/vfx/movie-background.png"
+              src="/assets/images/vfx/movie-background-leg.png"
               alt=""
               aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover"
@@ -969,7 +1009,7 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
               }}
             >
               <img
-                src="/assets/images/vfx/movie-background.png"
+                src="/assets/images/vfx/movie-background-leg.png"
                 alt="Movies"
                 className="w-full h-full object-cover"
               />
@@ -1018,7 +1058,7 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: `url('/assets/images/vfx/movie-background.png')`,
+                backgroundImage: `url('/assets/images/vfx/movie-background-leg.png')`,
               }}
             />
             <div className="absolute inset-0 bg-black/60" />
