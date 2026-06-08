@@ -4,19 +4,10 @@ import Footer from "../components/Footer";
 import AnimatedColorText from "../components/AnimatedColorText";
 import FixedHero from "@/components/FixedHero";
 
-const showreels = [
-  {
-    title: "Master Showreel",
-    embedUrl: "https://www.youtube.com/embed/VIDEO_ID_1",
-  },
-  {
-    title: "Commercial Showreel",
-    embedUrl: "https://www.youtube.com/embed/VIDEO_ID_2",
-  },
-  {
-    title: "Documentary Showreel",
-    embedUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
-  },
+const showcaseImages = [
+  "/assets/images/motionPictures/AyodhyaSS3.jpg",
+  "/assets/images/motionPictures/CHHSS2.jpg",
+  "/assets/images/motionPictures/UHC2.png",
 ];
 
 const MotionPictures = () => {
@@ -33,7 +24,7 @@ const MotionPictures = () => {
       <Header />
 
       <FixedHero
-        backgroundImage="/assets/images/motionPictures/motionpicturesbg.jpeg"
+        backgroundImage="/assets/images/motionPictures/motionpicturesBg.jpg"
         title="Motion Pictures"
         description={
           <AnimatedColorText
@@ -53,22 +44,17 @@ const MotionPictures = () => {
         </div>
 
         <div className="space-y-0">
-          {showreels.map((showreel, index) => (
+          {showcaseImages.map((image, index) => (
             <div
-              key={showreel.title}
-              className={`w-full ${index % 2 === 0 ? "bg-theme-primaryBg2" : "bg-theme-secondaryBg2"} py-20 px-6 md:px-12 lg:px-20`}
+              key={image}
+              className={`w-full ${index % 2 === 0 ? "bg-theme-primaryBg2" : "bg-theme-secondaryBg2"} py-12 md:py-16 px-0`}
             >
-              <h3 className="text-theme-secondaryText text-xl md:text-2xl font-gotham-bold mb-6">
-                {showreel.title}
-              </h3>
-
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-                <iframe
-                  src={showreel.embedUrl}
-                  title={showreel.title}
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+              <div className="w-full flex justify-center">
+                <img
+                  src={image}
+                  alt={`Motion Pictures Showcase ${index + 1}`}
+                  className="block w-full h-auto object-contain"
+                  loading="lazy"
                 />
               </div>
             </div>

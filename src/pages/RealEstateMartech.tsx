@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "../components/Header";
@@ -217,22 +217,23 @@ const immersiveTabs: ImmersiveTabData[] = [
   {
     id: "interactive-sales-tour",
     label: "Interactive Sales Tour",
-    videoSrc: "/assets/videos/placeholder_video.mp4",
+    videoSrc: "https://storage.net-fs.com/hosting/6111279/12/index.htm",
   },
   {
     id: "digital-twin",
     label: "Digital Twin",
-    videoSrc: "/assets/videos/placeholder_video.mp4",
+    videoSrc: "https://www.youtube.com/embed/E02wLhAMBWs",
   },
   {
     id: "experience-center",
     label: "Experience Center",
-    videoSrc: "/assets/videos/placeholder_video.mp4",
+    videoSrc:
+      "https://drive.google.com/file/d/1W2hf1xqbaxXeBY_IrM7-TNPU57BNa06k/preview",
   },
   {
     id: "ar-vr",
     label: "AR / VR",
-    videoSrc: "/assets/videos/placeholder_video.mp4",
+    videoSrc: "https://www.youtube.com/embed/sgD8tVOTqsE",
   },
 ];
 
@@ -247,12 +248,15 @@ const RealEstateMartech = () => {
   const [activeImmersiveTabId, setActiveImmersiveTabId] = useState<string>(
     immersiveTabs[0].id,
   );
-  const immersiveVideoRef = useRef<HTMLVideoElement>(null);
-  const immersiveSectionRef = useRef<HTMLElement>(null);
-  const [isImmersiveInView, setIsImmersiveInView] = useState<boolean>(false);
-  const [isPageVisible, setIsPageVisible] = useState<boolean>(true);
 
-  const EXPERTISE_PER_PAGE = 2;
+  const isMobileViewport =
+    typeof window !== "undefined" && window.innerWidth < 768;
+
+  const EXPERTISE_PER_PAGE = isMobileViewport
+    ? 1
+    : selectedExpertiseCategory === "3D Walkthroughs"
+      ? 1
+      : 3;
   const AUTO_ROTATE_MS = 4000;
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
@@ -305,56 +309,6 @@ const RealEstateMartech = () => {
 
   const handleTabSwitch = (tab: ImmersiveTabData) => {
     setActiveImmersiveTabId(tab.id);
-  };
-
-  useEffect(() => {
-    const handleVisibilityChange = () => setIsPageVisible(!document.hidden);
-    handleVisibilityChange();
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () =>
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-  }, []);
-
-  useEffect(() => {
-    const section = immersiveSectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsImmersiveInView(
-          entry.isIntersecting && entry.intersectionRatio >= 0.35,
-        );
-      },
-      { threshold: [0, 0.35, 0.6] },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const video = immersiveVideoRef.current;
-    if (!video) return;
-
-    const shouldPlay = isImmersiveInView && isPageVisible;
-
-    if (!shouldPlay) {
-      video.pause();
-      return;
-    }
-
-    if (video.paused) {
-      void video.play().catch(() => undefined);
-    }
-  }, [activeImmersiveTab.videoSrc, isImmersiveInView, isPageVisible]);
-
-  const handleImmersiveTimeUpdate = () => {};
-
-  const handleImmersiveEnded = () => {
-    const video = immersiveVideoRef.current;
-    if (!video) return;
-
-    video.currentTime = 0;
   };
 
   return (
@@ -447,7 +401,7 @@ const RealEstateMartech = () => {
         </h2>
 
         <div className="mt-6 mb-8 w-full max-w-[1700px]">
-          <div className="flex flex-wrap gap-y-3 text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] w-full tracking-tight">
+          <div className="hidden md:flex flex-wrap gap-y-3 text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] w-full tracking-tight">
             {expertiseCategories.map((category, index) => (
               <div key={category} className="flex items-center">
                 <button
@@ -469,6 +423,29 @@ const RealEstateMartech = () => {
               </div>
             ))}
           </div>
+
+          <div className="md:hidden flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide pb-2 text-lg font-bold tracking-tight">
+            {expertiseCategories.map((category, index) => (
+              <div key={category} className="flex items-center shrink-0">
+                <button
+                  onClick={() => {
+                    setSelectedExpertiseCategory(category);
+                    setCurrentExpertisePage(0);
+                  }}
+                  className={`transition-colors duration-300 ${
+                    selectedExpertiseCategory === category
+                      ? "text-[#4ab6ff]"
+                      : "text-[#f2eee2]/40"
+                  }`}
+                >
+                  {category}
+                </button>
+                {index < expertiseCategories.length - 1 && (
+                  <span className="text-[#f2eee2]/30 mx-3">|</span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="relative w-full">
@@ -484,7 +461,11 @@ const RealEstateMartech = () => {
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          <div className="relative overflow-hidden px-4 md:px-6 py-4">
+          <div
+            className={`relative overflow-hidden px-4 md:px-6 pt-4 ${
+              EXPERTISE_PER_PAGE === 1 ? "pb-16" : "pb-4"
+            }`}
+          >
             <AnimatePresence initial={false} custom={expertiseDirection}>
               <motion.div
                 key={`${selectedExpertiseCategory}-${currentExpertisePage}`}
@@ -493,14 +474,18 @@ const RealEstateMartech = () => {
                 animate={{ x: 0 }}
                 exit={{ x: expertiseDirection > 0 ? "-100%" : "100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="absolute inset-4 md:inset-6 grid grid-cols-1 md:grid-cols-2 gap-8"
+                className={`absolute inset-4 md:inset-6 grid gap-8 ${
+                  EXPERTISE_PER_PAGE === 1
+                    ? "grid-cols-1"
+                    : "grid-cols-1 md:grid-cols-3"
+                }`}
               >
                 {expertisePageItems.map((item, index) => (
                   <div
                     key={`${item.title}-${item.subtitle}-${expertiseStartIndex + index}`}
                     className="group flex flex-col cursor-pointer"
                   >
-                    <div className="relative bg-[#0b0830] overflow-hidden rounded-none aspect-[16/10] flex items-center justify-center">
+                    <div className="relative bg-[#0b0830] overflow-hidden rounded-none aspect-[16/10] flex items-center justify-center w-full max-w-[1200px] mx-auto">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -525,7 +510,7 @@ const RealEstateMartech = () => {
                       )}
                     </div>
 
-                    <div className="mt-4 text-[#f2eee2] text-base md:text-lg">
+                    <div className="mt-4 pb-2 text-[#f2eee2] text-base md:text-lg leading-normal">
                       <span className="font-gotham-bold">Client :</span>{" "}
                       <span>{item.title}</span>
                       <span className="mx-2">|</span>
@@ -540,18 +525,32 @@ const RealEstateMartech = () => {
                 }).map((_, index) => (
                   <div
                     key={`placeholder-${index}`}
-                    className="aspect-[16/10]"
+                    className={
+                      EXPERTISE_PER_PAGE === 1
+                        ? "aspect-[16/10] min-h-[320px] md:min-h-[520px]"
+                        : "aspect-[16/10]"
+                    }
                   />
                 ))}
               </motion.div>
             </AnimatePresence>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 invisible">
+            <div
+              className={`grid gap-8 invisible ${
+                EXPERTISE_PER_PAGE === 1
+                  ? "grid-cols-1"
+                  : "grid-cols-1 md:grid-cols-3"
+              }`}
+            >
               {Array(EXPERTISE_PER_PAGE)
                 .fill(0)
                 .map((_, i) => (
                   <div
                     key={i}
-                    className="aspect-[16/10]"
+                    className={
+                      EXPERTISE_PER_PAGE === 1
+                        ? "aspect-[16/10] min-h-[320px] md:min-h-[520px]"
+                        : "aspect-[16/10]"
+                    }
                   ></div>
                 ))}
             </div>
@@ -572,10 +571,7 @@ const RealEstateMartech = () => {
       </section>
 
       {/* ── Section 2: Immersive Technology Solutions ─────────────────── */}
-      <section
-        ref={immersiveSectionRef}
-        className="w-full bg-theme-secondaryBg1 py-14 md:py-16"
-      >
+      <section className="w-full bg-theme-secondaryBg1 py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1240px] px-6 sm:px-10 lg:px-0">
           {/* Section header */}
           <h2 className="font-display text-3xl sm:text-4xl md:text-[44px] font-normal text-white/60 mb-10">
@@ -613,15 +609,13 @@ const RealEstateMartech = () => {
           {/* Content: video full width below tab bar */}
           <div className="w-full">
             <div className="relative w-full aspect-video bg-black overflow-hidden rounded-lg">
-              <video
-                ref={immersiveVideoRef}
+              <iframe
                 src={activeImmersiveTab.videoSrc}
-                className="w-full h-full object-cover"
-                onTimeUpdate={handleImmersiveTimeUpdate}
-                onEnded={handleImmersiveEnded}
-                muted
-                preload="metadata"
-                playsInline
+                title={activeImmersiveTab.label}
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
               />
             </div>
           </div>

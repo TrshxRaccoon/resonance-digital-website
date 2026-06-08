@@ -21,7 +21,10 @@ const VFX = () => {
   const expandedContentRef = useRef<HTMLDivElement>(null);
   const splitSectionRef = useRef<HTMLDivElement>(null);
 
-  const ITEMS_PER_PAGE = 4;
+  const isMobileViewport =
+  typeof window !== "undefined" && window.innerWidth < 768;
+
+const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
   const MOVIE_AUTO_ROTATE_MS = 4000;
 
   const handleMovieNext = () => {
@@ -70,22 +73,22 @@ const VFX = () => {
 
   const movieShowreels = {
     "Master Showreel": {
-      youtubeEmbedUrl: "https://resonancedigital.in/assets/videos/Resonance-VFX-Showreel_MP4.mp4",
+      youtubeEmbedUrl: "/assets/videos/MasterMovie.webm",
     },
     "Action Reel": {
       youtubeEmbedUrl: "https://www.youtube.com/embed/rLzbIqI1VrU",
     },
     "Roto-Paint-Matchmove": {
-      youtubeEmbedUrl: "https://www.youtube.com/embed/mn7WMlnyWnQ",
+      youtubeEmbedUrl: "/assets/videos/RPM.webm",
     },
     "Set Extension": {
-      youtubeEmbedUrl: "https://www.youtube.com/embed/KBwcwjQDjEE",
+      youtubeEmbedUrl: "/assets/videos/SetExtension.webm",
     },
     "PIP Reel": {
-      youtubeEmbedUrl: "https://www.youtube.com/embed/8jUa_imL-DI",
+      youtubeEmbedUrl: "/assets/videos/PIP.webm",
     },
     "Creature Reel": {
-      youtubeEmbedUrl: "https://www.youtube.com/embed/RbtCvfX4n_I",
+      youtubeEmbedUrl: "/assets/videos/Creature.webm",
     },
     "Crowd Multiplication Reel": {
       youtubeEmbedUrl: "https://www.youtube.com/embed/87CuOfwFpd0",
@@ -94,10 +97,10 @@ const VFX = () => {
 
   const adShowreels = {
     "Master Showreel": {
-      embedUrl: "https://www.youtube.com/embed/YizxjEdgjwo",
+      embedUrl: "/assets/videos/MasterAds.webm",
     },
     "Automobile Showreel": {
-      embedUrl: "https://www.youtube.com/embed/Oc4FdMn6v_Y",
+      embedUrl: "/assets/videos/Automobile.webm",
     },
     "Liquids Showreel": {
       embedUrl:
@@ -584,64 +587,64 @@ const VFX = () => {
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   const adsVideoFeed = [
     {
-      src: "https://www.youtube.com/embed/R38Utym7jQA",
+      src: "/assets/videos/Apollo_Tyres.webm",
       label: "Apollo Apterra Tyres",
     },
     {
-      src: "https://www.youtube.com/embed/Mzi9C-KQn20",
+      src: "/assets/videos/OPPO.webm",
       label: "OPPO AI Best Face",
     },
     {
-      src: "https://www.youtube.com/embed/hV5qy2Uf6rA",
+      src: "/assets/videos/Indigo.webm",
       label: "Indigo Protect Plus",
     },
-    { src: "https://www.youtube.com/embed/WyRVQCG9zQU", label: "Campa Energy" },
-    { src: "https://www.youtube.com/embed/2XmSERxk2D4", label: "Black Dog" },
-    { src: "https://www.youtube.com/embed/RfB82bLMjF0", label: "SUPERBET" },
+    { src: "/assets/videos/Campa.webm", label: "Campa Energy" },
+    { src: "/assets/videos/Black_Dog.webm", label: "Black Dog" },
+    { src: "/assets/videos/SUPERBET.webm", label: "SUPERBET" },
     {
-      src: "https://www.youtube.com/embed/645Oi-VWWzk",
+      src: "/assets/videos/Fastrack.webm",
       label: "Fastrack Smart",
     },
-    { src: "https://www.youtube.com/embed/tbF1zLEg2JQ", label: "Bournvita" },
-    { src: "https://www.youtube.com/embed/7bJF4SQNHfM", label: "Honda Amaze" },
+    { src: "/assets/videos/Bournvita.webm", label: "Bournvita" },
+    { src: "/assets/videos/Honda.webm", label: "Honda Amaze" },
     { src: "https://www.instagram.com/reel/DQMRzL5DVIW/embed", label: "Oreo" },
     {
-      src: "https://www.youtube.com/embed/WZ0iwRyJvUE",
+      src: "/assets/videos/Ecolink.webm",
       label: "Ecolink BLDC Fans",
     },
-    { src: "https://www.youtube.com/embed/YBghJkyU938", label: "JK Cement" },
+    { src: "/assets/videos/JK_Cement.webm", label: "JK Cement" },
     {
-      src: "https://www.youtube.com/embed/KKrPcYTI-ms",
+      src: "/assets/videos/Director_Special.webm",
       label: "Director Special Elaichi",
     },
-    { src: "https://www.youtube.com/embed/8Zl1JTwkGsU", label: "Kit Kat" },
-    { src: "https://www.youtube.com/embed/3bMiUFq4R3g", label: "Max Fashion" },
+    { src: "/assets/videos/KitKat.webm", label: "Kit Kat" },
+    { src: "/assets/videos/Max_Fashion.webm", label: "Max Fashion" },
     {
-      src: "https://www.youtube.com/embed/18ONRTDjpNE",
+      src: "/assets/videos/Mahindra.webm",
       label: "The Plush New XUV500",
     },
     {
-      src: "https://www.youtube.com/embed/j_yCTy7RJdA",
+      src: "/assets/videos/Savsol.webm",
       label: "Savsol Lubricants",
     },
     {
-      src: "https://www.youtube.com/embed/psj8PBNokiU",
+      src: "/assets/videos/Flipkart.webm",
       label: "Flipkart Big Bang Diwali",
     },
     {
-      src: "https://www.youtube.com/embed/oC56lEFHo0Y",
+      src: "/assets/videos/Acko.webm",
       label: "The Fast & The Fair - ACKO",
     },
     {
-      src: "https://www.youtube.com/embed/qSiO0_LFdlo",
+      src: "/assets/videos/Netflix2021.webm",
       label: "Netflix End of Year 2021",
     },
     {
-      src: "https://www.youtube.com/embed/_-nqkErvF1E",
+      src: "/assets/videos/Exclusive Deleted Scenes Netflix Playback 2022.webm",
       label: "Netflix End of Year 2022",
     },
     {
-      src: "https://www.youtube.com/embed/K5qns5BI208",
+      src: "/assets/videos/Netflix2023.webm",
       label: "Netflix End of Year 2023",
     },
   ];
@@ -712,14 +715,27 @@ const VFX = () => {
     <div
       className={`group relative w-full aspect-video overflow-hidden rounded-sm ${className}`}
     >
-      <iframe
-        src={src}
-        title={label}
-        loading="lazy"
-        className="absolute inset-0 w-full h-full"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
+      {src.endsWith(".webm") ? (
+        <video
+          src={src}
+          title={label}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <iframe
+          src={src}
+          title={label}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      )}
       <div className="absolute inset-0 bg-black/10 pointer-events-none" />
       <p className="absolute bottom-6 left-6 text-[#f2eee2] font-display text-xl font-bold pointer-events-none">
         {label}
@@ -860,73 +876,125 @@ const VFX = () => {
       {!expandedSection && (
         <section
           ref={splitSectionRef}
-          className="relative w-full h-screen overflow-hidden bg-black"
+          className="relative w-full overflow-hidden bg-black"
         >
-          {/* Full-bleed movies image as base layer — prevents black corners showing through clip gaps */}
-          <img
-            src="/assets/images/vfx/movie-background.png"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          {/* Movies (Left, diagonally clipped) */}
-          <div
-            onClick={() => handleExpand("movies")}
-            onMouseEnter={() => setHoveredSide("movies")}
-            onMouseLeave={() => setHoveredSide(null)}
-            className="absolute inset-0 overflow-hidden group cursor-pointer transition-all duration-700"
-            style={{
-              clipPath:
-                hoveredSide === "movies"
-                  ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-                  : hoveredSide === "ads"
-                    ? "polygon(0 0, 15% 0, 5% 100%, 0 100%)"
-                    : "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
-            }}
-          >
+          {/* ── DESKTOP: diagonal split (unchanged) ── */}
+          <div className="hidden md:block relative w-full h-screen">
+            {/* Full-bleed movies image as base layer — prevents black corners showing through clip gaps */}
             <img
               src="/assets/images/vfx/movie-background.png"
-              alt="Movies"
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover"
             />
+            {/* Movies (Left, diagonally clipped) */}
             <div
-  className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
-    hoveredSide === "ads"
-      ? "bg-black/0"
-      : "bg-black/45 group-hover:bg-black/25"
-  }`}
-/>
+              onClick={() => handleExpand("movies")}
+              onMouseEnter={() => setHoveredSide("movies")}
+              onMouseLeave={() => setHoveredSide(null)}
+              className="absolute inset-0 overflow-hidden group cursor-pointer transition-all duration-700"
+              style={{
+                clipPath:
+                  hoveredSide === "movies"
+                    ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+                    : hoveredSide === "ads"
+                      ? "polygon(0 0, 15% 0, 5% 100%, 0 100%)"
+                      : "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
+              }}
+            >
+              <img
+                src="/assets/images/vfx/movie-background.png"
+                alt="Movies"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              />
+              <div
+                className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
+                  hoveredSide === "ads"
+                    ? "bg-black/0"
+                    : "bg-black/45 group-hover:bg-black/25"
+                }`}
+              />
+              <h2 className="absolute left-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
+                Films & Episodic
+              </h2>
+            </div>
 
-            <h2 className="absolute left-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
-              Films & Episodic
-            </h2>
+            {/* Ads (Right, diagonally clipped) */}
+            <div
+              onClick={() => handleExpand("ads")}
+              onMouseEnter={() => setHoveredSide("ads")}
+              onMouseLeave={() => setHoveredSide(null)}
+              className="absolute inset-0 overflow-hidden group cursor-pointer transition-all duration-700"
+              style={{
+                clipPath:
+                  hoveredSide === "ads"
+                    ? "polygon(5% 0, 100% 0, 100% 100%, 15% 100%)"
+                    : hoveredSide === "movies"
+                      ? "polygon(95% 0, 100% 0, 100% 100%, 85% 100%)"
+                      : "polygon(62% 0, 100% 0, 100% 100%, 42% 100%)",
+              }}
+            >
+              <img
+                src="/assets/images/vfx/ads-showreel.jpg"
+                alt="Ads"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 pointer-events-none bg-black/45 transition-all duration-500 group-hover:bg-black/25" />
+              <h2 className="absolute right-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
+                Advertising
+              </h2>
+            </div>
           </div>
 
-          {/* Ads (Right, diagonally clipped) */}
-          <div
-            onClick={() => handleExpand("ads")}
-            onMouseEnter={() => setHoveredSide("ads")}
-            onMouseLeave={() => setHoveredSide(null)}
-            className="absolute inset-0 overflow-hidden group cursor-pointer transition-all duration-700"
-            style={{
-              clipPath:
-                hoveredSide === "ads"
-                  ? "polygon(5% 0, 100% 0, 100% 100%, 15% 100%)"
-                  : hoveredSide === "movies"
-                    ? "polygon(95% 0, 100% 0, 100% 100%, 85% 100%)"
-                    : "polygon(62% 0, 100% 0, 100% 100%, 42% 100%)",
-            }}
-          >
-            <img
-              src="/assets/images/vfx/ads-showreel.jpg"
-              alt="Ads"
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 pointer-events-none bg-black/45 transition-all duration-500 group-hover:bg-black/25" />
+          {/* ── MOBILE: vertical equivalent of the desktop diagonal split ── */}
+          {/* Same two panels, same images, same titles, same onClick —
+              clipPath axes swapped so the diagonal cut runs horizontally
+              and the panels stack top (Films) / bottom (Ads). */}
+          <div className="md:hidden relative w-full" style={{ height: "100svh" }}>
 
-            <h2 className="absolute right-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
-              Advertising
-            </h2>
+            {/* Base layer — films image fills the seam gap between the two clips */}
+            <img
+              src="/assets/images/vfx/movie-background.png"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+
+            {/* Films & Episodic — top panel, clipped with a horizontal diagonal */}
+            <div
+              onClick={() => handleExpand("movies")}
+              className="absolute inset-0 overflow-hidden cursor-pointer transition-all duration-700"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 62%, 0 45%)",
+              }}
+            >
+              <img
+                src="/assets/images/vfx/movie-background.png"
+                alt="Movies"
+                className="w-full h-full object-cover"
+              />
+              <h2 className="absolute z-10 left-5 top-1/3 -translate-y-1/2 font-display text-[13vw] font-bold text-theme-primaryText">
+                Films & Episodic
+              </h2>
+            </div>
+
+            {/* Advertising — bottom panel, clipped mirror */}
+            <div
+              onClick={() => handleExpand("ads")}
+              className="absolute inset-0 overflow-hidden cursor-pointer transition-all duration-700"
+              style={{
+                clipPath: "polygon(0 58%, 100% 42%, 100% 100%, 0 100%)",
+              }}
+            >
+              <img
+                src="/assets/images/vfx/ads-showreel.jpg"
+                alt="Ads"
+                className="w-full h-full object-cover"
+              />
+              <h2 className="absolute z-10 right-5 bottom-1/3 translate-y-1/2 font-display text-[13vw] font-bold text-theme-primaryText">
+                Advertising
+              </h2>
+            </div>
           </div>
         </section>
       )}
@@ -956,7 +1024,7 @@ const VFX = () => {
             <div className="absolute inset-0 bg-black/60" />
             {/* Main Title */}
             <div className="relative z-10 max-w-6xl w-full mt-20">
-              <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
+              <h1 className="font-display text-[45px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
                 VFX: Films & Episodic
               </h1>
 
@@ -1005,7 +1073,18 @@ const VFX = () => {
                     {movieShowcasePages.map((pageItems, pageIndex) => (
                       <div
                         key={pageIndex}
-                        className="shrink-0 min-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                        className="
+  shrink-0
+  min-w-full
+  grid
+  grid-cols-1
+  md:grid-cols-2
+  lg:grid-cols-4
+  gap-6
+  max-w-sm
+  mx-auto
+  md:max-w-none
+"
                       >
                         {pageItems.map((movie, index) => (
                           <div
@@ -1100,7 +1179,7 @@ const VFX = () => {
 
                 {/* Category Filter */}
                 <div className="mt-8 mb-12">
-                  <div className="flex flex-wrap gap-y-1 gap-x-0 text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed tracking-tighter">
+                  <div className="md:flex md:flex-wrap hidden gap-y-1 gap-x-0 text-xl md:text-4xl lg:text-5xl font-bold leading-relaxed tracking-tighter">
                     {movieCategories.map((category, index) => (
                       <div key={category} className="flex items-center">
                         <button
@@ -1119,22 +1198,53 @@ const VFX = () => {
                       </div>
                     ))}
                   </div>
+                  {/* Mobile-friendly showreel selector */}
+                  <div className="md:hidden flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide pb-2 text-lg font-bold tracking-tight">
+                    {movieCategories.map((category, index) => (
+                      <div key={category} className="flex items-center shrink-0">
+                        <button
+                          onClick={() => setSelectedMovieCategory(category)}
+                          className={`transition-colors duration-300 ${
+                            selectedMovieCategory === category
+                              ? "text-[#4ab6ff]"
+                              : "text-[#f2eee2]/40"
+                          }`}
+                        >
+                          {category}
+                        </button>
+                        {index < movieCategories.length - 1 && (
+                          <span className="text-[#f2eee2]/30 mx-3">|</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Showreel Display */}
                 {selectedMovieShowreel && (
                   <div className="w-full">
-                    <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
-                      <iframe
-                        key={selectedMovieCategory}
-                        src={selectedMovieShowreel.youtubeEmbedUrl}
-                        title={`${selectedMovieCategory} showreel`}
-                        className="w-full h-full"
-                        loading="lazy"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
+                    <div className="relative aspect-video md:aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                      {selectedMovieShowreel.youtubeEmbedUrl.endsWith(".webm") ? (
+                        <video
+                          key={selectedMovieCategory}
+                          src={selectedMovieShowreel.youtubeEmbedUrl}
+                          className="w-full h-full"
+                          controls
+                          playsInline
+                          preload="metadata"
+                        />
+                      ) : (
+                        <iframe
+                          key={selectedMovieCategory}
+                          src={selectedMovieShowreel.youtubeEmbedUrl}
+                          title={`${selectedMovieCategory} showreel`}
+                          className="w-full h-full"
+                          loading="lazy"
+                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      )}
                     </div>
                   </div>
                 )}
@@ -1157,10 +1267,7 @@ const VFX = () => {
                       </span>{" "}
                       and security compliance with{" "}
                       <span className="font-semibold">
-                        Warner Bros, Lionsgate, Universal Pictures, Paramount,
-                      </span>{" "}
-                      <span className="text-[#f2eee2]/60">
-                        Amazon Studios, Netflix and ABC
+                        Warner Bros, Lionsgate, Universal Pictures, Paramount, Starz, Amazon Studios, Netflix and ABC
                       </span>{" "}
                       validate our commitment to safeguarding client content and
                       IP.
@@ -1218,7 +1325,7 @@ const VFX = () => {
             <div className="absolute inset-0 bg-black/60" />
             {/* Main Title */}
             <div className="relative z-10 max-w-6xl w-full mt-20">
-              <h1 className="font-display text-[85px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
+              <h1 className="font-display text-[45px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-10 leading-tight">
                 VFX: Advertising
               </h1>
 
@@ -1239,7 +1346,7 @@ const VFX = () => {
               </h2>
 
               <div className="mt-8 mb-12">
-                <div className="flex flex-wrap gap-y-4 gap-x-0 text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed">
+                <div className="hidden md:flex flex-wrap gap-y-4 gap-x-0 text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed">
                   {adCategories.map((category, index) => (
                     <div key={category} className="flex items-center">
                       <button
@@ -1258,25 +1365,62 @@ const VFX = () => {
                     </div>
                   ))}
                 </div>
+                {/* Mobile-friendly Ads showreel selector */}
+                <div className="md:hidden flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide pb-2 text-lg font-bold tracking-tight">
+                  {adCategories.map((category, index) => (
+                    <div key={category} className="flex items-center shrink-0">
+                      <button
+                        onClick={() => setSelectedAdCategory(category)}
+                        className={`transition-colors duration-300 ${
+                          selectedAdCategory === category
+                            ? "text-[#4ab6ff]"
+                            : "text-[#f2eee2]/40"
+                        }`}
+                      >
+                        {category}
+                      </button>
+                      {index < adCategories.length - 1 && (
+                        <span className="text-[#f2eee2]/30 mx-3">|</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {adShowreels[selectedAdCategory as keyof typeof adShowreels] && (
                 <div className="w-full">
-                  <div className="relative aspect-[16/9] bg-black rounded-lg overflow-hidden shadow-2xl">
-                    <iframe
-                      key={selectedAdCategory}
-                      src={
-                        adShowreels[
-                          selectedAdCategory as keyof typeof adShowreels
-                        ].embedUrl
-                      }
-                      title={selectedAdCategory}
-                      className="w-full h-full"
-                      loading="lazy"
-                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
+                  <div className="relative aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                    {adShowreels[
+                      selectedAdCategory as keyof typeof adShowreels
+                    ].embedUrl.endsWith(".webm") ? (
+                      <video
+                        key={selectedAdCategory}
+                        src={
+                          adShowreels[
+                            selectedAdCategory as keyof typeof adShowreels
+                          ].embedUrl
+                        }
+                        className="w-full h-full"
+                        controls
+                        playsInline
+                        preload="metadata"
+                      />
+                    ) : (
+                      <iframe
+                        key={selectedAdCategory}
+                        src={
+                          adShowreels[
+                            selectedAdCategory as keyof typeof adShowreels
+                          ].embedUrl
+                        }
+                        title={selectedAdCategory}
+                        className="w-full h-full"
+                        loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    )}
                   </div>
                 </div>
               )}
@@ -1297,14 +1441,26 @@ const VFX = () => {
                       key={blockIdx}
                       className="relative w-full aspect-video overflow-hidden rounded-sm"
                     >
-                      <iframe
-                        src={v0.src}
-                        title={v0.label}
-                        loading="lazy"
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
+                      {v0.src.endsWith(".webm") ? (
+                        <video
+                          src={v0.src}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                        />
+                      ) : (
+                        <iframe
+                          src={v0.src}
+                          title={v0.label}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full"
+                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      )}
                       <div className="absolute inset-0 bg-black/20" />
                       <p className="absolute bottom-8 left-8 text-[#f2eee2] font-display text-2xl font-bold tracking-wide">
                         {v0.label}
@@ -1379,10 +1535,16 @@ const VFX = () => {
                 column boundaries.
               */}
               <div
-                className="w-[80%] mx-auto"
+                className="w-full md:w-[80%] md:mx-auto"
                 style={{
-                  columnCount: 3,
-                  columnGap: "8px",
+                  columnCount:
+                    typeof window !== "undefined" && window.innerWidth < 768
+                      ? 2
+                      : 3,
+                  columnGap:
+                    typeof window !== "undefined" && window.innerWidth < 768
+                      ? "0px"
+                      : "8px",
                 }}
               >
                 {cgiStillsShowcase.map((image, index) => {
@@ -1406,7 +1568,10 @@ const VFX = () => {
                       style={{
                         display: "inline-block",
                         width: "100%",
-                        marginBottom: "8px",
+                        marginBottom:
+                          typeof window !== "undefined" && window.innerWidth < 768
+                            ? "0px"
+                            : "8px",
                         breakInside: "avoid",
                       }}
                     >

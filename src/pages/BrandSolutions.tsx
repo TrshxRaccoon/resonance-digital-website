@@ -32,7 +32,7 @@ type TVCShowcaseItem = {
   image: string;
   client: string;
   year: string;
-  youtubeEmbedUrl: string;
+  videoSrc: string;
 };
 
 const brandShowcase: BrandShowcaseItem[] = [
@@ -180,52 +180,28 @@ const brandShowcase: BrandShowcaseItem[] = [
   },
 ];
 
-const tvcShowcaseVideoEmbeds = [
-  "https://www.youtube.com/embed/R38Utym7jQA",
-  "https://www.youtube.com/embed/Mzi9C-KQn20",
-  "https://www.youtube.com/embed/hV5qy2Uf6rA",
-  "https://www.youtube.com/embed/WyRVQCG9zQU",
-  "https://www.youtube.com/embed/2XmSERxk2D4",
-  "https://www.youtube.com/embed/RfB82bLMjF0",
-  "https://www.youtube.com/embed/645Oi-VWWzk",
-  "https://www.youtube.com/embed/tbF1zLEg2JQ",
-  "https://www.youtube.com/embed/7bJF4SQNHfM",
-  "https://www.youtube.com/embed/WZ0iwRyJvUE",
-  "https://www.youtube.com/embed/YBghJkyU938",
-  "https://www.youtube.com/embed/KKrPcYTI-ms",
-  "https://www.youtube.com/embed/8Zl1JTwkGsU",
-  "https://www.youtube.com/embed/3bMiUFq4R3g",
-  "https://www.youtube.com/embed/18ONRTDjpNE",
-  "https://www.youtube.com/embed/j_yCTy7RJdA",
-  "https://www.youtube.com/embed/psj8PBNokiU",
-  "https://www.youtube.com/embed/oC56lEFHo0Y",
-  "https://www.youtube.com/embed/qSiO0_LFdlo",
-  "https://www.youtube.com/embed/_-nqkErvF1E",
-  "https://www.youtube.com/embed/K5qns5BI208",
-];
-
 const tvcShowcase: TVCShowcaseItem[] = [
-  { title: "Apollo Apterra Tyres", image: "/assets/images/BrandStatements/ICICI-Lombard.jpg", client: "Apollo Tyres", year: "2025", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[0] },
-  { title: "OPPO AI Best Face", image: "/assets/images/BrandStatements/oppo.png", client: "OPPO", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[1] },
-  { title: "IndiGo Protect Plus", image: "/assets/images/BrandStatements/images.jpeg", client: "IndiGo", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[2] },
-  { title: "Campa Energy", image: "/assets/images/movies/movies_01.png", client: "Campa", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[3] },
-  { title: "Black Dog", image: "/assets/images/movies/avatar.jpeg", client: "Black Dog", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[4] },
-  { title: "SUPERBET", image: "/assets/images/movies/batman.png", client: "SUPERBET", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[5] },
-  { title: "Fastrack Smart", image: "/assets/images/movies/movies_03.png", client: "Fastrack", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[6] },
-  { title: "Bournvita", image: "/assets/images/movies/dune.jpeg", client: "Bournvita", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[7] },
-  { title: "The All-New Honda Amaze", image: "/assets/images/movies/flash.jpg", client: "Honda", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[8] },
-  { title: "Ecolink BLDC Fans", image: "/assets/images/movies/strangerThings.jpg", client: "Ecolink", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[9] },
-  { title: "JK Cement", image: "/assets/images/movies/avatar.jpeg", client: "JK Cement", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[10] },
-  { title: "Director Special Elaichi", image: "/assets/images/movies/batman.png", client: "Director Special", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[11] },
-  { title: "Kit Kat", image: "/assets/images/movies/movies_01.png", client: "Kit Kat", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[12] },
-  { title: "Max Fashion", image: "/assets/images/movies/movies_02Witches.png", client: "Max Fashion", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[13] },
-  { title: "The Plush New XUV500", image: "/assets/images/CaseStudies/mahindra1.png", client: "Mahindra", year: "2018", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[14] },
-  { title: "Savsol Lubricants", image: "/assets/images/movies/dune.jpeg", client: "Savsol", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[15] },
-  { title: "Flipkart Big Bang Diwali", image: "/assets/images/movies/flash.jpg", client: "Flipkart", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[16] },
-  { title: "The Fast & The Fair", image: "/assets/images/movies/strangerThings.jpg", client: "ACKO", year: "2024", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[17] },
-  { title: "Netflix End of Year 2021", image: "/assets/images/movies/strangerThings.jpg", client: "Netflix", year: "2021", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[18] },
-  { title: "Netflix End of Year 2022", image: "/assets/images/movies/avatar.jpeg", client: "Netflix", year: "2022", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[19] },
-  { title: "Netflix End of Year 2023", image: "/assets/images/movies/batman.png", client: "Netflix", year: "2023", youtubeEmbedUrl: tvcShowcaseVideoEmbeds[20] },
+  { title: "Apollo Apterra Tyres", image: "/assets/images/BrandStatements/ICICI-Lombard.jpg", client: "Apollo Tyres", year: "2025", videoSrc: "/assets/videos/Apollo_Tyres.webm" },
+  { title: "OPPO AI Best Face", image: "/assets/images/BrandStatements/oppo.png", client: "OPPO", year: "2024", videoSrc: "/assets/videos/OPPO.webm" },
+  { title: "IndiGo Protect Plus", image: "/assets/images/BrandStatements/images.jpeg", client: "IndiGo", year: "2024", videoSrc: "/assets/videos/Indigo.webm" },
+  { title: "Campa Energy", image: "/assets/images/movies/movies_01.png", client: "Campa", year: "2024", videoSrc: "/assets/videos/Campa.webm" },
+  { title: "Black Dog", image: "/assets/images/movies/avatar.jpeg", client: "Black Dog", year: "2024", videoSrc: "/assets/videos/Black_Dog.webm" },
+  { title: "SUPERBET", image: "/assets/images/movies/batman.png", client: "SUPERBET", year: "2024", videoSrc: "/assets/videos/SUPERBET.webm" },
+  { title: "Fastrack Smart", image: "/assets/images/movies/movies_03.png", client: "Fastrack", year: "2024", videoSrc: "/assets/videos/Fastrack.webm" },
+  { title: "Bournvita", image: "/assets/images/movies/dune.jpeg", client: "Bournvita", year: "2024", videoSrc: "/assets/videos/Bournvita.webm" },
+  { title: "The All-New Honda Amaze", image: "/assets/images/movies/flash.jpg", client: "Honda", year: "2024", videoSrc: "/assets/videos/Honda.webm" },
+  { title: "Ecolink BLDC Fans", image: "/assets/images/movies/strangerThings.jpg", client: "Ecolink", year: "2024", videoSrc: "/assets/videos/Ecolink.webm" },
+  { title: "JK Cement", image: "/assets/images/movies/avatar.jpeg", client: "JK Cement", year: "2024", videoSrc: "/assets/videos/JK_Cement.webm" },
+  { title: "Director Special Elaichi", image: "/assets/images/movies/batman.png", client: "Director Special", year: "2024", videoSrc: "/assets/videos/Director_Special.webm" },
+  { title: "Kit Kat", image: "/assets/images/movies/movies_01.png", client: "Kit Kat", year: "2024", videoSrc: "/assets/videos/KitKat.webm" },
+  { title: "Max Fashion", image: "/assets/images/movies/movies_02Witches.png", client: "Max Fashion", year: "2024", videoSrc: "/assets/videos/Max_Fashion.webm" },
+  { title: "The Plush New XUV500", image: "/assets/images/CaseStudies/mahindra1.png", client: "Mahindra", year: "2018", videoSrc: "/assets/videos/Mahindra.webm" },
+  { title: "Savsol Lubricants", image: "/assets/images/movies/dune.jpeg", client: "Savsol", year: "2024", videoSrc: "/assets/videos/Savsol.webm" },
+  { title: "Flipkart Big Bang Diwali", image: "/assets/images/movies/flash.jpg", client: "Flipkart", year: "2024", videoSrc: "/assets/videos/Flipkart.webm" },
+  { title: "The Fast & The Fair", image: "/assets/images/movies/strangerThings.jpg", client: "ACKO", year: "2024", videoSrc: "/assets/videos/Acko.webm" },
+  { title: "Netflix End of Year 2021", image: "/assets/images/movies/strangerThings.jpg", client: "Netflix", year: "2021", videoSrc: "/assets/videos/Netflix2021.webm" },
+  { title: "Netflix End of Year 2022", image: "/assets/images/movies/avatar.jpeg", client: "Netflix", year: "2022", videoSrc: "/assets/videos/Netflix2022.webm" },
+  { title: "Netflix End of Year 2023", image: "/assets/images/movies/batman.png", client: "Netflix", year: "2023", videoSrc: "/assets/videos/Netflix2023.webm" },
 ];
 
 const brandStatements = [
@@ -328,8 +304,8 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
   },
   {
     title: "Netflix India",
-    image: "/assets/images/CaseStudies/for\ website-41.png",
-    caseStudyImage: "/assets/images/CaseStudies/for\ website-41.png",
+    image: "/assets/images/CaseStudies/for\ website-38.png",
+    caseStudyImage: "/assets/images/CaseStudies/for\ website-38.png",
     galleryImages: [
       "/assets/images/CaseStudies/for\ website-38.png",
       "/assets/images/CaseStudies/for\ website-39.png",
@@ -564,8 +540,8 @@ const BrandSolutions = () => {
   };
 
 
-  const openShowcaseVideoModal = (youtubeEmbedUrl: string) => {
-    setActiveShowcaseVideoUrl(youtubeEmbedUrl);
+  const openShowcaseVideoModal = (videoSrc: string) => {
+    setActiveShowcaseVideoUrl(videoSrc);
   };
 
   const closeShowcaseVideoModal = () => {
@@ -583,9 +559,6 @@ const BrandSolutions = () => {
   }, [activeShowcaseVideoUrl, activeCaseStudy]);
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
-  const showcaseVideoUrlWithAutoplay = activeShowcaseVideoUrl
-    ? `${activeShowcaseVideoUrl}${activeShowcaseVideoUrl.includes("?") ? "&" : "?"}autoplay=1&rel=0`
-    : "";
 
   return (
     <>
@@ -682,18 +655,23 @@ const BrandSolutions = () => {
               key={`${item.client}-${item.year}-${index}`}
               type="button"
               className="flex flex-col text-left cursor-pointer group"
-              onClick={() => openShowcaseVideoModal(item.youtubeEmbedUrl)}
+              onClick={() => openShowcaseVideoModal(item.videoSrc)}
               aria-label={`Open ${item.title}`}
             >
               <div className="relative aspect-video overflow-hidden rounded-sm bg-black">
-                <iframe
-                  src={item.youtubeEmbedUrl}
-                  title={item.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+                <video
+                  src={item.videoSrc}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  muted
+                  playsInline
+                  preload="metadata"
                 />
+
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                    <Play className="w-6 h-6 text-black ml-0.5" fill="currentColor" />
+                  </div>
+                </div>
               </div>
               <p className="mt-3 text-sm text-gray-500 uppercase tracking-wide">
                 {item.client} <span className="text-gray-400">|</span>{" "}
@@ -729,12 +707,12 @@ const BrandSolutions = () => {
               exit={{ scale: 0.98, opacity: 0 }}
               transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
             >
-              <iframe
-                src={showcaseVideoUrlWithAutoplay}
-                title="TVC showcase video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                allowFullScreen
+              <video
+                src={activeShowcaseVideoUrl || undefined}
                 className="w-full h-full"
+                controls
+                autoPlay
+                playsInline
               />
             </motion.div>
           </motion.div>
