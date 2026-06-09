@@ -22,9 +22,9 @@ const VFX = () => {
   const splitSectionRef = useRef<HTMLDivElement>(null);
 
   const isMobileViewport =
-  typeof window !== "undefined" && window.innerWidth < 768;
+    typeof window !== "undefined" && window.innerWidth < 768;
 
-const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
+  const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
   const MOVIE_AUTO_ROTATE_MS = 4000;
 
   const handleMovieNext = () => {
@@ -109,403 +109,370 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
   };
 
   const moviesShowcase = [
-    // 1. Doctor's-Strange-Multiverse-of-Madness
     {
       title: "Doctor Strange in the Multiverse of Madness",
-      image: "/assets/images/vfx/DrStrangePoster.jpg",
+      image: "/assets/images/vfx/showcase/Doctor-Strange-Multiverse-of-Madness.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 2. Dhurandhar
     {
       title: "Dhurandhar",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Dhurandhar.jpg",
+      image: "/assets/images/vfx/showcase/Dhurandhar.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 3. Mission-Impossible-Dead-Reckoning_1
     {
       title: "Mission Impossible – Dead Reckoning",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mission-Impossible-Dead-Reckoning_1.jpg",
+      image: "/assets/images/vfx/showcase/Mission-Impossible-Dead-Reckoning.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 4. The-Last of Us
     {
       title: "The Last of Us",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Last of Us.JPG",
+      image: "/assets/images/vfx/showcase/The-Last-of-Us.JPG",
       platform: "",
       year: "",
       category: "",
     },
-    // 5. Pathan
     {
       title: "Pathan",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Pathan.jpg",
+      image: "/assets/images/vfx/showcase/Pathan.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 7. Squid-Games-3
     {
       title: "Squid Game 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Squid-Games-3.jpg",
+      image: "/assets/images/vfx/showcase/Squid-Games-3.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 8. Family-Man-S3
     {
       title: "The Family Man 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Family-Man-S3.jpg",
+      image: "/assets/images/vfx/showcase/Family-Man.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 9. Witcher
     {
       title: "Witcher",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Witcher.jpg",
+      image: "/assets/images/vfx/showcase/Witcher.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 10. Mirzapur-S3
     {
       title: "Mirzapur Season 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mirzapur-S3.jpg",
+      image: "/assets/images/vfx/showcase/Mirzapur-S3.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 11. Sandman-Season 1
     {
       title: "The Sandman",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Sandman-Season 1.jpg",
+      image: "/assets/images/vfx/showcase/Sandman.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 12. Antman-Wasp-Quantumania
     {
       title: "Ant-Man and the Wasp: Quantumania",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Antman-Wasp-Quantumania.jpg",
+      image: "/assets/images/vfx/showcase/Antman-Wasp-Quantumania.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 13. KGF2
     {
       title: "KGF",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/KGF2.jpg",
+      image: "/assets/images/vfx/showcase/KGF-2.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 14. Extraction-2
     {
       title: "Extraction 2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Extraction-2.JPG",
+      image: "/assets/images/vfx/showcase/Extraction-2.JPG",
       platform: "",
       year: "",
       category: "",
     },
-    // 15. Secret-Invasion
     {
       title: "Secret Invasion",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Secret-Invasion.jpg",
+      image: "/assets/images/vfx/showcase/Secret-Invasion.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 16. Citadel-Honey-Bunny
     {
       title: "Citadel: Honey Bunny",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Citadel-Honey-Bunny.jpg",
+      image: "/assets/images/vfx/showcase/Citadel-Honey-Bunny.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 17. 12th-Fail
     {
       title: "12th Fail",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/12th-Fail.jpg",
+      image: "/assets/images/vfx/showcase/12th-Fail.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 18. Red-Notice
     {
       title: "Red Notice",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Red-Notice.jpg",
+      image: "/assets/images/vfx/showcase/Red-Notice.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 19. The-Flash
     {
       title: "The Flash",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Flash.JPG",
+      image: "/assets/images/vfx/showcase/The-Flash.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 20. Rocket-Boys
     {
       title: "Rocket Boys",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Rocket-Boys.jpg",
+      image: "/assets/images/vfx/showcase/Rocket-Boys.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 23. Senna
     {
       title: "Senna",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Senna.jpg",
+      image: "/assets/images/vfx/showcase/Senna.JPG",
       platform: "",
       year: "",
       category: "",
     },
-    // 24. SEE
     {
       title: "See Season 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/SEE.jpg",
+      image: "/assets/images/vfx/showcase/SEE.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 25. Karate-Kids-Legends
     {
       title: "Karate Kid",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Karate-Kids-Legends.jpg",
+      image: "/assets/images/vfx/showcase/Karate-Kids-Legends.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 28. Upload
     {
       title: "Upload",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Upload.jpg",
+      image: "/assets/images/vfx/showcase/Upload-Complete.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 29. TED
     {
       title: "Ted",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/TED.jpg",
+      image: "/assets/images/vfx/showcase/TED.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 30. Dept-Q
     {
       title: "Dept. Q",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Dept-Q.jpg",
+      image: "/assets/images/vfx/showcase/Dept-Q.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 31. Kartikeya-2
     {
       title: "Karthikeya 2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Kartikeya-2.jpg",
+      image: "/assets/images/vfx/showcase/Kartikeya\ 2.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 32. Baaghi-4
     {
       title: "Baaghi 4",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-4.jpg",
+      image: "/assets/images/vfx/showcase/Baaghi-4.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 33. Chandigarh-Kare-Aashiqui
     {
       title: "Chandigarh Kare Aashiqui",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Chandigarh-Kare-Aashiqui.jpg",
+      image: "/assets/images/vfx/showcase/Chandigarh-Kare-Aashiqui.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 35. Orville
     {
       title: "Orville 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Orville.jpg",
+      image: "/assets/images/vfx/showcase/Orville.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 36. Fraggle-Rock
     {
       title: "Fraggle Rock",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Fraggle-Rock.jpg",
+      image: "/assets/images/vfx/showcase/Fraggle-Rock.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 38. Anaconda
     {
       title: "Anaconda",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Anaconda.jpg",
+      image: "/assets/images/vfx/showcase/Anaconda.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 39. Heropanti-2
     {
       title: "Heropanti 2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Heropanti-2.jpg",
+      image: "/assets/images/vfx/showcase/Heropanti-2.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 40. Baaghi-3
     {
       title: "Baaghi 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Baaghi-3.jpg",
+      image: "/assets/images/vfx/showcase/Baaghi-3.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 41. Wendel-and-Wild
     {
       title: "Wendell & Wild",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Wendel-and-Wild.jpg",
+      image: "/assets/images/vfx/showcase/Wendell-&-Wild.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 42. Mike
     {
       title: "Mike",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mike.jpg",
+      image: "/assets/images/vfx/showcase/Mike.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 50. The-Empire
     {
       title: "Star Wars: The Empire Strikes Back",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Empire.jpg",
+      image: "/assets/images/vfx/showcase/The Empire.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 51. Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01
     {
       title: "Tu Meri Main Tera Main Tera Tu Meri",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri-01.jpg",
+      image: "/assets/images/vfx/showcase/Tu-Meri-Main-Tera-Main-Tera-Tu-Meri.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    // 54. Mumbai-Diaries
     {
       title: "Mumbai Diaries",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Mumbai-Diaries.jpg",
+      image: "/assets/images/vfx/showcase/Mumbai-Diaries.jpg",
       platform: "",
       year: "",
       category: "",
     },
     // Append any remaining movies not in the above order (preserve their object contents)
-    // The following titles were not mentioned in the requested order:
     {
       title: "The Batman",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Batman.jpg",
+      image: "/assets/images/vfx/showcase/Batman.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "Beauty in Back",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Beauty-in-Black 2.jpg",
+      image: "/assets/images/vfx/showcase/Beauty-in-Black-2.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "Bhediya",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Bhediya.jpg",
+      image: "/assets/images/vfx/showcase/Bhediya.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "Sadak 2",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/sadak2.jpg",
+      image: "/assets/images/vfx/showcase/Sadak-2.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "Soorarai Pottru",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Soorarai-Pottru.jpg",
+      image: "/assets/images/vfx/showcase/Soorarai Pottru.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "Star Girl",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Stargirl.jpg",
+      image: "/assets/images/vfx/showcase/Stargirl.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    {
-      title: "The Flash",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/The-Flash 8.jpg",
-      platform: "",
-      year: "",
-      category: "",
-    },
+    // REMOVE the duplicate "The Flash" with image containing "The-Flash 8"
+    // {
+    //   title: "The Flash",
+    //   image:
+    //     "https://resonancedigital.in/assets/images/VFX/movies/The-Flash 8.jpg",
+    //   platform: "",
+    //   year: "",
+    //   category: "",
+    // },
     {
       title: "Tulsa King",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Tulsa-King.jpg",
+      image: "/assets/images/vfx/showcase/Tulsa-King.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "The Umbrella Academy 3",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Umbrella-Academy S3.jpg",
+      image: "/assets/images/vfx/showcase/Umbrella-Academy.jpg",
       platform: "",
       year: "",
       category: "",
     },
     {
       title: "Land Of Bad",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-237953.JPG",
+      image: "/assets/images/vfx/showcase/Land-of-Bad.JPG",
       platform: "",
       year: "",
       category: "",
     },
-    {
-      title: "Mission Impossible: Dead Reckoning",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-520721.JPG",
-      platform: "",
-      year: "",
-      category: "",
-    },
+    // REMOVE the duplicate "Mission Impossible: Dead Reckoning" with image containing "Unconfirmed-520721"
+    // {
+    //   title: "Mission Impossible: Dead Reckoning",
+    //   image:
+    //     "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-520721.JPG",
+    //   platform: "",
+    //   year: "",
+    //   category: "",
+    // },
     {
       title: "Winning Time",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-945243.jpg",
+      image: "/assets/images/vfx/showcase/Winning-Time.jpg",
       platform: "",
       year: "",
       category: "",
     },
-    {
-      title: "Senna",
-      image: "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-977985.JPG",
-      platform: "",
-      year: "",
-      category: "",
-    },
+    // REMOVE the duplicate "Senna" with image containing "Unconfirmed-977985"
+    // {
+    //   title: "Senna",
+    //   image:
+    //     "https://resonancedigital.in/assets/images/VFX/movies/Unconfirmed-977985.JPG",
+    //   platform: "",
+    //   year: "",
+    //   category: "",
+    // },
   ];
 
   const adsShowcase = [
@@ -952,8 +919,10 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
           {/* Same two panels, same images, same titles, same onClick —
               clipPath axes swapped so the diagonal cut runs horizontally
               and the panels stack top (Films) / bottom (Ads). */}
-          <div className="md:hidden relative w-full" style={{ height: "100svh" }}>
-
+          <div
+            className="md:hidden relative w-full"
+            style={{ height: "100svh" }}
+          >
             {/* Base layer — films image fills the seam gap between the two clips */}
             <img
               src="/assets/images/vfx/movie-background-leg.png"
@@ -1203,7 +1172,10 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
                   {/* Mobile-friendly showreel selector */}
                   <div className="md:hidden flex items-center overflow-x-auto whitespace-nowrap scrollbar-hide pb-2 text-lg font-bold tracking-tight">
                     {movieCategories.map((category, index) => (
-                      <div key={category} className="flex items-center shrink-0">
+                      <div
+                        key={category}
+                        className="flex items-center shrink-0"
+                      >
                         <button
                           onClick={() => setSelectedMovieCategory(category)}
                           className={`transition-colors duration-300 ${
@@ -1226,7 +1198,9 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
                 {selectedMovieShowreel && (
                   <div className="w-full">
                     <div className="relative aspect-video md:aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
-                      {selectedMovieShowreel.youtubeEmbedUrl.endsWith(".webm") ? (
+                      {selectedMovieShowreel.youtubeEmbedUrl.endsWith(
+                        ".webm",
+                      ) ? (
                         <video
                           key={selectedMovieCategory}
                           src={selectedMovieShowreel.youtubeEmbedUrl}
@@ -1269,7 +1243,8 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
                       </span>{" "}
                       and security compliance with{" "}
                       <span className="font-semibold">
-                        Warner Bros, Lionsgate, Universal Pictures, Paramount, Starz, Amazon Studios, Netflix and ABC
+                        Warner Bros, Lionsgate, Universal Pictures, Paramount,
+                        Starz, Amazon Studios, Netflix and ABC
                       </span>{" "}
                       validate our commitment to safeguarding client content and
                       IP.
@@ -1571,7 +1546,8 @@ const ITEMS_PER_PAGE = isMobileViewport ? 1 : 4;
                         display: "inline-block",
                         width: "100%",
                         marginBottom:
-                          typeof window !== "undefined" && window.innerWidth < 768
+                          typeof window !== "undefined" &&
+                          window.innerWidth < 768
                             ? "0px"
                             : "8px",
                         breakInside: "avoid",
