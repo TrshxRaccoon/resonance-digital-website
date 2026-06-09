@@ -226,37 +226,52 @@ const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {[
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-1.jpg",
+              name: "Rohit",
+              image: "/assets/images/team/member-1.jpeg",
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-2.jpg",
+              name: "What we do",
               info: true,
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-3.jpg",
+              name: "Somak Mukherjee",
+              image: "/assets/images/team/member-2.jpeg",
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-4.jpg",
+              name: "Himanshu Pandey",
+              image: "/assets/images/team/member-3.jpeg",
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-5.jpg",
+              name: "Sandeep",
+              image: "/assets/images/team/member-4.jpeg",
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-6.jpg",
+              name: "Pooja",
+              image: "/assets/images/team/member-5.jpeg",
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-7.jpg",
+              name: "Vinayak Khilnani",
+              image: "/assets/images/team/member-6.jpeg",
             },
             {
-              name: "Lorem Ipsum",
-              image: "/assets/images/team/member-8.jpg",
+              name: "Mansi Solanki",
+              image: "/assets/images/team/member-7.jpeg",
+            },
+            {
+              name: "Maninder Singh",
+              image: "/assets/images/team/member-8.jpeg",
+            },
+            {
+              name: "Sajan Raj",
+              image: "/assets/images/team/member-9.jpeg",
+            },
+            {
+              name: "Mahim Kumar Chaudhuri",
+              image: "/assets/images/team/member-10.jpeg",
+            },
+            {
+              name: "Manpreet Singh",
+              image: "/assets/images/team/member-11.jpeg",
             },
           ].map((member, index) => (
             <div
