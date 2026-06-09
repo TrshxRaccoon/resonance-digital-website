@@ -97,7 +97,7 @@ const Index = () => {
           content="Resonance Digital is a premium VFX and creative studio specializing in visual effects, brand content, real estate visualization, and immersive experiences."
         />
         <meta name="keywords" content="VFX, visual effects, animation, creative studio, brand content, real estate visualization" />
-        <link rel="canonical" href="https://resonancedigital.com" />
+        <link rel="canonical" href="https://resonancedigital.in" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
