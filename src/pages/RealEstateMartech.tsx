@@ -360,7 +360,7 @@ const RealEstateMartech = () => {
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
             <img
-              src="https://resonancedigital.in/assets/images/realEstate/Arch-client-logo.png"
+              src="/assets/images/martech/Arch-client-logo.png"
               alt="Real Estate Clients"
               className="w-full max-w-[750px] h-auto object-contain opacity-85"
             />
