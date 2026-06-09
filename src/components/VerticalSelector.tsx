@@ -30,7 +30,7 @@ const verticals = [
       "Photorealistic renders and immersive virtual tours for architectural projects.",
     href: "/real-estate",
     bgImage:
-      "https://resonancedigital.in/assets/images/realEstate/verticalSelectorImg.png",
+      "/assets/images/martech/Mahindra.png",
   },
   {
     id: "motion-pictures",
