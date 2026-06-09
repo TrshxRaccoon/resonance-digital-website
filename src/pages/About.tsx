@@ -158,7 +158,7 @@ const About = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Heading */}
-          <div className="max-w-5xl relative z-20">
+          <div className="max-w-5xl relative z-10">
             <h2 className="font-display text-[56px] md:text-[80px] lg:text-[100px] font-bold text-theme-primaryText leading-[0.95] mb-8">
               Meet our team
             </h2>
@@ -170,9 +170,9 @@ const About = () => {
           </div>
 
           {/* Team Visual Composition */}
-          <div className="relative mt-16 md:mt-24 min-h-[700px] md:min-h-[200px] flex flex-col md:flex-row items-center md:items-end justify-center gap-6 md:gap-0">
+          <div className="relative z-30 mt-2 md:mt-1 min-h-[700px] md:min-h-[500px] flex flex-col md:flex-row items-center md:items-end justify-center gap-6 md:gap-0">
             {/* Left Info Card */}
-            <div className="relative md:absolute md:left-0 md:bottom-32 z-10 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
+            <div className="relative md:absolute md:left-0 md:bottom-8 z-50 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
               <h3 className="text-[#29a7ff] font-semibold text-lg mb-3">
                 Abhyuday Grover
               </h3>
@@ -187,24 +187,24 @@ const About = () => {
             </div>
 
             {/* Main Team Images */}
-            <div className="relative flex items-end justify-center my-4 md:my-0">
+            <div className="relative z-30 flex items-end justify-center my-4 md:my-0 md:translate-y-16">
               {/* Back Person */}
               <img
                 src="/assets/images/team/team-1.png"
                 alt="Team member"
-                className="relative z-10 w-[220px] sm:w-[260px] md:w-[420px] lg:w-[500px] object-contain grayscale contrast-125 brightness-90"
+                className="relative z-30 w-[220px] sm:w-[260px] md:w-[420px] lg:w-[500px] object-contain grayscale contrast-125 brightness-90"
               />
 
               {/* Front Person */}
               <img
                 src="/assets/images/team/team-2.png"
                 alt="Team member"
-                className="absolute bottom-0 right-[-15%] md:right-[-20%] z-20 w-[190px] sm:w-[230px] md:w-[360px] lg:w-[440px] object-contain grayscale contrast-125 brightness-90"
+                className="absolute bottom-0 right-[-15%] md:right-[-20%] z-40 w-[190px] sm:w-[230px] md:w-[360px] lg:w-[440px] object-contain grayscale contrast-125 brightness-90"
               />
             </div>
 
             {/* Right Info Card */}
-            <div className="relative md:absolute md:right-0 md:bottom-12 z-10 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
+            <div className="relative md:absolute md:right-0 md:bottom-0 z-50 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
               <h3 className="text-[#29a7ff] font-semibold text-lg mb-3">
                 Utsarg Grover
               </h3>
