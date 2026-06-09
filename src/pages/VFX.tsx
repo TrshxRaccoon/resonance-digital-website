@@ -1252,11 +1252,11 @@ const VFX = () => {
                   </div>
 
                   {/* Right Side - Company Logos Image */}
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 overflow-hidden rounded-2xl h-[320px] md:h-[420px] relative">
                     <img
-                      src="https://resonancedigital.in/assets/images/VFX/movies/securityCertifications/Security-Certification.png"
+                      src="/assets/images/vfx/Security-Certification.png"
                       alt="Company Logos - TPN, Warner Bros, Amazon Studios, Lionsgate, Netflix, Universal"
-                      className="w-full h-auto rounded-2xl"
+                      className="absolute top-0 right-0 h-full w-[200%] max-w-none object-cover"
                     />
                   </div>
                 </div>
@@ -1276,7 +1276,7 @@ const VFX = () => {
                   {/* Right Side - Client Logos */}
                   <div className="flex-1 min-w-0">
                     <img
-                      src="https://resonancedigital.in/assets/images/VFX/Films-and-episodic-client.png"
+                      src="/assets/images/vfx/Films-and-episodic-client.png"
                       alt="Films & Episodic Clients Logos"
                       className="w-full max-w-[1200px] h-auto rounded-2xl scale-110 origin-right"
                     />

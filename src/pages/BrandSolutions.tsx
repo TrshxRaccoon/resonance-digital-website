@@ -589,7 +589,7 @@ const BrandSolutions = () => {
           {/* Left — clients grid image */}
           <div className="w-full lg:w-1/2">
             <img
-              src="https://resonancedigital.in/assets/images/brandSolutions/Brand-solution-logo.png"
+              src="/assets/images/CaseStudies/Brand-solution-logo.png"
               alt="Brand Solutions Clients"
               className="max-w-full max-h-full object-contain"
             />
