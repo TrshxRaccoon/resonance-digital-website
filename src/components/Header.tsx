@@ -53,7 +53,11 @@ const Header = () => {
           to="/"
           className="relative z-50 font-display text-xl md:text-2xl font-bold tracking-tight text-foreground flex items-center gap-1"
         >
-          <img src="/assets/images/RDL_logo.png" alt="Resonance" className="h-10 md:h-12" />
+          <img
+            src="/assets/images/RDL_logo.png"
+            alt="Resonance"
+            className="h-10 md:h-12"
+          />
         </Link>
 
         {/* Hamburger */}
@@ -62,7 +66,11 @@ const Header = () => {
           className="relative z-50 w-12 h-12 flex items-center justify-center text-gray-500 hover:text-primary transition-colors duration-300"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </header>
 
