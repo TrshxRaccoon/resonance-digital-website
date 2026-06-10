@@ -222,7 +222,7 @@ const About = () => {
       </section>
 
       {/* Team Members Grid */}
-      <section className="w-full bg-theme-secondaryBg1 px-[5%] md:px-[8%] lg:px-[10%] pb-24">
+      <section className="w-full bg-theme-secondaryBg1 px-[5%] md:px-[8%] lg:px-[10%] pb-24 pt-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {[
             {
@@ -250,7 +250,7 @@ const About = () => {
               image: "/assets/images/team/member-5.jpeg",
             },
             {
-              name: "Vinayak Khilnani",
+              name: "Vinay Khilnani",
               image: "/assets/images/team/member-6.jpeg",
             },
             {
@@ -284,7 +284,7 @@ const About = () => {
                     {member.name}
                   </h3>
 
-                  <p className="text-xs md:text-sm leading-relaxed text-white/90 mb-4">
+                  <p className="text-xs md:text-sm leading-relaxed text-white/90 mb-2">
                     Multiple campaigns for more than 50 brands/corporates in varied mediums.
                   </p>
 
@@ -297,7 +297,7 @@ const About = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover grayscale"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
 
                   <div className="absolute inset-0 bg-black/15" />
@@ -313,18 +313,24 @@ const About = () => {
       </section>
 
       {/* Awards Showcase Image */}
-      <section className="relative w-full bg-black flex flex-col items-center justify-center">
+      <section className="relative w-full bg-theme-primaryBg1 flex flex-col items-center justify-center">
         <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
           <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight text-center">
             Awards Showcase
           </h2>
         </div>
 
-        <img
-          src="/assets/images/awards/awardshowcase.png"
-          alt="Awards Showcase"
-          className="w-full h-auto block"
-        />
+        <picture>
+          <source
+            media="(max-width: 768px), (max-aspect-ratio: 4/5)"
+            srcSet="/assets/images/awards/awardshowcase-mobile.png"
+          />
+          <img
+            src="/assets/images/awards/awardshowcase.png"
+            alt="Awards Showcase"
+            className="w-full h-auto block"
+          />
+        </picture>
       </section>
 
       <Footer theme="dark"/>

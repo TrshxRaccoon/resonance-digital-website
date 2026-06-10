@@ -3,126 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedColorText from "@/components/AnimatedColorText";
 
-const AWARDS = [
-  {
-    id: "fps",
-    name: "24 FPS",
-    img: "/assets/images/awards/24fps_copy.png",
-    alt: "24 FPS Award",
-    flip: false,
-    items: [
-      { label: "BEST VFX", sub: "Web Series 2025" },
-      { label: "BEST VFX", sub: "Web Series 2024" },
-      { label: "BEST VFX", sub: "Web Series 2023" },
-    ],
-  },
-  {
-    id: "filmfare",
-    name: "FILMFARE",
-    img: "/assets/images/awards/filmfare-l-bollywood-awards-trophy-11563256379bolcjatcv8.png",
-    alt: "Filmfare Award",
-    flip: true,
-    items: [{ label: "BEST VFX", sub: "Web Series 2022" }],
-  },
-  {
-    id: "kyoorius",
-    name: "KYOORIUS",
-    img: "/assets/images/awards/kyoorius-2.png",
-    alt: "Kyoorius Award",
-    flip: false,
-    items: [{ label: "BEST VFX", sub: "Web Series 2022" }],
-  },
-  {
-    id: "ita",
-    name: "ITA",
-    img: "/assets/images/awards/ITA_Awards_Trophy.png",
-    alt: "ITA Award",
-    flip: true,
-    items: [{ label: "BEST VFX", sub: "Web Series 2022" }],
-  },
-];
-
-const AwardCard = ({ award }: { award: (typeof AWARDS)[number] }) => {
-  const trophy = (
-    // LINE 46 — trophy container width. Change w-[160px] to make trophies wider/narrower.
-    <div className="relative w-[160px] flex-shrink-0 flex items-center justify-center">
-      <div
-        className="
-          absolute
-          w-[180px]
-          h-[180px]
-          rounded-full
-          bg-[#4ab6ff]/20
-          blur-[60px]
-        "
-      />
-
-      <img
-        src={award.img}
-        alt={award.alt}
-        className="
-          relative z-10
-          w-full
-          h-[30vh]
-          object-contain
-          transition-transform
-          duration-500
-          hover:scale-105
-        "
-      />
-    </div>
-  );
-
-  const connector = (
-    // LINE 58 — connector spacing. Change mx-6 to push trophy/label apart or together.
-    <div className="flex items-center flex-shrink-0 self-center mx-6">
-      {/* LINE 60 — line length each side of the dot. Change w-8 on both divs. */}
-      <div className="w-8 h-[2px] bg-[#4ab6ff]" />
-      {/* LINE 62 — dot size. Change w-4 h-4 to resize the circle. */}
-      <div className="w-4 h-4 rounded-full border-2 border-[#4ab6ff] bg-[#100a44] flex-shrink-0" />
-      <div className="w-8 h-[2px] bg-[#4ab6ff]" />
-    </div>
-  );
-
-  const label = (
-    // LINE 67 — label box padding. Change px-8 py-8 for more/less internal space.
-    <div className="flex-1 border border-[#4ab6ff]/30 bg-[#0b0845]/80
-                    rounded-2xl px-8 py-8 self-stretch flex flex-col justify-center">
-      {/* LINE 70 — award name font size. Change text-4xl to scale the name. */}
-      <p className="text-[#4ab6ff] font-extrabold text-4xl tracking-widest leading-none mb-5">
-        {award.name}
-      </p>
-      {/* LINE 73 — gap between award entries. Change gap-4 for more/less spacing. */}
-      <div className="flex flex-col gap-4">
-        {award.items.map((it, i) => (
-          <div key={i} className={i > 0 ? "pt-4 border-t border-white/10" : ""}>
-            {/* LINE 76 — entry label font size. Change text-xl to resize BEST VFX text. */}
-            <p className="text-white font-bold text-xl leading-tight">
-              {it.label}
-            </p>
-            {it.sub && (
-              // LINE 80 — entry sub font size. Change text-lg to resize "Web Series 20XX".
-              <p className="text-white/60 text-lg leading-tight">
-                {it.sub}
-              </p>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="flex items-center w-full h-full">
-      {award.flip ? (
-        <>{label}{connector}{trophy}</>
-      ) : (
-        <>{trophy}{connector}{label}</>
-      )}
-    </div>
-  );
-};
-
 const Awards = () => {
   return (
     <>
@@ -183,18 +63,25 @@ const Awards = () => {
       </section>
 
      {/* Awards Showcase Image */}
-<section className="relative w-full bg-black flex flex-col items-center justify-center">
-  <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
-    <h2 className="font-display text-[30px] leading-[0.95] md:text-[40px] lg:text-[65px] font-bold text-theme-primaryText tracking-tight text-left">
-      Awards Showcase
-    </h2>
-  </div>
-  <img
-    src="/assets/images/awards/awardshowcase.png"
-    alt="Awards Showcase"
-    className="w-auto max-w-full h-auto max-h-[80vh] block object-contain mx-auto"
-  />
-</section>
+      <section className="relative w-full bg-theme-secondaryBg1 flex flex-col items-center justify-center">
+        <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
+          <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight text-center">
+            Awards Showcase
+          </h2>
+        </div>
+
+        <picture>
+          <source
+            media="(max-width: 768px), (max-aspect-ratio: 4/5)"
+            srcSet="/assets/images/awards/awardshowcase-mobile.png"
+          />
+          <img
+            src="/assets/images/awards/awardshowcase.png"
+            alt="Awards Showcase"
+            className="w-full h-auto block"
+          />
+        </picture>
+      </section>
 
       {/* 
       Awards Showcase — full viewport height 
