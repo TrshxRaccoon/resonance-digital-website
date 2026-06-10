@@ -15,11 +15,10 @@ const VFX = () => {
   const [selectedAdCategory, setSelectedAdCategory] =
     useState<string>("Master Showreel");
   const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
-  const [currentAdIndex, setCurrentAdIndex] = useState<number>(0);
-  const [adDirection, setAdDirection] = useState<number>(0);
   const [hoveredSide, setHoveredSide] = useState<"movies" | "ads" | null>(null);
   const expandedContentRef = useRef<HTMLDivElement>(null);
   const splitSectionRef = useRef<HTMLDivElement>(null);
+  const videoObserverRef = useRef<IntersectionObserver | null>(null);
 
   const isMobileViewport =
     typeof window !== "undefined" && window.innerWidth < 768;
@@ -39,20 +38,6 @@ const VFX = () => {
     }
   };
 
-  const handleAdNext = () => {
-    if (currentAdIndex + ITEMS_PER_PAGE < adsShowcase.length) {
-      setAdDirection(1);
-      setCurrentAdIndex(currentAdIndex + ITEMS_PER_PAGE);
-    }
-  };
-
-  const handleAdPrev = () => {
-    if (currentAdIndex > 0) {
-      setAdDirection(-1);
-      setCurrentAdIndex(Math.max(0, currentAdIndex - ITEMS_PER_PAGE));
-    }
-  };
-
   const movieCategories = [
     "Master Showreel",
     "Action Reel",
@@ -68,8 +53,6 @@ const VFX = () => {
     "Automobile Showreel",
     "Liquids Showreel",
   ];
-
-  const YOUTUBE_EMBED_PLACEHOLDER = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
   const movieShowreels = {
     "Master Showreel": {
@@ -694,6 +677,7 @@ const VFX = () => {
           loop
           playsInline
           preload="metadata"
+data-autopause="true"
         />
       ) : (
         <iframe
@@ -732,6 +716,37 @@ const VFX = () => {
       );
     }
   }, [expandedSection]);
+
+  useEffect(() => {
+  const videos = document.querySelectorAll(
+    "video[data-autopause='true']"
+  );
+
+  videoObserverRef.current?.disconnect();
+
+  videoObserverRef.current = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  videos.forEach((video) => {
+    videoObserverRef.current?.observe(video);
+  });
+
+  return () => {
+    videoObserverRef.current?.disconnect();
+  };
+}, [expandedSection]);
 
   const handleExpand = (section: string) => {
     if (splitSectionRef.current) {
@@ -1067,6 +1082,8 @@ const VFX = () => {
                               src={movie.image}
                               alt={movie.title}
                               className="absolute inset-0 w-full h-full object-cover"
+                              loading="lazy"
+decoding="async"
                             />
 
                             {/* Hover Overlay */}
@@ -1208,6 +1225,7 @@ const VFX = () => {
                           controls
                           playsInline
                           preload="metadata"
+data-autopause="true"
                         />
                       ) : (
                         <iframe
@@ -1381,6 +1399,7 @@ const VFX = () => {
                         controls
                         playsInline
                         preload="metadata"
+data-autopause="true"
                       />
                     ) : (
                       <iframe
@@ -1427,6 +1446,7 @@ const VFX = () => {
                           loop
                           playsInline
                           preload="metadata"
+data-autopause="true"
                         />
                       ) : (
                         <iframe
@@ -1499,34 +1519,20 @@ const VFX = () => {
 
           <section className="px-12 md:px-24 py-24 bg-theme-secondaryBg1">
             <div className="max-w-7xl mx-auto">
-              {/* ── CGI Stills — unequal masonry grid ── */}
+              {/* ── CGI Stills — full-bleed masonry grid ── */}
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-10">
                 VFX: CGI Stills <span className="text-[#4ab6ff]">|</span>{" "}
                 <span className="text-[#f2eee2]/60 font-bold">Showcase</span>
               </h2>
 
               {/*
-                CSS-columns masonry: browser stacks items top-to-bottom in each
-                column, so natural image heights create the unequal-card look
-                without any JS. break-inside-avoid stops images splitting across
-                column boundaries.
+                Tailwind CSS-columns masonry: `columns-2 md:columns-3` sets 2 cols
+                on mobile and 3 on md+. `gap-2` applies the column gutter.
+                `break-inside-avoid` on each card stops images splitting across
+                column boundaries. No JS / window.innerWidth needed.
               */}
-              <div
-                className="w-full md:w-[80%] md:mx-auto"
-                style={{
-                  columnCount:
-                    typeof window !== "undefined" && window.innerWidth < 768
-                      ? 2
-                      : 3,
-                  columnGap:
-                    typeof window !== "undefined" && window.innerWidth < 768
-                      ? "0px"
-                      : "8px",
-                }}
-              >
+              <div className="w-full columns-2 md:columns-3 gap-2">
                 {cgiStillsShowcase.map((image, index) => {
-                  // Cycle through aspect ratios so adjacent cards are never
-                  // the same height — this is what creates the uneven grid feel
                   const aspects = [
                     "aspect-[4/5]",
                     "aspect-[16/9]",
@@ -1541,22 +1547,14 @@ const VFX = () => {
                   return (
                     <div
                       key={`cgi-still-${index}`}
-                      className={`group relative ${aspects[index % aspects.length]} overflow-hidden rounded-sm`}
-                      style={{
-                        display: "inline-block",
-                        width: "100%",
-                        marginBottom:
-                          typeof window !== "undefined" &&
-                          window.innerWidth < 768
-                            ? "0px"
-                            : "8px",
-                        breakInside: "avoid",
-                      }}
+                      className={`group relative ${aspects[index % aspects.length]} overflow-hidden rounded-sm mb-2 break-inside-avoid`}
                     >
                       <img
                         src={image}
                         alt={`CGI Still ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+decoding="async"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 pointer-events-none" />
                       {/* index badge — appears on hover */}

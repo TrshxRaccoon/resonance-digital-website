@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -181,70 +181,188 @@ const brandShowcase: BrandShowcaseItem[] = [
 ];
 
 const tvcShowcase: TVCShowcaseItem[] = [
-  { title: "Apollo Apterra Tyres", image: "/assets/images/BrandStatements/ICICI-Lombard.jpg", client: "Apollo Tyres", year: "2025", videoSrc: "/assets/videos/Apollo_Tyres.webm" },
-  { title: "OPPO AI Best Face", image: "/assets/images/BrandStatements/oppo.png", client: "OPPO", year: "2024", videoSrc: "/assets/videos/OPPO.webm" },
-  { title: "IndiGo Protect Plus", image: "/assets/images/BrandStatements/images.jpeg", client: "IndiGo", year: "2024", videoSrc: "/assets/videos/Indigo.webm" },
-  { title: "Campa Energy", image: "/assets/images/movies/movies_01.png", client: "Campa", year: "2024", videoSrc: "/assets/videos/Campa.webm" },
-  { title: "Black Dog", image: "/assets/images/movies/avatar.jpeg", client: "Black Dog", year: "2024", videoSrc: "/assets/videos/Black_Dog.webm" },
-  { title: "SUPERBET", image: "/assets/images/movies/batman.png", client: "SUPERBET", year: "2024", videoSrc: "/assets/videos/SUPERBET.webm" },
-  { title: "Fastrack Smart", image: "/assets/images/movies/movies_03.png", client: "Fastrack", year: "2024", videoSrc: "/assets/videos/Fastrack.webm" },
-  { title: "Bournvita", image: "/assets/images/movies/dune.jpeg", client: "Bournvita", year: "2024", videoSrc: "/assets/videos/Bournvita.webm" },
-  { title: "The All-New Honda Amaze", image: "/assets/images/movies/flash.jpg", client: "Honda", year: "2024", videoSrc: "/assets/videos/Honda.webm" },
-  { title: "Ecolink BLDC Fans", image: "/assets/images/movies/strangerThings.jpg", client: "Ecolink", year: "2024", videoSrc: "/assets/videos/Ecolink.webm" },
-  { title: "JK Cement", image: "/assets/images/movies/avatar.jpeg", client: "JK Cement", year: "2024", videoSrc: "/assets/videos/JK_Cement.webm" },
-  { title: "Director Special Elaichi", image: "/assets/images/movies/batman.png", client: "Director Special", year: "2024", videoSrc: "/assets/videos/Director_Special.webm" },
-  { title: "Kit Kat", image: "/assets/images/movies/movies_01.png", client: "Kit Kat", year: "2024", videoSrc: "/assets/videos/KitKat.webm" },
-  { title: "Max Fashion", image: "/assets/images/movies/movies_02Witches.png", client: "Max Fashion", year: "2024", videoSrc: "/assets/videos/Max_Fashion.webm" },
-  { title: "The Plush New XUV500", image: "/assets/images/CaseStudies/mahindra1.png", client: "Mahindra", year: "2018", videoSrc: "/assets/videos/Mahindra.webm" },
-  { title: "Savsol Lubricants", image: "/assets/images/movies/dune.jpeg", client: "Savsol", year: "2024", videoSrc: "/assets/videos/Savsol.webm" },
-  { title: "Flipkart Big Bang Diwali", image: "/assets/images/movies/flash.jpg", client: "Flipkart", year: "2024", videoSrc: "/assets/videos/Flipkart.webm" },
-  { title: "The Fast & The Fair", image: "/assets/images/movies/strangerThings.jpg", client: "ACKO", year: "2024", videoSrc: "/assets/videos/Acko.webm" },
-  { title: "Netflix End of Year 2021", image: "/assets/images/movies/strangerThings.jpg", client: "Netflix", year: "2021", videoSrc: "/assets/videos/Netflix2021.webm" },
-  { title: "Netflix End of Year 2022", image: "/assets/images/movies/avatar.jpeg", client: "Netflix", year: "2022", videoSrc: "/assets/videos/Netflix2022.webm" },
-  { title: "Netflix End of Year 2023", image: "/assets/images/movies/batman.png", client: "Netflix", year: "2023", videoSrc: "/assets/videos/Netflix2023.webm" },
+  {
+    title: "Apollo Apterra Tyres",
+    image: "/assets/images/BrandStatements/ICICI-Lombard.jpg",
+    client: "Apollo Tyres",
+    year: "2025",
+    videoSrc: "/assets/videos/Apollo_Tyres.webm",
+  },
+  {
+    title: "OPPO AI Best Face",
+    image: "/assets/images/BrandStatements/oppo.png",
+    client: "OPPO",
+    year: "2024",
+    videoSrc: "/assets/videos/OPPO.webm",
+  },
+  {
+    title: "IndiGo Protect Plus",
+    image: "/assets/images/BrandStatements/images.jpeg",
+    client: "IndiGo",
+    year: "2024",
+    videoSrc: "/assets/videos/Indigo.webm",
+  },
+  {
+    title: "Campa Energy",
+    image: "/assets/images/movies/movies_01.png",
+    client: "Campa",
+    year: "2024",
+    videoSrc: "/assets/videos/Campa.webm",
+  },
+  {
+    title: "Black Dog",
+    image: "/assets/images/movies/avatar.jpeg",
+    client: "Black Dog",
+    year: "2024",
+    videoSrc: "/assets/videos/Black_Dog.webm",
+  },
+  {
+    title: "SUPERBET",
+    image: "/assets/images/movies/batman.png",
+    client: "SUPERBET",
+    year: "2024",
+    videoSrc: "/assets/videos/SUPERBET.webm",
+  },
+  {
+    title: "Fastrack Smart",
+    image: "/assets/images/movies/movies_03.png",
+    client: "Fastrack",
+    year: "2024",
+    videoSrc: "/assets/videos/Fastrack.webm",
+  },
+  {
+    title: "Bournvita",
+    image: "/assets/images/movies/dune.jpeg",
+    client: "Bournvita",
+    year: "2024",
+    videoSrc: "/assets/videos/Bournvita.webm",
+  },
+  {
+    title: "The All-New Honda Amaze",
+    image: "/assets/images/movies/flash.jpg",
+    client: "Honda",
+    year: "2024",
+    videoSrc: "/assets/videos/Honda.webm",
+  },
+  {
+    title: "Ecolink BLDC Fans",
+    image: "/assets/images/movies/strangerThings.jpg",
+    client: "Ecolink",
+    year: "2024",
+    videoSrc: "/assets/videos/Ecolink.webm",
+  },
+  {
+    title: "JK Cement",
+    image: "/assets/images/movies/avatar.jpeg",
+    client: "JK Cement",
+    year: "2024",
+    videoSrc: "/assets/videos/JK_Cement.webm",
+  },
+  {
+    title: "Director Special Elaichi",
+    image: "/assets/images/movies/batman.png",
+    client: "Director Special",
+    year: "2024",
+    videoSrc: "/assets/videos/Director_Special.webm",
+  },
+  {
+    title: "Kit Kat",
+    image: "/assets/images/movies/movies_01.png",
+    client: "Kit Kat",
+    year: "2024",
+    videoSrc: "/assets/videos/KitKat.webm",
+  },
+  {
+    title: "Max Fashion",
+    image: "/assets/images/movies/movies_02Witches.png",
+    client: "Max Fashion",
+    year: "2024",
+    videoSrc: "/assets/videos/Max_Fashion.webm",
+  },
+  {
+    title: "The Plush New XUV500",
+    image: "/assets/images/CaseStudies/mahindra1.png",
+    client: "Mahindra",
+    year: "2018",
+    videoSrc: "/assets/videos/Mahindra.webm",
+  },
+  {
+    title: "Savsol Lubricants",
+    image: "/assets/images/movies/dune.jpeg",
+    client: "Savsol",
+    year: "2024",
+    videoSrc: "/assets/videos/Savsol.webm",
+  },
+  {
+    title: "Flipkart Big Bang Diwali",
+    image: "/assets/images/movies/flash.jpg",
+    client: "Flipkart",
+    year: "2024",
+    videoSrc: "/assets/videos/Flipkart.webm",
+  },
+  {
+    title: "The Fast & The Fair",
+    image: "/assets/images/movies/strangerThings.jpg",
+    client: "ACKO",
+    year: "2024",
+    videoSrc: "/assets/videos/Acko.webm",
+  },
+  {
+    title: "Netflix End of Year 2021",
+    image: "/assets/images/movies/strangerThings.jpg",
+    client: "Netflix",
+    year: "2021",
+    videoSrc: "/assets/videos/Netflix2021.webm",
+  },
+  {
+    title: "Netflix End of Year 2022",
+    image: "/assets/images/movies/avatar.jpeg",
+    client: "Netflix",
+    year: "2022",
+    videoSrc: "/assets/videos/Netflix2022.webm",
+  },
+  {
+    title: "Netflix End of Year 2023",
+    image: "/assets/images/movies/batman.png",
+    client: "Netflix",
+    year: "2023",
+    videoSrc: "/assets/videos/Netflix2023.webm",
+  },
 ];
 
 const brandStatements = [
-{
-  title: "Social Media Management",
-  body:
-    "Building meaningful digital presence through strategic content, community engagement, platform management and performance-driven social media growth.",
-},
-{
-  title: "Content and Copy",
-  body:
-    "Crafting compelling narratives, impactful messaging and original content that strengthens brand identity and drives audience connection.",
-},
-{
-  title: "Print, OOH and Mainline",
-  body:
-    "Creating attention-grabbing campaigns across print, outdoor and traditional media to maximise visibility and brand recall.",
-},
-{
-  title: "Brand Launch and Rebranding",
-  body:
-    "From market entry to transformation, we build distinctive brand identities that inspire trust and long-term recognition.",
-},
-{
-  title: "Graphic Design, Iconography and Illustration",
-  body:
-    "Designing visually compelling assets, custom illustrations and brand elements that communicate ideas with clarity and creativity.",
-},
-{
-  title: "Video Editing and Animation",
-  body:
-    "Transforming concepts into engaging visual stories through dynamic editing, motion graphics and high-quality animation.",
-},
-{
-  title: "Film Production, AVs and Product Photography",
-  body:
-    "Producing cinematic films, corporate AVs and professional photography that showcase brands, products and experiences effectively.",
-},
-{
-  title: "Campaign Planning",
-  body:
-    "Developing integrated campaigns that align objectives, audiences, channels and creative execution for measurable impact.",
-},
+  {
+    title: "Social Media Management",
+    body: "Building meaningful digital presence through strategic content, community engagement, platform management and performance-driven social media growth.",
+  },
+  {
+    title: "Content and Copy",
+    body: "Crafting compelling narratives, impactful messaging and original content that strengthens brand identity and drives audience connection.",
+  },
+  {
+    title: "Print, OOH and Mainline",
+    body: "Creating attention-grabbing campaigns across print, outdoor and traditional media to maximise visibility and brand recall.",
+  },
+  {
+    title: "Brand Launch and Rebranding",
+    body: "From market entry to transformation, we build distinctive brand identities that inspire trust and long-term recognition.",
+  },
+  {
+    title: "Graphic Design, Iconography and Illustration",
+    body: "Designing visually compelling assets, custom illustrations and brand elements that communicate ideas with clarity and creativity.",
+  },
+  {
+    title: "Video Editing and Animation",
+    body: "Transforming concepts into engaging visual stories through dynamic editing, motion graphics and high-quality animation.",
+  },
+  {
+    title: "Film Production, AVs and Product Photography",
+    body: "Producing cinematic films, corporate AVs and professional photography that showcase brands, products and experiences effectively.",
+  },
+  {
+    title: "Campaign Planning",
+    body: "Developing integrated campaigns that align objectives, audiences, channels and creative execution for measurable impact.",
+  },
 ];
 
 const caseStudyShowcase: BrandShowcaseItem[] = [
@@ -304,19 +422,18 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
   },
   {
     title: "Netflix India",
-    image: "/assets/images/CaseStudies/for\ website-38.png",
-    caseStudyImage: "/assets/images/CaseStudies/for\ website-38.png",
+    image: "/assets/images/CaseStudies/for website-38.png",
+    caseStudyImage: "/assets/images/CaseStudies/for website-38.png",
     galleryImages: [
-      "/assets/images/CaseStudies/for\ website-38.png",
-      "/assets/images/CaseStudies/for\ website-39.png",
-      "/assets/images/CaseStudies/for\ website-40.png",
-      "/assets/images/CaseStudies/for\ website-41.png",
+      "/assets/images/CaseStudies/for website-38.png",
+      "/assets/images/CaseStudies/for website-39.png",
+      "/assets/images/CaseStudies/for website-40.png",
+      "/assets/images/CaseStudies/for website-41.png",
     ],
     client: "Netflix India",
     year: "2023",
     service: "Campaign Production",
-    objective:
-      "Drive engagement through culturally relevant storytelling.",
+    objective: "Drive engagement through culturally relevant storytelling.",
     approach:
       "Created end-of-year Playback campaigns for 2021, 2022, and 2023, delivering high-viewership content. Extended impact through brand collaborations like KitKat and award-winning work recognised at Kyoorius 2023.",
     impact:
@@ -325,14 +442,14 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
   {
     title: "CONOSH",
     image: "/assets/images/CaseStudies/conosh-1.png",
-    caseStudyImage: "/assets/images/CaseStudies/for\ website-23.png",
+    caseStudyImage: "/assets/images/CaseStudies/for website-23.png",
     galleryImages: [
-      "/assets/images/CaseStudies/for\ website-23.png",
-      "/assets/images/CaseStudies/for\ website-20.png",
-      "/assets/images/CaseStudies/for\ website-21.png",
-      "/assets/images/CaseStudies/for\ website-22.png",
-      "/assets/images/CaseStudies/for\ website-24.png",
-      "/assets/images/CaseStudies/for\ website-25.png",
+      "/assets/images/CaseStudies/for website-23.png",
+      "/assets/images/CaseStudies/for website-20.png",
+      "/assets/images/CaseStudies/for website-21.png",
+      "/assets/images/CaseStudies/for website-22.png",
+      "/assets/images/CaseStudies/for website-24.png",
+      "/assets/images/CaseStudies/for website-25.png",
     ],
     client: "CONOSH",
     year: "2025",
@@ -356,8 +473,7 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "OPPO",
     year: "2024",
     service: "Video Editing & Animation",
-    objective:
-      "Bring AI capabilities to life in an engaging, humanised way.",
+    objective: "Bring AI capabilities to life in an engaging, humanised way.",
     approach:
       "Conceptualised and executed a mascot-led narrative, blending storytelling with product demonstration.",
   },
@@ -366,22 +482,21 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     image: "/assets/images/CaseStudies/mahindra1.png",
     caseStudyImage: "/assets/images/CaseStudies/mahindra1.png",
     galleryImages: [
-      "/assets/images/CaseStudies/for\ website-31.png",
-      "/assets/images/CaseStudies/for\ website-32.png",
-      "/assets/images/CaseStudies/for\ website-33.png",
-      "/assets/images/CaseStudies/for\ website-34.png",
-      "/assets/images/CaseStudies/for\ website-35.png",
-      "/assets/images/CaseStudies/for\ website-36.png",
+      "/assets/images/CaseStudies/for website-31.png",
+      "/assets/images/CaseStudies/for website-32.png",
+      "/assets/images/CaseStudies/for website-33.png",
+      "/assets/images/CaseStudies/for website-34.png",
+      "/assets/images/CaseStudies/for website-35.png",
+      "/assets/images/CaseStudies/for website-36.png",
     ],
     client: "Mahindra XUV 500",
     year: "2018",
     service: "Campaign Production",
-    objective:
-      "Showcase product innovation and elevate brand perception.",
+    objective: "Showcase product innovation and elevate brand perception.",
     approach:
       "Delivered high-quality product films and full-CG executions, highlighting design, performance, and features.",
     impact:
-      "Positioned Mahindra as a tech-forward automotive brand, including executing India’s first end-to-end CG car launch.",
+      "Positioned Mahindra as a tech-forward automotive brand, including executing India's first end-to-end CG car launch.",
   },
   {
     title: "Vraj Group",
@@ -405,8 +520,7 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     year: "2024",
     service: "Brand Campaign",
     objective: "Build a premium project identity.",
-    approach:
-      "Designed branding, visual language, and high-end collateral.",
+    approach: "Designed branding, visual language, and high-end collateral.",
     impact: "Delivered a refined, luxury positioning.",
   },
   {
@@ -415,19 +529,17 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     caseStudyImage: "/assets/images/CaseStudies/estuary1.png",
     galleryImages: [
       "/assets/images/CaseStudies/estuary1.png",
-      "/assets/images/CaseStudies/for\ website-27.png",
-      "/assets/images/CaseStudies/for\ website-26.png",
-      "/assets/images/CaseStudies/for\ website-28.png",
+      "/assets/images/CaseStudies/for website-27.png",
+      "/assets/images/CaseStudies/for website-26.png",
+      "/assets/images/CaseStudies/for website-28.png",
     ],
     client: "Estuary",
     year: "2020",
     service: "Digital Marketing",
-    objective:
-      "Establish a premium identity in a niche category.",
+    objective: "Establish a premium identity in a niche category.",
     approach:
       "Built a refined brand language across packaging, digital, website, and films.",
-    impact:
-      "Positioned the brand as aspirational and category-defining.",
+    impact: "Positioned the brand as aspirational and category-defining.",
   },
   {
     title: "Calamus One - Ultrabike",
@@ -446,12 +558,10 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "Calamus One - Ultrabike",
     year: "2019",
     service: "Brand Film",
-    objective:
-      "Launch a next-gen e-bike with a tech-forward narrative.",
+    objective: "Launch a next-gen e-bike with a tech-forward narrative.",
     approach:
       "Developed product films and digital storytelling highlighting innovation.",
-    impact:
-      "Enabled strong market entry and successful crowdfunding traction.",
+    impact: "Enabled strong market entry and successful crowdfunding traction.",
   },
   {
     title: "Puravankara",
@@ -473,12 +583,10 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "Puravankara",
     year: "2022",
     service: "Real Estate Marketing",
-    objective:
-      "Launch a premium residential project across channels.",
+    objective: "Launch a premium residential project across channels.",
     approach:
       "Delivered a 360° campaign across print, digital, and on-ground media.",
-    impact:
-      "Built a consistent, high-end brand narrative.",
+    impact: "Built a consistent, high-end brand narrative.",
   },
   {
     title: "Elegant Builders & Developers",
@@ -499,14 +607,59 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     client: "Elegant Builders & Developers",
     year: "2024",
     service: "Brand Solutions",
-    objective:
-      "Launch a nature-led luxury project.",
-    approach:
-      "Built a brand language rooted in conscious living across media.",
+    objective: "Launch a nature-led luxury project.",
+    approach: "Built a brand language rooted in conscious living across media.",
     impact:
       "Positioned the project at the intersection of sustainability and luxury.",
   },
 ];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Skeleton shimmer shown while a gallery image is loading
+// ─────────────────────────────────────────────────────────────────────────────
+const ImageSkeleton = () => (
+  <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GalleryImage — wraps each gallery img with a skeleton until it's loaded.
+// The first image (idx === 0) gets fetchpriority="high" + loading="eager" so
+// the browser fetches it immediately when the overlay opens. All subsequent
+// images get loading="lazy" + decoding="async" so they don't compete.
+// ─────────────────────────────────────────────────────────────────────────────
+const GalleryImage = ({
+  src,
+  alt,
+  idx,
+  className,
+}: {
+  src: string;
+  alt: string;
+  idx: number;
+  className?: string;
+}) => {
+  const [loaded, setLoaded] = useState(false);
+  const isPriority = idx <= 2;
+
+  return (
+    <div className={`relative ${className ?? ""}`}>
+      {!loaded && <ImageSkeleton />}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setLoaded(true)}
+        // First image: fetch immediately at high priority
+        // Rest: defer until near-viewport, decode off main thread
+        {...(isPriority
+          ? { fetchPriority: "high" as any, loading: "eager" as const }
+          : { loading: "lazy" as const, decoding: "async" as const })}
+        className={`w-full h-full object-contain transition-opacity duration-300 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
+  );
+};
 
 const BrandSolutions = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -521,38 +674,65 @@ const BrandSolutions = () => {
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
-    window.addEventListener("resize", checkMobile);
+    window.addEventListener("resize", checkMobile, { passive: true });
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // ─── FIX 1: Background-preload all case study gallery images while the
+  // browser is idle. Uses requestIdleCallback so it never competes with
+  // above-the-fold rendering. When the user clicks a case study card the
+  // images are already in the browser cache — they appear instantly.
+  useEffect(() => {
+    const preloadAll = () => {
+      caseStudyShowcase.forEach((study) => {
+        // Preload whichever gallery list will be used (mobile or desktop)
+        const list =
+          isMobile && study.mobileGalleryImages?.length
+            ? study.mobileGalleryImages
+            : (study.galleryImages ?? []);
+
+        // Also preload the hero/caseStudyImage
+        const heroSrc = study.caseStudyImage ?? study.image;
+        [heroSrc, ...list].forEach((src, index) => {
+          const img = new Image();
+
+          if (index < 3) {
+            img.fetchPriority = "high";
+          }
+
+          img.decoding = "async";
+          img.src = src;
+        });
+      });
+    };
+
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        (window as any).requestIdleCallback(preloadAll, { timeout: 3000 });
+      } else {
+        // Fallback for Safari — defer by 2 s so it doesn't block page load
+        const t = setTimeout(preloadAll, 2000);
+        return () => clearTimeout(t);
+      }
+    }
+  }, [isMobile]);
 
   const activeCaseStudy =
     activeCaseStudyIndex !== null
       ? caseStudyShowcase[activeCaseStudyIndex]
       : null;
 
-  const openCaseStudy = (index: number) => {
-    setActiveCaseStudyIndex(index);
-  };
+  const openCaseStudy = (index: number) => setActiveCaseStudyIndex(index);
+  const closeCaseStudy = () => setActiveCaseStudyIndex(null);
 
-  const closeCaseStudy = () => {
-    setActiveCaseStudyIndex(null);
-  };
-
-
-  const openShowcaseVideoModal = (videoSrc: string) => {
+  const openShowcaseVideoModal = (videoSrc: string) =>
     setActiveShowcaseVideoUrl(videoSrc);
-  };
-
-  const closeShowcaseVideoModal = () => {
-    setActiveShowcaseVideoUrl(null);
-  };
+  const closeShowcaseVideoModal = () => setActiveShowcaseVideoUrl(null);
 
   useEffect(() => {
     if (!activeShowcaseVideoUrl && !activeCaseStudy) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
     return () => {
       document.body.style.overflow = previousOverflow;
     };
@@ -564,7 +744,6 @@ const BrandSolutions = () => {
     <>
       <Header />
 
-      {/* Hero Section */}
       <FixedHero
         backgroundImage="/assets/images/BrandStatements/ICICI-lombard2.png"
         title="Brand Solutions"
@@ -578,24 +757,23 @@ const BrandSolutions = () => {
 
       {/* Clients + Statements Section */}
       <section className="w-full bg-theme-primaryBg2 py-20 px-10 md:px-16">
-        {/* Section heading */}
         <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12">
           Brand Solutions <span className="text-gray-400">|</span>{" "}
           <span className="font-bold text-gray-700">Clients</span>
         </h2>
 
-        {/* 50/50 split */}
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Left — clients grid image */}
           <div className="w-full lg:w-1/2">
+            {/* FIX 2: lazy-load the large client logo sheet (below the fold) */}
             <img
               src="/assets/images/CaseStudies/Brand-solution-logo.png"
               alt="Brand Solutions Clients"
+              loading="lazy"
+              decoding="async"
               className="max-w-full max-h-full object-contain"
             />
           </div>
 
-          {/* Right — accordion statements */}
           <div className="w-full lg:w-1/2 flex flex-col self-start pb-16">
             {brandStatements.map((item, i) => (
               <div key={i}>
@@ -634,7 +812,6 @@ const BrandSolutions = () => {
                 </AnimatePresence>
               </div>
             ))}
-            {/* Final bottom border */}
             <div className="h-[2px] bg-gray-300 w-full" />
           </div>
         </div>
@@ -658,19 +835,30 @@ const BrandSolutions = () => {
               onClick={() => openShowcaseVideoModal(item.videoSrc)}
               aria-label={`Open ${item.title}`}
             >
-              <div className="relative aspect-video overflow-hidden rounded-sm bg-black">
-                <video
-                  src={item.videoSrc}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  muted
-                  playsInline
-                  preload="metadata"
-                />
+              {/*
+                FIX 3: The original code rendered a <video preload="metadata"> for
+                every one of the 21 TVC cards. That means 21 simultaneous network
+                requests fetching video headers on page load, plus 21 video
+                decoders initialising — the single biggest source of lag/heat on
+                this page. The videos are only ever played inside the modal, so
+                the grid card only needs a thumbnail image + play icon.
+                The actual <video> is mounted inside the modal below, only when
+                the user clicks (see activeShowcaseVideoUrl conditional).
+              */}
+              <div className="relative aspect-video overflow-hidden rounded-sm bg-black border border-white/10">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
 
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                    <Play className="w-6 h-6 text-black ml-0.5" fill="currentColor" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Play
+                      className="w-6 h-6 text-black ml-0.5"
+                      fill="currentColor"
+                    />
                   </div>
+
+                  <h3 className="text-white text-base md:text-lg font-semibold">
+                    {item.title}
+                  </h3>
                 </div>
               </div>
               <p className="mt-3 text-sm text-gray-500 uppercase tracking-wide">
@@ -682,6 +870,7 @@ const BrandSolutions = () => {
         </div>
       </section>
 
+      {/* TVC Video Modal */}
       <AnimatePresence>
         {activeShowcaseVideoUrl && (
           <motion.div
@@ -690,6 +879,7 @@ const BrandSolutions = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+            onClick={closeShowcaseVideoModal}
           >
             <button
               type="button"
@@ -706,9 +896,16 @@ const BrandSolutions = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.98, opacity: 0 }}
               transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+              onClick={(e) => e.stopPropagation()}
             >
+              {/*
+                FIX 4: The <video> is only mounted here — inside the modal —
+                when the user explicitly clicks a card. Before that click,
+                zero video elements exist in the DOM, so zero network requests
+                and zero decoders are running.
+              */}
               <video
-                src={activeShowcaseVideoUrl || undefined}
+                src={activeShowcaseVideoUrl}
                 className="w-full h-full"
                 controls
                 autoPlay
@@ -719,7 +916,7 @@ const BrandSolutions = () => {
         )}
       </AnimatePresence>
 
-      {/* Brand Solutions — Showcase */}
+      {/* Brand Solutions — Case Studies */}
       <section className="w-full bg-theme-primaryBg2 pb-24 px-10 py-10 md:px-16">
         <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12 translate-y-3">
           Brand Solutions <span className="text-gray-400">|</span>{" "}
@@ -736,9 +933,14 @@ const BrandSolutions = () => {
               aria-label={`Open case study ${item.title}`}
             >
               <div className="relative aspect-video overflow-hidden rounded-sm bg-[#e7e5df] border border-[#d7d4cc]">
+                {/* FIX 5: lazy-load case study card thumbnails — 11 images
+                    were all fetching eagerly. The first card stays eager
+                    since it may be in the initial viewport. */}
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -766,7 +968,6 @@ const BrandSolutions = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
           >
-            {/* Close button */}
             <button
               type="button"
               aria-label="Close case study"
@@ -776,12 +977,8 @@ const BrandSolutions = () => {
               <X className="w-5 h-5 text-gray-600" />
             </button>
 
-            {/* Content — vertical scroll: hero + metadata, then gallery images inline */}
             <div className="flex flex-col">
-
-              {/* ── Above-fold: on desktop hero-left + metadata-right; on mobile metadata-top + hero-below ── */}
               <div className="min-h-screen flex flex-col lg:flex-row">
-
                 {/* MOBILE ONLY — metadata sits at the top */}
                 <motion.div
                   key={`mobile-meta-${activeCaseStudyIndex}`}
@@ -797,47 +994,75 @@ const BrandSolutions = () => {
                     {activeCaseStudy.title}
                   </h2>
 
-                  {/* Metadata rows */}
                   <div className="space-y-0 mb-6">
                     <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
-                      <span className="text-gray-400 text-xs uppercase tracking-wide">Client</span>
-                      <span className="text-gray-800 font-bold uppercase tracking-wide text-xs">{activeCaseStudy.client}</span>
+                      <span className="text-gray-400 text-xs uppercase tracking-wide">
+                        Client
+                      </span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-xs">
+                        {activeCaseStudy.client}
+                      </span>
                     </div>
                     <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
-                      <span className="text-gray-400 text-xs uppercase tracking-wide">Service</span>
-                      <span className="text-gray-800 font-bold uppercase tracking-wide text-xs">{activeCaseStudy.service}</span>
+                      <span className="text-gray-400 text-xs uppercase tracking-wide">
+                        Service
+                      </span>
+                      <span className="text-gray-800 font-bold uppercase tracking-wide text-xs">
+                        {activeCaseStudy.service}
+                      </span>
                     </div>
                     <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
-                      <span className="text-gray-400 text-xs uppercase tracking-wide">Year</span>
-                      <span className="text-gray-800 font-bold text-xs">{activeCaseStudy.year}</span>
+                      <span className="text-gray-400 text-xs uppercase tracking-wide">
+                        Year
+                      </span>
+                      <span className="text-gray-800 font-bold text-xs">
+                        {activeCaseStudy.year}
+                      </span>
                     </div>
                     {activeCaseStudy.videoHighlight && (
                       <div className="grid grid-cols-[100px_1fr] items-baseline border-b border-gray-300 py-2.5">
-                        <span className="text-gray-400 text-xs uppercase tracking-wide">Reach</span>
-                        <span className="text-[#1498e1] font-bold text-xs">{activeCaseStudy.videoHighlight}</span>
+                        <span className="text-gray-400 text-xs uppercase tracking-wide">
+                          Reach
+                        </span>
+                        <span className="text-[#1498e1] font-bold text-xs">
+                          {activeCaseStudy.videoHighlight}
+                        </span>
                       </div>
                     )}
                   </div>
 
-                  {/* Objective / Approach / Impact */}
-                  {(activeCaseStudy.objective || activeCaseStudy.approach || activeCaseStudy.impact) && (
+                  {(activeCaseStudy.objective ||
+                    activeCaseStudy.approach ||
+                    activeCaseStudy.impact) && (
                     <div className="mb-7 space-y-4">
                       {activeCaseStudy.objective && (
                         <div>
-                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">Objective</p>
-                          <p className="text-gray-600 text-sm leading-relaxed">{activeCaseStudy.objective}</p>
+                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">
+                            Objective
+                          </p>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {activeCaseStudy.objective}
+                          </p>
                         </div>
                       )}
                       {activeCaseStudy.approach && (
                         <div>
-                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">Approach</p>
-                          <p className="text-gray-600 text-sm leading-relaxed">{activeCaseStudy.approach}</p>
+                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">
+                            Approach
+                          </p>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {activeCaseStudy.approach}
+                          </p>
                         </div>
                       )}
                       {activeCaseStudy.impact && (
                         <div>
-                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">Impact</p>
-                          <p className="text-gray-600 text-sm leading-relaxed">{activeCaseStudy.impact}</p>
+                          <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">
+                            Impact
+                          </p>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {activeCaseStudy.impact}
+                          </p>
                         </div>
                       )}
                     </div>
@@ -845,7 +1070,8 @@ const BrandSolutions = () => {
 
                   {activeCaseStudy.galleryImages?.length ? (
                     <p className="text-[10px] uppercase tracking-[0.25em] text-gray-400 mb-4">
-                      ↓ Scroll to view gallery ({activeCaseStudy.galleryImages.length} images)
+                      ↓ Scroll to view gallery (
+                      {activeCaseStudy.galleryImages.length} images)
                     </p>
                   ) : null}
 
@@ -857,9 +1083,9 @@ const BrandSolutions = () => {
                   </button>
                 </motion.div>
 
-                {/* Hero image — full width on mobile, 55% on desktop */}
+                {/* Hero image */}
                 <motion.div
-                  key={activeCaseStudy.image + activeCaseStudyIndex}
+                  key={`hero-${activeCaseStudyIndex}`}
                   initial={{ opacity: 0, x: -24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
@@ -869,12 +1095,20 @@ const BrandSolutions = () => {
                   <div className="absolute inset-0 flex flex-col items-center justify-center px-6 md:px-10 lg:px-16">
                     <div className="relative w-full h-full flex items-center justify-center">
                       <div className="overflow-hidden bg-transparent">
+                        {/*
+                          FIX 6: Hero case study image gets fetchPriority="high" so
+                          the browser fetches it the moment the overlay opens,
+                          before anything else. Combined with the idle-time preload
+                          (FIX 1) it will usually already be cached.
+                        */}
                         <img
                           src={
-                            activeCaseStudy.caseStudyImage ||
+                            activeCaseStudy.caseStudyImage ??
                             activeCaseStudy.image
                           }
                           alt={`${activeCaseStudy.title} case study`}
+                          fetchPriority="high"
+                          loading="eager"
                           className="max-w-full max-h-full object-contain object-left"
                         />
                       </div>
@@ -884,23 +1118,19 @@ const BrandSolutions = () => {
 
                 {/* DESKTOP ONLY — right metadata panel */}
                 <motion.div
-                  key={activeCaseStudyIndex}
+                  key={`desktop-meta-${activeCaseStudyIndex}`}
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                   className="hidden lg:flex w-full lg:w-[45%] flex-col justify-start px-10 md:px-16 pt-20 lg:pt-24 pb-16"
                 >
-                  {/* Section label */}
                   <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
                     Brand Solutions | Case Study
                   </p>
-
-                  {/* Title */}
                   <h2 className="font-display text-[36px] md:text-[52px] font-bold text-gray-800 leading-none mb-10">
                     {activeCaseStudy.title}
                   </h2>
 
-                  {/* Metadata rows */}
                   <div className="space-y-0 mb-8">
                     <div className="grid grid-cols-[110px_1fr] items-baseline border-b border-gray-300 py-3">
                       <span className="text-gray-400 text-sm uppercase tracking-wide">
@@ -938,8 +1168,9 @@ const BrandSolutions = () => {
                     )}
                   </div>
 
-                  {/* Objective, Approach, Impact */}
-                  {(activeCaseStudy.objective || activeCaseStudy.approach || activeCaseStudy.impact) && (
+                  {(activeCaseStudy.objective ||
+                    activeCaseStudy.approach ||
+                    activeCaseStudy.impact) && (
                     <div className="mb-10 space-y-6">
                       {activeCaseStudy.objective && (
                         <div>
@@ -974,14 +1205,13 @@ const BrandSolutions = () => {
                     </div>
                   )}
 
-                  {/* Scroll hint — only shown when gallery images exist */}
                   {activeCaseStudy.galleryImages?.length ? (
                     <p className="text-[10px] uppercase tracking-[0.25em] text-gray-400 mb-6">
-                      ↓ Scroll to view gallery ({activeCaseStudy.galleryImages.length} images)
+                      ↓ Scroll to view gallery (
+                      {activeCaseStudy.galleryImages.length} images)
                     </p>
                   ) : null}
 
-                  {/* Dismiss hint */}
                   <button
                     onClick={closeCaseStudy}
                     className="self-start text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
@@ -991,107 +1221,112 @@ const BrandSolutions = () => {
                 </motion.div>
               </div>
 
-              {/* ── Gallery images — inline, full viewport-height on desktop / auto-height on mobile ── */}
-              {activeCaseStudy.galleryImages?.length ? (() => {
-                // Pick the right image list — mobile gets mobileGalleryImages if provided
+              {/* Gallery images */}
+              {(() => {
+                if (!activeCaseStudy.galleryImages?.length) return null;
+
                 const galleryList =
                   isMobile && activeCaseStudy.mobileGalleryImages?.length
                     ? activeCaseStudy.mobileGalleryImages
                     : activeCaseStudy.galleryImages;
 
                 return (
-                <div className="flex flex-col">
-                  {/* Gallery header strip */}
-                  <div className="bg-theme-secondaryBg2 border-t border-gray-300 px-0 md:px-8 py-5 md:py-6">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-1">
-                      Gallery
-                    </p>
-                    <div className="flex items-baseline gap-3 md:gap-4 flex-wrap">
-                      <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
-                        {activeCaseStudy.title}
-                      </h2>
-                      <span className="text-gray-400 text-sm">·</span>
-                      <span className="text-gray-400 text-sm">{activeCaseStudy.year}</span>
-                      <span className="text-gray-400 text-sm">·</span>
-                      <span className="text-gray-400 text-sm uppercase tracking-wide">{activeCaseStudy.service}</span>
+                  <div className="flex flex-col">
+                    <div className="bg-theme-secondaryBg2 border-t border-gray-300 px-0 md:px-8 py-5 md:py-6">
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-1">
+                        Gallery
+                      </p>
+                      <div className="flex items-baseline gap-3 md:gap-4 flex-wrap">
+                        <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
+                          {activeCaseStudy.title}
+                        </h2>
+                        <span className="text-gray-400 text-sm">·</span>
+                        <span className="text-gray-400 text-sm">
+                          {activeCaseStudy.year}
+                        </span>
+                        <span className="text-gray-400 text-sm">·</span>
+                        <span className="text-gray-400 text-sm uppercase tracking-wide">
+                          {activeCaseStudy.service}
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Full-screen stacked images — 100svh on desktop, auto height on mobile with tight gaps */}
-                  <div className={isMobile ? "flex flex-col gap-2 px-0" : "flex flex-col"}>
-                    {galleryList.map((image, idx) => {
-                      // Killer Jeans special paired layout — desktop only
-                      if (
-                        !isMobile &&
-                        activeCaseStudy.title === "Killer Jeans" &&
-                        image.includes("Killer2.png")
-                      ) {
+                    <div
+                      className={
+                        isMobile ? "flex flex-col gap-2 px-0" : "flex flex-col"
+                      }
+                    >
+                      {galleryList.map((image, idx) => {
+                        // Killer Jeans special paired layout — desktop only
+                        if (
+                          !isMobile &&
+                          activeCaseStudy.title === "Killer Jeans" &&
+                          image.includes("Killer2.png")
+                        ) {
+                          return (
+                            <div
+                              key={idx}
+                              className="relative w-full flex items-center justify-center gap-6 px-8"
+                              style={{ height: "100svh" }}
+                            >
+                              <GalleryImage
+                                src="/assets/images/CaseStudies/Killer2.png"
+                                alt="Killer Jeans 2"
+                                idx={idx}
+                                className="w-1/2 h-full"
+                              />
+                              <GalleryImage
+                                src="/assets/images/CaseStudies/Killer3.png"
+                                alt="Killer Jeans 3"
+                                idx={idx + 1}
+                                className="w-1/2 h-full"
+                              />
+                            </div>
+                          );
+                        }
+
+                        if (
+                          !isMobile &&
+                          activeCaseStudy.title === "Killer Jeans" &&
+                          image.includes("Killer3.png")
+                        ) {
+                          return null;
+                        }
+
                         return (
                           <div
                             key={idx}
-                            className="relative w-full flex items-center justify-center gap-6 px-8"
-                            style={{ height: "100svh" }}
+                            className="relative w-full"
+                            style={isMobile ? undefined : { height: "100svh" }}
                           >
-                            <img
-                              src="/assets/images/CaseStudies/Killer2.png"
-                              alt="Killer Jeans 2"
-                              className="w-1/2 h-full object-contain"
-                            />
-                            <img
-                              src="/assets/images/CaseStudies/Killer3.png"
-                              alt="Killer Jeans 3"
-                              className="w-1/2 h-full object-contain"
+                            {/*
+                              FIX 7: GalleryImage component handles per-image
+                              priority, skeleton placeholder, and fade-in.
+                              First image (idx 0) is high-priority + eager;
+                              the rest are lazy + async-decoded.
+                            */}
+                            <GalleryImage
+                              src={image}
+                              alt={`${activeCaseStudy.title} — ${idx + 1} of ${galleryList.length}`}
+                              idx={idx}
+                              className={isMobile ? "w-full" : "w-full h-full"}
                             />
                           </div>
                         );
-                      }
+                      })}
+                    </div>
 
-                      // Skip Killer3 on desktop (it's paired with Killer2 above)
-                      if (
-                        !isMobile &&
-                        activeCaseStudy.title === "Killer Jeans" &&
-                        image.includes("Killer3.png")
-                      ) {
-                        return null;
-                      }
-
-                      return (
-                        <div
-                          key={idx}
-                          className={
-                            isMobile
-                              ? "relative w-full"
-                              : "relative w-full"
-                          }
-                          style={isMobile ? undefined : { height: "100svh" }}
-                        >
-                          <img
-                            src={image}
-                            alt={`${activeCaseStudy.title} — ${idx + 1} of ${galleryList.length}`}
-                            className={
-                              isMobile
-                                ? "w-full h-auto object-contain"
-                                : "w-full h-full object-contain"
-                            }
-                          />
-                        </div>
-                      );
-                    })}
+                    <div className="py-10 md:py-12 flex justify-center border-t border-gray-300 bg-theme-secondaryBg2">
+                      <button
+                        onClick={closeCaseStudy}
+                        className="text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
+                      >
+                        ← Back to Showcase
+                      </button>
+                    </div>
                   </div>
-
-                  {/* Footer */}
-                  <div className="py-10 md:py-12 flex justify-center border-t border-gray-300 bg-theme-secondaryBg2">
-                    <button
-                      onClick={closeCaseStudy}
-                      className="text-xs uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors duration-200 border-b border-gray-300 hover:border-gray-600 pb-0.5"
-                    >
-                      ← Back to Showcase
-                    </button>
-                  </div>
-                </div>
                 );
-              })() : null}
-
+              })()}
             </div>
           </motion.div>
         )}
