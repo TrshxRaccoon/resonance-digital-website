@@ -559,7 +559,7 @@ const VFX = () => {
         },
         { src: "/assets/videos/Bournvita.webm", label: "Bournvita" },
         { src: "/assets/videos/Honda.webm", label: "Honda Amaze" },
-        { src: "https://www.instagram.com/reel/DQMRzL5DVIW/embed", label: "Oreo" },
+        { src: "/assets/videos/oreo.webm", label: "Oreo" },
         {
             src: "/assets/videos/Ecolink.webm",
             label: "Ecolink BLDC Fans",
