@@ -133,7 +133,7 @@ const BrandStatement = () => {
                             <span
                                 key={index}
                                 style={{
-                                    color: index < visibleCharacters ? "#4ab6ff" : "#f2eee2",
+                                    color: index < visibleCharacters ? "#201c50" : "#f2eee2",
                                 }}
                             >
                                 {char}
