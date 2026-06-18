@@ -1,8 +1,26 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/:path*/index.html",
+            "destination": "/:path*/",
+            "permanent": true
+        }
+    ],
+    "headers": [
+        {
+            "source": "/RDL_logo.png",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=86400, must-revalidate"
+                }
+            ]
+        }
+    ]
 }
