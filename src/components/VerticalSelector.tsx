@@ -30,7 +30,7 @@ const verticals = [
             "Photorealistic renders and immersive virtual tours for architectural projects.",
         href: "/real-estate",
         bgImage:
-            "/assets/images/martech/Mahindra.png",
+            "/assets/images/realestposter.png",
     },
     {
         id: "motion-pictures",

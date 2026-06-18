@@ -105,7 +105,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     }}
                 >
                     <a
-                        href="mailto:hello@resonancedigital.com"
+                        href="mailto:info@resonancedigital.in"
                         className="hover:text-theme-primaryText transition-colors duration-300"
                     >
                         hello@resonancedigital.com
