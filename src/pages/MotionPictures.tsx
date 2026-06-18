@@ -5,9 +5,21 @@ import AnimatedColorText from "../components/AnimatedColorText";
 import FixedHero from "@/components/FixedHero";
 
 const showcaseImages = [
-    "/assets/images/motionPictures/AyodhyaSS3.jpg",
-    "/assets/images/motionPictures/CHHSS1.jpg",
-    "/assets/images/motionPictures/UHC1.png",
+    {
+        image: "/assets/images/motionPictures/AyodhyaSS3.jpg",
+        title: "Deepotsav",
+        year: "2025",
+    },
+    {
+        image: "/assets/images/motionPictures/CHHSS1.jpg",
+        title: "Chhatrasal",
+        year: "2025",
+    },
+    {
+        image: "/assets/images/motionPictures/UHC1.png",
+        title: "Conosh",
+        year: "2025",
+    },
 ];
 
 const MotionPictures = () => {
@@ -44,18 +56,27 @@ const MotionPictures = () => {
                 </div>
 
                 <div className="space-y-0">
-                    {showcaseImages.map((image, index) => (
+                    {showcaseImages.map((item, index) => (
                         <div
-                            key={image}
+                            key={item.image}
                             className={`w-full ${index % 2 === 0 ? "bg-theme-primaryBg2" : "bg-theme-secondaryBg2"} py-12 md:py-16 px-0`}
                         >
-                            <div className="w-full flex justify-center">
+                            <div className="relative w-full flex justify-center">
                                 <img
-                                    src={image}
+                                    src={item.image}
                                     alt={`Motion Pictures Showcase ${index + 1}`}
                                     className="block w-full h-auto object-contain"
                                     loading="lazy"
                                 />
+
+                                <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 text-right text-white pointer-events-none">
+                                    <div className="font-display text-xl md:text-3xl font-semibold leading-none">
+                                        {item.title}
+                                    </div>
+                                    <div className="mt-1 text-sm md:text-lg tracking-wider leading-none">
+                                        {item.year}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
