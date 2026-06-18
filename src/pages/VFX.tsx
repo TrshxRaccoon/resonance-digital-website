@@ -616,7 +616,10 @@ const VFX = () => {
         "T",
         "grid2x2",
         "full",
-        "invertedT",
+        "split",
+        "full",
+        "split",
+        "split",
         "full",
     ] as const;
 
@@ -628,7 +631,6 @@ const VFX = () => {
         split: 2,
         T: 3,
         grid2x2: 4,
-        invertedT: 3,
     };
 
     // Slice videos into blocks — walks through LAYOUT_PATTERN first, then
@@ -866,7 +868,7 @@ const VFX = () => {
                     <div className="hidden md:block relative w-full h-screen">
                         {/* Full-bleed movies image as base layer — prevents black corners showing through clip gaps */}
                         <img
-                            src="/assets/images/vfx/movie-background-leg.png"
+                            src="/assets/images/vfx/movie-background-leg.jpg"
                             alt=""
                             aria-hidden="true"
                             className="absolute inset-0 w-full h-full object-cover"
@@ -887,14 +889,14 @@ const VFX = () => {
                             }}
                         >
                             <img
-                                src="/assets/images/vfx/movie-background-leg.png"
+                                src="/assets/images/vfx/movie-background-leg.jpg"
                                 alt="Movies"
                                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                             />
                             <div
                                 className={`absolute inset-0 pointer-events-none transition-all duration-500 ${hoveredSide === "ads"
-                                        ? "bg-black/0"
-                                        : "bg-black/45 group-hover:bg-black/25"
+                                    ? "bg-black/0"
+                                    : "bg-black/45 group-hover:bg-black/25"
                                     }`}
                             />
                             <h2 className="absolute left-5 top-1/2 -translate-y-1/2 font-display text-[88px] font-bold text-white group-hover:text-[#4ab6ff] transition-all duration-500 group-hover:scale-105">
@@ -939,7 +941,7 @@ const VFX = () => {
                     >
                         {/* Base layer — films image fills the seam gap between the two clips */}
                         <img
-                            src="/assets/images/vfx/movie-background-leg.png"
+                            src="/assets/images/vfx/movie-background-leg.jpg"
                             alt=""
                             aria-hidden="true"
                             className="absolute inset-0 w-full h-full object-cover"
@@ -954,7 +956,7 @@ const VFX = () => {
                             }}
                         >
                             <img
-                                src="/assets/images/vfx/movie-background-leg.png"
+                                src="/assets/images/vfx/movie-background-leg.jpg"
                                 alt="Movies"
                                 className="w-full h-full object-cover"
                             />
@@ -1003,7 +1005,7 @@ const VFX = () => {
                         <div
                             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                             style={{
-                                backgroundImage: `url('/assets/images/vfx/movie-background-leg.png')`,
+                                backgroundImage: `url('/assets/images/vfx/movie-background-leg.jpg')`,
                             }}
                         />
                         <div className="absolute inset-0 bg-black/60" />
@@ -1040,8 +1042,8 @@ const VFX = () => {
                                     onClick={handleMoviePrev}
                                     disabled={currentMovieIndex === 0}
                                     className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-[#f2eee2] transition-all duration-300 ${currentMovieIndex === 0
-                                            ? "bg-[#4ab6ff]/10 cursor-not-allowed opacity-50"
-                                            : "bg-[#4ab6ff]/20 hover:bg-[#4ab6ff]/40 cursor-pointer"
+                                        ? "bg-[#4ab6ff]/10 cursor-not-allowed opacity-50"
+                                        : "bg-[#4ab6ff]/20 hover:bg-[#4ab6ff]/40 cursor-pointer"
                                         }`}
                                 >
                                     <ChevronLeft className="w-6 h-6" />
@@ -1119,8 +1121,8 @@ const VFX = () => {
                                         currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length
                                     }
                                     className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 rounded-full flex items-center justify-center text-[#f2eee2] transition-all duration-300 ${currentMovieIndex + ITEMS_PER_PAGE >= moviesShowcase.length
-                                            ? "bg-[#4ab6ff]/10 cursor-not-allowed opacity-50"
-                                            : "bg-[#4ab6ff]/20 hover:bg-[#4ab6ff]/40 cursor-pointer"
+                                        ? "bg-[#4ab6ff]/10 cursor-not-allowed opacity-50"
+                                        : "bg-[#4ab6ff]/20 hover:bg-[#4ab6ff]/40 cursor-pointer"
                                         }`}
                                 >
                                     <ChevronRight className="w-6 h-6" />
@@ -1170,8 +1172,8 @@ const VFX = () => {
                                                 <button
                                                     onClick={() => setSelectedMovieCategory(category)}
                                                     className={`transition-colors duration-300 ${selectedMovieCategory === category
-                                                            ? "text-[#4ab6ff]"
-                                                            : "text-[#f2eee2]/40 hover:text-[#4ab6ff]"
+                                                        ? "text-[#4ab6ff]"
+                                                        : "text-[#f2eee2]/40 hover:text-[#4ab6ff]"
                                                         }`}
                                                 >
                                                     {category}
@@ -1192,8 +1194,8 @@ const VFX = () => {
                                                 <button
                                                     onClick={() => setSelectedMovieCategory(category)}
                                                     className={`transition-colors duration-300 ${selectedMovieCategory === category
-                                                            ? "text-[#4ab6ff]"
-                                                            : "text-[#f2eee2]/40"
+                                                        ? "text-[#4ab6ff]"
+                                                        : "text-[#f2eee2]/40"
                                                         }`}
                                                 >
                                                     {category}
@@ -1342,8 +1344,8 @@ const VFX = () => {
                                             <button
                                                 onClick={() => setSelectedAdCategory(category)}
                                                 className={`transition-colors duration-300 ${selectedAdCategory === category
-                                                        ? "text-[#4ab6ff]"
-                                                        : "text-[#f2eee2]/40 hover:text-[#4ab6ff]"
+                                                    ? "text-[#4ab6ff]"
+                                                    : "text-[#f2eee2]/40 hover:text-[#4ab6ff]"
                                                     }`}
                                             >
                                                 {category}
@@ -1361,8 +1363,8 @@ const VFX = () => {
                                             <button
                                                 onClick={() => setSelectedAdCategory(category)}
                                                 className={`transition-colors duration-300 ${selectedAdCategory === category
-                                                        ? "text-[#4ab6ff]"
-                                                        : "text-[#f2eee2]/40"
+                                                    ? "text-[#4ab6ff]"
+                                                    : "text-[#f2eee2]/40"
                                                     }`}
                                             >
                                                 {category}
@@ -1490,17 +1492,6 @@ const VFX = () => {
                                             <AdCard src={v1.src} label={v1.label} />
                                             <AdCard src={v2.src} label={v2.label} />
                                             <AdCard src={v3.src} label={v3.label} />
-                                        </div>
-                                    );
-
-                                case "invertedT":
-                                    return (
-                                        <div key={blockIdx} className="flex flex-col gap-3 w-full">
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                                <AdCard src={v0.src} label={v0.label} />
-                                                <AdCard src={v1.src} label={v1.label} />
-                                            </div>
-                                            <AdCard src={v2.src} label={v2.label} />
                                         </div>
                                     );
 

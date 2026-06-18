@@ -27,9 +27,12 @@ const Hero = () => {
                     loop
                     playsInline
                     preload="auto"
-                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    className="absolute inset-0 w-full h-full object-cover scale-125 z-0"
+                    style={{
+                        objectPosition: "center center",
+                    }}
                 >
-                    <source src="/assets/images/hero-showreel.webm" type="video/webm" />
+                    <source src="/assets/videos/hero-showreel.webm" type="video/webm" />
                 </video>
 
                 {/* Dark Overlay */}
@@ -99,7 +102,7 @@ const Hero = () => {
                         <span
                             style={{
                                 display: "block",
-                                color: "#ffffff",
+                                color: "#f6f5ee",
                             }}
                         >
                             We are a team of
@@ -108,7 +111,7 @@ const Hero = () => {
                         <span
                             style={{
                                 display: "block",
-                                color: "#C8D46A", // Brand Solution green from PPT
+                                color: "#f6f5ee",
                                 letterSpacing: "-0.065em",
                                 lineHeight: "0.88",
                             }}
@@ -127,7 +130,7 @@ const Hero = () => {
                         <span
                             style={{
                                 display: "block",
-                                color: "#ffffff",
+                                color: "#f6f5ee",
                             }}
                         >
                             experts.
