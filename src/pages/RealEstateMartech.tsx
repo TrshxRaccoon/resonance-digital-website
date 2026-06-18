@@ -183,7 +183,7 @@ const expertiseShowcase: ExpertiseShowcaseItem[] = [
         subtitle: "",
         image: "/assets/images/martech/Walkthroughs/Zira.png",
         category: "Drone Shots",
-        videoSrc: "/assets/videos/Mahindra.webm",
+        videoSrc: "/assets/videos/droneShot.webm",
     },
 
     //2D & 3D Isometrics
