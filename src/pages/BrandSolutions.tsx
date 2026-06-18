@@ -755,7 +755,7 @@ const BrandSolutions = () => {
             />
 
             {/* Clients + Statements Section */}
-            <section className="w-full bg-theme-primaryBg2 py-20 px-10 md:px-16">
+            <section className="w-full bg-theme-secondaryBg2 py-20 px-10 md:px-16">
                 <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12">
                     Brand Solutions <span className="text-gray-400">|</span>{" "}
                     <span className="font-bold text-gray-700">Clients</span>
@@ -817,7 +817,7 @@ const BrandSolutions = () => {
             </section>
 
             {/* Brand Solutions — TVC Showcase */}
-            <section className="w-full bg-theme-secondaryBg2 pb-24 px-10 py-10 md:px-16">
+            <section className="w-full bg-theme-primaryBg2 pb-24 px-10 py-10 md:px-16">
                 <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12">
                     Brand Solutions <span className="text-gray-400">|</span>{" "}
                     <span className="text-gray-600">TVC</span>{" "}
@@ -916,7 +916,7 @@ const BrandSolutions = () => {
             </AnimatePresence>
 
             {/* Brand Solutions — Case Studies */}
-            <section className="w-full bg-theme-primaryBg2 pb-24 px-10 py-10 md:px-16">
+            <section className="w-full bg-theme-secondaryBg2 pb-24 px-10 py-10 md:px-16">
                 <h2 className="font-display text-3xl md:text-4xl font-normal text-gray-400 mb-12 translate-y-3">
                     Brand Solutions <span className="text-gray-400">|</span>{" "}
                     <span className="font-bold text-gray-700">Case Studies</span>
