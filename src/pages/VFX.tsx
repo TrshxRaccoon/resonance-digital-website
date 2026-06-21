@@ -1220,6 +1220,7 @@ const VFX = () => {
                                                     src={selectedMovieShowreel.youtubeEmbedUrl}
                                                     className="w-full h-full"
                                                     controls
+                                                    muted
                                                     playsInline
                                                     preload="metadata"
                                                     data-autopause="true"
@@ -1271,7 +1272,7 @@ const VFX = () => {
                                         <img
                                             src="/assets/images/vfx/Security-Certification.png"
                                             alt="Company Logos - TPN, Warner Bros, Amazon Studios, Lionsgate, Netflix, Universal"
-                                            className="absolute top-0 right-0 h-full w-[200%] max-w-none object-cover"
+                                            className="absolute top-0 right-0 h-full object-cover object-right"
                                         />
                                     </div>
                                 </div>
