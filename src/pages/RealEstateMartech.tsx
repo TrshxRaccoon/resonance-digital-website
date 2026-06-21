@@ -155,28 +155,28 @@ const expertiseShowcase: ExpertiseShowcaseItem[] = [
         subtitle: "",
         image: "/assets/images/martech/Walkthroughs/Kalpataru-Park-Revera.png",
         category: "3D Walkthroughs",
-        videoSrc: "/assets/videos/MasterAds.webm",
+        videoSrc: "/assets/videos/Kalpataru.webm",
     },
     {
         title: "Mahindra Vista",
         subtitle: "",
         image: "/assets/images/martech/Walkthroughs/Mahindra-Vista.png",
         category: "3D Walkthroughs",
-        videoSrc: "/assets/videos/Mahindra.webm",
+        videoSrc: "/assets/videos/Mahindra3D.webm",
     },
     {
         title: "Prestige Bellanza",
         subtitle: "",
         image: "/assets/images/martech/Walkthroughs/Prestige-Bellanza.png",
         category: "3D Walkthroughs",
-        videoSrc: "/assets/videos/Automobile.webm",
+        videoSrc: "/assets/videos/Prestige.webm",
     },
     {
         title: "Zira",
         subtitle: "",
         image: "/assets/images/martech/Walkthroughs/Zira.png",
         category: "3D Walkthroughs",
-        videoSrc: "/assets/videos/OPPO.webm",
+        videoSrc: "/assets/videos/Zira.webm",
     },
     {
         title: "Drone Showcase",
@@ -247,6 +247,7 @@ const RealEstateMartech = () => {
     const [activeWalkthroughVideo, setActiveWalkthroughVideo] = useState<
         string | null
     >(null);
+    const [activeImage, setActiveImage] = useState<{ src: string; title: string } | null>(null);
     const [activeImmersiveTabId, setActiveImmersiveTabId] = useState<string>(
         immersiveTabs[0].id,
     );
@@ -531,9 +532,16 @@ const RealEstateMartech = () => {
                                 {expertisePageItems.map((item, index) => (
                                     <div
                                         key={`${item.title}-${item.subtitle}-${expertiseStartIndex + index}`}
-                                        onClick={() =>
-                                            item.videoSrc && setActiveWalkthroughVideo(item.videoSrc)
-                                        }
+                                        onClick={() => {
+                                            if (item.videoSrc) {
+                                                setActiveWalkthroughVideo(item.videoSrc);
+                                            } else {
+                                                setActiveImage({
+                                                    src: item.image,
+                                                    title: item.title,
+                                                });
+                                            }
+                                        }}
                                         className="group flex flex-col cursor-pointer"
                                     >
                                         <div className="relative overflow-hidden rounded-xl aspect-[16/10] w-full bg-white/5 border border-white/10">
@@ -683,7 +691,25 @@ const RealEstateMartech = () => {
                     </div>
                 </div>
             </section>
-
+            {activeImage && (
+                <div
+                    className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4"
+                    onClick={() => setActiveImage(null)}
+                >
+                    <button
+                        className="absolute top-6 right-6 text-white text-5xl leading-none"
+                        onClick={() => setActiveImage(null)}
+                    >
+                        ×
+                    </button>
+                    <img
+                        src={activeImage.src}
+                        alt={activeImage.title}
+                        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
             {activeWalkthroughVideo && (
                 <div
                     className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4"
