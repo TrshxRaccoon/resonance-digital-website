@@ -103,7 +103,7 @@ const BrandStatement = () => {
     }, [isInView]);
 
     const statementText =
-        "A leading digital Creative Technology Company, which focuses on delivering rememberable web designs that are searchable, alongside other online promotion solutions. We provide our clients with striking, practical, and intuitive sites that attract clientele and yield revenue.";
+        "India’s most diversified Creative Technology Company combining VFX, Brand Solutions, Real Estate Prop-Tech, Content Production, AI and Government Contracts.";
 
     const visibleCharacters = isMobile
         ? statementText.length

@@ -88,8 +88,8 @@ const Contact = () => {
                         </h1>
 
                         <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                            <p className="text-white mb-2">Your next big ideas</p>
-                            <p className="text-[#2a5266]">starts here. Lets make</p>
+                            <p className="text-white mb-2">Your next big idea</p>
+                            <p className="text-[#2a5266]">starts here. Let's make</p>
                             <p className="text-[#2a5266]">it real!</p>
                         </div>
                     </div>

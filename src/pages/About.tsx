@@ -226,29 +226,9 @@ const About = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
                     {[
                         {
-                            name: "Himanshu Pandey",
-                            role: "Creative Director - Commercials",
-                            image: "/assets/images/team/Himanshu-Pandey.png",
-                        },
-                        {
-                            name: "Mahim Kumar Chaudhuri",
-                            role: "Creative Director - Brand Solutions",
-                            image: "/assets/images/team/Mahim-Kumar-Chaudhuri.png",
-                        },
-                        {
-                            name: "Maninder Singh",
-                            role: "Business Head - VFX",
-                            image: "/assets/images/team/Maninder-Singh.png",
-                        },
-                        {
-                            name: "Manpreet Singh",
-                            role: "VFX Supervisor - Commercials",
-                            image: "/assets/images/team/Manpreet-Singh.png",
-                        },
-                        {
-                            name: "Mansi Solanki",
-                            role: "Senior People Partner",
-                            image: "/assets/images/team/Mansi-Solanki.png",
+                            name: "Rohit Raghuvanshi",
+                            role: "Executive Producer - Commercials",
+                            image: "/assets/images/team/Rohit.png",
                         },
                         {
                             name: "Pooja Verma",
@@ -256,23 +236,14 @@ const About = () => {
                             image: "/assets/images/team/Pooja.png",
                         },
                         {
-                            info: true,
-                            name: "What We Do",
-                        },
-                        {
-                            name: "Rohit Raghuvanshi",
-                            role: "Executive Producer - Commercials",
-                            image: "/assets/images/team/Rohit.png",
-                        },
-                        {
                             name: "Sajan Raj",
                             role: "VFX Producer",
                             image: "/assets/images/team/Sajan-Raj.png",
                         },
                         {
-                            name: "Sandeep Avhad",
-                            role: "IT Manager",
-                            image: "/assets/images/team/Sandeep.png",
+                            name: "Maninder Singh",
+                            role: "Business Head - VFX",
+                            image: "/assets/images/team/Maninder-Singh.png",
                         },
                         {
                             name: "Somak Mukherjee",
@@ -280,9 +251,38 @@ const About = () => {
                             image: "/assets/images/team/Somak-Mukherjee.png",
                         },
                         {
+                            name: "Himanshu Pandey",
+                            role: "Creative Director - Commercials",
+                            image: "/assets/images/team/Himanshu-Pandey.png",
+                        },
+                        {
+                            name: "Manpreet Singh",
+                            role: "VFX Supervisor - Commercials",
+                            image: "/assets/images/team/Manpreet-Singh.png",
+                        },
+                        {
+                            name: "Mahim Kumar Chaudhuri",
+                            role: "Creative Director - Brand Solutions",
+                            image: "/assets/images/team/Mahim-Kumar-Chaudhuri.png",
+                        },
+                        {
                             name: "Vinay Khilnani",
                             role: "Head - Strategic Alliances & Growth",
                             image: "/assets/images/team/Vinay-Khilnani.png",
+                        },
+                        {
+                            name: "Mansi Solanki",
+                            role: "Senior People Partner",
+                            image: "/assets/images/team/Mansi-Solanki.png",
+                        },
+                        {
+                            name: "Sandeep Avhad",
+                            role: "IT Manager",
+                            image: "/assets/images/team/Sandeep.png",
+                        },
+                        {
+                            info: true,
+                            name: "What We Do",
                         },
                     ].map((member, index) => (
                         <div

@@ -1220,6 +1220,8 @@ const VFX = () => {
                                                     src={selectedMovieShowreel.youtubeEmbedUrl}
                                                     className="w-full h-full"
                                                     controls
+                                                    autoPlay
+                                                    loop
                                                     muted
                                                     playsInline
                                                     preload="metadata"
@@ -1393,6 +1395,9 @@ const VFX = () => {
                                                 }
                                                 className="w-full h-full"
                                                 controls
+                                                autoPlay
+                                                loop
+                                                muted
                                                 playsInline
                                                 preload="metadata"
                                                 data-autopause="true"
