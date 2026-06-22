@@ -183,84 +183,84 @@ const brandShowcase: BrandShowcaseItem[] = [
 const tvcShowcase: TVCShowcaseItem[] = [
     {
         title: "Apollo Apterra Tyres",
-        image: "/assets/images/BrandStatements/ICICI-Lombard.jpg",
+        image: "/assets/images/Thumbnails/Apollo Apterra Tyres.jpg",
         client: "Apollo Tyres",
         year: "2025",
         videoSrc: "/assets/videos/Apollo_Tyres.webm",
     },
     {
         title: "OPPO AI Best Face",
-        image: "/assets/images/BrandStatements/oppo.png",
+        image: "/assets/images/Thumbnails/OPPO Reno12 Series.jpg",
         client: "OPPO",
         year: "2024",
         videoSrc: "/assets/videos/OPPO.webm",
     },
     {
         title: "IndiGo Protect Plus",
-        image: "/assets/images/BrandStatements/images.jpeg",
+        image: "/assets/images/Thumbnails/Indigo Protect Plus.jpg",
         client: "IndiGo",
         year: "2024",
         videoSrc: "/assets/videos/Indigo.webm",
     },
     {
         title: "Campa Energy",
-        image: "/assets/images/movies/movies_01.png",
+        image: "/assets/images/Thumbnails/Campa Energy TVC.jpg",
         client: "Campa",
         year: "2024",
         videoSrc: "/assets/videos/Campa.webm",
     },
     {
         title: "Black Dog",
-        image: "/assets/images/movies/avatar.jpeg",
+        image: "/assets/images/Thumbnails/Black Dog.jpg",
         client: "Black Dog",
         year: "2024",
         videoSrc: "/assets/videos/Black_Dog.webm",
     },
     {
         title: "SUPERBET",
-        image: "/assets/images/movies/batman.png",
+        image: "/assets/images/Thumbnails/SUPERBET.jpg",
         client: "SUPERBET",
         year: "2024",
         videoSrc: "/assets/videos/SUPERBET.webm",
     },
     {
         title: "Fastrack Smart",
-        image: "/assets/images/movies/movies_03.png",
+        image: "/assets/images/Thumbnails/Fastrack Smart.jpg",
         client: "Fastrack",
         year: "2024",
         videoSrc: "/assets/videos/Fastrack.webm",
     },
     {
         title: "Bournvita",
-        image: "/assets/images/movies/dune.jpeg",
+        image: "/assets/images/Thumbnails/Bournvita.jpg",
         client: "Bournvita",
         year: "2024",
         videoSrc: "/assets/videos/Bournvita.webm",
     },
     {
         title: "The All-New Honda Amaze",
-        image: "/assets/images/movies/flash.jpg",
+        image: "/assets/images/Thumbnails/The All-New Honda Amaze.jpg",
         client: "Honda",
         year: "2024",
         videoSrc: "/assets/videos/Honda.webm",
     },
     {
         title: "Ecolink BLDC Fans",
-        image: "/assets/images/movies/strangerThings.jpg",
+        image: "/assets/images/Thumbnails/Ecolink BLDC Fans.jpg",
         client: "Ecolink",
         year: "2024",
         videoSrc: "/assets/videos/Ecolink.webm",
     },
     {
         title: "JK Cement",
-        image: "/assets/images/movies/avatar.jpeg",
+        image: "/assets/images/Thumbnails/JK Cement.jpg",
         client: "JK Cement",
         year: "2024",
         videoSrc: "/assets/videos/JK_Cement.webm",
     },
     {
         title: "Director Special Elaichi",
-        image: "/assets/images/movies/batman.png",
+        image: "/assets/images/Thumbnails/Director Special Elaichi.jpg",
         client: "Director Special",
         year: "2024",
         videoSrc: "/assets/videos/Director_Special.webm",
@@ -274,49 +274,49 @@ const tvcShowcase: TVCShowcaseItem[] = [
     },
     {
         title: "Max Fashion",
-        image: "/assets/images/movies/movies_02Witches.png",
+        image: "/assets/images/Thumbnails/Max Fashion.jpg",
         client: "Max Fashion",
         year: "2024",
         videoSrc: "/assets/videos/Max_Fashion.webm",
     },
     {
         title: "The Plush New XUV500",
-        image: "/assets/images/CaseStudies/mahindra1.png",
+        image: "/assets/images/Thumbnails/The Plush New XUV500.jpg",
         client: "Mahindra",
         year: "2018",
         videoSrc: "/assets/videos/Mahindra.webm",
     },
     {
         title: "Savsol Lubricants",
-        image: "/assets/images/movies/dune.jpeg",
+        image: "/assets/images/Thumbnails/Savsol Lubricants.jpg",
         client: "Savsol",
         year: "2024",
         videoSrc: "/assets/videos/Savsol.webm",
     },
     {
         title: "Flipkart Big Bang Diwali",
-        image: "/assets/images/movies/flash.jpg",
+        image: "/assets/images/Thumbnails/Flipkart Big Bang Diwali.jpg",
         client: "Flipkart",
         year: "2024",
         videoSrc: "/assets/videos/Flipkart.webm",
     },
     {
         title: "The Fast & The Fair",
-        image: "/assets/images/movies/strangerThings.jpg",
+        image: "/assets/images/Thumbnails/The Fast & The Fair-Acko.jpg",
         client: "ACKO",
         year: "2024",
         videoSrc: "/assets/videos/Acko.webm",
     },
     {
         title: "Netflix End of Year 2021",
-        image: "/assets/images/movies/strangerThings.jpg",
+        image: "/assets/images/Thumbnails/Netflix end of the year 2021.jpg",
         client: "Netflix",
         year: "2021",
         videoSrc: "/assets/videos/Netflix2021.webm",
     },
     {
         title: "Netflix End of Year 2022",
-        image: "/assets/images/movies/avatar.jpeg",
+        image: "/assets/images/Thumbnails/Netflix end of the year 2022.jpg",
         client: "Netflix",
         year: "2022",
         videoSrc: "/assets/videos/Netflix2022.webm",
@@ -834,27 +834,22 @@ const BrandSolutions = () => {
                             onClick={() => openShowcaseVideoModal(item.videoSrc)}
                             aria-label={`Open ${item.title}`}
                         >
-                            {/*
-                FIX 3: The original code rendered a <video preload="metadata"> for
-                every one of the 21 TVC cards. That means 21 simultaneous network
-                requests fetching video headers on page load, plus 21 video
-                decoders initialising — the single biggest source of lag/heat on
-                this page. The videos are only ever played inside the modal, so
-                the grid card only needs a thumbnail image + play icon.
-                The actual <video> is mounted inside the modal below, only when
-                the user clicks (see activeShowcaseVideoUrl conditional).
-              */}
                             <div className="relative aspect-video overflow-hidden rounded-sm bg-black border border-white/10">
-                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-
-                                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/45 transition-colors duration-300" />
+                                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center z-10">
                                     <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
                                         <Play
                                             className="w-6 h-6 text-black ml-0.5"
                                             fill="currentColor"
                                         />
                                     </div>
-
                                     <h3 className="text-white text-base md:text-lg font-semibold">
                                         {item.title}
                                     </h3>
@@ -1039,7 +1034,7 @@ const BrandSolutions = () => {
                                                         <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">
                                                             Objective
                                                         </p>
-                                                        <p className="text-gray-600 text-sm leading-relaxed">
+                                                        <p className="text-gray-600 text-sm leading-snug">
                                                             {activeCaseStudy.objective}
                                                         </p>
                                                     </div>
@@ -1049,7 +1044,7 @@ const BrandSolutions = () => {
                                                         <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">
                                                             Approach
                                                         </p>
-                                                        <p className="text-gray-600 text-sm leading-relaxed">
+                                                        <p className="text-gray-600 text-sm leading-snug">
                                                             {activeCaseStudy.approach}
                                                         </p>
                                                     </div>
@@ -1059,7 +1054,7 @@ const BrandSolutions = () => {
                                                         <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-1.5">
                                                             Impact
                                                         </p>
-                                                        <p className="text-gray-600 text-sm leading-relaxed">
+                                                        <p className="text-gray-600 text-sm leading-snug">
                                                             {activeCaseStudy.impact}
                                                         </p>
                                                     </div>
@@ -1091,9 +1086,9 @@ const BrandSolutions = () => {
                                     className="w-full lg:w-[55%] relative h-[80vw] lg:h-auto lg:min-h-screen"
                                 >
                                     <div className="absolute inset-0 bg-theme-primaryBg2" />
-                                    <div className="absolute inset-0 flex flex-col items-center justify-center px-6 md:px-10 lg:px-16">
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center px-2 md:px-4 lg:px-6">
                                         <div className="relative w-full h-full flex items-center justify-center">
-                                            <div className="overflow-hidden bg-transparent">
+                                            <div className="overflow-hidden bg-transparent w-[700px] h-[500px] max-w-full">
                                                 {/*
                           FIX 6: Hero case study image gets fetchPriority="high" so
                           the browser fetches it the moment the overlay opens,
@@ -1108,7 +1103,7 @@ const BrandSolutions = () => {
                                                     alt={`${activeCaseStudy.title} case study`}
                                                     fetchPriority="high"
                                                     loading="eager"
-                                                    className="max-w-full max-h-full object-contain object-left"
+                                                    className="w-full h-full object-cover"
                                                 />
                                             </div>
                                         </div>
@@ -1121,7 +1116,7 @@ const BrandSolutions = () => {
                                     initial={{ opacity: 0, x: 24 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                                    className="hidden lg:flex w-full lg:w-[45%] flex-col justify-start px-10 md:px-16 pt-20 lg:pt-24 pb-16"
+                                    className="hidden lg:flex w-full lg:w-[45%] flex-col justify-start px-4 md:px-6 lg:px-8 pt-20 lg:pt-24 pb-16"
                                 >
                                     <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
                                         Brand Solutions | Case Study
@@ -1176,7 +1171,7 @@ const BrandSolutions = () => {
                                                         <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
                                                             Objective
                                                         </p>
-                                                        <p className="text-gray-600 text-[15px] leading-relaxed">
+                                                        <p className="text-gray-600 text-[15px] leading-snug">
                                                             {activeCaseStudy.objective}
                                                         </p>
                                                     </div>
@@ -1186,7 +1181,7 @@ const BrandSolutions = () => {
                                                         <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
                                                             Approach
                                                         </p>
-                                                        <p className="text-gray-600 text-[15px] leading-relaxed">
+                                                        <p className="text-gray-600 text-[15px] leading-snug">
                                                             {activeCaseStudy.approach}
                                                         </p>
                                                     </div>
@@ -1196,7 +1191,7 @@ const BrandSolutions = () => {
                                                         <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
                                                             Impact
                                                         </p>
-                                                        <p className="text-gray-600 text-[15px] leading-relaxed">
+                                                        <p className="text-gray-600 text-[15px] leading-snug">
                                                             {activeCaseStudy.impact}
                                                         </p>
                                                     </div>
