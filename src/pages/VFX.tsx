@@ -539,10 +539,6 @@ const VFX = () => {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     const adsVideoFeed = [
         {
-            src: "/assets/videos/Apollo_Tyres.webm",
-            label: "Apollo Apterra Tyres",
-        },
-        {
             src: "/assets/videos/OPPO.webm",
             label: "OPPO AI Best Face",
         },
@@ -563,6 +559,10 @@ const VFX = () => {
         {
             src: "/assets/videos/Ecolink.webm",
             label: "Ecolink BLDC Fans",
+        },
+        {
+            src: "/assets/videos/Apollo_Tyres.webm",
+            label: "Apollo Apterra Tyres",
         },
         { src: "/assets/videos/JK_Cement.webm", label: "JK Cement" },
         {
