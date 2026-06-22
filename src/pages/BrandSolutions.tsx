@@ -1226,22 +1226,19 @@ const BrandSolutions = () => {
 
                                 return (
                                     <div className="flex flex-col">
-                                        <div className="bg-theme-secondaryBg2 border-t border-gray-300 px-0 md:px-8 py-5 md:py-6">
-                                            <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-1">
-                                                Gallery
-                                            </p>
-                                            <div className="flex items-baseline gap-3 md:gap-4 flex-wrap">
-                                                <h2 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
-                                                    {activeCaseStudy.title}
-                                                </h2>
-                                                <span className="text-gray-400 text-sm">·</span>
-                                                <span className="text-gray-400 text-sm">
-                                                    {activeCaseStudy.year}
-                                                </span>
-                                                <span className="text-gray-400 text-sm">·</span>
-                                                <span className="text-gray-400 text-sm uppercase tracking-wide">
-                                                    {activeCaseStudy.service}
-                                                </span>
+                                        <div className="sticky top-0 z-40 bg-theme-secondaryBg2 border-t border-b border-gray-300 px-4 md:px-8 py-4 backdrop-blur-sm">
+                                            <div className="flex items-center gap-4">
+                                                <img
+                                                    src="/public/RDL_Logo.png"
+                                                    alt="Resonance Digital"
+                                                    className="h-10 w-auto object-contain"
+                                                />
+                                                    <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400">
+                                                        Brand Solutions
+                                                    <h2 className="font-display text-lg md:text-2xl font-bold text-gray-800 leading-none">
+                                                        Case Studies
+                                                    </h2>
+                                                    </p>
                                             </div>
                                         </div>
 
@@ -1305,6 +1302,20 @@ const BrandSolutions = () => {
                                                             idx={idx}
                                                             className={isMobile ? "w-full" : "w-full h-full"}
                                                         />
+                                                        {/* Conditional overlay for MORDE gallery image */}
+                                                        {activeCaseStudy.title === "MORDE" && image.includes("Morde-49-01.png") && (
+                                                            <>
+                                                                <div className="absolute left-1/2 top-[85%] left-[66%] text-[#7a7a7a] text-xl md:text-3xl font-bold tracking-tight pointer-events-none">
+                                                                    Social Media
+                                                                </div>
+                                                            </>
+                                                        )}
+                                                        {/* Conditional overlay for Killer Jeans gallery image */}
+                                                        {activeCaseStudy.title === "Killer Jeans" && image.includes("Killer4.png") && (
+                                                            <div className="absolute bottom-[12%] left-[70%] text-[#7a7a7a] text-xl md:text-3xl font-bold tracking-tight pointer-events-none">
+                                                                Social Media
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 );
                                             })}

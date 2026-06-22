@@ -59,7 +59,7 @@ const VFX = () => {
             youtubeEmbedUrl: "/assets/videos/MasterMovie.webm",
         },
         "Action Reel": {
-            youtubeEmbedUrl: "https://www.youtube.com/embed/rLzbIqI1VrU",
+            youtubeEmbedUrl: "/assets/videos/ActionShowreel.webm",
         },
         "Roto-Paint-Matchmove": {
             youtubeEmbedUrl: "/assets/videos/RPM.webm",
@@ -74,7 +74,7 @@ const VFX = () => {
             youtubeEmbedUrl: "/assets/videos/Creature.webm",
         },
         "Crowd Multiplication Reel": {
-            youtubeEmbedUrl: "https://www.youtube.com/embed/87CuOfwFpd0",
+            youtubeEmbedUrl: "/assets/videos/CMR.webm",
         },
     };
 
