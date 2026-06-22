@@ -226,52 +226,63 @@ const About = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
                     {[
                         {
-                            name: "Rohit",
-                            image: "/assets/images/team/member-1.jpeg",
-                        },
-                        {
-                            name: "What we do",
-                            info: true,
-                        },
-                        {
-                            name: "Somak Mukherjee",
-                            image: "/assets/images/team/member-2.jpeg",
-                        },
-                        {
                             name: "Himanshu Pandey",
-                            image: "/assets/images/team/member-3.jpeg",
-                        },
-                        {
-                            name: "Sandeep",
-                            image: "/assets/images/team/member-4.jpeg",
-                        },
-                        {
-                            name: "Pooja",
-                            image: "/assets/images/team/member-5.jpeg",
-                        },
-                        {
-                            name: "Vinay Khilnani",
-                            image: "/assets/images/team/member-6.jpeg",
-                        },
-                        {
-                            name: "Mansi Solanki",
-                            image: "/assets/images/team/member-7.jpeg",
-                        },
-                        {
-                            name: "Maninder Singh",
-                            image: "/assets/images/team/member-8.jpeg",
-                        },
-                        {
-                            name: "Sajan Raj",
-                            image: "/assets/images/team/member-9.jpeg",
+                            role: "Creative Director - Commercials",
+                            image: "/assets/images/team/Himanshu-Pandey.png",
                         },
                         {
                             name: "Mahim Kumar Chaudhuri",
-                            image: "/assets/images/team/member-10.jpeg",
+                            role: "Creative Director - Brand Solutions",
+                            image: "/assets/images/team/Mahim-Kumar-Chaudhuri.png",
+                        },
+                        {
+                            name: "Maninder Singh",
+                            role: "Business Head - VFX",
+                            image: "/assets/images/team/Maninder-Singh.png",
                         },
                         {
                             name: "Manpreet Singh",
-                            image: "/assets/images/team/member-11.jpeg",
+                            role: "VFX Supervisor - Commercials",
+                            image: "/assets/images/team/Manpreet-Singh.png",
+                        },
+                        {
+                            name: "Mansi Solanki",
+                            role: "Senior People Partner",
+                            image: "/assets/images/team/Mansi-Solanki.png",
+                        },
+                        {
+                            name: "Pooja Verma",
+                            role: "Head - Business Development",
+                            image: "/assets/images/team/Pooja.png",
+                        },
+                        {
+                            info: true,
+                            name: "What We Do",
+                        },
+                        {
+                            name: "Rohit Raghuvanshi",
+                            role: "Executive Producer - Commercials",
+                            image: "/assets/images/team/Rohit.png",
+                        },
+                        {
+                            name: "Sajan Raj",
+                            role: "VFX Producer",
+                            image: "/assets/images/team/Sajan-Raj.png",
+                        },
+                        {
+                            name: "Sandeep Avhad",
+                            role: "IT Manager",
+                            image: "/assets/images/team/Sandeep.png",
+                        },
+                        {
+                            name: "Somak Mukherjee",
+                            role: "Creative Director",
+                            image: "/assets/images/team/Somak-Mukherjee.png",
+                        },
+                        {
+                            name: "Vinay Khilnani",
+                            role: "Head - Strategic Alliances & Growth",
+                            image: "/assets/images/team/Vinay-Khilnani.png",
                         },
                     ].map((member, index) => (
                         <div
@@ -279,7 +290,7 @@ const About = () => {
                             className="relative aspect-[0.8] overflow-hidden bg-[#1e566b]"
                         >
                             {member.info ? (
-                                <div className="w-full h-full bg-[#1e566b] p-6 md:p-8 flex flex-col justify-start text-white">
+                                <div className="w-full h-full bg-theme-primaryBg1 p-6 md:p-8 flex flex-col justify-start text-white">
                                     <h3 className="text-[#29a7ff] text-lg md:text-xl font-semibold mb-4">
                                         {member.name}
                                     </h3>
@@ -300,10 +311,15 @@ const About = () => {
                                         className="absolute inset-0 w-full h-full object-cover"
                                     />
 
-                                    <div className="absolute inset-0 bg-black/15" />
+                                    <div className="absolute inset-x-0 bottom-0 h-20 md:h-20 bg-black/70 backdrop-blur-sm" />
 
-                                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#29a7ff] font-semibold text-sm md:text-xl text-center whitespace-nowrap">
-                                        {member.name}
+                                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[90%] text-center">
+                                        <div className="text-[#29a7ff] font-semibold text-sm md:text-xl leading-tight">
+                                            {member.name}
+                                        </div>
+                                        <div className="text-white/85 text-[10px] md:text-sm mt-1 leading-tight">
+                                            {member.role}
+                                        </div>
                                     </div>
                                 </>
                             )}

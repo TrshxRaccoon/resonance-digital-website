@@ -12,7 +12,7 @@ const menuItems = [
     { label: "Brand Solutions", href: "/brandSolutions" },
     { label: "Real Estate", href: "/real-estate" },
     { label: "Motion Pictures", href: "/motion-pictures" },
-    { label: "About", href: "/about" },
+    { label: "About Us", href: "/about" },
     { label: "Awards", href: "/awards" },
     { label: "Contact", href: "/contact" },
 ];
@@ -108,7 +108,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         href="mailto:info@resonancedigital.in"
                         className="hover:text-theme-primaryText transition-colors duration-300"
                     >
-                        hello@resonancedigital.com
+                        info@resonancedigital.com
                     </a>
                 </div>
             </div>
