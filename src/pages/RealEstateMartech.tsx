@@ -247,7 +247,7 @@ const RealEstateMartech = () => {
     const [activeWalkthroughVideo, setActiveWalkthroughVideo] = useState<
         string | null
     >(null);
-    const [activeImage, setActiveImage] = useState<{ src: string; title: string } | null>(null);
+    const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
     const [activeImmersiveTabId, setActiveImmersiveTabId] = useState<string>(
         immersiveTabs[0].id,
     );
@@ -341,6 +341,26 @@ const RealEstateMartech = () => {
         expertiseStartIndex,
         expertiseStartIndex + EXPERTISE_PER_PAGE,
     );
+
+    const activeImage =
+        activeImageIndex !== null
+            ? filteredExpertiseItems[activeImageIndex]
+            : null;
+
+    const showPreviousImage = () => {
+        if (activeImageIndex === null) return;
+        setActiveImageIndex(
+            (activeImageIndex - 1 + filteredExpertiseItems.length) %
+                filteredExpertiseItems.length,
+        );
+    };
+
+    const showNextImage = () => {
+        if (activeImageIndex === null) return;
+        setActiveImageIndex(
+            (activeImageIndex + 1) % filteredExpertiseItems.length,
+        );
+    };
 
     const activeImmersiveTab =
         immersiveTabs.find((t) => t.id === activeImmersiveTabId) ??
@@ -536,10 +556,13 @@ const RealEstateMartech = () => {
                                             if (item.videoSrc) {
                                                 setActiveWalkthroughVideo(item.videoSrc);
                                             } else {
-                                                setActiveImage({
-                                                    src: item.image,
-                                                    title: item.title,
-                                                });
+                                                setActiveImageIndex(
+                                                    filteredExpertiseItems.findIndex(
+                                                        (expertiseItem) =>
+                                                            expertiseItem.image === item.image &&
+                                                            expertiseItem.title === item.title,
+                                                    ),
+                                                );
                                             }
                                         }}
                                         className="group flex flex-col cursor-pointer"
@@ -694,20 +717,38 @@ const RealEstateMartech = () => {
             {activeImage && (
                 <div
                     className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4"
-                    onClick={() => setActiveImage(null)}
+                    onClick={() => setActiveImageIndex(null)}
                 >
                     <button
                         className="absolute top-6 right-6 text-white text-5xl leading-none"
-                        onClick={() => setActiveImage(null)}
+                        onClick={() => setActiveImageIndex(null)}
                     >
                         ×
                     </button>
+                    <button
+                        className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            showPreviousImage();
+                        }}
+                    >
+                        <ChevronLeft className="w-8 h-8" />
+                    </button>
                     <img
-                        src={activeImage.src}
+                        src={activeImage.image}
                         alt={activeImage.title}
                         className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
                         onClick={(e) => e.stopPropagation()}
                     />
+                    <button
+                        className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            showNextImage();
+                        }}
+                    >
+                        <ChevronRight className="w-8 h-8" />
+                    </button>
                 </div>
             )}
             {activeWalkthroughVideo && (
