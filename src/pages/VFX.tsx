@@ -16,6 +16,7 @@ const VFX = () => {
         useState<string>("Master Showreel");
     const [currentMovieIndex, setCurrentMovieIndex] = useState<number>(0);
     const [hoveredSide, setHoveredSide] = useState<"movies" | "ads" | null>(null);
+    const [activeCgiImage, setActiveCgiImage] = useState<string | null>(null);
     const expandedContentRef = useRef<HTMLDivElement>(null);
     const splitSectionRef = useRef<HTMLDivElement>(null);
     const videoObserverRef = useRef<IntersectionObserver | null>(null);
@@ -510,24 +511,24 @@ const VFX = () => {
     ];
 
     const cgiStillsShowcase = [
-        "/assets/images/CGI-Stills/CGI-1.jpg",
-        "/assets/images/CGI-Stills/CGI-2.jpg",
-        "/assets/images/CGI-Stills/CGI-3.jpg",
-        "/assets/images/CGI-Stills/CGI-4.jpg",
-        "/assets/images/CGI-Stills/CGI-5.jpg",
-        "/assets/images/CGI-Stills/CGI-6.jpg",
-        "/assets/images/CGI-Stills/CGI-7.jpg",
-        "/assets/images/CGI-Stills/CGI-8.jpg",
-        "/assets/images/CGI-Stills/CGI-9.jpg",
-        "/assets/images/CGI-Stills/CGI-10.jpg",
-        "/assets/images/CGI-Stills/CGI-11.jpg",
-        "/assets/images/CGI-Stills/CGI-12.jpg",
-        "/assets/images/CGI-Stills/CGI-13.jpg",
-        "/assets/images/CGI-Stills/CGI-14.jpg",
-        "/assets/images/CGI-Stills/CGI-15.jpg",
-        "/assets/images/CGI-Stills/CGI-16.jpg",
-        "/assets/images/CGI-Stills/CGI-17.jpg",
-        "/assets/images/CGI-Stills/CGI-18.jpg",
+        "/assets/images/CGI-Stills/CGI1.jpeg",
+        "/assets/images/CGI-Stills/CGI2.jpeg",
+        "/assets/images/CGI-Stills/CGI3.jpeg",
+        "/assets/images/CGI-Stills/CGI4.jpeg",
+        "/assets/images/CGI-Stills/CGI5.jpeg",
+        "/assets/images/CGI-Stills/CGI6.jpeg",
+        "/assets/images/CGI-Stills/CGI7.jpeg",
+        "/assets/images/CGI-Stills/CGI8.jpeg",
+        "/assets/images/CGI-Stills/CGI9.jpeg",
+        "/assets/images/CGI-Stills/CGI10.jpeg",
+        "/assets/images/CGI-Stills/CGI11.jpeg",
+        "/assets/images/CGI-Stills/CGI12.jpeg",
+        "/assets/images/CGI-Stills/CGI13.jpeg",
+        "/assets/images/CGI-Stills/CGI14.jpeg",
+        "/assets/images/CGI-Stills/CGI15.jpeg",
+        "/assets/images/CGI-Stills/CGI16.jpeg",
+        "/assets/images/CGI-Stills/CGI17.jpeg",
+        "/assets/images/CGI-Stills/CGI18.jpeg",
     ];
 
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1060,17 +1061,17 @@ const VFX = () => {
                                             <div
                                                 key={pageIndex}
                                                 className="
-  shrink-0
-  min-w-full
-  grid
-  grid-cols-1
-  md:grid-cols-2
-  lg:grid-cols-4
-  gap-6
-  max-w-sm
-  mx-auto
-  md:max-w-none
-"
+                                                shrink-0
+                                                min-w-full
+                                                grid
+                                                grid-cols-1
+                                                md:grid-cols-2
+                                                lg:grid-cols-4
+                                                gap-6
+                                                max-w-sm
+                                                mx-auto
+                                                md:max-w-none
+                                                "
                                             >
                                                 {pageItems.map((movie, index) => (
                                                     <div
@@ -1537,7 +1538,8 @@ const VFX = () => {
                                     return (
                                         <div
                                             key={`cgi-still-${index}`}
-                                            className={`group relative ${aspects[index % aspects.length]} overflow-hidden rounded-sm mb-2 break-inside-avoid`}
+                                            onClick={() => setActiveCgiImage(image)}
+                                            className={`group relative ${aspects[index % aspects.length]} overflow-hidden rounded-sm mb-2 break-inside-avoid cursor-pointer`}
                                         >
                                             <img
                                                 src={image}
@@ -1567,6 +1569,26 @@ const VFX = () => {
                         {/* You can add additional content here if needed */}
                     </div>
                 </section>
+            )}
+            {activeCgiImage && (
+                <div
+                    className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-4"
+                    onClick={() => setActiveCgiImage(null)}
+                >
+                    <button
+                        className="absolute top-6 right-6 text-white text-5xl leading-none z-10"
+                        onClick={() => setActiveCgiImage(null)}
+                    >
+                        ×
+                    </button>
+
+                    <img
+                        src={activeCgiImage}
+                        alt="CGI Still"
+                        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
             )}
 
             <Footer theme="dark" />
