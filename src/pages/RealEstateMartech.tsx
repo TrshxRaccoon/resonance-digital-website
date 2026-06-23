@@ -73,79 +73,79 @@ const expertiseShowcase: ExpertiseShowcaseItem[] = [
     {
         title: "Hiranandani Empress Hill",
         subtitle: "",
-        image: "/assets/images/martech/Renders/HiranandaniEmpressHill.png",
+        image: "/assets/images/martech/Renders/Hiranandani Empress Hill.jpg",
         category: "3D Renders",
     },
     {
         title: "Kalpataru",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Kalpataru.png",
+        image: "/assets/images/martech/Renders/Kalpataru.jpg",
         category: "3D Renders",
     },
     {
         title: "DLF",
         subtitle: "",
-        image: "/assets/images/martech/Renders/DLF.png",
+        image: "/assets/images/martech/Renders/DLF (1).jpg",
         category: "3D Renders",
     },
     {
         title: "Oberoi Sky City",
         subtitle: "",
-        image: "/assets/images/martech/Renders/OberoiSkyCity.png",
+        image: "/assets/images/martech/Renders/Oberoi Sky City.jpg",
         category: "3D Renders",
     },
     {
         title: "Larsen & Toubro",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Larsen&Turbo.png",
+        image: "/assets/images/martech/Renders/Larsen & Turbo.jpg",
         category: "3D Renders",
     },
     {
         title: "Mahindra Vista",
         subtitle: "",
-        image: "/assets/images/martech/Renders/MahindraVista.png",
+        image: "/assets/images/martech/Renders/Mahindra Vista.jpg",
         category: "3D Renders",
     },
     {
         title: "Hiranandini Empress Hill",
         subtitle: "",
-        image: "/assets/images/martech/Renders/HiranandiniEmpressHill.png",
+        image: "/assets/images/martech/Renders/Hiranandini Empress Hill.jpg",
         category: "3D Renders",
     },
     {
         title: "Mahindra 2",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Mahindra_2.png",
+        image: "/assets/images/martech/Renders/Mahindra_2.jpg",
         category: "3D Renders",
     },
     {
         title: "Mahindra 1",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Mahindra_1.png",
+        image: "/assets/images/martech/Renders/Mahindra_1.jpg",
         category: "3D Renders",
     },
     {
         title: "Rustomjee",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Rustomjee.png",
+        image: "/assets/images/martech/Renders/Rustomjee.jpg",
         category: "3D Renders",
     },
     {
         title: "Rustomjee Lavie",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Rustomjee Lavie.png",
+        image: "/assets/images/martech/Renders/Rustomjee Lavie.jpg",
         category: "3D Renders",
     },
     {
         title: "Larsen & Toubro 1",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Larsen&Turbo_1.png",
+        image: "/assets/images/martech/Renders/Larsen & Turbo_1.jpg",
         category: "3D Renders",
     },
     {
         title: "Mahindra",
         subtitle: "",
-        image: "/assets/images/martech/Renders/Mahindra.png",
+        image: "/assets/images/martech/Renders/Mahindra.jpg",
         category: "3D Renders",
     },
 
@@ -181,9 +181,9 @@ const expertiseShowcase: ExpertiseShowcaseItem[] = [
     {
         title: "Drone Showcase",
         subtitle: "",
-        image: "/assets/images/martech/Walkthroughs/Zira.png",
+        image: "/assets/images/martech/Walkthroughs/DroneShot.png",
         category: "Drone Shots",
-        videoSrc: "/assets/videos/droneShot.webm",
+        videoSrc: "/assets/videos/DroneShot.webm",
     },
 
     //2D & 3D Isometrics
@@ -228,7 +228,7 @@ const immersiveTabs: ImmersiveTabData[] = [
         id: "experience-center",
         label: "Experience Center",
         videoSrc:
-            "https://drive.google.com/file/d/1W2hf1xqbaxXeBY_IrM7-TNPU57BNa06k/preview",
+            "/assets/videos/ImmersiveTech.webm",
     },
     {
         id: "ar-vr",
@@ -351,7 +351,7 @@ const RealEstateMartech = () => {
         if (activeImageIndex === null) return;
         setActiveImageIndex(
             (activeImageIndex - 1 + filteredExpertiseItems.length) %
-                filteredExpertiseItems.length,
+            filteredExpertiseItems.length,
         );
     };
 
@@ -471,8 +471,8 @@ const RealEstateMartech = () => {
                                         setCurrentExpertisePage(0);
                                     }}
                                     className={`transition-colors duration-300 ${selectedExpertiseCategory === category
-                                            ? "text-[#4ab6ff]"
-                                            : "text-white/40 hover:text-[#4ab6ff]"
+                                        ? "text-[#4ab6ff]"
+                                        : "text-white/40 hover:text-[#4ab6ff]"
                                         }`}
                                 >
                                     {category}
@@ -493,8 +493,8 @@ const RealEstateMartech = () => {
                                         setCurrentExpertisePage(0);
                                     }}
                                     className={`transition-colors duration-300 ${selectedExpertiseCategory === category
-                                            ? "text-[#4ab6ff]"
-                                            : "text-[#f2eee2]/40"
+                                        ? "text-[#4ab6ff]"
+                                        : "text-[#f2eee2]/40"
                                         }`}
                                 >
                                     {category}
@@ -512,8 +512,8 @@ const RealEstateMartech = () => {
                         onClick={handleExpertisePrev}
                         disabled={!canSlideExpertise}
                         className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${!canSlideExpertise
-                                ? "bg-sky-400/10 cursor-not-allowed opacity-50"
-                                : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
+                            ? "bg-sky-400/10 cursor-not-allowed opacity-50"
+                            : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
                             }`}
                     >
                         <ChevronLeft className="w-6 h-6" />
@@ -545,8 +545,8 @@ const RealEstateMartech = () => {
                                 exit={{ x: expertiseDirection > 0 ? "-100%" : "100%", opacity: 0 }}
                                 transition={{ duration: 0.45, ease: "easeInOut" }}
                                 className={`absolute inset-4 md:inset-6 grid gap-8 ${EXPERTISE_PER_PAGE === 1
-                                        ? "grid-cols-1"
-                                        : "grid-cols-1 md:grid-cols-3"
+                                    ? "grid-cols-1"
+                                    : "grid-cols-1 md:grid-cols-3"
                                     }`}
                             >
                                 {expertisePageItems.map((item, index) => (
@@ -627,8 +627,8 @@ const RealEstateMartech = () => {
                         </AnimatePresence>
                         <div
                             className={`grid gap-8 invisible ${EXPERTISE_PER_PAGE === 1
-                                    ? "grid-cols-1"
-                                    : "grid-cols-1 md:grid-cols-3"
+                                ? "grid-cols-1"
+                                : "grid-cols-1 md:grid-cols-3"
                                 }`}
                         >
                             {Array(EXPERTISE_PER_PAGE)
@@ -650,8 +650,8 @@ const RealEstateMartech = () => {
                         onClick={handleExpertiseNext}
                         disabled={!canSlideExpertise}
                         className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${!canSlideExpertise
-                                ? "bg-sky-400/10 cursor-not-allowed opacity-50"
-                                : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
+                            ? "bg-sky-400/10 cursor-not-allowed opacity-50"
+                            : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
                             }`}
                     >
                         <ChevronRight className="w-6 h-6" />
@@ -701,15 +701,28 @@ const RealEstateMartech = () => {
                 A key forces the old iframe to unmount and a fresh one to mount,
                 so only one embed is ever active at a time.
               */}
-                            <iframe
-                                key={activeImmersiveTab.id}
-                                src={activeImmersiveTab.videoSrc}
-                                title={activeImmersiveTab.label}
-                                className="absolute inset-0 w-full h-full border-0"
-                                loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                            />
+                            {activeImmersiveTab.videoSrc.startsWith("/assets/") ? (
+                                <video
+                                    key={activeImmersiveTab.id}
+                                    src={activeImmersiveTab.videoSrc}
+                                    className="absolute inset-0 w-full h-full"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    controls
+                                />
+                            ) : (
+                                <iframe
+                                    key={activeImmersiveTab.id}
+                                    src={activeImmersiveTab.videoSrc}
+                                    title={activeImmersiveTab.label}
+                                    className="absolute inset-0 w-full h-full border-0"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
