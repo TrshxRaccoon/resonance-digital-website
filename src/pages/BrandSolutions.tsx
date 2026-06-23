@@ -267,7 +267,7 @@ const tvcShowcase: TVCShowcaseItem[] = [
     },
     {
         title: "Kit Kat",
-        image: "/assets/images/movies/movies_01.png",
+        image: "/assets/images/Thumbnails/Kitkat.jpg",
         client: "Kit Kat",
         year: "2024",
         videoSrc: "/assets/videos/KitKat.webm",
@@ -323,7 +323,7 @@ const tvcShowcase: TVCShowcaseItem[] = [
     },
     {
         title: "Netflix End of Year 2023",
-        image: "/assets/images/movies/batman.png",
+        image: "/assets/images/Thumbnails/Netflix23.jpg",
         client: "Netflix",
         year: "2023",
         videoSrc: "/assets/videos/Netflix2023.webm",
