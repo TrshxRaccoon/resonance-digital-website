@@ -549,7 +549,7 @@ const VFX = () => {
         },
         { src: "/assets/videos/Campa.webm", label: "Campa Energy" },
         { src: "/assets/videos/Black_Dog.webm", label: "Black Dog" },
-        { src: "/assets/videos/SUPERBET.webm", label: "SUPERBET" },
+        { src: "/assets/videos/Superbet.webm", label: "Superbet" },
         {
             src: "/assets/videos/Fastrack.webm",
             label: "Fastrack Smart",

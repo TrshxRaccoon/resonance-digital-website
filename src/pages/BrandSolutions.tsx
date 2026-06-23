@@ -217,11 +217,11 @@ const tvcShowcase: TVCShowcaseItem[] = [
         videoSrc: "/assets/videos/Black_Dog.webm",
     },
     {
-        title: "SUPERBET",
+        title: "Superbet",
         image: "/assets/images/Thumbnails/SUPERBET.jpg",
         client: "SUPERBET",
         year: "2024",
-        videoSrc: "/assets/videos/SUPERBET.webm",
+        videoSrc: "/assets/videos/Superbet.webm",
     },
     {
         title: "Fastrack Smart",
