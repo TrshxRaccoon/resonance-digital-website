@@ -89,7 +89,9 @@ const Contact = () => {
 
                         <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                             <p className="text-white mb-2">Your next big idea</p>
-                            <p className="text-[#2a5266]">starts here. Let's make</p>
+                            <p className="text-[#2a5266]">
+                                <span className="text-white">starts here.</span> Let's make
+                            </p>
                             <p className="text-[#2a5266]">it real!</p>
                         </div>
                     </div>
@@ -106,9 +108,8 @@ const Contact = () => {
                                     value={formData.fullName}
                                     onChange={handleChange}
                                     placeholder="Full Name"
-                                    className={`w-full bg-transparent border ${
-                                        errors.fullName ? "border-red-400" : "border-white/30"
-                                    } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300`}
+                                    className={`w-full bg-transparent border ${errors.fullName ? "border-red-400" : "border-white/30"
+                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300`}
                                 />
                                 {errors.fullName && (
                                     <p className="text-red-400 text-sm mt-2">{errors.fullName}</p>
@@ -123,9 +124,8 @@ const Contact = () => {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     placeholder="Subject"
-                                    className={`w-full bg-transparent border ${
-                                        errors.subject ? "border-red-400" : "border-white/30"
-                                    } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300`}
+                                    className={`w-full bg-transparent border ${errors.subject ? "border-red-400" : "border-white/30"
+                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300`}
                                 />
                                 {errors.subject && (
                                     <p className="text-red-400 text-sm mt-2">{errors.subject}</p>
@@ -140,9 +140,8 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder="Write your message..."
                                     rows={4}
-                                    className={`w-full bg-transparent border ${
-                                        errors.message ? "border-red-400" : "border-white/30"
-                                    } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300 resize-none`}
+                                    className={`w-full bg-transparent border ${errors.message ? "border-red-400" : "border-white/30"
+                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300 resize-none`}
                                 />
                                 <div className="flex justify-between items-center mt-2">
                                     {errors.message ? (
@@ -150,9 +149,8 @@ const Contact = () => {
                                     ) : (
                                         <div />
                                     )}
-                                    <p className={`text-sm ${
-                                        messageCharsRemaining < 50 ? "text-yellow-400" : "text-white/50"
-                                    }`}>
+                                    <p className={`text-sm ${messageCharsRemaining < 50 ? "text-yellow-400" : "text-white/50"
+                                        }`}>
                                         {messageCharsRemaining} characters remaining
                                     </p>
                                 </div>
