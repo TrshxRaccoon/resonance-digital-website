@@ -457,6 +457,34 @@ const VFX = () => {
         //   year: "",
         //   category: "",
         // },
+        {
+            title: "Senna",
+            image: "/assets/images/vfx/showcase/Senna.jpeg",
+            platform: "",
+            year: "",
+            category: "",
+        },
+        {
+            title: "John Wick",
+            image: "/assets/images/vfx/showcase/JohnWick.jpeg",
+            platform: "",
+            year: "",
+            category: "",
+        },
+        {
+            title: "Shantaram",
+            image: "/assets/images/vfx/showcase/Shantaram.jpeg",
+            platform: "",
+            year: "",
+            category: "",
+        },
+        {
+            title: "Alice In Borderland",
+            image: "/assets/images/vfx/showcase/Alice.jpeg",
+            platform: "",
+            year: "",
+            category: "",
+        }
     ];
 
     const adsShowcase = [
