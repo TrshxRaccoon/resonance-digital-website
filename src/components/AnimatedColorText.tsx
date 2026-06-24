@@ -50,10 +50,10 @@ export default function AnimatedColorText({
                 willChange: "auto",
             }}
         >
-            <span className="text-white">{whiteText} </span>
+            <span className="text-[#ceccc7]">{whiteText} </span>
             <span>
-                <span className="text-[#f2eee2]">{visibleText}</span>
-                <span className="text-[#100a44]">{hiddenText}</span>
+                <span className="text-[#ceccc7]">{visibleText}</span>
+                <span className="text-theme-secondaryText">{hiddenText}</span>
             </span>
         </p>
     );

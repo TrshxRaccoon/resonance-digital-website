@@ -83,7 +83,7 @@ const MotionPictures = () => {
                 </div>
             </section>
 
-            <Footer theme="light" />
+            <Footer theme="dark" />
         </>
     );
 };

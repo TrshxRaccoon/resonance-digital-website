@@ -37,7 +37,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
             {/* Side Menu Panel */}
             <div
-                className={`fixed top-0 right-0 bottom-0 z-[70] w-full md:w-[450px] ${isLightMenuTheme ? "bg-theme-secondaryBg2" : "bg-theme-secondaryBg1"
+                className={`fixed top-0 right-0 bottom-0 z-[70] w-full md:w-[450px] ${isLightMenuTheme ? "bg-theme-primaryBg1" : "bg-theme-secondaryBg2"
                     } transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "translate-x-0" : "translate-x-full"
                     }`}
                 style={{
@@ -51,8 +51,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     onClick={onClose}
                     aria-label="Close menu"
                     className={`absolute top-8 right-8 flex items-center gap-2 transition-colors duration-300 group z-10 ${isLightMenuTheme
-                            ? "text-black hover:text-theme-primaryText"
-                            : "text-white hover:text-theme-primaryText"
+                            ? "text-theme-secondaryBg2 hover:text-theme-secondaryText"
+                            : "text-theme-primaryBg1 hover:text-theme-secondaryText"
                         }`}
                 >
                     <X className="w-5 h-5" strokeWidth={1.5} />
@@ -81,10 +81,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                             >
                                 <span
                                     className={`font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight transition-colors duration-300 ${isActive
-                                            ? "text-theme-primaryText"
+                                            ? (isLightMenuTheme ? "text-theme-secondaryBg2" : "text-theme-primaryBg1")
                                             : isLightMenuTheme
-                                                ? "text-theme-secondaryText group-hover:text-theme-primaryText"
-                                                : "text-white group-hover:text-theme-primaryText"
+                                                ? "text-theme-secondaryText group-hover:text-theme-secondaryBg2"
+                                                : "text-[#d2d3d4] group-hover:text-theme-primaryBg1"
                                         }`}
                                     style={{ willChange: "color" }}
                                 >
@@ -97,7 +97,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
                 {/* Email at Bottom */}
                 <div
-                    className={`absolute bottom-12 left-0 right-0 flex justify-center text-xs px-8 ${isLightMenuTheme ? "text-theme-secondaryText" : "text-white"
+                    className={`absolute bottom-12 left-0 right-0 flex justify-center text-xs px-8 ${isLightMenuTheme ? "text-theme-secondaryBg2" : "text-theme-primaryBg1"
                         }`}
                     style={{
                         opacity: isOpen ? 1 : 0,
@@ -106,7 +106,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 >
                     <a
                         href="mailto:info@resonancedigital.in"
-                        className="hover:text-theme-primaryText transition-colors duration-300"
+                        className="hover:text-theme-secondaryText transition-colors duration-300"
                     >
                         info@resonancedigital.com
                     </a>

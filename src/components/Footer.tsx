@@ -71,16 +71,16 @@ const LinkedInIcon = () => (
 
 const Footer = ({ theme = "light" }: FooterProps) => {
     const isDark = theme === "dark";
-    const backgroundClass = isDark ? "bg-[#080032]" : "bg-[#f6f5ee]";
+    const backgroundClass = isDark ? "bg-[#000000]" : "bg-[#f6f5ee]";
     const textClass = isDark ? "text-[#f2eee2]" : "text-black";
     const mutedTextClass = isDark ? "text-[#f2eee2]/70" : "text-black/70";
     const subtleTextClass = isDark ? "text-[#f2eee2]/50" : "text-black/50";
     const bodyTextClass = isDark ? "text-[#f2eee2]/90" : "text-black/90";
     const borderClass = isDark ? "border-[#f2eee2]/20" : "border-black/20";
     const topCtaClass = isDark
-        ? "bg-[#f2eee2]/20 hover:bg-[#f2eee2]/30"
-        : "bg-[#080032] hover:bg-[#080032]/90";
-    const topCtaTextClass = isDark ? "text-[#f2eee2]" : "text-white";
+        ? "bg-[#414044] hover:opacity-90"
+        : "bg-theme-primaryBg1 hover:opacity-90";
+    const topCtaTextClass = isDark ? "text-theme-primaryText" : "text-white";
 
     return (
         <footer className={`${backgroundClass} ${textClass}`}>
@@ -101,7 +101,6 @@ const Footer = ({ theme = "light" }: FooterProps) => {
                             <span className={`font-semibold text-base ${topCtaTextClass}`}>
                                 Got A Project? let's Talk
                             </span>
-                            {/* FIX: SVG arrow instead of emoji */}
                             <ArrowUpRight className={`w-5 h-5 ${topCtaTextClass}`} />
                         </Link>
 
@@ -125,7 +124,7 @@ const Footer = ({ theme = "light" }: FooterProps) => {
 
                             {/* Overlay with "Open in Maps" button */}
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                                <div className="bg-sky-400 text-white px-6 py-3 rounded-full font-semibold opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300 shadow-xl">
+                                <div className="bg-theme-primaryBg1 text-white px-6 py-3 rounded-full font-semibold opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300 shadow-xl">
                                     Open in Maps →
                                 </div>
                             </div>

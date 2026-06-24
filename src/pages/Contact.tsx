@@ -76,23 +76,23 @@ const Contact = () => {
         <>
             <Header />
 
-            <section className="relative w-full min-h-screen bg-[#080032] flex items-center px-6 md:px-12 lg:px-24 py-32">
+            <section className="relative w-full min-h-screen bg-theme-primaryBg1 flex items-center px-6 md:px-12 lg:px-24 py-32">
                 <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
                     {/* LEFT SIDE - Heading */}
                     <div>
                         <p className="text-white/50 text-sm md:text-base mb-6">Contact Us</p>
 
-                        <h1 className="font-display text-[80px] md:text-[100px] lg:text-[120px] font-bold text-[#4ab6ff] leading-none mb-8">
+                        <h1 className="font-display text-[80px] md:text-[100px] lg:text-[120px] font-bold text-theme-primaryText leading-none mb-8">
                             Let's Talk
                         </h1>
 
-                        <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                            <p className="text-white mb-2">Your next big idea</p>
-                            <p className="text-[#2a5266]">
-                                <span className="text-white">starts here.</span> Let's make
+                        <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.70] -space-y-6">
+                            <p className="text-theme-primaryText mb-0 tracking-tight">Your next big idea</p>
+                            <p className="text-theme-primaryText mb-0 tracking-tight">
+                                <span className="text-theme-primaryText">starts here.</span> Let's make
                             </p>
-                            <p className="text-[#2a5266]">it real!</p>
+                            <p className="text-theme-primaryText mb-0 tracking-tight">it real!</p>
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder="Full Name"
                                     className={`w-full bg-transparent border ${errors.fullName ? "border-red-400" : "border-white/30"
-                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300`}
+                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-theme-secondaryText transition-colors duration-300`}
                                 />
                                 {errors.fullName && (
                                     <p className="text-red-400 text-sm mt-2">{errors.fullName}</p>
@@ -125,7 +125,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     placeholder="Subject"
                                     className={`w-full bg-transparent border ${errors.subject ? "border-red-400" : "border-white/30"
-                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300`}
+                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-theme-secondaryText transition-colors duration-300`}
                                 />
                                 {errors.subject && (
                                     <p className="text-red-400 text-sm mt-2">{errors.subject}</p>
@@ -141,7 +141,7 @@ const Contact = () => {
                                     placeholder="Write your message..."
                                     rows={4}
                                     className={`w-full bg-transparent border ${errors.message ? "border-red-400" : "border-white/30"
-                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-sky-400 transition-colors duration-300 resize-none`}
+                                        } text-white placeholder-white/50 px-6 py-4 rounded-sm focus:outline-none focus:border-theme-secondaryText transition-colors duration-300 resize-none`}
                                 />
                                 <div className="flex justify-between items-center mt-2">
                                     {errors.message ? (
@@ -159,7 +159,7 @@ const Contact = () => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-full font-semibold text-lg py-4 rounded-sm transition-all duration-300 bg-white/90 hover:bg-white text-[#132c3b] hover:shadow-lg"
+                                className="w-full font-semibold text-lg py-4 rounded-sm transition-all duration-300 bg-theme-primaryBg2 hover:bg-theme-primaryBg1/90 text-theme-secondaryBg1 hover:shadow-lg"
                             >
                                 Send
                             </button>

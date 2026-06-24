@@ -18,14 +18,6 @@ const Awards = () => {
 
             {/* Hero Section — unchanged */}
             <section className="relative w-full min-h-screen overflow-hidden bg-theme-primaryBg1">
-                {/* Background Texture */}
-                <div
-                    className="absolute inset-0 opacity-40"
-                    style={{
-                        backgroundImage:
-                            "radial-gradient(circle at 20% 20%, rgba(74,182,255,0.15) 0%, transparent 35%), radial-gradient(circle at 80% 30%, rgba(74,182,255,0.12) 0%, transparent 30%), radial-gradient(circle at 50% 80%, rgba(255,255,255,0.05) 0%, transparent 35%)",
-                    }}
-                />
 
                 {/* Header spacing */}
                 <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/40 to-transparent z-10" />
@@ -34,7 +26,7 @@ const Awards = () => {
                     {/* Top Content */}
                     <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-10 lg:gap-16 flex-1">
                         {/* Left Side */}
-                        <div className="max-w-[720px]">
+                        <div className="relative z-30 max-w-[720px] lg:min-h-[520px] flex flex-col justify-center">
                             <h1 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight mb-8 md:mb-10">
                                 Awards &<br />
                                 Achievements
@@ -49,12 +41,12 @@ const Awards = () => {
                         </div>
 
                         {/* Right Side */}
-                        <div className="relative flex items-center justify-center lg:justify-end">
-                            <div className="relative w-full max-w-[640px] lg:max-w-[720px]">
+                        <div className="absolute inset-0 lg:relative lg:flex lg:items-center lg:justify-end pointer-events-none">
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70vw] max-w-[380px] lg:static lg:translate-y-0 lg:w-full lg:max-w-[620px] lg:h-[520px] flex items-center justify-center">
                                 <img
                                     src="/assets/images/awards/Awards-01.png"
                                     alt="Awards"
-                                    className="w-full h-auto object-contain opacity-90"
+                                    className="w-full h-full object-contain opacity-90 lg:opacity-90"
                                 />
                             </div>
                         </div>
@@ -63,9 +55,17 @@ const Awards = () => {
             </section>
 
             {/* Awards Showcase Image */}
-            <section className="relative w-full bg-theme-secondaryBg1 flex flex-col items-center justify-center">
-                <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
-                    <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight text-center">
+            <section className="relative w-full bg-black">
+                {/* Desktop overlay title */}
+                <div className="hidden md:block absolute top-[180px] left-6 md:left-12 lg:left-20 z-10">
+                    <h2 className="font-display text-[45px] md:text-[55px] lg:text-[75px] font-bold text-theme-primaryText tracking-tight leading-[0.95]">
+                        Awards Showcase
+                    </h2>
+                </div>
+
+                {/* Mobile standalone title container */}
+                <div className="md:hidden px-6 pt-8 pb-6 bg-black flex justify-center text-center">
+                    <h2 className="font-display text-3xl font-bold text-theme-primaryText leading-tight">
                         Awards Showcase
                     </h2>
                 </div>
@@ -83,46 +83,7 @@ const Awards = () => {
                 </picture>
             </section>
 
-            {/* 
-      Awards Showcase — full viewport height 
-      */}
-            {/*
-      <section className="relative w-full min-h-screen bg-[#100a44] overflow-hidden flex items-center">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse at 15% 30%, rgba(74,182,255,0.07) 0%, transparent 50%), radial-gradient(ellipse at 85% 70%, rgba(74,182,255,0.07) 0%, transparent 50%)",
-          }}
-        />
-
-        <div className="relative w-full px-10 flex flex-col justify-center gap-0">
-
-          <div className="grid grid-cols-2 h-[42vh]">
-            <div className="flex items-center pr-6">
-              <AwardCard award={AWARDS[0]} />
-            </div>
-            <div className="flex items-center pl-6">
-              <AwardCard award={AWARDS[1]} />
-            </div>
-          </div>
-
-          <div className="my-4 h-px bg-gradient-to-r from-transparent via-[#4ab6ff]/25 to-transparent" />
-
-          <div className="grid grid-cols-2 h-[42vh]">
-            <div className="flex items-center pr-6">
-              <AwardCard award={AWARDS[2]} />
-            </div>
-            <div className="flex items-center pl-6">
-              <AwardCard award={AWARDS[3]} />
-            </div>
-          </div>
-
-        </div>
-      </section>
-      */}
-
-            <Footer theme="dark" />
+            <Footer theme="light" />
         </>
     );
 };

@@ -871,10 +871,10 @@ const VFX = () => {
 
             {/* Hero Section */}
             {!expandedSection && (
-                <section className="relative w-full min-h-screen bg-[#080032] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
+                <section className="relative w-full min-h-screen bg-[#15171e] flex flex-col justify-center px-6 md:px-12 lg:px-24 py-24">
                     {/* Main Title */}
                     <div className="max-w-6xl w-full mt-20">
-                        <h1 className="font-display text-[35px] md:text-[95px] lg:text-[105px] font-bold text-[#4ab6ff] mb-6 leading-tight">
+                        <h1 className="font-display text-[35px] md:text-[95px] lg:text-[105px] font-bold text-theme-primaryText mb-6 leading-tight">
                             VFX: Movies & Ads
                         </h1>
 
@@ -1019,7 +1019,7 @@ const VFX = () => {
             {expandedSection && (
                 <button
                     onClick={handleCollapse}
-                    className="fixed top-32 md:top-36 right-8 z-[40] bg-[#4ab6ff] hover:bg-[#4ab6ff]/80 text-[#201c50] px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="fixed top-32 md:top-36 right-8 z-[40] bg-theme-secondaryBg2 hover:bg-theme-secondaryBg2/80 text-[#201c50] px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                     ← Back
                 </button>
@@ -1063,7 +1063,7 @@ const VFX = () => {
                     </section>
 
                     {/* Movies Showcase Carousel */}
-                    <section className="relative w-full bg-theme-primaryBg1 px-12 md:px-24 pb-32">
+                    <section className="relative w-full bg-theme-primaryBg1 px-12 md:px-24">
                         <div className="max-w-7xl mx-auto">
                             <div className="relative">
                                 {/* Carousel Navigation */}
@@ -1186,7 +1186,7 @@ const VFX = () => {
               </div> */}
 
                             {/* Areas of Expertise Section */}
-                            <section className="py-24 bg-theme-secondaryBg1 -mx-12 md:-mx-24 px-12 md:px-24">
+                            <section className="py-24 bg-theme-secondaryText -mx-12 md:-mx-24 px-12 md:px-24">
                                 <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-4">
                                     VFX: Films & Episodic{" "}
                                     <span className="text-[#4ab6ff]">|</span>{" "}
@@ -1278,7 +1278,7 @@ const VFX = () => {
                                 <div className="flex flex-col lg:flex-row gap-12 items-center">
                                     {/* Left Side - Text Content */}
                                     <div className="flex-1">
-                                        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4ab6ff] mb-8 leading-tight">
+                                        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primaryText mb-8 leading-tight">
                                             Security
                                             <br />
                                             Certifications
@@ -1310,11 +1310,11 @@ const VFX = () => {
                             </div>
 
                             {/* Films & Episodic Clients Section */}
-                            <div className="mt-0 mb-0 -mx-12 md:-mx-24 px-12 md:px-24 py-24 bg-theme-secondaryBg1">
+                            <div className="mt-0 mb-0 -mx-12 md:-mx-24 px-12 md:px-24 py-24 bg-theme-secondaryText">
                                 <div className="flex flex-col lg:flex-row gap-12 items-start">
                                     {/* Left Side - Title */}
                                     <div className="lg:w-[45%]">
-                                        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#4ab6ff] leading-tight">
+                                        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primaryText leading-tight">
                                             Films & Episodic <br />
                                             Clients
                                         </h2>
@@ -1362,7 +1362,7 @@ const VFX = () => {
                     </section>
 
                     {/* Areas of Expertise Section */}
-                    <section className="px-12 md:px-24 py-24 bg-theme-secondaryBg1">
+                    <section className="px-12 md:px-24 py-24 bg-theme-primaryBg1">
                         <div className="max-w-7xl mx-auto translate-y-8">
                             <h2 className="font-display text-4xl md:text-5xl font-bold text-[#f2eee2] mb-4">
                                 VFX: Advertising <span className="text-[#4ab6ff]">|</span>{" "}
@@ -1536,7 +1536,7 @@ const VFX = () => {
                         })}
                     </div>
 
-                    <section className="px-12 md:px-24 py-24 bg-theme-secondaryBg1">
+                    <section className="px-12 md:px-24 py-24 bg-theme-secondaryText">
                         <div className="max-w-7xl mx-auto">
                             {/* ── CGI Stills — full-bleed masonry grid ── */}
                             <h2 className="font-display text-4xl md:text-5xl font-light text-[#f2eee2] mb-10">
@@ -1593,9 +1593,6 @@ const VFX = () => {
             {/* Original Expandable Items Section - Only show when nothing is expanded */}
             {!expandedSection && (
                 <section className="w-full bg-theme-primaryBg1">
-                    <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-12 space-y-4">
-                        {/* You can add additional content here if needed */}
-                    </div>
                 </section>
             )}
             {activeCgiImage && (

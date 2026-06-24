@@ -386,10 +386,10 @@ const RealEstateMartech = () => {
                 }
             />
 
-            <section className="w-full min-h-screen bg-theme-secondaryBg1 py-10 md:py-12 px-10 md:px-16 flex flex-col justify-center">
-                <h2 className="font-display text-2xl md:text-3xl font-normal text-white/60 mb-8">
-                    Real Estate Mar-Tech <span className="text-white/50">|</span>{" "}
-                    <span className="font-bold text-white">Clients</span>
+            <section className="w-full min-h-screen bg-theme-secondaryBg2 py-10 md:py-12 px-10 md:px-16 flex flex-col justify-center">
+                <h2 className="font-display text-2xl md:text-3xl font-normal text-theme-secondaryText/70 mb-8">
+                    Real Estate Mar-Tech <span className="text-black/50">|</span>{" "}
+                    <span className="font-bold text-theme-secondaryText">Clients</span>
                 </h2>
 
                 <div className="flex flex-col lg:flex-row gap-12">
@@ -407,12 +407,12 @@ const RealEstateMartech = () => {
                     <div className="w-full lg:w-1/2 flex flex-col self-start pb-4">
                         {realEstateStatements.map((item, i) => (
                             <div key={i}>
-                                <div className="h-px bg-white/20 w-full" />
+                                <div className="h-px bg-black/20 w-full" />
                                 <button
                                     onClick={() => toggle(i)}
                                     className="w-full flex items-center justify-between py-2.5 text-left group"
                                 >
-                                    <span className="font-display text-[18px] md:text-[20px] text-white/85 group-hover:text-sky-300 transition-colors duration-200 leading-tight">
+                                    <span className="font-display text-[18px] md:text-[20px] text-black/85 group-hover:text-theme-secondaryText transition-colors duration-200 leading-tight">
                                         {item.title}
                                     </span>
                                     <ChevronDown
@@ -421,7 +421,7 @@ const RealEstateMartech = () => {
                                                 openIndex === i ? "rotate(180deg)" : "rotate(0deg)",
                                             transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                                         }}
-                                        className="w-4 h-4 text-white/60 flex-shrink-0 ml-4"
+                                        className="w-4 h-4 text-black/60 flex-shrink-0 ml-4"
                                     />
                                 </button>
                                 <AnimatePresence initial={false}>
@@ -437,7 +437,7 @@ const RealEstateMartech = () => {
                                             }}
                                             style={{ overflow: "hidden" }}
                                         >
-                                            <p className="text-white/65 text-sm leading-relaxed pb-4 max-w-xl">
+                                            <p className="text-black/65 text-sm leading-relaxed pb-4 max-w-xl">
                                                 {item.body}
                                             </p>
                                         </motion.div>
@@ -456,9 +456,9 @@ const RealEstateMartech = () => {
                 ref={expertiseSectionRef}
                 className="w-full bg-theme-primaryBg1 pt-16 pb-10 md:pt-20 md:pb-12 px-10 md:px-16"
             >
-                <h2 className="font-display text-3xl md:text-4xl font-normal text-white/60 mb-6">
+                <h2 className="font-display text-3xl md:text-4xl font-normal text-theme-primaryText/70 mb-6">
                     Real Estate Mar-Tech <span className="text-white/50">|</span>{" "}
-                    <span className="font-bold text-white">Areas of expertise</span>
+                    <span className="font-bold text-theme-primaryText">Areas of expertise</span>
                 </h2>
 
                 <div className="mt-6 mb-8 w-full max-w-[1700px]">
@@ -471,8 +471,8 @@ const RealEstateMartech = () => {
                                         setCurrentExpertisePage(0);
                                     }}
                                     className={`transition-colors duration-300 ${selectedExpertiseCategory === category
-                                        ? "text-[#4ab6ff]"
-                                        : "text-white/40 hover:text-[#4ab6ff]"
+                                        ? "text-theme-secondaryText"
+                                        : "text-white/40 hover:text-theme-secondaryText"
                                         }`}
                                 >
                                     {category}
@@ -493,14 +493,14 @@ const RealEstateMartech = () => {
                                         setCurrentExpertisePage(0);
                                     }}
                                     className={`transition-colors duration-300 ${selectedExpertiseCategory === category
-                                        ? "text-[#4ab6ff]"
-                                        : "text-[#f2eee2]/40"
+                                        ? "text-theme-secondaryText"
+                                        : "text-theme-primaryText/40"
                                         }`}
                                 >
                                     {category}
                                 </button>
                                 {index < expertiseCategories.length - 1 && (
-                                    <span className="text-[#f2eee2]/30 mx-3">|</span>
+                                    <span className="text-theme-primaryText/30 mx-3">|</span>
                                 )}
                             </div>
                         ))}
@@ -512,8 +512,8 @@ const RealEstateMartech = () => {
                         onClick={handleExpertisePrev}
                         disabled={!canSlideExpertise}
                         className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${!canSlideExpertise
-                            ? "bg-sky-400/10 cursor-not-allowed opacity-50"
-                            : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
+                            ? "bg-theme-secondaryText/10 cursor-not-allowed opacity-50"
+                            : "bg-theme-secondaryText/20 hover:bg-theme-secondaryText/40 cursor-pointer"
                             }`}
                     >
                         <ChevronLeft className="w-6 h-6" />
@@ -567,7 +567,7 @@ const RealEstateMartech = () => {
                                         }}
                                         className="group flex flex-col cursor-pointer"
                                     >
-                                        <div className="relative overflow-hidden rounded-xl aspect-[16/10] w-full bg-white/5 border border-white/10">
+                                        <div className="relative overflow-hidden aspect-[16/10] w-full bg-white/5 border border-white/10">
                                             {/*
                         FIX 7: loading="lazy" + decoding="async" on all expertise images.
                         The carousel shows 3 images at a time from a pool of 13+ — the
@@ -584,7 +584,7 @@ const RealEstateMartech = () => {
                                             />
                                             {item.videoSrc && (
                                                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#4ab6ff]/90 backdrop-blur-sm flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
+                                                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-theme-secondaryText/90 backdrop-blur-sm flex items-center justify-center shadow-[0_0_40px_rgba(74,182,255,0.5)]">
                                                         <div
                                                             className="ml-1"
                                                             style={{
@@ -600,7 +600,7 @@ const RealEstateMartech = () => {
                                             )}
                                         </div>
 
-                                        <div className="mt-4 flex flex-col gap-1 text-[#f2eee2]">
+                                        <div className="mt-4 flex flex-col gap-1 text-theme-primaryText">
                                             <h3 className="text-lg md:text-xl font-semibold leading-tight">
                                                 {item.title}
                                             </h3>
@@ -650,8 +650,8 @@ const RealEstateMartech = () => {
                         onClick={handleExpertiseNext}
                         disabled={!canSlideExpertise}
                         className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 ${!canSlideExpertise
-                            ? "bg-sky-400/10 cursor-not-allowed opacity-50"
-                            : "bg-sky-400/20 hover:bg-sky-400/40 cursor-pointer"
+                            ? "bg-theme-secondaryText/10 cursor-not-allowed opacity-50"
+                            : "bg-theme-secondaryText/20 hover:bg-theme-secondaryText/40 cursor-pointer"
                             }`}
                     >
                         <ChevronRight className="w-6 h-6" />
@@ -660,11 +660,11 @@ const RealEstateMartech = () => {
             </section>
 
             {/* ── Section 2: Immersive Technology Solutions ─────────────────── */}
-            <section className="w-full bg-theme-secondaryBg1 py-14 md:py-16">
+            <section className="w-full bg-theme-secondaryBg2 py-14 md:py-16">
                 <div className="mx-auto w-full max-w-[1240px] px-6 sm:px-10 lg:px-0">
-                    <h2 className="font-display text-3xl sm:text-4xl md:text-[44px] font-normal text-white/60 mb-10">
-                        Real Estate Mar-Tech <span className="text-white/50">|</span>{" "}
-                        <span className="font-bold text-white">
+                    <h2 className="font-display text-3xl sm:text-4xl md:text-[44px] font-normal text-theme-secondaryText/70 mb-10">
+                        Real Estate Mar-Tech <span className="text-black/50">|</span>{" "}
+                        <span className="font-bold text-theme-primaryBg1">
                             Immersive Technology Solutions
                         </span>
                     </h2>
@@ -681,8 +681,8 @@ const RealEstateMartech = () => {
                                     onClick={() => handleTabSwitch(tab)}
                                     className={`py-[18px] px-4 text-center font-display font-bold text-[14px] sm:text-[15px] md:text-[17px] tracking-wide transition-all duration-200 border-[#d0cfc8] ${idx < 2 ? "border-b md:border-b-0" : ""
                                         } ${mobileRightBorder} ${desktopRightBorder} ${isActive
-                                            ? "bg-[#4ab6ff] text-white"
-                                            : "bg-[#f6f5ee] text-[#58595b] hover:bg-[#ebebdf]"
+                                            ? "bg-theme-primaryBg1 text-theme-secondaryBg2"
+                                            : "bg-theme-secondaryText text-theme-primaryText hover:text-theme-primaryBg1"
                                         }`}
                                 >
                                     {tab.label}
@@ -750,7 +750,7 @@ const RealEstateMartech = () => {
                     <img
                         src={activeImage.image}
                         alt={activeImage.title}
-                        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
+                        className="max-w-[95vw] max-h-[95vh] object-contain"
                         onClick={(e) => e.stopPropagation()}
                     />
                     <button

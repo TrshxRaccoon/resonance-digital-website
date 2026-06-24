@@ -82,7 +82,7 @@ const FixedHero = ({
                 }}
             >
                 <div className="max-w-6xl">
-                    <h1 className="font-display text-[65px] md:text-[75px] lg:text-[85px] font-bold text-[#4ab6ff] mb-10 leading-tight">
+                    <h1 className="font-display text-[65px] md:text-[75px] lg:text-[85px] font-bold text-secondaryText mb-10 leading-tight">
                         {title}
                     </h1>
 

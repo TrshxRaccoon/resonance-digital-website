@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedColorText from "@/components/AnimatedColorText";
-import { Globe, BriefcaseBusiness, TrendingUp } from "lucide-react";
+
 
 const About = () => {
     return (
@@ -34,15 +34,16 @@ const About = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="w-full bg-theme-secondaryBg1 py-20 px-10 md:px-16">
+            <section className="w-full bg-black py-20 px-10 md:px-16">
                 {/* Stats Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
                     {/* Stat 1 */}
                     <div className="text-center">
-                        <div className="flex items-end justify-center gap-3 mb-4">
-                            <BriefcaseBusiness
-                                className="w-10 h-10 md:w-20 md:h-20 text-white mb-2"
-                                strokeWidth={1.75}
+                        <div className="flex items-end justify-center gap-0 mb-4">
+                            <img
+                                src="/assets/images/about/man.png"
+                                alt="Experts"
+                                className="w-10 h-10 md:w-20 md:h-20 object-contain mb-2"
                             />
                             <span className="text-[80px] md:text-[100px] font-display font-light text-white leading-none">
                                 250
@@ -58,10 +59,11 @@ const About = () => {
 
                     {/* Stat 2 */}
                     <div className="text-center">
-                        <div className="flex items-end justify-center gap-3 mb-4">
-                            <Globe
-                                className="w-10 h-10 md:w-20 md:h-20 text-white mb-2"
-                                strokeWidth={1.75}
+                        <div className="flex items-end justify-center gap-0 mb-4">
+                            <img
+                                src="/assets/images/about/globe.png"
+                                alt="Countries"
+                                className="w-10 h-10 md:w-20 md:h-20 object-contain mb-2"
                             />
                             <span className="text-[80px] md:text-[100px] font-display font-light text-white leading-none">
                                 20
@@ -77,10 +79,11 @@ const About = () => {
 
                     {/* Stat 3 */}
                     <div className="text-center">
-                        <div className="flex items-end justify-center gap-3 mb-4">
-                            <TrendingUp
-                                className="w-10 h-10 md:w-20 md:h-20 text-white mb-2"
-                                strokeWidth={1.75}
+                        <div className="flex items-end justify-center gap-0 mb-4">
+                            <img
+                                src="/assets/images/about/2016.png"
+                                alt="Years"
+                                className="w-10 h-10 md:w-20 md:h-20 object-contain mb-2"
                             />
                             <span className="text-[80px] md:text-[100px] font-display font-light text-white leading-none">
                                 10
@@ -165,23 +168,23 @@ const About = () => {
 
                         <div className="max-w-[1100px] text-white text-[32px] md:text-[46px] lg:text-[58px] font-semibold leading-[0.95] tracking-tight">
                             Guided by strong vision and thoughtful, Resonance is proud to be a reliable
-                            <span className="text-[#1c4e63]"> partner for major creative initiatives in India and beyond.</span>
+                            <span className="text-theme-secondaryText"> partner for major creative initiatives in India and beyond.</span>
                         </div>
                     </div>
 
                     {/* Team Visual Composition */}
                     <div className="relative z-30 mt-2 md:mt-1 min-h-[700px] md:min-h-[500px] flex flex-col md:flex-row items-center md:items-end justify-center gap-6 md:gap-0">
                         {/* Left Info Card */}
-                        <div className="relative md:absolute md:left-0 md:bottom-8 z-50 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
-                            <h3 className="text-[#29a7ff] font-semibold text-lg mb-3">
+                        <div className="relative md:absolute md:left-0 md:bottom-8 z-50 bg-theme-primaryBg2/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
+                            <h3 className="text-theme-secondaryText font-semibold text-lg mb-3">
                                 Abhyuday Grover
                             </h3>
 
-                            <p className="text-sm leading-relaxed text-white/85 mb-3">
+                            <p className="text-sm leading-relaxed text-theme-secondaryText/85 mb-3">
                                 Multiple campaigns for more than 50 brands/corporates in varied mediums.
                             </p>
 
-                            <p className="text-sm leading-relaxed text-white/70">
+                            <p className="text-sm leading-relaxed text-theme-secondaryText/70">
                                 Branding, Digital Marketing, Mainline advertising, Product photography, TVC production, Audio Visual films and Content creation.
                             </p>
                         </div>
@@ -204,16 +207,16 @@ const About = () => {
                         </div>
 
                         {/* Right Info Card */}
-                        <div className="relative md:absolute md:right-0 md:bottom-0 z-50 bg-[#2b6177]/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
-                            <h3 className="text-[#29a7ff] font-semibold text-lg mb-3">
+                        <div className="relative md:absolute md:right-0 md:bottom-0 z-50 bg-theme-primaryBg2/70 backdrop-blur-sm p-6 w-full max-w-[320px] md:w-[280px] text-white shadow-2xl">
+                            <h3 className="text-theme-secondaryText font-semibold text-lg mb-3">
                                 Utsarg Grover
                             </h3>
 
-                            <p className="text-sm leading-relaxed text-white/85 mb-3">
+                            <p className="text-sm leading-relaxed text-theme-secondaryText/85 mb-3">
                                 Multiple campaigns for more than 50 brands/corporates in varied mediums.
                             </p>
 
-                            <p className="text-sm leading-relaxed text-white/70">
+                            <p className="text-sm leading-relaxed text-theme-secondaryText/70">
                                 Branding, Digital Marketing, Mainline advertising, TVC production, Audio Visual films and Content creation.
                             </p>
                         </div>
@@ -222,7 +225,7 @@ const About = () => {
             </section>
 
             {/* Team Members Grid */}
-            <section className="w-full bg-theme-secondaryBg1 px-[5%] md:px-[8%] lg:px-[10%] pb-24 pt-24">
+            <section className="w-full bg-black px-[5%] md:px-[8%] lg:px-[10%] pb-24 pt-24">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
                     {[
                         {
@@ -287,19 +290,19 @@ const About = () => {
                     ].map((member, index) => (
                         <div
                             key={index}
-                            className="relative aspect-[0.8] overflow-hidden bg-[#1e566b]"
+                            className="relative aspect-[0.8] overflow-hidden bg-theme-secondaryBg1"
                         >
                             {member.info ? (
                                 <div className="w-full h-full bg-theme-primaryBg1 p-6 md:p-8 flex flex-col justify-start text-white">
-                                    <h3 className="text-[#29a7ff] text-lg md:text-xl font-semibold mb-4">
+                                    <h3 className="text-theme-primaryText text-lg md:text-xl font-semibold mb-4">
                                         {member.name}
                                     </h3>
 
-                                    <p className="text-xs md:text-sm leading-relaxed text-white/90 mb-2">
+                                    <p className="text-xs md:text-sm leading-relaxed text-theme-primaryText/60 mb-2">
                                         Multiple campaigns for more than 50 brands/corporates in varied mediums.
                                     </p>
 
-                                    <p className="text-xs md:text-sm leading-relaxed text-white/75">
+                                    <p className="text-xs md:text-sm leading-relaxed text-theme-primaryText/60">
                                         Branding, Digital Marketing, Mainline advertising, Product photography, TVC production, Audio Visual films and Content Creation.
                                     </p>
                                 </div>
@@ -311,13 +314,13 @@ const About = () => {
                                         className="absolute inset-0 w-full h-full object-cover"
                                     />
 
-                                    <div className="absolute inset-x-0 bottom-0 h-20 md:h-20 bg-black/70 backdrop-blur-sm" />
+                                    <div className="absolute inset-x-0 bottom-0 h-20 bg-black/70 backdrop-blur-sm" />
 
-                                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[90%] text-center">
-                                        <div className="text-[#29a7ff] font-semibold text-sm md:text-xl leading-tight">
+                                    <div className="absolute inset-x-0 bottom-0 h-20 flex flex-col items-center justify-center px-3 text-center overflow-hidden">
+                                        <div className="text-theme-primaryText font-semibold text-[11px] md:text-lg leading-tight max-w-full break-words">
                                             {member.name}
                                         </div>
-                                        <div className="text-white/85 text-[10px] md:text-sm mt-1 leading-tight">
+                                        <div className="text-theme-primaryText/75 text-[9px] md:text-sm mt-1 leading-tight max-w-full break-words">
                                             {member.role}
                                         </div>
                                     </div>
@@ -329,9 +332,17 @@ const About = () => {
             </section>
 
             {/* Awards Showcase Image */}
-            <section className="relative w-full bg-theme-primaryBg1 flex flex-col items-center justify-center">
-                <div className="w-full px-6 md:px-12 lg:px-20 pt-16 pb-8">
-                    <h2 className="font-display text-[56px] leading-[0.95] md:text-[84px] lg:text-[110px] font-bold text-theme-primaryText tracking-tight text-center">
+            <section className="relative w-full bg-theme-primaryBg1">
+                {/* Desktop overlay title */}
+                <div className="hidden md:block absolute top-[180px] left-6 md:left-12 lg:left-20 z-10">
+                    <h2 className="font-display text-[45px] md:text-[55px] lg:text-[75px] font-bold text-theme-primaryText tracking-tight leading-[0.95]">
+                        Awards Showcase
+                    </h2>
+                </div>
+
+                {/* Mobile standalone title container */}
+                <div className="md:hidden px-6 pt-8 pb-6 bg-black flex justify-center text-center">
+                    <h2 className="font-display text-3xl font-bold text-theme-primaryText leading-tight">
                         Awards Showcase
                     </h2>
                 </div>
