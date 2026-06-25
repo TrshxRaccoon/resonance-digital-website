@@ -130,7 +130,7 @@ const Index = () => {
     return (
         <>
             <Helmet>
-                <title>Resonance Digital | VFX & Creative Studio</title>
+                <title>Resonance Digital | India's most diversified Creative Technology Company</title>
                 <meta
                     name="description"
                     content="Resonance Digital is a premium VFX and creative studio specializing in visual effects, brand content, real estate visualization, and immersive experiences."
