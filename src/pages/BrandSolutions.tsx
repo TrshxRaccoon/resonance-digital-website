@@ -1249,7 +1249,7 @@ const BrandSolutions = () => {
                                                     return (
                                                         <div
                                                             key={idx}
-                                                            className="relative w-full flex items-center justify-center gap-6 px-8"
+                                                            className={`relative w-full flex items-center justify-center gap-6 px-8 ${idx % 2 === 0 ? "bg-theme-primaryBg2" : "bg-theme-secondaryBg2"}`}
                                                             style={{ height: "100svh" }}
                                                         >
                                                             <GalleryImage
@@ -1279,7 +1279,7 @@ const BrandSolutions = () => {
                                                 return (
                                                     <div
                                                         key={idx}
-                                                        className="relative w-full"
+                                                        className={`relative w-full ${idx % 2 === 0 ? "bg-theme-primaryBg2" : "bg-theme-secondaryBg2"}`}
                                                         style={isMobile ? undefined : { height: "100svh" }}
                                                     >
                                                         {/*
