@@ -10,7 +10,7 @@ const Header = () => {
 
   const isLightThemePage = [
     "/",
-    "/brandSolutions",
+    "/brand-solutions",
     "/motion-pictures",
   ].includes(pathname);
 

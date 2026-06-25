@@ -16,7 +16,7 @@ const Awards = () => {
 
             <Header />
 
-            {/* Hero Section — unchanged */}
+            {/* Hero Section */}
             <section className="relative w-full min-h-screen overflow-hidden bg-theme-primaryBg1">
 
                 {/* Header spacing */}

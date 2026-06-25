@@ -18,7 +18,7 @@ const verticals = [
         subtitle: "",
         description:
             "Strategic brand content and campaigns that resonate with audiences worldwide.",
-        href: "/brandSolutions",
+        href: "/brand-solutions",
         bgImage:
             "/assets/images/brandsolposter.png",
     },

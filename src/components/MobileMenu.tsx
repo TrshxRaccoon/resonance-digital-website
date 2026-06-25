@@ -9,7 +9,7 @@ interface MobileMenuProps {
 const menuItems = [
     { label: "Home", href: "/" },
     { label: "VFX", href: "/vfx" },
-    { label: "Brand Solutions", href: "/brandSolutions" },
+    { label: "Brand Solutions", href: "/brand-solutions" },
     { label: "Real Estate", href: "/real-estate" },
     { label: "Motion Pictures", href: "/motion-pictures" },
     { label: "About Us", href: "/about" },
@@ -21,7 +21,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     const location = useLocation();
     const isLightMenuTheme = [
         "/",
-        "/brandSolutions",
+        "/brand-solutions",
         "/motion-pictures",
     ].includes(location.pathname);
 

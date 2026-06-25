@@ -172,13 +172,11 @@ const Index = () => {
                         </div>
                       </div>
                     </section>*/}
-                    {/* <HorizontalSelector /> */}
                     <VerticalSelector />
                 </main>
                 <Footer />
             </div>
 
-            {/* Rendered at root level — never clipped by any stacking context */}
             <ScrollIndicator />
         </>
     );

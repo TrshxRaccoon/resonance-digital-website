@@ -1299,11 +1299,11 @@ const VFX = () => {
                                     </div>
 
                                     {/* Right Side - Company Logos Image */}
-                                    <div className="flex-1 min-w-0 overflow-hidden rounded-2xl h-[320px] md:h-[420px] relative">
+                                    <div className="flex-1 min-w-0 overflow-hidden rounded-2xl relative mt-8 lg:mt-0 h-auto lg:h-[420px]">
                                         <img
                                             src="/assets/images/vfx/Security-Certification.png"
                                             alt="Company Logos - TPN, Warner Bros, Amazon Studios, Lionsgate, Netflix, Universal"
-                                            className="absolute top-0 right-0 h-full object-cover object-right"
+                                            className="relative lg:absolute top-0 right-0 w-full lg:w-auto h-auto lg:h-full object-contain lg:object-cover object-right"
                                         />
                                     </div>
                                 </div>
