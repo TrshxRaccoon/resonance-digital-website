@@ -1221,7 +1221,7 @@ const BrandSolutions = () => {
                                         <div className="sticky top-0 z-40 bg-theme-secondaryBg2 border-t border-b border-gray-300 px-4 md:px-8 py-4 backdrop-blur-sm">
                                             <div className="flex items-center gap-4">
                                                 <img
-                                                    src="/RDL_Logo.png"
+                                                    src="/public/RDL_Logo.png"
                                                     alt="Resonance Digital"
                                                     className="h-10 w-auto object-contain"
                                                 />
