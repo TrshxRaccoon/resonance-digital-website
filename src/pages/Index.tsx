@@ -146,7 +146,7 @@ const Index = () => {
                         <Hero />
                     </section>
                     <BrandStatement />
-                    <section className="w-full bg-theme-primaryText py-24 md:py-32">
+                    {/*<section className="w-full bg-theme-primaryText py-24 md:py-32">
                       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-y-0">
                         <div className="flex flex-col items-center">
                           <span className="relative inline-block text-6xl md:text-8xl font-extralight tracking-tight text-theme-secondaryText leading-none">
@@ -171,7 +171,7 @@ const Index = () => {
                           <span className="mt-2 text-sm md:text-base text-gray-500">Years In the Industry</span>
                         </div>
                       </div>
-                    </section>
+                    </section>*/}
                     {/* <HorizontalSelector /> */}
                     <VerticalSelector />
                 </main>
