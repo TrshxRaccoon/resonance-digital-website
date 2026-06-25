@@ -118,7 +118,7 @@ const VerticalSelector = () => {
 
     return (
         <section
-            className="w-full h-screen relative overflow-hidden"
+            className="w-full relative overflow-hidden"
             id="verticals"
         >
             {/* ── Full-screen background image layer (shared by both layouts) ──── */}
@@ -139,8 +139,8 @@ const VerticalSelector = () => {
             {/* ── Content layer ──────────────────────────────────────────────────── */}
             <div className="relative z-10 h-full flex flex-col">
                 {/* Section header */}
-                <div className="px-6 md:px-12 py-8 md:py-12 border-b border-white/20">
-                    <h2 className="text-xl uppercase tracking-widest text-white/50">
+                <div className="px-6 md:px-12 py-4 md:py-4 border-b border-white/20">
+                    <h2 className="text-3xl tracking-tight text-white/50">
                         Our Verticals
                     </h2>
                 </div>
@@ -162,7 +162,7 @@ const VerticalSelector = () => {
                             }}
                         >
                             {/* Card overlay */}
-                            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-300 -z-10" />
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300 -z-10" />
 
                             {/* Number */}
                             <span className="text-xs text-white/70 font-body relative z-10">

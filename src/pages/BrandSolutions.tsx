@@ -368,14 +368,12 @@ const brandStatements = [
 const caseStudyShowcase: BrandShowcaseItem[] = [
     {
         title: "MORDE",
-        image: "/assets/images/CaseStudies/Morde-49.png",
-        caseStudyImage: "/assets/images/CaseStudies/Morde-49.png",
+        image: "/assets/images/CaseStudies/Morde/MordThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Morde/MordThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/Morde-1.png",
-            "/assets/images/CaseStudies/Morde-49.png",
-            "/assets/images/CaseStudies/Morde-49-01.png",
-            "/assets/images/CaseStudies/Morde-3-01.png",
-            "/assets/images/CaseStudies/Morde-2-01.png",
+            "/assets/images/CaseStudies/Morde/2.png",
+            "/assets/images/CaseStudies/Morde/3.png",
+            "/assets/images/CaseStudies/Morde/4.png",
         ],
         mobileGalleryImages: [
             "/assets/images/CaseStudies/Morde/Morde1-01.png",
@@ -395,14 +393,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Killer Jeans",
-        image: "/assets/images/CaseStudies/Killer1.png",
-        caseStudyImage: "/assets/images/CaseStudies/Killer1.png",
+        image: "/assets/images/CaseStudies/Killer/KillThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Killer/KillThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/Killer1.png",
-            "/assets/images/CaseStudies/Killer2.png",
-            "/assets/images/CaseStudies/Killer3.png",
-            "/assets/images/CaseStudies/Killer4.png",
-            "/assets/images/CaseStudies/Killer5.png",
+            "/assets/images/CaseStudies/Killer/2.png",
+            "/assets/images/CaseStudies/Killer/3.png",
+            "/assets/images/CaseStudies/Killer/4.png",
         ],
         mobileGalleryImages: [
             "/assets/images/CaseStudies/Killer/Killer1-3-01.png",
@@ -422,13 +418,13 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Netflix India",
-        image: "/assets/images/CaseStudies/for website-38.png",
-        caseStudyImage: "/assets/images/CaseStudies/for website-38.png",
+        image: "/assets/images/CaseStudies/Netflix/NetfThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Netflix/NetfThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/for website-38.png",
-            "/assets/images/CaseStudies/for website-39.png",
-            "/assets/images/CaseStudies/for website-40.png",
-            "/assets/images/CaseStudies/for website-41.png",
+            "/assets/images/CaseStudies/Netflix/1.png",
+            "/assets/images/CaseStudies/Netflix/2.png",
+            "/assets/images/CaseStudies/Netflix/3.png",
+            "/assets/images/CaseStudies/Netflix/4.png",
         ],
         client: "Netflix India",
         year: "2023",
@@ -441,15 +437,15 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "CONOSH",
-        image: "/assets/images/CaseStudies/conosh-1.png",
-        caseStudyImage: "/assets/images/CaseStudies/for website-23.png",
+        image: "/assets/images/CaseStudies/Conosh/ConoThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Conosh/ConoThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/for website-23.png",
-            "/assets/images/CaseStudies/for website-20.png",
-            "/assets/images/CaseStudies/for website-21.png",
-            "/assets/images/CaseStudies/for website-22.png",
-            "/assets/images/CaseStudies/for website-24.png",
-            "/assets/images/CaseStudies/for website-25.png",
+            "/assets/images/CaseStudies/Conosh/1.png",
+            "/assets/images/CaseStudies/Conosh/2.png",
+            "/assets/images/CaseStudies/Conosh/3.png",
+            "/assets/images/CaseStudies/Conosh/4.png",
+            "/assets/images/CaseStudies/Conosh/5.png",
+            "/assets/images/CaseStudies/Conosh/6.png",
         ],
         client: "CONOSH",
         year: "2025",
@@ -463,12 +459,11 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "OPPO",
-        image: "/assets/images/CaseStudies/oppo-1.png",
-        caseStudyImage: "/assets/images/CaseStudies/oppo-1.png",
+        image: "/assets/images/CaseStudies/Oppo/OppoThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Oppo/OppoThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/oppo-1.png",
-            "/assets/images/CaseStudies/oppo-2.png",
-            "/assets/images/CaseStudies/oppo-3.png",
+            "/assets/images/CaseStudies/Oppo/2.png",
+            "/assets/images/CaseStudies/Oppo/3.png",
         ],
         client: "OPPO",
         year: "2024",
@@ -479,15 +474,15 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Mahindra XUV 500",
-        image: "/assets/images/CaseStudies/mahindra1.png",
-        caseStudyImage: "/assets/images/CaseStudies/mahindra1.png",
+        image: "/assets/images/CaseStudies/Mahindra/MahiThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Mahindra/MahiThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/for website-31.png",
-            "/assets/images/CaseStudies/for website-32.png",
-            "/assets/images/CaseStudies/for website-33.png",
-            "/assets/images/CaseStudies/for website-34.png",
-            "/assets/images/CaseStudies/for website-35.png",
-            "/assets/images/CaseStudies/for website-36.png",
+            "/assets/images/CaseStudies/Mahindra/1.png",
+            "/assets/images/CaseStudies/Mahindra/2.png",
+            "/assets/images/CaseStudies/Mahindra/3.png",
+            "/assets/images/CaseStudies/Mahindra/4.png",
+            "/assets/images/CaseStudies/Mahindra/5.png",
+            "/assets/images/CaseStudies/Mahindra/6.png",
         ],
         client: "Mahindra XUV 500",
         year: "2018",
@@ -500,15 +495,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Vraj Group",
-        image: "/assets/images/CaseStudies/Vraj_meridian.png",
-        caseStudyImage: "/assets/images/CaseStudies/Vraj_meridian.png",
+        image: "/assets/images/CaseStudies/Vraj/VrajThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Vraj/VrajThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/Vraj_meridian.png",
-            "/assets/images/CaseStudies/Vraj-meridian-logo.png",
-            "/assets/images/CaseStudies/2.png",
-            "/assets/images/CaseStudies/3-1.png",
-            "/assets/images/CaseStudies/4.png",
-            "/assets/images/CaseStudies/5.png",
+            "/assets/images/CaseStudies/Vraj/2.png",
+            "/assets/images/CaseStudies/Vraj/3.png",
+            "/assets/images/CaseStudies/Vraj/4.png",
         ],
         mobileGalleryImages: [
             "/assets/images/CaseStudies/Vraj/Vraj_1-01.png",
@@ -525,13 +517,13 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Estuary",
-        image: "/assets/images/CaseStudies/estuary1.png",
-        caseStudyImage: "/assets/images/CaseStudies/estuary1.png",
+        image: "/assets/images/CaseStudies/Estuary/EstuThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Estuary/EstuThumb.png",
         galleryImages: [
-            "/assets/images/CaseStudies/estuary1.png",
-            "/assets/images/CaseStudies/for website-27.png",
-            "/assets/images/CaseStudies/for website-26.png",
-            "/assets/images/CaseStudies/for website-28.png",
+            "/assets/images/CaseStudies/Estuary/1.png",
+            "/assets/images/CaseStudies/Estuary/2.png",
+            "/assets/images/CaseStudies/Estuary/3.png",
+            "/assets/images/CaseStudies/Estuary/4.png",
         ],
         client: "Estuary",
         year: "2020",
@@ -543,12 +535,11 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Calamus One - Ultrabike",
-        image: "/assets/images/CaseStudies/calamus1.png",
-        caseStudyImage: "/assets/images/CaseStudies/calamus1.png",
+        image: "/assets/images/CaseStudies/Calumus/CaluThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Calumus/CaluThumb.png",
         galleryImages: [
-            "assets/images/CaseStudies/calamus1.png",
-            "assets/images/CaseStudies/1.png",
-            "assets/images/CaseStudies/2.png",
+            "/assets/images/CaseStudies/Calumus/2.png",
+            "/assets/images/CaseStudies/Calumus/3.png",
         ],
         mobileGalleryImages: [
             "/assets/images/CaseStudies/Calamus/Calamus1-0-01.png",
@@ -565,14 +556,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Puravankara",
-        image: "/assets/images/CaseStudies/p5.png",
-        caseStudyImage: "/assets/images/CaseStudies/p5.png",
+        image: "/assets/images/CaseStudies/Purvankara/PurvThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Purvankara/PurvThumb.png",
         galleryImages: [
-            "assets/images/CaseStudies/p5.png",
-            "assets/images/CaseStudies/p1.jpeg",
-            "assets/images/CaseStudies/p2.png",
-            "assets/images/CaseStudies/p3.png",
-            "assets/images/CaseStudies/p4.png",
+            "/assets/images/CaseStudies/Purvankara/2.png",
+            "/assets/images/CaseStudies/Purvankara/3.png",
+            "/assets/images/CaseStudies/Purvankara/4.png",
         ],
         mobileGalleryImages: [
             "/assets/images/CaseStudies/PURAVANKARA/Puravankara_1-3-01.png",
@@ -590,13 +579,12 @@ const caseStudyShowcase: BrandShowcaseItem[] = [
     },
     {
         title: "Elegant Builders & Developers",
-        image: "/assets/images/CaseStudies/elegant1.png",
-        caseStudyImage: "/assets/images/CaseStudies/elegant1.png",
+        image: "/assets/images/CaseStudies/Elegent/ElegThumb.png",
+        caseStudyImage: "/assets/images/CaseStudies/Elegent/ElegThumb.png",
         galleryImages: [
-            "assets/images/CaseStudies/elegant1.png",
-            "assets/images/CaseStudies/elegant2.png",
-            "assets/images/CaseStudies/elegant3.png",
-            "assets/images/CaseStudies/elegant4.png",
+            "/assets/images/CaseStudies/Elegent/2.png",
+            "/assets/images/CaseStudies/Elegent/3.png",
+            "/assets/images/CaseStudies/Elegent/4.png",
         ],
         mobileGalleryImages: [
             "/assets/images/CaseStudies/Elegent/Elegant_1-2-01.png",
@@ -966,7 +954,7 @@ const BrandSolutions = () => {
                             type="button"
                             aria-label="Close case study"
                             onClick={closeCaseStudy}
-                            className="fixed top-6 right-6 z-[60] w-11 h-11 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors duration-200"
+                            className="fixed top-3 md:top-6 right-6 z-[60] w-11 h-11 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors duration-200"
                         >
                             <X className="w-5 h-5 text-gray-600" />
                         </button>
@@ -1088,7 +1076,7 @@ const BrandSolutions = () => {
                                     <div className="absolute inset-0 bg-theme-primaryBg2" />
                                     <div className="absolute inset-0 flex flex-col items-center justify-center px-2 md:px-4 lg:px-6">
                                         <div className="relative w-full h-full flex items-center justify-center">
-                                            <div className="overflow-hidden bg-transparent w-[700px] h-[500px] max-w-full">
+                                            <div className="overflow-hidden bg-transparent w-[280px] h-[200px] sm:w-[360px] sm:h-[260px] lg:w-[700px] lg:h-[500px] max-w-full">
                                                 {/*
                           FIX 6: Hero case study image gets fetchPriority="high" so
                           the browser fetches it the moment the overlay opens,
@@ -1219,17 +1207,21 @@ const BrandSolutions = () => {
                             {(() => {
                                 if (!activeCaseStudy.galleryImages?.length) return null;
 
-                                const galleryList =
-                                    isMobile && activeCaseStudy.mobileGalleryImages?.length
-                                        ? activeCaseStudy.mobileGalleryImages
-                                        : activeCaseStudy.galleryImages;
+                                // Temporarily disable the mobile-specific gallery so mobile and desktop
+                                // render the same image set.
+                                // const galleryList =
+                                //     isMobile && activeCaseStudy.mobileGalleryImages?.length
+                                //         ? activeCaseStudy.mobileGalleryImages
+                                //         : activeCaseStudy.galleryImages;
+
+                                const galleryList = activeCaseStudy.galleryImages;
 
                                 return (
                                     <div className="flex flex-col">
                                         <div className="sticky top-0 z-40 bg-theme-secondaryBg2 border-t border-b border-gray-300 px-4 md:px-8 py-4 backdrop-blur-sm">
                                             <div className="flex items-center gap-4">
                                                 <img
-                                                    src="/public/RDL_Logo.png"
+                                                    src="/RDL_Logo.png"
                                                     alt="Resonance Digital"
                                                     className="h-10 w-auto object-contain"
                                                 />
