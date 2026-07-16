@@ -210,7 +210,9 @@ const Index = () => {
                             {/* Divider and Text Statement */}
                             <div className="w-full border-t border-black/[0.15] pt-12">
                                 <p className="font-display text-[32px] sm:text-[40px] md:text-[54px] lg:text-[68px] xl:text-[76px] font-bold text-[#58595b] leading-[0.9] tracking-tight max-w-[1400px]">
-                                    Creativity and technology, working together to transform what’s possible.
+                                    Where Creativity Meets Intelligence.
+                                    <br />
+                                    AI. VFX. Immersive. Brand Experiences. One Creative Technology Partner.
                                 </p>
                             </div>
                         </div>

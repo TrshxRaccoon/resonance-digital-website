@@ -181,46 +181,50 @@ const About = () => {
                                         {/* Divider and Text Statement */}
                                         <div className="w-full border-t border-black/[0.15] pt-12">
                                             <p className="font-display text-[32px] sm:text-[40px] md:text-[54px] lg:text-[68px] xl:text-[76px] font-bold text-[#58595b] leading-[0.9] tracking-tight max-w-[1400px]">
-                                                Creativity and technology, working together to transform what’s possible.
+                                                Where Creativity Meets Intelligence.
+                                                <br />
+                                                AI. VFX. Immersive. Brand Experiences. One Creative Technology Partner.
                                             </p>
                                         </div>
                                     </div>
-                                </section>              {/* Meet Our Team Section */}
-            <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#f2eee2] to-[#f7ecdc] pt-24 pb-12 px-6 md:px-12 lg:px-20">
+                                </section>
+
+            {/* Meet Our Team Section */}
+            <section className="relative w-full overflow-hidden bg-[#f2eee2] pt-24 px-6 md:px-12 lg:px-24">
                 {/* Background Glow */}
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.05),transparent_55%)]" />
 
-                <div className="relative z-10 w-full">
+                <div className="relative z-10 w-full max-w-[1700px] mx-auto">
                     {/* Heading */}
-                    <div className="max-w-5xl relative z-10">
-                        <h2 className=" text-[56px] md:text-[80px] lg:text-[100px] font-bold text-black leading-[0.95] mb-8">
+                    <div className="max-w-[1400px] relative z-10 mb-12">
+                        <h2 className="text-[56px] md:text-[80px] lg:text-[100px] font-bold text-black leading-[0.95] mb-8 font-display">
                             Meet our team
                         </h2>
 
-                        <div className="max-w-[1100px] text-theme-secondaryText text-[32px] md:text-[46px] lg:text-[58px] font-bold font-display leading-[0.90] tracking-tight">
-                            Guided by strong vision and thoughtful, Resonance is proud to be a reliable
-                            <span className="text-theme-secondaryText font-display font-bold"> partner for major creative initiatives in India and beyond.</span>
+                        <div className="max-w-[1100px] text-theme-secondaryText text-[32px] md:text-[46px] lg:text-[58px] font-bold font-display leading-[0.95] tracking-tight">
+                            Guided by strong thought and vision,
+                            <br />
+                            Resonance is proud to be a reliable partner for major
+                            creative initiatives worldwide.
                         </div>
+                    </div>
+
+                    {/* Leaders Image */}
+                    <div className="w-full overflow-hidden flex justify-center -mb-[6px] md:-mb-[10px]">
+                        <img
+                            src="/assets/images/team/leaders.png"
+                            alt="Resonance Leadership Team"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-auto object-contain select-none block"
+                        />
                     </div>
                 </div>
             </section>
 
-            {/* Team Visual Composition (Full Width Gallery Style) */}
-            <section className="w-full bg-gradient-to-b from-[#f7ecdc] to-[#fbf1e4]">
-                <div className="w-full aspect-[16/9] md:aspect-[21/9] lg:max-h-[85vh] overflow-hidden bg-black/[0.02]">
-                    <img
-                        src="/assets/images/team/leaders.png"
-                        alt="Resonance Leadership Team"
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-            </section>
-
             {/* Team Members Grid */}
-            <section className="w-full bg-gradient-to-b from-[#fbf1e4] to-[#f2eee2] px-12 md:px-24 pb-24 pt-24">
-                <div className="max-w-[1700px] mx-auto flex flex-col gap-[2px]">
+            <section className="w-full bg-[#f2eee2] px-6 md:px-12 lg:px-24 pb-24 pt-20">
+                <div className="max-w-[1700px] mx-auto flex flex-col gap-[2px] bg-{#f2eee2}">
                     {/* Row 1 */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
                         {members.slice(0, 4).map((member, i) => renderMember(member, i))}
